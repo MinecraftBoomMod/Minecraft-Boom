@@ -142,7 +142,13 @@ public abstract class BlockVanillaSlab extends BlockSlabBase
 
     public static enum EnumType implements IStringSerializable
     {
-        SMOOTH_GRANITE(0, MapColor.STONE, Names.SMOOTH_GRANITE), SMOOTH_DIORITE(1, MapColor.STONE, Names.SMOOTH_DIORITE), SMOOTH_ANDESITE(2, MapColor.STONE, Names.SMOOTH_ANDESITE), PRISMARINE_BRICKS(3, MapColor.STONE, Names.PRISMARINE_BRICKS), PRISMARINE_DARK(4, MapColor.STONE, Names.DARK_PRISMARINE), END_STONE_BRICKS(5, MapColor.STONE, Names.END_BRICKS), RED_NETHER_BRICKS(6, MapColor.STONE, Names.RED_NETHER_BRICK);
+        SMOOTH_GRANITE(0, MapColor.STONE, Names.SMOOTH_GRANITE),
+        SMOOTH_DIORITE(1, MapColor.STONE, Names.SMOOTH_DIORITE),
+        SMOOTH_ANDESITE(2, MapColor.STONE, Names.SMOOTH_ANDESITE),
+        PRISMARINE_BRICKS(3, MapColor.STONE, Names.PRISMARINE_BRICKS),
+        PRISMARINE_DARK(4, MapColor.STONE, Names.DARK_PRISMARINE),
+        END_STONE_BRICKS(5, MapColor.STONE, Names.END_BRICKS),
+        RED_NETHER_BRICKS(6, MapColor.STONE, Names.RED_NETHER_BRICK);
 
         private static final BlockVanillaSlab.EnumType[] META_LOOKUP = new BlockVanillaSlab.EnumType[values().length];
 

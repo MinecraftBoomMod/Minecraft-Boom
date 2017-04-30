@@ -86,7 +86,10 @@ public class BlockPolished extends BlockBase implements IBlockMeta
 
     public static enum EnumType implements IStringSerializable
     {
-        SMOOTH_PRISMARINE(0, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE), SMOOTH_DARK_PRISMARINE(1, MapColor.STONE, Names.BLOCK_SMOOTH_DARK_PRISMARINE), SMOOTH_END_STONE(2, MapColor.STONE, Names.BLOCK_SMOOTH_END_STONE), SMOOTH_NETHERRACK(3, MapColor.STONE, Names.BLOCK_SMOOTH_NETHERRACK);
+        SMOOTH_PRISMARINE(0, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),
+        SMOOTH_DARK_PRISMARINE(1, MapColor.STONE, Names.BLOCK_SMOOTH_DARK_PRISMARINE),
+        SMOOTH_END_STONE(2, MapColor.STONE, Names.BLOCK_SMOOTH_END_STONE),
+        SMOOTH_NETHERRACK(3, MapColor.STONE, Names.BLOCK_SMOOTH_NETHERRACK);
 
         private static final BlockPolished.EnumType[] META_LOOKUP = new BlockPolished.EnumType[values().length];
 

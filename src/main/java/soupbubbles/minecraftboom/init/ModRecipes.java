@@ -12,7 +12,7 @@ public class ModRecipes
 
     public static void initRecipes()
     {
-        addStairRecipe(ModBlocks.BLOCK_STAIRS_STONE, Blocks.STONE_SLAB, 2);
+        addStairRecipe(ModBlocks.BLOCK_STAIRS_STONE, Blocks.STONE_SLAB, 3);
 
         addStairRecipe(ModBlocks.BLOCK_STAIRS_SMOOTH_GRANITE, 2);
         addStairRecipe(ModBlocks.BLOCK_STAIRS_SMOOTH_DIORITE, 4);
@@ -29,12 +29,12 @@ public class ModRecipes
 
     private static void addStairRecipe(BlockStairBase output)
     {
-        addStairRecipe(output, 4, 0);
+        addStairRecipe(output, 6, 0);
     }
 
     private static void addStairRecipe(BlockStairBase output, int meta)
     {
-        addStairRecipe(output, 4, meta);
+        addStairRecipe(output, 6, meta);
     }
 
     private static void addStairRecipe(BlockStairBase output, int amount, int meta)
