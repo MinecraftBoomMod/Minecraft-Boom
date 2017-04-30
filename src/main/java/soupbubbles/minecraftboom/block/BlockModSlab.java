@@ -28,7 +28,7 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockModSlab extends BlockSlabBase
 {
-    public static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create("variant", BlockModSlab.EnumType.class);
+    protected static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create("variant", BlockModSlab.EnumType.class);
 
     public BlockModSlab(String name)
     {
@@ -138,6 +138,12 @@ public abstract class BlockModSlab extends BlockSlabBase
     public MapColor getMapColor(IBlockState state)
     {
         return state.getValue(VARIANT).getMapColor();
+    }
+    
+    @Override
+    public PropertyEnum getVariants()
+    {
+        return VARIANT;
     }
 
     public static enum EnumType implements IStringSerializable

@@ -28,7 +28,7 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockVanillaSlab extends BlockSlabBase
 {
-    public static final PropertyEnum<BlockVanillaSlab.EnumType> VARIANT = PropertyEnum.<BlockVanillaSlab.EnumType>create("variant", BlockVanillaSlab.EnumType.class);
+    protected static final PropertyEnum<BlockVanillaSlab.EnumType> VARIANT = PropertyEnum.<BlockVanillaSlab.EnumType>create("variant", BlockVanillaSlab.EnumType.class);
 
     public BlockVanillaSlab(String name)
     {
@@ -140,6 +140,12 @@ public abstract class BlockVanillaSlab extends BlockSlabBase
         return state.getValue(VARIANT).getMapColor();
     }
 
+    @Override
+    public PropertyEnum getVariants()
+    {
+        return VARIANT;
+    }
+    
     public static enum EnumType implements IStringSerializable
     {
         SMOOTH_GRANITE(0, MapColor.STONE, Names.SMOOTH_GRANITE),

@@ -18,10 +18,8 @@ import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockStairsStone;
 import soupbubbles.minecraftboom.block.BlockVanillaSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaSlabHalf;
-import soupbubbles.minecraftboom.item.ItemModSlab;
-import soupbubbles.minecraftboom.item.ItemPolished;
-import soupbubbles.minecraftboom.item.ItemVanillaSlab;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
+import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class ModBlocks
@@ -52,7 +50,7 @@ public class ModBlocks
     static
     {
         BLOCK_POLISHED = new BlockPolished();
-        registerBlockMeta(BLOCK_POLISHED, new ItemPolished());
+        registerBlockMeta(BLOCK_POLISHED);
 
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
@@ -63,22 +61,22 @@ public class ModBlocks
         BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairsStone(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
         BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairsStone(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
 
-        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
-        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
+        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
+        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
         BLOCK_HALF_SLAB_VANILLA = new BlockVanillaSlabHalf();
         BLOCK_DOUBLE_SLAB_VANILLA = new BlockVanillaSlabDouble();
 
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA, new ItemVanillaSlab(BLOCK_HALF_SLAB_VANILLA));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA, new ItemVanillaSlab(BLOCK_DOUBLE_SLAB_VANILLA));
+        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA, BLOCK_HALF_SLAB_VANILLA, BLOCK_DOUBLE_SLAB_VANILLA));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA, BLOCK_HALF_SLAB_VANILLA, BLOCK_DOUBLE_SLAB_VANILLA));
 
         BLOCK_HALF_SLAB_MOD = new BlockModSlabHalf();
         BLOCK_DOUBLE_SLAB_MOD = new BlockModSlabDouble();
 
-        registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemModSlab(BLOCK_HALF_SLAB_MOD));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemModSlab(BLOCK_DOUBLE_SLAB_MOD));
+        registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
     }
 
     public static void registerBlocks()
@@ -109,6 +107,11 @@ public class ModBlocks
         return block;
     }
 
+    protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block)
+    {
+        return registerBlockMeta(block, new ItemBlockMeta(block));
+    }
+    
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block, ItemBlockMeta itemBlock)
     {
         GameRegistry.register(block);

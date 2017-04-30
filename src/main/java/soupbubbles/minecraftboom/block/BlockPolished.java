@@ -22,7 +22,7 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockPolished extends BlockBase implements IBlockMeta
 {
-    public static final PropertyEnum<BlockPolished.EnumType> VARIANT = PropertyEnum.<BlockPolished.EnumType>create("variant", BlockPolished.EnumType.class);
+    protected static final PropertyEnum<BlockPolished.EnumType> VARIANT = PropertyEnum.<BlockPolished.EnumType>create("variant", BlockPolished.EnumType.class);
 
     public BlockPolished()
     {
@@ -84,6 +84,12 @@ public class BlockPolished extends BlockBase implements IBlockMeta
         return new BlockStateContainer(this, new IProperty[] {VARIANT});
     }
 
+    @Override
+    public PropertyEnum getVariants()
+    {
+        return VARIANT;
+    }
+    
     public static enum EnumType implements IStringSerializable
     {
         SMOOTH_PRISMARINE(0, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),

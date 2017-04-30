@@ -1,14 +1,15 @@
 package soupbubbles.minecraftboom.item.base;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IStringSerializable;
 import soupbubbles.minecraftboom.block.base.IBlockMeta;
 
-public abstract class ItemBlockMeta extends ItemBlock
+public class ItemBlockMeta extends ItemBlock
 {
+    private final String[] VARIANTS = new String[((IBlockMeta) block).getVariants().getAllowedValues().size()];
+
     public ItemBlockMeta(Block block) 
     {
         super(block);
@@ -16,6 +17,11 @@ public abstract class ItemBlockMeta extends ItemBlock
         if (!(block instanceof IBlockMeta))
         {
         	throw new IllegalArgumentException(block.getUnlocalizedName() + " must implement IBlockMeta");
+        }
+        
+        for (int i = 0; i < VARIANTS.length; i++)
+        {
+            VARIANTS[i] = ((IStringSerializable) block.getStateFromMeta(i).getValue(((IBlockMeta) block).getVariants())).getName();
         }
         
         setRegistryName(block.getRegistryName());
@@ -40,5 +46,8 @@ public abstract class ItemBlockMeta extends ItemBlock
     	return "";
     }
 
-    public abstract String[] getVariants();
+    public String[] getVariants()
+    {
+        return VARIANTS;
+    }
 }

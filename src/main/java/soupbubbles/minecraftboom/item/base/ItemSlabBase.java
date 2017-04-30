@@ -22,7 +22,7 @@ import soupbubbles.minecraftboom.block.base.IBlockMeta;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 
-public abstract class ItemSlabBase extends ItemBlockMeta
+public class ItemSlabBase extends ItemBlockMeta
 {
 	private final BlockSlabBase singleSlab;
 	private final BlockSlabBase doubleSlab;
