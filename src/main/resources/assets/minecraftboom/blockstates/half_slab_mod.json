@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "half=bottom,variant=smooth_prismarine": { "model": "minecraftboom:half_slab_smooth_prismarine" },
+        "half=bottom,variant=smooth_dark_prismarine": { "model": "minecraftboom:half_slab_smooth_dark_prismarine" },
+        "half=bottom,variant=smooth_end_stone": { "model": "minecraftboom:half_slab_smooth_end_stone" },
+        "half=bottom,variant=smooth_netherrack": { "model": "minecraftboom:half_slab_smooth_netherrack" },
+        "half=top,variant=smooth_prismarine": { "model": "minecraftboom:upper_slab_smooth_prismarine" },
+        "half=top,variant=smooth_dark_prismarine": { "model": "minecraftboom:upper_slab_smooth_dark_prismarine" },
+        "half=top,variant=smooth_end_stone": { "model": "minecraftboom:upper_slab_smooth_end_stone" },
+        "half=top,variant=smooth_netherrack": { "model": "minecraftboom:upper_slab_smooth_netherrack" }
+    }
+}

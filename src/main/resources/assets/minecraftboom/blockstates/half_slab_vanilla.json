@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "half=bottom,variant=smooth_granite": { "model": "minecraftboom:half_slab_smooth_granite" },
+        "half=bottom,variant=smooth_diorite": { "model": "minecraftboom:half_slab_smooth_diorite" },
+        "half=bottom,variant=smooth_andesite": { "model": "minecraftboom:half_slab_smooth_andesite" },
+        "half=bottom,variant=prismarine_bricks": { "model": "minecraftboom:half_slab_prismarine_bricks" },
+        "half=bottom,variant=dark_prismarine": { "model": "minecraftboom:half_slab_dark_prismarine" },
+        "half=bottom,variant=end_bricks": { "model": "minecraftboom:half_slab_end_bricks" },
+        "half=bottom,variant=red_nether_brick": { "model": "minecraftboom:half_slab_red_nether_brick" },
+        "half=top,variant=smooth_granite": { "model": "minecraftboom:upper_slab_smooth_granite" },
+        "half=top,variant=smooth_diorite": { "model": "minecraftboom:upper_slab_smooth_diorite" },
+        "half=top,variant=smooth_andesite": { "model": "minecraftboom:upper_slab_smooth_andesite" },
+        "half=top,variant=prismarine_bricks": { "model": "minecraftboom:upper_slab_prismarine_bricks" },
+        "half=top,variant=dark_prismarine": { "model": "minecraftboom:upper_slab_dark_prismarine" },
+        "half=top,variant=end_bricks": { "model": "minecraftboom:upper_slab_end_bricks" },
+        "half=top,variant=red_nether_brick": { "model": "minecraftboom:upper_slab_red_nether_brick" }
+    }
+}

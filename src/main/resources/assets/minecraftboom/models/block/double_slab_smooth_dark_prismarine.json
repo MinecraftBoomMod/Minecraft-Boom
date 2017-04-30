@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minecraftboom:blocks/smooth_dark_prismarine",
+        "side": "minecraftboom:blocks/slab_smooth_dark_prismarine_side"
+    }
+}

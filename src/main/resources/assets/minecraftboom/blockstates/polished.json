@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "variant=smooth_prismarine": { "model": "minecraftboom:smooth_prismarine" },
+        "variant=smooth_dark_prismarine": { "model": "minecraftboom:smooth_dark_prismarine" },
+        "variant=smooth_end_stone": { "model": "minecraftboom:smooth_end_stone" },
+        "variant=smooth_netherrack": { "model": "minecraftboom:smooth_netherrack" }
+    }
+}

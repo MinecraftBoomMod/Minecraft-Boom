@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minecraftboom:blocks/smooth_netherrack",
+        "side": "minecraftboom:blocks/slab_smooth_netherrack_side"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minecraftboom:blocks/smooth_end_stone",
+        "side": "minecraftboom:blocks/slab_smooth_end_stone_side"
+    }
+}

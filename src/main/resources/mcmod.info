@@ -1,0 +1,16 @@
+[
+{
+  "modid": "minecraftboom",
+  "name": "Minecraft Boom",
+  "description": "Exploiting the potential of the game",
+  "version": "1.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Soupbubbles"],
+  "credits": "RatavierCreations as mod creator and texture artist, Soupbubbles for code",
+  "logoFile": "assets/minecraftboom/textures/logo/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
