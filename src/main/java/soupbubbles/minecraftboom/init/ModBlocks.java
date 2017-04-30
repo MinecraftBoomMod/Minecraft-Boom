@@ -18,6 +18,7 @@ import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockStairsStone;
 import soupbubbles.minecraftboom.block.BlockVanillaSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaSlabHalf;
+import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
@@ -27,6 +28,10 @@ public class ModBlocks
     public static final Set<Block> BLOCKS = new HashSet<>();
 
     public static final BlockPolished BLOCK_POLISHED;
+
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_ANDESITE;
 
     public static final BlockStairsStone BLOCK_STAIRS_STONE;
     public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_GRANITE;
@@ -51,6 +56,10 @@ public class ModBlocks
     {
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
+        
+        BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
+        BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
+        BLOCK_PILLAR_SMOOTH_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_ANDESITE));
 
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));

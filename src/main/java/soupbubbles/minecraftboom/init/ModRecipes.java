@@ -17,6 +17,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockPolished;
+import soupbubbles.minecraftboom.block.BlockVanillaSlab;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
@@ -43,6 +44,10 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), "xx", "xx", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.NETHERRACK));
         
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_GRANITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA, 1, BlockVanillaSlab.EnumType.SMOOTH_GRANITE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_DIORITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA, 1, BlockVanillaSlab.EnumType.SMOOTH_DIORITE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_ANDESITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA, 1, BlockVanillaSlab.EnumType.SMOOTH_ANDESITE.getMetadata()));
+   
         addStairRecipe(BlockStone.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
         addStairRecipe(BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_GRANITE);
         addStairRecipe(BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_DIORITE);

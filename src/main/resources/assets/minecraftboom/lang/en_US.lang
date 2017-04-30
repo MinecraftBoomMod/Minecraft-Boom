@@ -7,6 +7,10 @@ tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
 tile.minecraftboom.smooth_end_stone.name=Polished End Stone
 tile.minecraftboom.smooth_netherrack.name=Polished Netherrack
 
+tile.minecraftboom.pillar_smooth_granite.name=Polished Granite Pillar
+tile.minecraftboom.pillar_smooth_diorite.name=Polished Diorite Pillar
+tile.minecraftboom.pillar_smooth_andesite.name=Polished Andesite Pillar
+
 tile.minecraftboom.stairs_stone.name=Stone Slab Stairs
 tile.minecraftboom.stairs_smooth_granite.name=Polished Granite Stairs
 tile.minecraftboom.stairs_smooth_diorite.name=Polished Diorite Stairs

@@ -23,6 +23,10 @@ public class Names
     public static final String BLOCK_SMOOTH_DARK_PRISMARINE = "smooth_dark_prismarine";
     public static final String BLOCK_SMOOTH_END_STONE = "smooth_end_stone";
     public static final String BLOCK_SMOOTH_NETHERRACK = "smooth_netherrack";
+    
+    public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
+    public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
+    public static final String BLOCK_PILLAR_SMOOTH_ANDESITE = "pillar_smooth_andesite";
 
     public static final String BLOCK_HALF_SLAB_VANILLA = "half_slab_vanilla";
     public static final String BLOCK_DOUBLE_SLAB_VANILLA = "double_slab_vanilla";
