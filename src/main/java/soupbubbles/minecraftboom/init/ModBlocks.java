@@ -2,7 +2,6 @@ package soupbubbles.minecraftboom.init;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.Function;
 
 import javax.annotation.Nullable;
 
@@ -22,6 +21,8 @@ import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
+
+import com.google.common.base.Function;
 
 public class ModBlocks
 {
