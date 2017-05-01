@@ -16,7 +16,9 @@ public abstract class CommonProxy implements IProxy
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         
         ModBlocks.registerBlocks();
-        ModItems.registerItems();
+        // ModItems.registerItems();
+        ModItems.init();
+        ModItems.register();
         ModRecipes.init();
     }
 

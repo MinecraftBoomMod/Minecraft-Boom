@@ -1,6 +1,9 @@
 # Creative Tab
 itemGroup.minecraftboom=Minecraft Boom
 
+# Items
+item.elder_guardian_spike.name=Elder Guardian Spike
+
 # Blocks
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
