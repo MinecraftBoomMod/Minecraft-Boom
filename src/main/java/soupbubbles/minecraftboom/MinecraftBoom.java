@@ -13,6 +13,7 @@ import soupbubbles.minecraftboom.reference.Reference;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class MinecraftBoom
 {
+	//test the uploading
     @SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
     public static IProxy proxy;
 
