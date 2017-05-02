@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "minecraftboom:pillar_smooth_dark_prismarine" },
+        "axis=z": { "model": "minecraftboom:pillar_smooth_dark_prismarine", "x": 90 },
+        "axis=x": { "model": "minecraftboom:pillar_smooth_dark_prismarine", "x": 90, "y": 90 }
+    }
+}

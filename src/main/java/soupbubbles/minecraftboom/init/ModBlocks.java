@@ -68,7 +68,7 @@ public class ModBlocks
         BLOCK_PILLAR_SMOOTH_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_PRISMARINE));
         BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE));
         BLOCK_PILLAR_SMOOTH_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_END_STONE));
-        BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_SMOOTH_NETHERRACK));
+        BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_NETHERRACK));
  
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
