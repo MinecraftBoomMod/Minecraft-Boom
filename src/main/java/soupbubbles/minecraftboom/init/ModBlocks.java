@@ -9,19 +9,22 @@ import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockRedSandstone;
+import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
+import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockPolished;
-import soupbubbles.minecraftboom.block.BlockStairsStone;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
+import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
@@ -40,23 +43,29 @@ public class ModBlocks
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_END_STONE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_NETHERRACK;
 
-    public static final BlockStairsStone BLOCK_STAIRS_STONE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_GRANITE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_DIORITE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_ANDESITE;
-    public static final BlockStairsStone BLOCK_STAIRS_PRISMARINE_BRICKS;
-    public static final BlockStairsStone BLOCK_STAIRS_DARK_PRISMARINE;
-    public static final BlockStairsStone BLOCK_STAIRS_END_BRICKS;
-    public static final BlockStairsStone BLOCK_STAIRS_RED_NETHER_BRICK;
-
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_PRISMARINE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_END_STONE;
-    public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_NETHERRACK;
+    public static final BlockStairBase BLOCK_STAIRS_STONE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_GRANITE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_DIORITE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_ANDESITE;  
+    public static final BlockStairBase BLOCK_STAIRS_MOSSY_COBBLESTONE;
+    public static final BlockStairBase BLOCK_STAIRS_MOSSY_STONEBRICK;
+    public static final BlockStairBase BLOCK_STAIRS_CRACKED_STONEBRICK;
+    public static final BlockStairBase BLOCK_STAIRS_HARDENED_CLAY;
+    public static final BlockStairBase BLOCK_STAIRS_CHISELED_SANDSTONE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_SANDSTONE;
+    public static final BlockStairBase BLOCK_STAIRS_CHISELED_RED_SANDSTONE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_RED_SANDSTONE; 
+    public static final BlockStairBase BLOCK_STAIRS_PRISMARINE_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_DARK_PRISMARINE;
+    public static final BlockStairBase BLOCK_STAIRS_END_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_RED_NETHER_BRICK;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_PRISMARINE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_END_STONE;
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_NETHERRACK;
 
     public static final BlockVanillaStoneSlabHalf BLOCK_HALF_SLAB_VANILLA_STONE;
-    public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;
-    
+    public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;   
     public static final BlockVanillaStoneSlabHalf2 BLOCK_HALF_SLAB_VANILLA_STONE_2;
     public static final BlockVanillaStoneSlabDouble2 BLOCK_DOUBLE_SLAB_VANILLA_STONE_2;
     
@@ -76,35 +85,38 @@ public class ModBlocks
         BLOCK_PILLAR_SMOOTH_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_END_STONE));
         BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_NETHERRACK));
  
-        BLOCK_STAIRS_STONE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
-        BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
-        BLOCK_STAIRS_SMOOTH_DIORITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE));
-        BLOCK_STAIRS_SMOOTH_ANDESITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE_SMOOTH), Names.SMOOTH_ANDESITE));
-        BLOCK_STAIRS_PRISMARINE_BRICKS = registerBlock(new BlockStairsStone(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.BRICKS), Names.PRISMARINE_BRICKS));
-        BLOCK_STAIRS_DARK_PRISMARINE = registerBlock(new BlockStairsStone(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE));
-        BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairsStone(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
-        BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairsStone(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
-
-        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
-        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
+        BLOCK_STAIRS_STONE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
+        BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
+        BLOCK_STAIRS_SMOOTH_DIORITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE));
+        BLOCK_STAIRS_SMOOTH_ANDESITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE_SMOOTH), Names.SMOOTH_ANDESITE));
+        BLOCK_STAIRS_MOSSY_COBBLESTONE = registerBlock(new BlockStairBase(Blocks.MOSSY_COBBLESTONE.getDefaultState(), Names.MOSSY_COBBLESTONE));
+        BLOCK_STAIRS_MOSSY_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.MOSSY_STONEBRICK));
+        BLOCK_STAIRS_CRACKED_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), Names.CRACKED_STONEBRICK));
+        BLOCK_STAIRS_HARDENED_CLAY = registerBlock(new BlockStairBase(Blocks.HARDENED_CLAY.getDefaultState(), Names.HARDENED_CLAY));
+        BLOCK_STAIRS_CHISELED_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.CHISELED), Names.CHISELED_SANDSTONE));
+        BLOCK_STAIRS_SMOOTH_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.SMOOTH), Names.SMOOTH_SANDSTONE));
+        BLOCK_STAIRS_CHISELED_RED_SANDSTONE = registerBlock(new BlockStairBase(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.CHISELED), Names.CHISELED_RED_SANDSTONE));
+        BLOCK_STAIRS_SMOOTH_RED_SANDSTONE = registerBlock(new BlockStairBase(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.SMOOTH), Names.SMOOTH_RED_SANDSTONE));
+        BLOCK_STAIRS_PRISMARINE_BRICKS = registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.BRICKS), Names.PRISMARINE_BRICKS));
+        BLOCK_STAIRS_DARK_PRISMARINE = registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE));
+        BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairBase(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
+        BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairBase(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
+        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
+        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabHalf();
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabDouble();
-
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
-
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabHalf2();
         BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabDouble2();
-
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
-        
         BLOCK_HALF_SLAB_MOD = new BlockModSlabHalf();
         BLOCK_DOUBLE_SLAB_MOD = new BlockModSlabDouble();
-
+        
+        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
+        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
     }

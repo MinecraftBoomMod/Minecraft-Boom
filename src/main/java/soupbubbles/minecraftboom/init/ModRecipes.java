@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.BlockStairs;
@@ -13,6 +14,7 @@ import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
@@ -25,10 +27,17 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
 public class ModRecipes
 {
+    private static final List<IRecipe> RECIPES = CraftingManager.getInstance().getRecipeList();
+
+    public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
+    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS};
+
     private static int stairOutputAmount = 4;
 
     public static void init()
     {
+        removeVanillaRecipes();
+
         if (ConfigurationHandler.Settings.replaceVanillaStairRecipe)
         {
             stairOutputAmount = 6;
@@ -50,8 +59,7 @@ public class ModRecipes
         //Pillars
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_GRANITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, 1, BlockVanillaStoneSlab.EnumType.SMOOTH_GRANITE.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_DIORITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, 1, BlockVanillaStoneSlab.EnumType.SMOOTH_DIORITE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_ANDESITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, 1, BlockVanillaStoneSlab.EnumType.SMOOTH_ANDESITE.getMetadata()));
-        
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_ANDESITE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, 1, BlockVanillaStoneSlab.EnumType.SMOOTH_ANDESITE.getMetadata()));        
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_PRISMARINE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD, 1, BlockModSlab.EnumType.SMOOTH_PRISMARINE.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD, 1, BlockModSlab.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_SMOOTH_END_STONE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD, 1, BlockModSlab.EnumType.SMOOTH_END_STONE.getMetadata()));
@@ -62,6 +70,14 @@ public class ModRecipes
         addStairRecipe(BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_GRANITE);
         addStairRecipe(BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_DIORITE);
         addStairRecipe(BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_ANDESITE);
+        addStairRecipe(ModBlocks.BLOCK_STAIRS_MOSSY_COBBLESTONE);
+        addStairRecipe(BlockStoneBrick.MOSSY_META, ModBlocks.BLOCK_STAIRS_MOSSY_STONEBRICK);
+        addStairRecipe(BlockStoneBrick.CRACKED_META, ModBlocks.BLOCK_STAIRS_CRACKED_STONEBRICK);
+        addStairRecipe(ModBlocks.BLOCK_STAIRS_HARDENED_CLAY);
+        addStairRecipe(BlockSandStone.EnumType.CHISELED.getMetadata(), ModBlocks.BLOCK_STAIRS_CHISELED_SANDSTONE);
+        addStairRecipe(BlockSandStone.EnumType.SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_SANDSTONE);
+        addStairRecipe(BlockRedSandstone.EnumType.CHISELED.getMetadata(), ModBlocks.BLOCK_STAIRS_CHISELED_RED_SANDSTONE);
+        addStairRecipe(BlockRedSandstone.EnumType.SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_RED_SANDSTONE);
         addStairRecipe(BlockPrismarine.EnumType.BRICKS.getMetadata(), ModBlocks.BLOCK_STAIRS_PRISMARINE_BRICKS);
         addStairRecipe(BlockPrismarine.EnumType.DARK.getMetadata(), ModBlocks.BLOCK_STAIRS_DARK_PRISMARINE);
         addStairRecipe(ModBlocks.BLOCK_STAIRS_END_BRICKS);
@@ -70,14 +86,39 @@ public class ModRecipes
         addStairRecipe(BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE);
         addStairRecipe(BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_END_STONE);
         addStairRecipe(BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_NETHERRACK);
-        addStairSlabRecipe(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
         
+        addStairSlabRecipe(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
     }
 
+    private static void removeVanillaRecipes()
+    {
+        Iterator<IRecipe> ir = RECIPES.iterator();
+
+        while (ir.hasNext())
+        {
+            ItemStack outputStack = ir.next().getRecipeOutput();
+
+            for (Item item : REMOVE_ITEM_RECIPE_LIST)
+            {
+                if (outputStack != null && outputStack.getItem() == item)
+                {
+                    ir.remove();
+                } 
+            }
+         
+            for (Block block : REMOVE_BLOCK_RECIPE_LIST)
+            {
+                if (outputStack != null && outputStack.getItem() == Item.getItemFromBlock(block))
+                {
+                    ir.remove();
+                } 
+            }
+        }
+    }
+    
     private static void replaceVanillaStairRecipe()
     {
-        List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
-        Iterator<IRecipe> ir = recipes.iterator();
+        Iterator<IRecipe> ir = RECIPES.iterator();
 
         while (ir.hasNext())
         {
@@ -94,24 +135,18 @@ public class ModRecipes
         addStairRecipe(Blocks.COBBLESTONE, Blocks.STONE_STAIRS);
         addStairRecipe(Blocks.BRICK_BLOCK, Blocks.BRICK_STAIRS);
         addStairRecipe(Blocks.STONEBRICK, BlockStoneBrick.DEFAULT_META, Blocks.STONE_BRICK_STAIRS);
-        addStairRecipe(Blocks.STONEBRICK, BlockStoneBrick.CRACKED_META, Blocks.STONE_BRICK_STAIRS);
-        addStairRecipe(Blocks.STONEBRICK, BlockStoneBrick.MOSSY_META, Blocks.STONE_BRICK_STAIRS);
         addStairRecipe(Blocks.STONEBRICK, BlockStoneBrick.CHISELED_META, Blocks.STONE_BRICK_STAIRS);
         addStairRecipe(Blocks.NETHER_BRICK, Blocks.NETHER_BRICK_STAIRS);
         addStairRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.DEFAULT.getMetadata(), Blocks.SANDSTONE_STAIRS);
-        addStairRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.CHISELED.getMetadata(), Blocks.SANDSTONE_STAIRS);
-        addStairRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata(), Blocks.SANDSTONE_STAIRS);
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.SPRUCE.getMetadata(), Blocks.SPRUCE_STAIRS);
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.BIRCH.getMetadata(), Blocks.BIRCH_STAIRS);
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.JUNGLE.getMetadata(), Blocks.JUNGLE_STAIRS);
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.ACACIA.getMetadata(), Blocks.ACACIA_STAIRS);
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.DARK_OAK.getMetadata(), Blocks.DARK_OAK_STAIRS);
         addStairRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.DEFAULT.getMetadata(), Blocks.RED_SANDSTONE_STAIRS);
-        addStairRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.CHISELED.getMetadata(), Blocks.RED_SANDSTONE_STAIRS);
-        addStairRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata(), Blocks.RED_SANDSTONE_STAIRS);
         addStairRecipe(Blocks.PURPUR_BLOCK, Blocks.PURPUR_STAIRS);
     }
-
+    
     private static void addStairRecipe(BlockStairBase output)
     {
         addStairRecipe(0, output);
