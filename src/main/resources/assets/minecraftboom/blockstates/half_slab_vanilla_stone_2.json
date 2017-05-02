@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "half=bottom,variant=chiseled_sandstone": { "model": "minecraftboom:half_slab_chiseled_sandstone" },
+        "half=bottom,variant=smooth_sandstone": { "model": "minecraftboom:half_slab_smooth_sandstone" },
+        "half=bottom,variant=chiseled_red_sandstone": { "model": "minecraftboom:half_slab_chiseled_red_sandstone" },
+        "half=bottom,variant=smooth_red_sandstone": { "model": "minecraftboom:half_slab_smooth_red_sandstone" },
+        "half=bottom,variant=prismarine_bricks": { "model": "minecraftboom:half_slab_prismarine_bricks" },
+        "half=bottom,variant=dark_prismarine": { "model": "minecraftboom:half_slab_dark_prismarine" },
+        "half=bottom,variant=end_bricks": { "model": "minecraftboom:half_slab_end_bricks" },
+        "half=bottom,variant=red_nether_brick": { "model": "minecraftboom:half_slab_red_nether_brick" },
+        "half=top,variant=chiseled_sandstone": { "model": "minecraftboom:upper_slab_chiseled_sandstone" },
+        "half=top,variant=smooth_sandstone": { "model": "minecraftboom:upper_slab_smooth_sandstone" },
+        "half=top,variant=chiseled_red_sandstone": { "model": "minecraftboom:upper_slab_chiseled_red_sandstone" },
+        "half=top,variant=smooth_red_sandstone": { "model": "minecraftboom:upper_slab_smooth_red_sandstone" },
+        "half=top,variant=prismarine_bricks": { "model": "minecraftboom:upper_slab_prismarine_bricks" },
+        "half=top,variant=dark_prismarine": { "model": "minecraftboom:upper_slab_dark_prismarine" },
+        "half=top,variant=end_bricks": { "model": "minecraftboom:upper_slab_end_bricks" },
+        "half=top,variant=red_nether_brick": { "model": "minecraftboom:upper_slab_red_nether_brick" }
+    }
+}

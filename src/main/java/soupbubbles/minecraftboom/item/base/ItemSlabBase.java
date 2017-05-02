@@ -16,11 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.BlockVanillaSlab;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
-import soupbubbles.minecraftboom.block.base.IBlockMeta;
-import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 
 public class ItemSlabBase extends ItemBlockMeta
 {

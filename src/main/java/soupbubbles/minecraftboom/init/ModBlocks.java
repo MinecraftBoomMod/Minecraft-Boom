@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
+import com.google.common.base.Function;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockStone;
@@ -15,14 +17,14 @@ import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockStairsStone;
-import soupbubbles.minecraftboom.block.BlockVanillaSlabDouble;
-import soupbubbles.minecraftboom.block.BlockVanillaSlabHalf;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
-
-import com.google.common.base.Function;
 
 public class ModBlocks
 {
@@ -52,8 +54,12 @@ public class ModBlocks
     public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_END_STONE;
     public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_NETHERRACK;
 
-    public static final BlockVanillaSlabHalf BLOCK_HALF_SLAB_VANILLA;
-    public static final BlockVanillaSlabDouble BLOCK_DOUBLE_SLAB_VANILLA;
+    public static final BlockVanillaStoneSlabHalf BLOCK_HALF_SLAB_VANILLA_STONE;
+    public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;
+    
+    public static final BlockVanillaStoneSlabHalf2 BLOCK_HALF_SLAB_VANILLA_STONE_2;
+    public static final BlockVanillaStoneSlabDouble2 BLOCK_DOUBLE_SLAB_VANILLA_STONE_2;
+    
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
@@ -84,12 +90,18 @@ public class ModBlocks
         BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
         BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairsStone(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
-        BLOCK_HALF_SLAB_VANILLA = new BlockVanillaSlabHalf();
-        BLOCK_DOUBLE_SLAB_VANILLA = new BlockVanillaSlabDouble();
+        BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabHalf();
+        BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabDouble();
 
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA, BLOCK_HALF_SLAB_VANILLA, BLOCK_DOUBLE_SLAB_VANILLA));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA, BLOCK_HALF_SLAB_VANILLA, BLOCK_DOUBLE_SLAB_VANILLA));
+        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
 
+        BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabHalf2();
+        BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabDouble2();
+
+        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
+        
         BLOCK_HALF_SLAB_MOD = new BlockModSlabHalf();
         BLOCK_DOUBLE_SLAB_MOD = new BlockModSlabDouble();
 

@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "variant=chiseled_sandstone": { "model": "sandstone_chiseled" },
+        "variant=smooth_sandstone": { "model": "sandstone_smooth" },
+        "variant=chiseled_red_sandstone": { "model": "red_sandstone_chiseled" },
+        "variant=smooth_red_sandstone": { "model": "red_sandstone_smooth" },
+        "variant=prismarine_bricks": { "model": "prismarine_bricks" },
+        "variant=dark_prismarine": { "model": "prismarine_dark" },
+        "variant=end_bricks": { "model": "end_bricks" },
+        "variant=red_nether_brick": { "model": "red_nether_brick" }
+    }
+}

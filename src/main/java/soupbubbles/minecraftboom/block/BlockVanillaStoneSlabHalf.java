@@ -2,11 +2,11 @@ package soupbubbles.minecraftboom.block;
 
 import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockVanillaSlabHalf extends BlockVanillaSlab
+public class BlockVanillaStoneSlabHalf extends BlockVanillaStoneSlab
 {
-    public BlockVanillaSlabHalf()
+    public BlockVanillaStoneSlabHalf()
     {
-        super(Names.BLOCK_HALF_SLAB_VANILLA);
+        super(Names.BLOCK_HALF_SLAB_VANILLA_STONE);
     }
 
     @Override

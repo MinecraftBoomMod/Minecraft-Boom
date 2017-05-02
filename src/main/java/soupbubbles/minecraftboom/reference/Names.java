@@ -1,7 +1,10 @@
 package soupbubbles.minecraftboom.reference;
 
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockRedSandstone;
+import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
+import net.minecraft.block.BlockStoneBrick;
 
 public class Names
 {
@@ -12,6 +15,18 @@ public class Names
     public static final String SMOOTH_DIORITE = BlockStone.EnumType.DIORITE_SMOOTH.getName();
     public static final String ANDESITE = BlockStone.EnumType.ANDESITE.getName();
     public static final String SMOOTH_ANDESITE = BlockStone.EnumType.ANDESITE_SMOOTH.getName();
+    public static final String MOSSY_COBBLESTONE = "mossy_cobblestone";
+    public static final String STONEBRICK = BlockStoneBrick.EnumType.DEFAULT.getName();
+    public static final String MOSSY_STONEBRICK = BlockStoneBrick.EnumType.MOSSY.getName();
+    public static final String CRACKED_STONEBRICK = BlockStoneBrick.EnumType.CRACKED.getName();
+    public static final String CHISELED_STONEBRICK = BlockStoneBrick.EnumType.CHISELED.getName();
+    public static final String HARDENED_CLAY = "hardened_clay";
+    public static final String SANDSTONE = BlockSandStone.EnumType.DEFAULT.getName();
+    public static final String CHISELED_SANDSTONE = BlockSandStone.EnumType.CHISELED.getName();
+    public static final String SMOOTH_SANDSTONE = BlockSandStone.EnumType.SMOOTH.getName();
+    public static final String RED_SANDSTONE = BlockRedSandstone.EnumType.DEFAULT.getName();
+    public static final String CHISELED_RED_SANDSTONE = BlockRedSandstone.EnumType.CHISELED.getName();
+    public static final String SMOOTH_RED_SANDSTONE = BlockRedSandstone.EnumType.SMOOTH.getName();
     public static final String PRISMARINE = BlockPrismarine.EnumType.ROUGH.getName();
     public static final String PRISMARINE_BRICKS = BlockPrismarine.EnumType.BRICKS.getName();
     public static final String DARK_PRISMARINE = BlockPrismarine.EnumType.DARK.getName();
@@ -32,8 +47,10 @@ public class Names
     public static final String BLOCK_PILLAR_SMOOTH_END_STONE = "pillar_smooth_end_stone";
     public static final String BLOCK_PILLAR_SMOOTH_NETHERRACK = "pillar_smooth_netherrack";
  
-    public static final String BLOCK_HALF_SLAB_VANILLA = "half_slab_vanilla";
-    public static final String BLOCK_DOUBLE_SLAB_VANILLA = "double_slab_vanilla";
+    public static final String BLOCK_HALF_SLAB_VANILLA_STONE = "half_slab_vanilla_stone";
+    public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE = "double_slab_vanilla_stone";
+    public static final String BLOCK_HALF_SLAB_VANILLA_STONE_2 = "half_slab_vanilla_stone_2";
+    public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = "double_slab_vanilla_stone_2";
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
 }

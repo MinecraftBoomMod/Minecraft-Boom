@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "half=bottom,variant=smooth_granite": { "model": "minecraftboom:half_slab_smooth_granite" },
+        "half=bottom,variant=smooth_diorite": { "model": "minecraftboom:half_slab_smooth_diorite" },
+        "half=bottom,variant=smooth_andesite": { "model": "minecraftboom:half_slab_smooth_andesite" },
+        "half=bottom,variant=mossy_cobblestone": { "model": "minecraftboom:half_slab_mossy_cobblestone" },
+        "half=bottom,variant=mossy_stonebrick": { "model": "minecraftboom:half_slab_mossy_stonebrick" },
+        "half=bottom,variant=cracked_stonebrick": { "model": "minecraftboom:half_slab_cracked_stonebrick" },
+        "half=bottom,variant=hardened_clay": { "model": "minecraftboom:half_slab_hardened_clay" },
+        "half=top,variant=smooth_granite": { "model": "minecraftboom:upper_slab_smooth_granite" },
+        "half=top,variant=smooth_diorite": { "model": "minecraftboom:upper_slab_smooth_diorite" },
+        "half=top,variant=smooth_andesite": { "model": "minecraftboom:upper_slab_smooth_andesite" },
+        "half=top,variant=mossy_cobblestone": { "model": "minecraftboom:upper_slab_mossy_cobblestone" },
+        "half=top,variant=mossy_stonebrick": { "model": "minecraftboom:upper_slab_mossy_stonebrick" },
+        "half=top,variant=cracked_stonebrick": { "model": "minecraftboom:upper_slab_cracked_stonebrick" },
+        "half=top,variant=hardened_clay": { "model": "minecraftboom:upper_slab_hardened_clay" }
+    }
+}
