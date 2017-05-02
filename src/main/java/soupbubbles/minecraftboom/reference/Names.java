@@ -53,4 +53,7 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = "double_slab_vanilla_stone_2";
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
+    
+    //ALL CAPS because the String is final
+    public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
 }

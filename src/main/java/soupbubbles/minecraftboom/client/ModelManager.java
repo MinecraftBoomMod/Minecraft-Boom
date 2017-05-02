@@ -39,6 +39,8 @@ public class ModelManager
         ModBlocks.BLOCKS.stream().filter(block -> !itemsRegistered.contains(Item.getItemFromBlock(block))).forEach(this::initBlockModels);
     }
 
+    //This takes out list of all mod items and makes sure they register their models!
+    //It also makes sure that a item model can't be registered twice
     private void registerItemModels()
     {
         ModItems.ITEMS.stream().filter(item -> !itemsRegistered.contains(item)).forEach(this::initItemModels);

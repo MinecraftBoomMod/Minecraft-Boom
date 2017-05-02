@@ -11,24 +11,45 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemBasic;
+import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class ModItems
 {
-	
+	//The list of all items in our mod
     public static final Set<Item> ITEMS = new HashSet<>();
 
+    //Our item object, notice that it is final so you can't change the item
+    //The name of the object should be in ALL CAPS since it is final
+    //This is pretty much how vanilla does it too
     public static final Item ELDER_GUARDIAN_SPIKE; 
     
+    public static final Item ITEM_WITH_SUBITEMS; 
+
+    //The static initializer
+    //Here is where we create the objects for out mod items
     static
     {
-        ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase("elder_guardian_spike"));
+        //We set the item to the return of the registerItem method
+        //This will be the item we give as a parameter to the registerItem method
+        //The ItemBase class was previously abstract, I've changed that
+        //All ItemBase takes is the unlocalized item name which we set in the Names class
+        
+        ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
+        
+        //A item with subitems (just for demonstration)
+        //This will add 4 new items to the game
+        ITEM_WITH_SUBITEMS = registerItem(new ItemBase("red", "yellow", "green", "blue"));
     }
 
+    //Method to make sure that the static initializer runs
     public static void registerItems()
     {
     }
 
+    //A method for registring our items
+    //It registers them with GameRegistry and then adds the item to the list of all our mod items
+    //Finally it returns our item
     private static <T extends Item> T registerItem(T item)
     {
         GameRegistry.register(item);
@@ -36,6 +57,11 @@ public class ModItems
 
         return item;
     }
+    
+    /**
+     * Old Methods
+     * There if we want to keep them
+     */
     
     /*
 	public static void init() {
