@@ -13,7 +13,7 @@ public class ClientProxy extends CommonProxy
     {
         super.preInit(event);
 
-        ModItems.registerRenders();
+        //ModItems.registerRenders();
         ModelManager.INSTANCE.registerAllModels();
     }
 

@@ -33,6 +33,10 @@ public class ModBlocks
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_ANDESITE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_PRISMARINE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_END_STONE;
+    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_NETHERRACK;
 
     public static final BlockStairsStone BLOCK_STAIRS_STONE;
     public static final BlockStairsStone BLOCK_STAIRS_SMOOTH_GRANITE;
@@ -61,7 +65,11 @@ public class ModBlocks
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
         BLOCK_PILLAR_SMOOTH_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_ANDESITE));
-
+        BLOCK_PILLAR_SMOOTH_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_PRISMARINE));
+        BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE));
+        BLOCK_PILLAR_SMOOTH_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_END_STONE));
+        BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_SMOOTH_NETHERRACK));
+ 
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
         BLOCK_STAIRS_SMOOTH_DIORITE = registerBlock(new BlockStairsStone(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE));

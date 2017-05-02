@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
-public abstract class ItemBase extends Item
+public class ItemBase extends Item
 {
     private final String BASE_NAME;
     public final String[] VARIANTS;
