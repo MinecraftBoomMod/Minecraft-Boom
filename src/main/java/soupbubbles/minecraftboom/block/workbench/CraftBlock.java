@@ -20,11 +20,9 @@ public class CraftBlock extends BlockWorkbench {
 
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		System.out.println("activated");
 		if (worldIn.isRemote) {
 			return true;
 		} else {
-			System.out.println("openGUI");
 			playerIn.openGui(MinecraftBoom.instance, ModGuiHandler.CRAFT, worldIn, pos.getX(), pos.getY(), pos.getZ());
 			return true;
 		}

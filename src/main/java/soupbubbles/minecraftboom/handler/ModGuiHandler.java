@@ -17,7 +17,6 @@ public class ModGuiHandler implements IGuiHandler {
 	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
 		case CRAFT:
-			System.out.println("getServerGuiElement");
 			return new ContainerNewWorkbench(player.inventory, world, new BlockPos(x, y, z), (TileEntityCraft) world.getTileEntity(new BlockPos(x, y, z)));
 		default:
 				return null;
@@ -28,7 +27,6 @@ public class ModGuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
 		case CRAFT:
-			System.out.println("getClientGuiElement");
 			return new GuiCrafting(player.inventory, world, new BlockPos(x, y, z));
 		default:
 				return null;
