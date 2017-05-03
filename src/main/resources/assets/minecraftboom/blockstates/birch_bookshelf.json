@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "birch_bookshelf" }
+        "normal": { "model": "minecraftboom:birch_bookshelf" }
     }
 }
