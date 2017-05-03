@@ -13,6 +13,7 @@ import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -23,6 +24,8 @@ import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
+import soupbubbles.minecraftboom.block.base.BlockBase;
+import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
@@ -33,6 +36,9 @@ public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
 
+    public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
+    public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
+    
     public static final BlockPolished BLOCK_POLISHED;
 
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
@@ -74,6 +80,11 @@ public class ModBlocks
 
     static
     {
+        BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
+        
+        BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
+        registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS);
+        
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
         

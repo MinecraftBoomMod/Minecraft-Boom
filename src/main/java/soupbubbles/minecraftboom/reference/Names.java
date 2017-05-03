@@ -32,7 +32,10 @@ public class Names
     public static final String DARK_PRISMARINE = BlockPrismarine.EnumType.DARK.getName();
     public static final String END_BRICKS = "end_bricks";
     public static final String RED_NETHER_BRICK = "red_nether_brick";
-
+    
+    public static final String BLOCK_HARDENED_CLAY_BRICKS = "hardened_clay_bricks";
+    public static final String BLOCK_STAINED_HARDENED_CLAY_BRICKS = "stained_hardened_clay_bricks";
+    
     public static final String BLOCK_POLISHED = "polished";
     public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";
     public static final String BLOCK_SMOOTH_DARK_PRISMARINE = "smooth_dark_prismarine";
