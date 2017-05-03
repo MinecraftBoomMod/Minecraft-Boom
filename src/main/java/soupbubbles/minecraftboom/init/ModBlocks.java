@@ -15,6 +15,7 @@ import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
@@ -27,9 +28,12 @@ import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.block.workbench.CraftBlock;
+import soupbubbles.minecraftboom.block.workbench.TileEntityCraft;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.reference.Reference;
 
 public class ModBlocks
 {
@@ -82,6 +86,8 @@ public class ModBlocks
     
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
+    
+    public static final Block TILE_WORKBENCH;
 
     static
     {
@@ -140,6 +146,9 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
+        
+        TILE_WORKBENCH = replaceBlock(new CraftBlock(), "crafting_table");
+        GameRegistry.registerTileEntity(TileEntityCraft.class, Reference.MOD_ID + ":" + TileEntityCraft.class.getSimpleName());
     }
 
     public static void registerBlocks()
@@ -183,4 +192,18 @@ public class ModBlocks
         BLOCKS.add(block);
         return block;
     }
+    
+    protected static Block replaceBlock(Block block, String name) {
+		if (block.getRegistryName() == null)
+			block.setRegistryName(name);
+		try {
+			GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.BLOCK, block);
+			GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+		} catch (ExistingSubstitutionException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+
+		return block;
+	}
 }
