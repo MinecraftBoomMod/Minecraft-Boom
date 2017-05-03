@@ -47,7 +47,7 @@ public class ModItems
     {
     }
 
-    //A method for registring our items
+    //A method for registering our items
     //It registers them with GameRegistry and then adds the item to the list of all our mod items
     //Finally it returns our item
     private static <T extends Item> T registerItem(T item)

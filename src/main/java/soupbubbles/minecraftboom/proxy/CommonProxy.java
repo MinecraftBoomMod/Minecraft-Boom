@@ -14,7 +14,6 @@ public abstract class CommonProxy implements IProxy
     public void preInit(FMLPreInitializationEvent event)
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        
         ModBlocks.registerBlocks();
         
         
@@ -27,6 +26,8 @@ public abstract class CommonProxy implements IProxy
         //ModItems.register();
         
         
+        ModRecipes.init();
+        ModBlocks.registerBlocks();
         ModRecipes.init();
     }
 
