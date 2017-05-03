@@ -23,6 +23,7 @@ import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
+import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
@@ -33,6 +34,12 @@ public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
 
+    public static final BlockBase SPRUCE_BOOKSHELF;
+    public static final BlockBase JUNGLE_BOOKSHELF;
+    public static final BlockBase BIRCH_BOOKSHELF;
+    public static final BlockBase DARK_OAK_BOOKSHELF;
+    public static final BlockBase ACACIA_BOOKSHELF;
+    
     public static final BlockPolished BLOCK_POLISHED;
 
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
@@ -76,6 +83,12 @@ public class ModBlocks
     {
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
+        
+        SPRUCE_BOOKSHELF = registerBlock(new BlockBase(Names.SPRUCE_BOOKSHELF));
+        JUNGLE_BOOKSHELF = registerBlock(new BlockBase(Names.JUNGLE_BOOKSHELF));
+        BIRCH_BOOKSHELF = registerBlock(new BlockBase(Names.BIRCH_BOOKSHELF));
+        DARK_OAK_BOOKSHELF = registerBlock(new BlockBase(Names.DARK_OAK_BOOKSHELF));
+        ACACIA_BOOKSHELF = registerBlock(new BlockBase(Names.ACACIA_BOOKSHELF));
         
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));

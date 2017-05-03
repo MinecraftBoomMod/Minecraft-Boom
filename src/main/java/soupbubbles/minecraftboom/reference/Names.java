@@ -32,6 +32,12 @@ public class Names
     public static final String DARK_PRISMARINE = BlockPrismarine.EnumType.DARK.getName();
     public static final String END_BRICKS = "end_bricks";
     public static final String RED_NETHER_BRICK = "red_nether_brick";
+    
+    public static final String SPRUCE_BOOKSHELF = "spruce_bookshelf";
+    public static final String JUNGLE_BOOKSHELF = "jungle_bookshelf";
+    public static final String BIRCH_BOOKSHELF = "birch_bookshelf";
+    public static final String DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
+    public static final String ACACIA_BOOKSHELF = "acacia_bookshelf";
 
     public static final String BLOCK_POLISHED = "polished";
     public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";

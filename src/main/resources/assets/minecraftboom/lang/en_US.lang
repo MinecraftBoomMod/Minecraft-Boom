@@ -3,10 +3,16 @@ itemGroup.minecraftboom=Minecraft Boom
 
 
 # Items
-item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
+item.minecraftSboom.elder_guardian_spike.name=Elder Guardian Spike
 
 
 # Blocks
+tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
+tile.minecraftboom.jungle_bookshelf.name=Jungle Bookshelf
+tile.minecraftboom.birch_bookshelf.name=Birch Bookshelf
+tile.minecraftboom.dark_oak_bookshelf.name=Dark Oak Bookshelf
+tile.minecraftboom.acacia_bookshelf.name=Acacia Bookshelf
+
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
 tile.minecraftboom.smooth_end_stone.name=Polished End Stone
