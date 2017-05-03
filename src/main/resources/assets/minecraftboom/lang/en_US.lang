@@ -3,7 +3,7 @@ itemGroup.minecraftboom=Minecraft Boom
 
 
 # Items
-item.minecraftSboom.elder_guardian_spike.name=Elder Guardian Spike
+item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
 
 
 # Blocks
@@ -12,6 +12,24 @@ tile.minecraftboom.jungle_bookshelf.name=Jungle Bookshelf
 tile.minecraftboom.birch_bookshelf.name=Birch Bookshelf
 tile.minecraftboom.dark_oak_bookshelf.name=Dark Oak Bookshelf
 tile.minecraftboom.acacia_bookshelf.name=Acacia Bookshelf
+
+tile.minecraftboom.hardened_clay_bricks.name=Hardened Clay Bricks
+tile.minecraftboom.white_stained_hardened_clay_bricks.name=White Hardened Clay Bricks
+tile.minecraftboom.orange_stained_hardened_clay_bricks.name=Orange Hardened Clay Bricks
+tile.minecraftboom.magenta_stained_hardened_clay_bricks.name=Magenta Hardened Clay Bricks
+tile.minecraftboom.light_blue_stained_hardened_clay_bricks.name=Light Blue Hardened Clay Bricks
+tile.minecraftboom.yellow_stained_hardened_clay_bricks.name=Yellow Hardened Clay Bricks
+tile.minecraftboom.lime_stained_hardened_clay_bricks.name=Lime Hardened Clay Bricks
+tile.minecraftboom.pink_stained_hardened_clay_bricks.name=Pink Hardened Clay Bricks
+tile.minecraftboom.gray_stained_hardened_clay_bricks.name=Gray Hardened Clay Bricks
+tile.minecraftboom.silver_stained_hardened_clay_bricks.name=Light Gray Hardened Clay Bricks
+tile.minecraftboom.cyan_stained_hardened_clay_bricks.name=Cyan Hardened Clay Bricks
+tile.minecraftboom.purple_stained_hardened_clay_bricks.name=Purple Hardened Clay Bricks
+tile.minecraftboom.blue_stained_hardened_clay_bricks.name=Blue Hardened Clay Bricks
+tile.minecraftboom.brown_stained_hardened_clay_bricks.name=Brown Hardened Clay Bricks
+tile.minecraftboom.green_stained_hardened_clay_bricks.name=Green Hardened Clay Bricks
+tile.minecraftboom.red_stained_hardened_clay_bricks.name=Red Hardened Clay Bricks
+tile.minecraftboom.black_stained_hardened_clay_bricks.name=Black Hardened Clay Bricks
 
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine

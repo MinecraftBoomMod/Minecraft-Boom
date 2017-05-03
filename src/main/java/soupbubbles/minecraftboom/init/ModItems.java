@@ -24,7 +24,7 @@ public class ModItems
     //This is pretty much how vanilla does it too
     public static final Item ELDER_GUARDIAN_SPIKE; 
     
-    public static final Item ITEM_WITH_SUBITEMS; 
+    //public static final Item ITEM_WITH_SUBITEMS; 
 
     //The static initializer
     //Here is where we create the objects for out mod items
@@ -39,7 +39,7 @@ public class ModItems
         
         //A item with subitems (just for demonstration)
         //This will add 4 new items to the game
-        ITEM_WITH_SUBITEMS = registerItem(new ItemBase("red", "yellow", "green", "blue"));
+        //ITEM_WITH_SUBITEMS = registerItem(new ItemBase("red", "yellow", "green", "blue"));
     }
 
     //Method to make sure that the static initializer runs

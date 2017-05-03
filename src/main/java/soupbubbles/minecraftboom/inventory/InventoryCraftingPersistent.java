@@ -1,88 +1,106 @@
-package soupbubbles.minecraftboom.block.workbench;
+package soupbubbles.minecraftboom.inventory;
 
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 
-public class InventoryCraftingPersistent extends InventoryCrafting {
+public class InventoryCraftingPersistent extends InventoryCrafting
+{
 
-	private final int length;
-	private final Container eventHandler;
-	private final IInventory parent;
+    private final int length;
+    private final Container eventHandler;
+    private final IInventory parent;
 
-	public InventoryCraftingPersistent(Container eventHandler, IInventory parent, int width, int height) {
-		super(eventHandler, width, height);
-		int k = width * height;
+    public InventoryCraftingPersistent(Container eventHandler, IInventory parent, int width, int height)
+    {
+        super(eventHandler, width, height);
+        int k = width * height;
 
-		assert (k == parent.getSizeInventory());
+        assert (k == parent.getSizeInventory());
 
-		this.parent = parent;
-		this.length = k;
-		this.eventHandler = eventHandler;
-	}
+        this.parent = parent;
+        length = k;
+        this.eventHandler = eventHandler;
+    }
 
-	@Override
-	public int getSizeInventory() {
-		return this.length;
-	}
+    @Override
+    public int getSizeInventory()
+    {
+        return length;
+    }
 
-	@Override
-	public ItemStack getStackInSlot(int index) {
-		return index >= this.getSizeInventory() ? null : this.parent.getStackInSlot(index);
-	}
+    @Override
+    public ItemStack getStackInSlot(int index)
+    {
+        return index >= getSizeInventory() ? null : parent.getStackInSlot(index);
+    }
 
-	public String getCommandSenderName() {
-		return "container.crafting";
-	}
+    public String getCommandSenderName()
+    {
+        return "container.crafting";
+    }
 
-	@Override
-	public boolean hasCustomName() {
-		return false;
-	}
+    @Override
+    public boolean hasCustomName()
+    {
+        return false;
+    }
 
-	public ItemStack getStackInSlotOnClosing(int index) {
-		return null;
-	}
+    public ItemStack getStackInSlotOnClosing(int index)
+    {
+        return null;
+    }
 
-	@Override
-	public ItemStack decrStackSize(int index, int count) {
-		if (this.getStackInSlot(index) != null) {
-			ItemStack itemstack;
+    @Override
+    public ItemStack decrStackSize(int index, int count)
+    {
+        if (getStackInSlot(index) != null)
+        {
+            ItemStack itemstack;
 
-			if (this.getStackInSlot(index).getCount() <= count) {
-				itemstack = this.getStackInSlot(index);
-				this.setInventorySlotContents(index, ItemStack.EMPTY);
-				this.eventHandler.onCraftMatrixChanged(this);
-				return itemstack;
-			} else {
-				itemstack = this.getStackInSlot(index).splitStack(count);
+            if (getStackInSlot(index).getCount() <= count)
+            {
+                itemstack = getStackInSlot(index);
+                setInventorySlotContents(index, ItemStack.EMPTY);
+                eventHandler.onCraftMatrixChanged(this);
+                return itemstack;
+            }
+            else
+            {
+                itemstack = getStackInSlot(index).splitStack(count);
 
-				if (this.getStackInSlot(index).getCount() == 0) {
-					this.setInventorySlotContents(index, ItemStack.EMPTY);
-				}
+                if (getStackInSlot(index).getCount() == 0)
+                {
+                    setInventorySlotContents(index, ItemStack.EMPTY);
+                }
 
-				this.eventHandler.onCraftMatrixChanged(this);
-				return itemstack;
-			}
-		} else {
-			return null;
-		}
-	}
+                eventHandler.onCraftMatrixChanged(this);
+                return itemstack;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
 
-	@Override
-	public void setInventorySlotContents(int index, ItemStack stack) {
-		this.parent.setInventorySlotContents(index, stack);
-		this.eventHandler.onCraftMatrixChanged(this);
-	}
+    @Override
+    public void setInventorySlotContents(int index, ItemStack stack)
+    {
+        parent.setInventorySlotContents(index, stack);
+        eventHandler.onCraftMatrixChanged(this);
+    }
 
-	@Override
-	public void markDirty() {
-		this.parent.markDirty();
-		this.eventHandler.onCraftMatrixChanged(this);
-	}
+    @Override
+    public void markDirty()
+    {
+        parent.markDirty();
+        eventHandler.onCraftMatrixChanged(this);
+    }
 
-	@Override
-	public void clear() {
-	}
+    @Override
+    public void clear()
+    {
+    }
 }

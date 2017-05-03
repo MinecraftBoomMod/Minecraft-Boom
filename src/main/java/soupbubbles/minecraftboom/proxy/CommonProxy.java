@@ -15,19 +15,15 @@ public abstract class CommonProxy implements IProxy
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         ModBlocks.registerBlocks();
-        
+        ModBlocks.registerTileEntities();
         
         /* This calls registerItems in the ModItems which you might see doesn't contain anything
         All this does is it makes sure that the static initializer runs in the ModItems class */             
         ModItems.registerItems();
         
-        
         //ModItems.init();
         //ModItems.register();
         
-        
-        ModRecipes.init();
-        ModBlocks.registerBlocks();
         ModRecipes.init();
     }
 

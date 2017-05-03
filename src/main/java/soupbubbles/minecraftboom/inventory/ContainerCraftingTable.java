@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.block.workbench;
+package soupbubbles.minecraftboom.inventory;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -13,46 +13,52 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ContainerNewWorkbench extends Container {
+public class ContainerCraftingTable extends Container
+{
 
-	private final IInventory tileCraft;
-	public InventoryCrafting craftMatrix;
-	public IInventory craftResult = new InventoryCraftResult();
-	private final BlockPos pos;
-	private final World world;
+    private final IInventory tileCraft;
+    public InventoryCrafting craftMatrix;
+    public IInventory craftResult = new InventoryCraftResult();
+    private final BlockPos pos;
+    private final World world;
 
-	public ContainerNewWorkbench(InventoryPlayer playerInventory, World worldIn, BlockPos posIn, IInventory crafting) {
-		tileCraft = crafting;
-		craftMatrix = new InventoryCraftingPersistent(this, tileCraft, 3, 3);
-		this.pos = posIn;
-		this.world = worldIn;
-		this.addSlotToContainer(
-				new SlotCrafting(playerInventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+    public ContainerCraftingTable(InventoryPlayer playerInventory, World worldIn, BlockPos posIn, IInventory crafting)
+    {
+        tileCraft = crafting;
+        craftMatrix = new InventoryCraftingPersistent(this, tileCraft, 3, 3);
+        pos = posIn;
+        world = worldIn;
+        addSlotToContainer(new SlotCrafting(playerInventory.player, craftMatrix, craftResult, 0, 124, 35));
 
-		for (int i = 0; i < 3; ++i) {
-			for (int j = 0; j < 3; ++j) {
-				this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 3, 30 + j * 18, 17 + i * 18));
-			}
-		}
+        for (int i = 0; i < 3; ++i)
+        {
+            for (int j = 0; j < 3; ++j)
+            {
+                addSlotToContainer(new Slot(craftMatrix, j + i * 3, 30 + j * 18, 17 + i * 18));
+            }
+        }
 
-		for (int k = 0; k < 3; ++k) {
-			for (int i1 = 0; i1 < 9; ++i1) {
-				this.addSlotToContainer(new Slot(playerInventory, i1 + k * 9 + 9, 8 + i1 * 18, 84 + k * 18));
-			}
-		}
+        for (int k = 0; k < 3; ++k)
+        {
+            for (int i1 = 0; i1 < 9; ++i1)
+            {
+                addSlotToContainer(new Slot(playerInventory, i1 + k * 9 + 9, 8 + i1 * 18, 84 + k * 18));
+            }
+        }
 
-		for (int l = 0; l < 9; ++l) {
-			this.addSlotToContainer(new Slot(playerInventory, l, 8 + l * 18, 142));
-		}
+        for (int l = 0; l < 9; ++l)
+        {
+            addSlotToContainer(new Slot(playerInventory, l, 8 + l * 18, 142));
+        }
 
-		this.onCraftMatrixChanged(this.craftMatrix);
-	}
+        onCraftMatrixChanged(craftMatrix);
+    }
 
-	@Override
-    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer player, int index)
     {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = (Slot)this.inventorySlots.get(index);
+        Slot slot = (Slot) inventorySlots.get(index);
 
         if (slot != null && slot.getHasStack())
         {
@@ -61,9 +67,9 @@ public class ContainerNewWorkbench extends Container {
 
             if (index == 0)
             {
-                itemstack1.getItem().onCreated(itemstack1, this.world, playerIn);
+                itemstack1.getItem().onCreated(itemstack1, world, player);
 
-                if (!this.mergeItemStack(itemstack1, 10, 46, true))
+                if (!mergeItemStack(itemstack1, 10, 46, true))
                 {
                     return ItemStack.EMPTY;
                 }
@@ -72,19 +78,19 @@ public class ContainerNewWorkbench extends Container {
             }
             else if (index >= 10 && index < 37)
             {
-                if (!this.mergeItemStack(itemstack1, 37, 46, false))
+                if (!mergeItemStack(itemstack1, 37, 46, false))
                 {
                     return ItemStack.EMPTY;
                 }
             }
             else if (index >= 37 && index < 46)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 37, false))
+                if (!mergeItemStack(itemstack1, 10, 37, false))
                 {
                     return ItemStack.EMPTY;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 10, 46, false))
+            else if (!mergeItemStack(itemstack1, 10, 46, false))
             {
                 return ItemStack.EMPTY;
             }
@@ -103,29 +109,27 @@ public class ContainerNewWorkbench extends Container {
                 return ItemStack.EMPTY;
             }
 
-            ItemStack itemstack2 = slot.onTake(playerIn, itemstack1);
+            ItemStack itemstack2 = slot.onTake(player, itemstack1);
 
             if (index == 0)
             {
-                playerIn.dropItem(itemstack2, false);
+                player.dropItem(itemstack2, false);
             }
         }
 
         return itemstack;
     }
 
-	@Override
-	public boolean canInteractWith(EntityPlayer playerIn) {
-		return playerIn.getDistanceSq((double) this.pos.getX() + 0.5D, (double) this.pos.getY() + 0.5D,
-				(double) this.pos.getZ() + 0.5D) <= 64.0D;
-	}
+    @Override
+    public boolean canInteractWith(EntityPlayer player)
+    {
+        return player.getDistanceSq((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D) <= 64.0D;
+    }
 
-	@Override
-	public void onCraftMatrixChanged(IInventory inventoryIn) {
-		this.craftResult.setInventorySlotContents(0,
-				CraftingManager.getInstance().findMatchingRecipe(this.craftMatrix, this.world));
-	}
-	
-	
+    @Override
+    public void onCraftMatrixChanged(IInventory inventory)
+    {
+        craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(craftMatrix, world));
+    }
 
 }

@@ -1,10 +1,13 @@
-package soupbubbles.minecraftboom.block.workbench;
+package soupbubbles.minecraftboom.tileentity;
 
+import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.tileentities.TileInventory;
 
-public class TileEntityCraft extends TileInventory {
+public class TileEntityCraftingTable extends TileInventory
+{
 
-	public TileEntityCraft() {
-		super(10, "crafting_table");
-	}
+    public TileEntityCraftingTable()
+    {
+        super(10, Names.BLOCK_CRAFTING_TABLE);
+    }
 }

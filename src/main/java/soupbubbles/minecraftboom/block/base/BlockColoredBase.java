@@ -18,7 +18,7 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
     {
         this(Material.ROCK, name, 2.0F, 10.0F, SoundType.STONE);
     }
-    
+
     public BlockColoredBase(Material material, String name, float hardness, float resistance, SoundType sound)
     {
         super(material);
@@ -35,7 +35,7 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
     @Override
     public String getSpecialName(int meta)
     {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, getUnlocalizedName() + "_" + EnumDyeColor.byMetadata(meta).getName());
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, EnumDyeColor.byMetadata(meta).getName() + "_" + BASE_NAME);
     }
 
     @Override

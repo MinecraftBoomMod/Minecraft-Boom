@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import soupbubbles.minecraftboom.handler.ModGuiHandler;
+import soupbubbles.minecraftboom.handler.GuiHandler;
 import soupbubbles.minecraftboom.proxy.IProxy;
 import soupbubbles.minecraftboom.reference.Reference;
 
@@ -25,7 +25,7 @@ public class MinecraftBoom
     public void preInit(FMLPreInitializationEvent event)
     {
         proxy.preInit(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new ModGuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 
     @EventHandler

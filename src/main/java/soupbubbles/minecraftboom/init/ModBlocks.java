@@ -17,6 +17,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockPolished;
@@ -28,12 +29,11 @@ import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
-import soupbubbles.minecraftboom.block.workbench.CraftBlock;
-import soupbubbles.minecraftboom.block.workbench.TileEntityCraft;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.tileentity.TileEntityCraftingTable;
 
 public class ModBlocks
 {
@@ -44,7 +44,7 @@ public class ModBlocks
     public static final BlockBase BLOCK_BIRCH_BOOKSHELF;
     public static final BlockBase BLOCK_DARK_OAK_BOOKSHELF;
     public static final BlockBase BLOCK_ACACIA_BOOKSHELF;
-    
+
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
 
@@ -61,7 +61,7 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_STONE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_GRANITE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_DIORITE;
-    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_ANDESITE;  
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_ANDESITE;
     public static final BlockStairBase BLOCK_STAIRS_MOSSY_COBBLESTONE;
     public static final BlockStairBase BLOCK_STAIRS_MOSSY_STONEBRICK;
     public static final BlockStairBase BLOCK_STAIRS_CRACKED_STONEBRICK;
@@ -69,7 +69,7 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_CHISELED_SANDSTONE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_SANDSTONE;
     public static final BlockStairBase BLOCK_STAIRS_CHISELED_RED_SANDSTONE;
-    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_RED_SANDSTONE; 
+    public static final BlockStairBase BLOCK_STAIRS_SMOOTH_RED_SANDSTONE;
     public static final BlockStairBase BLOCK_STAIRS_PRISMARINE_BRICKS;
     public static final BlockStairBase BLOCK_STAIRS_DARK_PRISMARINE;
     public static final BlockStairBase BLOCK_STAIRS_END_BRICKS;
@@ -80,14 +80,14 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_NETHERRACK;
 
     public static final BlockVanillaStoneSlabHalf BLOCK_HALF_SLAB_VANILLA_STONE;
-    public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;   
+    public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;
     public static final BlockVanillaStoneSlabHalf2 BLOCK_HALF_SLAB_VANILLA_STONE_2;
     public static final BlockVanillaStoneSlabDouble2 BLOCK_DOUBLE_SLAB_VANILLA_STONE_2;
-    
+
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
-    
-    public static final Block TILE_WORKBENCH;
+
+    public static final Block BLOCK_CRAFTING_TABLE;
 
     static
     {
@@ -96,14 +96,14 @@ public class ModBlocks
         BLOCK_BIRCH_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_BIRCH_BOOKSHELF));
         BLOCK_DARK_OAK_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_DARK_OAK_BOOKSHELF));
         BLOCK_ACACIA_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_ACACIA_BOOKSHELF));
-        
+
         BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
         registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS, new ItemBlockMeta(BLOCK_STAINED_CLAY_BRICKS, Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS));
-        
+
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
-        
+
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
         BLOCK_PILLAR_SMOOTH_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_ANDESITE));
@@ -111,7 +111,7 @@ public class ModBlocks
         BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE));
         BLOCK_PILLAR_SMOOTH_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_END_STONE));
         BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_NETHERRACK));
- 
+
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));
         BLOCK_STAIRS_SMOOTH_DIORITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE));
@@ -139,16 +139,15 @@ public class ModBlocks
         BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabDouble2();
         BLOCK_HALF_SLAB_MOD = new BlockModSlabHalf();
         BLOCK_DOUBLE_SLAB_MOD = new BlockModSlabDouble();
-        
+
         registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
         registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
-        
-        TILE_WORKBENCH = replaceBlock(new CraftBlock(), "crafting_table");
-        GameRegistry.registerTileEntity(TileEntityCraft.class, Reference.MOD_ID + ":" + TileEntityCraft.class.getSimpleName());
+
+        BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
     }
 
     public static void registerBlocks()
@@ -157,6 +156,7 @@ public class ModBlocks
 
     public static void registerTileEntities()
     {
+        GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Reference.MOD_ID + ":" + TileEntityCraftingTable.class.getSimpleName());
     }
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)
@@ -183,7 +183,7 @@ public class ModBlocks
     {
         return registerBlockMeta(block, new ItemBlockMeta(block, ""));
     }
-    
+
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block, ItemBlockMeta itemBlock)
     {
         GameRegistry.register(block);
@@ -192,18 +192,24 @@ public class ModBlocks
         BLOCKS.add(block);
         return block;
     }
-    
-    protected static Block replaceBlock(Block block, String name) {
-		if (block.getRegistryName() == null)
-			block.setRegistryName(name);
-		try {
-			GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.BLOCK, block);
-			GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
-		} catch (ExistingSubstitutionException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
 
-		return block;
-	}
+    protected static Block replaceBlock(Block block, String name)
+    {
+        if (block.getRegistryName() == null)
+        {
+            block.setRegistryName(name);
+        }
+        try
+        {
+            GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.BLOCK, block);
+            GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+        }
+        catch (ExistingSubstitutionException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+        return block;
+    }
 }
