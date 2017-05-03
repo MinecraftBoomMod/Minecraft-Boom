@@ -20,9 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import soupbubbles.minecraftboom.block.BlockModSlab;
 import soupbubbles.minecraftboom.block.BlockPolished;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlab;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
@@ -31,6 +29,7 @@ public class ModRecipes
     private static final List<IRecipe> RECIPES = CraftingManager.getInstance().getRecipeList();
 
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
+
     public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER};
 
     private static int stairOutputAmount = 4;
@@ -72,6 +71,7 @@ public class ModRecipes
         if (ConfigurationHandler.Settings.replacePurplePillarRecipe)
         {
             GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_PILLAR), "x", "x", 'x', new ItemStack(Blocks.PURPUR_BLOCK));
+            GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_BLOCK), "x", "x", 'x', new ItemStack(Blocks.PURPUR_SLAB));
         }
 
         // Stairs
@@ -97,11 +97,23 @@ public class ModRecipes
         addStairRecipe(BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_NETHERRACK);
 
         addStairSlabRecipe(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
-        
+
         //Ladders
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', new ItemStack(Items.STICK), 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-    }
 
+        //additional Vanilla Recipes
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "SSS", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), " SS", " TS", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), "SS ", "ST ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), " SS", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), "SS ", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SHOVEL), " S ", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " S ", " S ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
+
+    }
+    
     private static void removeVanillaRecipes()
     {
         Iterator<IRecipe> ir = RECIPES.iterator();
