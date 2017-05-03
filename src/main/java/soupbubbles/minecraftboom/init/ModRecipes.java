@@ -54,11 +54,10 @@ public class ModRecipes
         //Bricks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 4), "xx", "xx", 'x', new ItemStack(Blocks.HARDENED_CLAY, 1));
         
-        for (int i = 0; i < EnumDyeColor.values().length; i++)
+        for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
         {
-            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 4, i), "xx", "xx", 'x', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, i));
-        }
-       
+            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 4, meta), "xx", "xx", 'x', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, meta));
+        }       
         
         // Polished Block
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
@@ -113,13 +112,13 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', new ItemStack(Items.STICK), 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
 
         //Vanilla Recipes
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "SSS", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), " SS", " TS", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), "SS ", "ST ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), " SS", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), "SS ", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SHOVEL), " S ", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " S ", " S ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "xxx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), " xx", " yx", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), "xx ", "xy ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), " xx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), "xx ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SHOVEL), " x ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " x ", " x ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
         
         GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
 
