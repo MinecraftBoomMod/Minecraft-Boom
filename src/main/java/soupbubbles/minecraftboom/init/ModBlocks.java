@@ -13,7 +13,6 @@ import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -36,9 +35,15 @@ public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
 
+    public static final BlockBase BLOCK_SPRUCE_BOOKSHELF;
+    public static final BlockBase BLOCK_JUNGLE_BOOKSHELF;
+    public static final BlockBase BLOCK_BIRCH_BOOKSHELF;
+    public static final BlockBase BLOCK_DARK_OAK_BOOKSHELF;
+    public static final BlockBase BLOCK_ACACIA_BOOKSHELF;
+    
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
-    
+
     public static final BlockPolished BLOCK_POLISHED;
 
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
@@ -80,8 +85,13 @@ public class ModBlocks
 
     static
     {
-        BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
+        BLOCK_SPRUCE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_SPRUCE_BOOKSHELF));
+        BLOCK_JUNGLE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_JUNGLE_BOOKSHELF));
+        BLOCK_BIRCH_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_BIRCH_BOOKSHELF));
+        BLOCK_DARK_OAK_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_DARK_OAK_BOOKSHELF));
+        BLOCK_ACACIA_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_ACACIA_BOOKSHELF));
         
+        BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
         registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS);
         

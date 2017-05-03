@@ -33,6 +33,12 @@ public class Names
     public static final String END_BRICKS = "end_bricks";
     public static final String RED_NETHER_BRICK = "red_nether_brick";
     
+    public static final String BLOCK_SPRUCE_BOOKSHELF = "spruce_bookshelf";
+    public static final String BLOCK_JUNGLE_BOOKSHELF = "jungle_bookshelf";
+    public static final String BLOCK_BIRCH_BOOKSHELF = "birch_bookshelf";
+    public static final String BLOCK_DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
+    public static final String BLOCK_ACACIA_BOOKSHELF = "acacia_bookshelf";
+
     public static final String BLOCK_HARDENED_CLAY_BRICKS = "hardened_clay_bricks";
     public static final String BLOCK_STAINED_HARDENED_CLAY_BRICKS = "stained_hardened_clay_bricks";
     
