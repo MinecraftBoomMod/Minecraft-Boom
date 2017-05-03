@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockRedSandstone;
@@ -15,6 +16,7 @@ import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -49,6 +51,15 @@ public class ModRecipes
 
     private static void initRecipes()
     {
+        //Bricks
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 4), "xx", "xx", 'x', new ItemStack(Blocks.HARDENED_CLAY, 1));
+        
+        for (int i = 0; i < EnumDyeColor.values().length; i++)
+        {
+            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 4, i), "xx", "xx", 'x', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, i));
+        }
+       
+        
         // Polished Block
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.DARK.getMetadata()));
@@ -101,7 +112,7 @@ public class ModRecipes
         //Ladders
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', new ItemStack(Items.STICK), 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
 
-        //additional Vanilla Recipes
+        //Vanilla Recipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "SSS", " T ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), " SS", " TS", " T ", 'S', Blocks.STONE, 'T', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), "SS ", "ST ", " T ", 'S', Blocks.STONE, 'T', Items.STICK);

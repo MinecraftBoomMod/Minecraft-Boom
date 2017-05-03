@@ -40,8 +40,8 @@ public class ModBlocks
     public static final Set<Block> BLOCKS = new HashSet<>();
 
     public static final BlockBase BLOCK_SPRUCE_BOOKSHELF;
-    public static final BlockBase BLOCK_JUNGLE_BOOKSHELF;
     public static final BlockBase BLOCK_BIRCH_BOOKSHELF;
+    public static final BlockBase BLOCK_JUNGLE_BOOKSHELF;
     public static final BlockBase BLOCK_DARK_OAK_BOOKSHELF;
     public static final BlockBase BLOCK_ACACIA_BOOKSHELF;
 
@@ -92,8 +92,8 @@ public class ModBlocks
     static
     {
         BLOCK_SPRUCE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_SPRUCE_BOOKSHELF));
-        BLOCK_JUNGLE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_JUNGLE_BOOKSHELF));
         BLOCK_BIRCH_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_BIRCH_BOOKSHELF));
+        BLOCK_JUNGLE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_JUNGLE_BOOKSHELF));
         BLOCK_DARK_OAK_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_DARK_OAK_BOOKSHELF));
         BLOCK_ACACIA_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_ACACIA_BOOKSHELF));
 
