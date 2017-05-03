@@ -17,6 +17,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
@@ -39,11 +40,7 @@ public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
 
-    public static final BlockBase BLOCK_SPRUCE_BOOKSHELF;
-    public static final BlockBase BLOCK_BIRCH_BOOKSHELF;
-    public static final BlockBase BLOCK_JUNGLE_BOOKSHELF;
-    public static final BlockBase BLOCK_DARK_OAK_BOOKSHELF;
-    public static final BlockBase BLOCK_ACACIA_BOOKSHELF;
+    public static final BlockBookShelf BLOCK_BOOKSHELF;
 
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
@@ -91,11 +88,8 @@ public class ModBlocks
 
     static
     {
-        BLOCK_SPRUCE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_SPRUCE_BOOKSHELF));
-        BLOCK_BIRCH_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_BIRCH_BOOKSHELF));
-        BLOCK_JUNGLE_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_JUNGLE_BOOKSHELF));
-        BLOCK_DARK_OAK_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_DARK_OAK_BOOKSHELF));
-        BLOCK_ACACIA_BOOKSHELF = registerBlock(new BlockBase(Names.BLOCK_ACACIA_BOOKSHELF));
+        BLOCK_BOOKSHELF = new BlockBookShelf();
+        registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
 
         BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);

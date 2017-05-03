@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.reference;
 
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
@@ -14,7 +15,13 @@ public class Names
     public static final String DIORITE = BlockStone.EnumType.DIORITE.getName();
     public static final String SMOOTH_DIORITE = BlockStone.EnumType.DIORITE_SMOOTH.getName();
     public static final String ANDESITE = BlockStone.EnumType.ANDESITE.getName();
-    public static final String SMOOTH_ANDESITE = BlockStone.EnumType.ANDESITE_SMOOTH.getName();
+    public static final String SMOOTH_ANDESITE = BlockStone.EnumType.ANDESITE_SMOOTH.getName();   
+    public static final String OAK = BlockPlanks.EnumType.OAK.getName();
+    public static final String SPRUCE = BlockPlanks.EnumType.SPRUCE.getName();
+    public static final String BIRCH = BlockPlanks.EnumType.BIRCH.getName();
+    public static final String JUNGLE = BlockPlanks.EnumType.JUNGLE.getName();
+    public static final String DARK_OAK = BlockPlanks.EnumType.DARK_OAK.getName();
+    public static final String ACACIA = BlockPlanks.EnumType.ACACIA.getName(); 
     public static final String MOSSY_COBBLESTONE = "mossy_cobblestone";
     public static final String STONEBRICK = BlockStoneBrick.EnumType.DEFAULT.getName();
     public static final String MOSSY_STONEBRICK = BlockStoneBrick.EnumType.MOSSY.getName();
@@ -36,11 +43,7 @@ public class Names
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
 
-    public static final String BLOCK_SPRUCE_BOOKSHELF = "spruce_bookshelf";
-    public static final String BLOCK_JUNGLE_BOOKSHELF = "jungle_bookshelf";
-    public static final String BLOCK_BIRCH_BOOKSHELF = "birch_bookshelf";
-    public static final String BLOCK_DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
-    public static final String BLOCK_ACACIA_BOOKSHELF = "acacia_bookshelf";
+    public static final String BLOCK_BOOKSHELF = "bookshelf";
 
     public static final String BLOCK_HARDENED_CLAY_BRICKS = "hardened_clay_bricks";
     public static final String BLOCK_STAINED_HARDENED_CLAY_BRICKS = "stained_hardened_clay_bricks";

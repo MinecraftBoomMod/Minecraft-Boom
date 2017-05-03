@@ -60,9 +60,9 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     @Override
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        for (BlockPolished.EnumType blockstone$enumtype : BlockPolished.EnumType.values())
+        for (BlockPolished.EnumType blockpolished$enumtype : BlockPolished.EnumType.values())
         {
-            list.add(new ItemStack(itemIn, 1, blockstone$enumtype.getMetadata()));
+            list.add(new ItemStack(itemIn, 1, blockpolished$enumtype.getMetadata()));
         }
     }
 
@@ -156,9 +156,9 @@ public class BlockPolished extends BlockBase implements IBlockMeta
 
         static
         {
-            for (BlockPolished.EnumType blockstone$enumtype : values())
+            for (BlockPolished.EnumType blockpolished$enumtype : values())
             {
-                META_LOOKUP[blockstone$enumtype.getMetadata()] = blockstone$enumtype;
+                META_LOOKUP[blockpolished$enumtype.getMetadata()] = blockpolished$enumtype;
             }
         }
     }

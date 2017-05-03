@@ -1,5 +1,5 @@
 {
-    "parent":"minecraftboom:block/hardened_clay_bricks",
+    "parent":"minecraftboom:block/birch_bookshelf",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],
