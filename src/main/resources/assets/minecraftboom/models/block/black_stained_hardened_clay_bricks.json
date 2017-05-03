@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minecraftboom:blocks/black_stained_hardened_clay_bricks"
+    }
+}

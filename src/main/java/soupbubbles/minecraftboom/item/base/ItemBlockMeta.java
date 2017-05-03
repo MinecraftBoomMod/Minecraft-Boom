@@ -9,8 +9,9 @@ import soupbubbles.minecraftboom.block.base.IBlockMeta;
 public class ItemBlockMeta extends ItemBlock
 {
     private final String[] VARIANTS = new String[((IBlockMeta) block).getVariants().getAllowedValues().size()];
-
-    public ItemBlockMeta(Block block) 
+    private String registryPrefix;
+    
+    public ItemBlockMeta(Block block, String name) 
     {
         super(block);
         
@@ -19,14 +20,20 @@ public class ItemBlockMeta extends ItemBlock
         	throw new IllegalArgumentException(block.getUnlocalizedName() + " must implement IBlockMeta");
         }
         
+        if (!name.isEmpty())
+        {
+            name = "_" + name;
+        }
+        
         for (int i = 0; i < VARIANTS.length; i++)
         {
-            VARIANTS[i] = ((IStringSerializable) block.getStateFromMeta(i).getValue(((IBlockMeta) block).getVariants())).getName();
+            VARIANTS[i] = ((IStringSerializable) block.getStateFromMeta(i).getValue(((IBlockMeta) block).getVariants())).getName() + name;
         }
         
         setRegistryName(block.getRegistryName());
         setMaxDamage(0);
         setHasSubtypes(true);
+        setRegistryPrefix("");
     }
     
     @Override
@@ -41,9 +48,15 @@ public class ItemBlockMeta extends ItemBlock
         return ((IBlockMeta)block).getSpecialName(stack.getItemDamage());
     }
     
+    public ItemBlockMeta setRegistryPrefix(String prefix)
+    {
+        registryPrefix = prefix;
+        return this;
+    }
+    
     public String getRegistryPrefix()
     {
-    	return "";
+    	return registryPrefix;
     }
 
     public String[] getVariants()

@@ -93,7 +93,7 @@ public class ModBlocks
         
         BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
-        registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS);
+        registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS, new ItemBlockMeta(BLOCK_STAINED_CLAY_BRICKS, Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS));
         
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
@@ -172,7 +172,7 @@ public class ModBlocks
 
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block)
     {
-        return registerBlockMeta(block, new ItemBlockMeta(block));
+        return registerBlockMeta(block, new ItemBlockMeta(block, ""));
     }
     
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block, ItemBlockMeta itemBlock)

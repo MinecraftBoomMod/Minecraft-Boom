@@ -25,9 +25,10 @@ public class ItemSlabBase extends ItemBlockMeta
 
 	public ItemSlabBase(BlockSlabBase block, BlockSlabBase singleBlock, BlockSlabBase doubleBlock) 
 	{
-		super(block);
+		super(block, "");
 		singleSlab = singleBlock;
 		doubleSlab = doubleBlock;
+        setRegistryPrefix(((BlockSlabBase) block).isDouble() ? "double_slab_" : "half_slab_");
 	}
 
 	@Override
@@ -124,11 +125,5 @@ public class ItemSlabBase extends ItemBlockMeta
     protected <T extends Comparable<T>> IBlockState makeState(IProperty<T> p_185055_1_, Comparable<?> p_185055_2_)
     {
         return doubleSlab.getDefaultState().withProperty(p_185055_1_, (T)p_185055_2_);
-    }
-    
-	@Override
-    public String getRegistryPrefix()
-    {
-    	return ((BlockSlabBase) block).isDouble() ? "double_slab_" : "half_slab_";
     }
 }
