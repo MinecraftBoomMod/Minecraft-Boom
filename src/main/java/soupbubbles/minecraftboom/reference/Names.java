@@ -71,4 +71,6 @@ public class Names
     
     //ALL CAPS because the String is final
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
+    public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
+    public static final String ITEM_POTION_FOOD_EXAMPLE = "potion_food_example";
 }

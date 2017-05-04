@@ -5,12 +5,15 @@ import java.util.Set;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemBasic;
+import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.reference.Reference;
 
@@ -22,7 +25,10 @@ public class ModItems
     //Our item object, notice that it is final so you can't change the item
     //The name of the object should be in ALL CAPS since it is final
     //This is pretty much how vanilla does it too
-    public static final Item ELDER_GUARDIAN_SPIKE; 
+    public static final Item ELDER_GUARDIAN_SPIKE;
+    public static final Item PUMPKIN_SLICE;
+    //An example of an item with potion effects
+    public static final Item POTION_FOOD_EXAMPLE;
     
     //public static final Item ITEM_WITH_SUBITEMS; 
 
@@ -36,6 +42,8 @@ public class ModItems
         //All ItemBase takes is the unlocalized item name which we set in the Names class
         
         ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
+        PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
+        POTION_FOOD_EXAMPLE = registerItem(new ItemFoodBase(Names.ITEM_POTION_FOOD_EXAMPLE, 0, false, new PotionEffect(Potion.getPotionById(3), 60/*2 secs*/, 2)/*You can add more by doing , new Potio....*/));
         
         //A item with subitems (just for demonstration)
         //This will add 4 new items to the game
