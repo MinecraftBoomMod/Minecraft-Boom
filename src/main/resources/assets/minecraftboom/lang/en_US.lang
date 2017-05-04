@@ -10,6 +10,8 @@ item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 
 
 # Blocks
+tile.minecraftboom.suger_cane_block.name=Suger Cane Block
+
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
 tile.minecraftboom.birch_bookshelf.name=Birch Bookshelf
 tile.minecraftboom.jungle_bookshelf.name=Jungle Bookshelf

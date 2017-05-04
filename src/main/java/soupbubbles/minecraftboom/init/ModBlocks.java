@@ -13,6 +13,7 @@ import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
@@ -42,6 +43,8 @@ public class ModBlocks
 
     public static final BlockBookShelf BLOCK_BOOKSHELF;
 
+    public static final BlockBase BLOCK_SUGER_CANE_BLOCK;
+    
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
 
@@ -97,6 +100,8 @@ public class ModBlocks
 
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
+        
+        BLOCK_SUGER_CANE_BLOCK = registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGER_CANE));
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));

@@ -40,6 +40,8 @@ public class Names
     public static final String END_BRICKS = "end_bricks";
     public static final String RED_NETHER_BRICK = "red_nether_brick";
     
+    public static final String BLOCK_SUGER_CANE = "suger_cane_block";
+    
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
 
