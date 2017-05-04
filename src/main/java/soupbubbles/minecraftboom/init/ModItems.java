@@ -3,6 +3,7 @@ package soupbubbles.minecraftboom.init;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -21,8 +22,9 @@ public class ModItems
     //This is pretty much how vanilla does it too
     public static final Item ELDER_GUARDIAN_SPIKE;
     public static final Item PUMPKIN_SLICE;
+    
     //An example of an item with potion effects
-    public static final Item POTION_FOOD_EXAMPLE;
+    //public static final Item POTION_FOOD_EXAMPLE;
     
     //public static final Item ITEM_WITH_SUBITEMS; 
 
@@ -37,7 +39,8 @@ public class ModItems
         
         ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
-        POTION_FOOD_EXAMPLE = registerItem(new ItemFoodBase(Names.ITEM_POTION_FOOD_EXAMPLE, 0, false, new PotionEffect(Potion.getPotionById(3), 60/*2 secs*/, 2)/*You can add more by doing , new Potio....*/));
+        
+        //POTION_FOOD_EXAMPLE = registerItem(new ItemFoodBase(Names.ITEM_POTION_FOOD_EXAMPLE, 0, false, new PotionEffect(MobEffects.HASTE, 60/*2 secs*/, 2)/*You can add more by doing , new Potio....*/));
         
         //A item with subitems (just for demonstration)
         //This will add 4 new items to the game

@@ -12,16 +12,16 @@ public class BlockBase extends Block
 
     public BlockBase(String name)
     {
-        this(Material.ROCK, name);
+        this(Material.ROCK, name, SoundType.STONE);
     }
 
-    public BlockBase(Material material, String name)
+    public BlockBase(Material material, String name, SoundType sound)
     {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        setSoundType(SoundType.STONE);
+        setSoundType(sound);
 
         BASE_NAME = name;
     }

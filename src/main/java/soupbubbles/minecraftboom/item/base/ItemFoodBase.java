@@ -6,44 +6,43 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.reference.Assets;
 
 public class ItemFoodBase extends ItemFood
 {
-	private PotionEffect[] effects;
+    private PotionEffect[] effects;
+    private final String BASE_NAME;
 
-	public ItemFoodBase(String name, int amount, boolean isWolfFood, PotionEffect...potionEffects)
-	{
-		super(amount, isWolfFood);
-		this.effects = potionEffects;
-		
-		//sets the registry name
+    public ItemFoodBase(String name, int amount, boolean isWolfFood, PotionEffect... potionEffects)
+    {
+        this(name, amount, 0.6F, isWolfFood, potionEffects);
+    }
+
+    public ItemFoodBase(String name, int amount, float saturation, boolean isWolfFood, PotionEffect... potionEffects)
+    {
+        super(amount, saturation, isWolfFood);
         setRegistryName(name);
-        //sets the unlocalized name
         setUnlocalizedName(name);
-        //puts it in our creativetab
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-	}
+        
+        BASE_NAME = name;
+        effects = potionEffects;
+    }
+    
+    @Override
+    public String getUnlocalizedName(ItemStack stack)
+    {
+        return String.format(Assets.ITEM_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
+    }
 
-	public ItemFoodBase(String name, int amount, float saturation, boolean isWolfFood, PotionEffect...potionEffects)
-	{
-		super(amount, saturation, isWolfFood);
-		this.effects = potionEffects;
-		
-		//sets the registry name
-        setRegistryName(name);
-        //sets the unlocalized name
-        setUnlocalizedName(name);
-        //puts it in our creativetab
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-	}
-	
-	@Override
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
-	{
-		//Adds all the potion effects specified
-		for (PotionEffect effect : effects) {
-			player.addPotionEffect(effect);
-		}
-	}
+    @Override
+    protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
+    {
+        super.onFoodEaten(stack, world, player);
 
+        for (PotionEffect effect : effects)
+        {
+            player.addPotionEffect(effect);
+        }
+    }
 }

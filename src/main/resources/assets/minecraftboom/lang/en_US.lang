@@ -4,13 +4,14 @@ itemGroup.minecraftboom=Minecraft Boom
 # Vanilla
 tile.bookshelf.name=Oak Bookshelf
 
+
 # Items
 item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 
 
 # Blocks
-tile.minecraftboom.suger_cane_block.name=Suger Cane Block
+tile.minecraftboom.sugar_cane_block.name=Sugar Cane Block
 
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
 tile.minecraftboom.birch_bookshelf.name=Birch Bookshelf

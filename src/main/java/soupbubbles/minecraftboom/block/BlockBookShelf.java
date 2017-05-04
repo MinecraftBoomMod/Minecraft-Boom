@@ -25,11 +25,10 @@ public class BlockBookShelf extends BlockBase implements IBlockMeta
 
     public BlockBookShelf()
     {
-        super(Material.WOOD, Names.BLOCK_BOOKSHELF);
+        super(Material.WOOD, Names.BLOCK_BOOKSHELF, SoundType.WOOD);
         setDefaultState(blockState.getBaseState().withProperty(VARIANT, BlockBookShelf.EnumType.SPRUCE));
         setHardness(2.0F);
         setResistance(5.0F);
-        setSoundType(SoundType.WOOD);
     }
 
     @Override
