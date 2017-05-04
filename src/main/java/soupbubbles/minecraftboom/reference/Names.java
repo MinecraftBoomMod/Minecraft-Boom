@@ -39,9 +39,11 @@ public class Names
     public static final String DARK_PRISMARINE = BlockPrismarine.EnumType.DARK.getName();
     public static final String END_BRICKS = "end_bricks";
     public static final String RED_NETHER_BRICK = "red_nether_brick";
+    public static final String PUMPKIN = "pumpkin";
     
     public static final String BLOCK_SUGAR_CANE = "sugar_cane_block";
-    
+    public static final String BLOCK_PUMPKIN = "mod_" + PUMPKIN;
+ 
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
 
@@ -71,8 +73,8 @@ public class Names
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
     
-    //ALL CAPS because the String is final
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
-    public static final String ITEM_POTION_FOOD_EXAMPLE = "potion_food_example";
+    public static final String ITEM_PINECONE = "pinecone";
+
 }

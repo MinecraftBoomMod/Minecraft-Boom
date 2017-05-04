@@ -1,8 +1,10 @@
 package soupbubbles.minecraftboom.block;
 
 import net.minecraft.block.BlockWorkbench;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -19,6 +21,8 @@ public class BlockCraftingTable extends BlockWorkbench
     public BlockCraftingTable()
     {
         super();
+        setHardness(2.5F);
+        setSoundType(SoundType.WOOD);
         setUnlocalizedName(Names.BLOCK_CRAFTING_TABLE_UNLOCALIZED);
     }
 

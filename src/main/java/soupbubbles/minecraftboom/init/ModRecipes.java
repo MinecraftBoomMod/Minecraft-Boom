@@ -2,6 +2,7 @@ package soupbubbles.minecraftboom.init;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
@@ -14,6 +15,7 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
@@ -22,7 +24,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
+import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
@@ -48,6 +52,7 @@ public class ModRecipes
         }
 
         initRecipes();
+        initFurnaceRecipes();
     }
 
     private static void initRecipes()
@@ -70,6 +75,7 @@ public class ModRecipes
         
         //Storage Blocks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SUGAR_CANE_BLOCK), "xxx", "xxx", "xxx", 'x', Items.REEDS);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.REEDS, 9), ModBlocks.BLOCK_SUGAR_CANE_BLOCK);
 
         // Polished Blocks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
@@ -94,6 +100,14 @@ public class ModRecipes
         {
             GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_PILLAR), "x", "x", 'x', Blocks.PURPUR_BLOCK);
             GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_BLOCK), "x", "x", 'x', Blocks.PURPUR_SLAB);
+        }
+        
+        if (ConfigurationHandler.Settings.replacePumpkin)
+        {
+            GameRegistry.addShapedRecipe(new ItemStack(Blocks.LIT_PUMPKIN), "x", "y", 'x', new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.CARVED.getMetadata()), 'y', Blocks.TORCH);
+            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.DEFAULT.getMetadata()), "xxx", "xxx", "xxx", 'x', ModItems.ITEM_PUMPKIN_SLICE);
+            GameRegistry.addShapelessRecipe(new ItemStack(Items.PUMPKIN_PIE), Items.SUGAR, Items.EGG, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE);
+            //GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.CARVED.getMetadata()), new ItemStack(Items.SHEARS.setContainerItem(Items.SHEARS), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.DEFAULT.getMetadata()));
         }
 
         // Stairs
@@ -133,11 +147,20 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), "xx ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SHOVEL), " x ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " x ", " x ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.PUMPKIN), "xxx", "xxx", "xxx", 'x', ModItems.PUMPKIN_SLICE);
-
-        
+       
         GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
+    }
+    
+    private static void initFurnaceRecipes()
+    {
+        if (ConfigurationHandler.Settings.replacePumpkin)
+        {
+            GameRegistry.addSmelting(ModBlocks.BLOCK_PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
+        }
+        else
+        {
+            GameRegistry.addSmelting(Blocks.PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
+        }
     }
     
     private static void removeVanillaRecipes()
@@ -171,6 +194,14 @@ public class ModRecipes
             {
                 ir.remove();
             }
+            else if (outputStack != null && ConfigurationHandler.Settings.replacePumpkin)
+            {
+                if(outputStack.getItem() == Item.getItemFromBlock(Blocks.LIT_PUMPKIN) || outputStack.getItem() == Items.PUMPKIN_PIE)
+                {
+                    ir.remove();
+                }
+            }
+        
         }
     }
 

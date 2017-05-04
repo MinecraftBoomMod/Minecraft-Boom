@@ -24,6 +24,7 @@ import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockPolished;
+import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
@@ -32,6 +33,7 @@ import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Names;
@@ -45,7 +47,7 @@ public class ModBlocks
     public static final BlockBookShelf BLOCK_BOOKSHELF;
 
     public static final BlockBase BLOCK_SUGAR_CANE_BLOCK;
-    
+
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
 
@@ -88,7 +90,8 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
-    public static final Block BLOCK_CRAFTING_TABLE;
+    public static final BlockCraftingTable BLOCK_CRAFTING_TABLE;
+    public static final BlockNewPumpkin BLOCK_PUMPKIN;
 
     static
     {
@@ -101,7 +104,7 @@ public class ModBlocks
 
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
-        
+
         BLOCK_SUGAR_CANE_BLOCK = (BlockBase) registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
@@ -147,7 +150,24 @@ public class ModBlocks
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
-        BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
+        if (ConfigurationHandler.Settings.replaceCraftingTable)
+        {
+            BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
+        }
+        else 
+        {
+            BLOCK_CRAFTING_TABLE = null;
+        }
+        
+        if (ConfigurationHandler.Settings.replacePumpkin)
+        {
+            BLOCK_PUMPKIN = new BlockNewPumpkin();
+            replaceBlock(BLOCK_PUMPKIN, Names.PUMPKIN);
+        }
+        else 
+        {
+            BLOCK_PUMPKIN = null;
+        }
     }
 
     public static void registerBlocks()
@@ -193,7 +213,7 @@ public class ModBlocks
         return block;
     }
 
-    protected static Block replaceBlock(Block block, String name)
+    protected static <BLOCK extends Block> BLOCK replaceBlock(BLOCK block, String name)
     {
         if (block.getRegistryName() == null)
         {
@@ -202,7 +222,16 @@ public class ModBlocks
         try
         {
             GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.BLOCK, block);
-            //GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+            
+            if (block == BLOCK_PUMPKIN)
+            {
+                GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlockMeta(block, Names.BLOCK_PUMPKIN));
+                BLOCKS.add(block);
+            }
+            else
+            {
+                GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+            }
         }
         catch (ExistingSubstitutionException e)
         {

@@ -12,7 +12,6 @@ public class ClientProxy extends CommonProxy
     public void preInit(FMLPreInitializationEvent event)
     {
         super.preInit(event);
-        //ModItems.registerRenders();
         
         //Register all our item models and block models automatically
         //We don't have to add any code

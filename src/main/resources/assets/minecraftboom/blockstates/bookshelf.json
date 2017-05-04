@@ -4,7 +4,6 @@
         "variant=birch": { "model": "minecraftboom:birch_bookshelf" },
         "variant=jungle": { "model": "minecraftboom:jungle_bookshelf" },
         "variant=acacia": { "model": "minecraftboom:acacia_bookshelf" },
-        "variant=dark_oak": { "model": "minecraftboom:dark_oak_bookshelf" }
-        
+        "variant=dark_oak": { "model": "minecraftboom:dark_oak_bookshelf" }       
     }
 }

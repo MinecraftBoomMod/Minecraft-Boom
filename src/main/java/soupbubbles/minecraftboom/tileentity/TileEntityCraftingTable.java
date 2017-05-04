@@ -1,9 +1,8 @@
 package soupbubbles.minecraftboom.tileentity;
 
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.tileentities.TileInventory;
 
-public class TileEntityCraftingTable extends TileInventory
+public class TileEntityCraftingTable extends TileEntityInventory
 {
 
     public TileEntityCraftingTable()

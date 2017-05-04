@@ -1,5 +1,4 @@
-package soupbubbles.minecraftboom.tileentities;
-
+package soupbubbles.minecraftboom.tileentity;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
@@ -11,7 +10,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileBase extends TileEntity
+public class TileEntityBase extends TileEntity
 {
     @Override
     public final void readFromNBT(NBTTagCompound compound)
@@ -31,12 +30,10 @@ public class TileBase extends TileEntity
 
     public void deserialize(NBTTagCompound tagCompound)
     {
-
     }
 
     void deserializeBase(NBTTagCompound tagCompound)
     {
-
     }
 
     public NBTTagCompound serialize(NBTTagCompound tagCompound)
@@ -44,13 +41,13 @@ public class TileBase extends TileEntity
         return tagCompound;
     }
 
-
     NBTTagCompound serializeBase(NBTTagCompound tagCompound)
     {
         return tagCompound;
     }
 
-    public void notifyUpdate() {
+    public void notifyUpdate()
+    {
         getWorld().notifyBlockUpdate(getPos(), getWorld().getBlockState(getPos()), getWorld().getBlockState(getPos()), 3);
     }
 

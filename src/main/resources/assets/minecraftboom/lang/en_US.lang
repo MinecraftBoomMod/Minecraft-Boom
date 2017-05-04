@@ -3,10 +3,21 @@ itemGroup.minecraftboom=Minecraft Boom
 
 # Vanilla
 tile.bookshelf.name=Oak Bookshelf
+tile.minecraftboom.mod_pumpkin.name=Pumpkin
+tile.minecraftboom.carved_mod_pumpkin.name=Carved Pumpkin
+tile.netherBrick.name=Nether Bricks
+tile.netherFence.name=Nether Bricks Fence
+tile.stairsNetherBrick.name=Nether Bricks Stairs
+tile.stoneSlab.netherBrick.name=Nether Bricks Slab
+tile.redNetherBrick.name=Red Nether Bricks
+item.seeds.name=Wheat Seeds
+item.spiderEye.name=Arthropod Eye
+item.fermentedSpiderEye.name=Fermented Arthropod Eye
 
 
 # Items
 item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
+item.minecraftboom.pinecone.name=Pinecone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 
 
@@ -67,7 +78,7 @@ tile.minecraftboom.stairs_smooth_red_sandstone.name=Smooth Red Sandstone Stairs
 tile.minecraftboom.stairs_prismarine_bricks.name=Prismarine Brick Stairs
 tile.minecraftboom.stairs_dark_prismarine.name=Dark Prismarine Stairs
 tile.minecraftboom.stairs_end_bricks.name=End Bricks Stairs
-tile.minecraftboom.stairs_red_nether_brick.name=Red Nether Brick Stairs
+tile.minecraftboom.stairs_red_nether_brick.name=Red Nether Bricks Stairs
 tile.minecraftboom.stairs_smooth_prismarine.name=Polished Prismarine Stairs
 tile.minecraftboom.stairs_smooth_dark_prismarine.name=Polished Dark Prismarine Stairs
 tile.minecraftboom.stairs_smooth_end_stone.name=Polished End Stone Stairs
@@ -89,7 +100,7 @@ tile.minecraftboom.half_slab_vanilla_stone_2_smooth_red_sandstone.name=Smooth Re
 tile.minecraftboom.half_slab_vanilla_stone_2_prismarine_bricks.name=Prismarine Bricks Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_dark_prismarine.name=Dark Prismarine Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_end_bricks.name=End Stone Bricks Slab
-tile.minecraftboom.half_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Brick Slab
+tile.minecraftboom.half_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Bricks Slab
 tile.minecraftboom.half_slab_mod_smooth_prismarine.name=Polished Prismarine Double Slab
 tile.minecraftboom.half_slab_mod_smooth_dark_prismarine.name=Polished Dark Prismarine Double Slab
 tile.minecraftboom.half_slab_mod_smooth_end_stone.name=Polished End Stone Double Slab
@@ -111,7 +122,7 @@ tile.minecraftboom.double_slab_vanilla_stone_2_smooth_red_sandstone.name=Smooth 
 tile.minecraftboom.double_slab_vanilla_stone_2_prismarine_bricks.name=Prismarine Bricks Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_dark_prismarine.name=Dark Prismarine Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_end_bricks.name=End Stone Bricks Double Slab
-tile.minecraftboom.double_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Brick Double Slab
+tile.minecraftboom.double_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Bricks Double Slab
 tile.minecraftboom.double_slab_mod_smooth_prismarine.name=Polished Prismarine Double Slab
 tile.minecraftboom.double_slab_mod_smooth_dark_prismarine.name=Polished Dark Prismarine Double Slab
 tile.minecraftboom.double_slab_mod_smooth_end_stone.name=Polished End Stone Double Slab

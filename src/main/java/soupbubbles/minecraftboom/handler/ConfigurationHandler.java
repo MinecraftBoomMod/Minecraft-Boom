@@ -25,6 +25,8 @@ public class ConfigurationHandler
     {
         Settings.replaceVanillaStairRecipe = configuration.getBoolean(Settings.REPLACE_VANILLA_STAIR_RECIPE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_VANILLA_STAIR_RECIPE_DEFAULT, Settings.REPLACE_VANILLA_STAIR_RECIPE_COMMENT, Settings.REPLACE_VANILLA_STAIR_RECIPES_LABEL);
         Settings.replacePurplePillarRecipe = configuration.getBoolean(Settings.REPLACE_PURPUR_PILLAR_RECIPE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
+        Settings.replacePumpkin = configuration.getBoolean(Settings.REPLACE_CRAFTING_TABLE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
+        Settings.replacePumpkin = configuration.getBoolean(Settings.REPLACE_PUMPKIN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PUMPKIN_DEFAULT, Settings.REPLACE_PUMPKIN_COMMENT, Settings.REPLACE_PUMPKIN_LABEL);
 
         if (configuration.hasChanged())
         {
@@ -54,5 +56,17 @@ public class ConfigurationHandler
         private static final String REPLACE_PURPUR_PILLAR_RECIPES_LABEL = "replace_purpur_pillar_recipe.label";
         private static final String REPLACE_PURPUR_PILLAR_RECIPE_COMMENT = "Return true if the mod should override the default recipe for Purple Pillars. The new crafting precipe will use 2 Purple Blocks instead of Purple Slabs";
         private static final boolean REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT = true;
+        
+        public static boolean replaceCraftingTable;
+        private static final String REPLACE_CRAFTING_TABLE_NAME = "Replace Crafting Table";
+        private static final String REPLACE_CRAFTING_TABLE_LABEL = "replace_crafting_table.label";
+        private static final String REPLACE_CRAFTING_TABLE_COMMENT = "Return true if the mod should override the vanilla version of the Crafting Table. The new version will save items in its inventory and not drop them when you close the GUI";
+        private static final boolean REPLACE_CRAFTING_TABLE_DEFAULT = true;
+        
+        public static boolean replacePumpkin;
+        private static final String REPLACE_PUMPKIN_NAME = "Replace Pumpkins";
+        private static final String REPLACE_PUMPKIN_LABEL = "replace_pumpkins.label";
+        private static final String REPLACE_PUMPKIN_COMMENT = "Return true if the mod should override the vanilla version of Pumpkins. The new version will include a Faceless Pumpkin, Pumpkin Slices and updated recipes";
+        private static final boolean REPLACE_PUMPKIN_DEFAULT = true;
     }
 }

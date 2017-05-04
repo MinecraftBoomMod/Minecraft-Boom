@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,variant=mod_pumpkin": { "model": "minecraftboom:pumpkin" },
+        "facing=south,variant=mod_pumpkin": { "model": "minecraftboom:pumpkin", "y": 180 },
+        "facing=west,variant=mod_pumpkin":  { "model": "minecraftboom:pumpkin", "y": 270 },
+        "facing=east,variant=mod_pumpkin":  { "model": "minecraftboom:pumpkin", "y": 90 },
+        "facing=north,variant=carved_mod_pumpkin": { "model": "pumpkin" },
+        "facing=south,variant=carved_mod_pumpkin": { "model": "pumpkin", "y": 180 },
+        "facing=west,variant=carved_mod_pumpkin":  { "model": "pumpkin", "y": 270 },
+        "facing=east,variant=carved_mod_pumpkin":  { "model": "pumpkin", "y": 90 }
+    }
+}

@@ -1,5 +1,4 @@
-package soupbubbles.minecraftboom.tileentities;
-
+package soupbubbles.minecraftboom.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -20,16 +19,16 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 
 @SuppressWarnings("deprecation")
-public class TileInventory extends TileBase implements IInventory
+public class TileEntityInventory extends TileEntityBase implements IInventory
 {
     protected int[] syncedSlots = new int[0];
     protected NonNullList<ItemStack> inventory;
     private int size;
     private String name;
 
-    public TileInventory(int size, String name)
+    public TileEntityInventory(int size, String name)
     {
-        this.inventory = NonNullList.withSize(size, ItemStack.EMPTY);
+        inventory = NonNullList.withSize(size, ItemStack.EMPTY);
         this.size = size;
         this.name = name;
         initializeItemHandlers();
@@ -203,16 +202,22 @@ public class TileInventory extends TileBase implements IInventory
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
         for (ItemStack stack : inventory)
+        {
             if (!stack.isEmpty())
+            {
                 return false;
+            } 
+        }
 
         return true;
     }
 
     @Override
-    public boolean isUsableByPlayer(EntityPlayer player) {
+    public boolean isUsableByPlayer(EntityPlayer player)
+    {
         return true;
     }
 
@@ -244,7 +249,8 @@ public class TileInventory extends TileBase implements IInventory
             handlerSouth = new SidedInvWrapper((ISidedInventory) this, EnumFacing.SOUTH);
             handlerWest = new SidedInvWrapper((ISidedInventory) this, EnumFacing.WEST);
             handlerEast = new SidedInvWrapper((ISidedInventory) this, EnumFacing.EAST);
-        } else
+        }
+        else
         {
             handlerDown = new InvWrapper(this);
             handlerUp = handlerDown;
@@ -270,20 +276,21 @@ public class TileInventory extends TileBase implements IInventory
         {
             switch (facing)
             {
-            case DOWN:
-                return (T) handlerDown;
-            case EAST:
-                return (T) handlerEast;
-            case NORTH:
-                return (T) handlerNorth;
-            case SOUTH:
-                return (T) handlerSouth;
-            case UP:
-                return (T) handlerUp;
-            case WEST:
-                return (T) handlerWest;
+                case DOWN:
+                    return (T) handlerDown;
+                case EAST:
+                    return (T) handlerEast;
+                case NORTH:
+                    return (T) handlerNorth;
+                case SOUTH:
+                    return (T) handlerSouth;
+                case UP:
+                    return (T) handlerUp;
+                case WEST:
+                    return (T) handlerWest;
             }
-        } else if (facing == null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+        }
+        else if (facing == null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
         {
             return (T) handlerDown;
         }
