@@ -7,10 +7,12 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 
-public class ItemFoodBase extends ItemFood {
+public class ItemFoodBase extends ItemFood
+{
 	private PotionEffect[] effects;
 
-	public ItemFoodBase(String name, int amount, boolean isWolfFood, PotionEffect...potionEffects) {
+	public ItemFoodBase(String name, int amount, boolean isWolfFood, PotionEffect...potionEffects)
+	{
 		super(amount, isWolfFood);
 		this.effects = potionEffects;
 		
@@ -22,7 +24,8 @@ public class ItemFoodBase extends ItemFood {
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
 	}
 
-	public ItemFoodBase(String name, int amount, float saturation, boolean isWolfFood, PotionEffect...potionEffects) {
+	public ItemFoodBase(String name, int amount, float saturation, boolean isWolfFood, PotionEffect...potionEffects)
+	{
 		super(amount, saturation, isWolfFood);
 		this.effects = potionEffects;
 		
@@ -35,7 +38,8 @@ public class ItemFoodBase extends ItemFood {
 	}
 	
 	@Override
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
+	{
 		//Adds all the potion effects specified
 		for (PotionEffect effect : effects) {
 			player.addPotionEffect(effect);

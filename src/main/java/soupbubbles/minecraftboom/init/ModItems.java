@@ -3,19 +3,13 @@ package soupbubbles.minecraftboom.init;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.item.base.ItemBase;
-import soupbubbles.minecraftboom.item.base.ItemBasic;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.reference.Reference;
 
 public class ModItems
 {
