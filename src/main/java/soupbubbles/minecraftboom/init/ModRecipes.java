@@ -37,7 +37,7 @@ public class ModRecipes
 
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
 
-    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF};
+    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK};
 
     private static int stairOutputAmount = 4;
 
@@ -90,7 +90,9 @@ public class ModRecipes
         GameRegistry.addShapelessRecipe(new ItemStack(Items.MAGMA_CREAM, 9), ModBlocks.BLOCK_MAGMA_CREAM);
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PRISMARINE_CRYSTAL), "xxx", "xxx", "xxx", 'x', Items.PRISMARINE_CRYSTALS);
         GameRegistry.addShapelessRecipe(new ItemStack(Items.PRISMARINE_CRYSTALS, 9), ModBlocks.BLOCK_PRISMARINE_CRYSTAL);
-
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), "xx", "xx", 'x', ModItems.ITEM_WITHER_BONE);
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_WITHER_BONE, 4), ModBlocks.BLOCK_CHARRED_BONE);
+        
         // Polished Blocks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.DARK.getMetadata()));
@@ -163,6 +165,8 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " x ", " x ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
        
         GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.BONE_BLOCK), "xx", "xx", 'x', Items.BONE);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.BONE, 4), Blocks.BONE_BLOCK);
     }
     
     private static void initFurnaceRecipes()

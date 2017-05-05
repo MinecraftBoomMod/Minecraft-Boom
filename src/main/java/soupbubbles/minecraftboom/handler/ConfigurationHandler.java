@@ -25,9 +25,9 @@ public class ConfigurationHandler
     {
         Settings.replaceVanillaStairRecipe = configuration.getBoolean(Settings.REPLACE_VANILLA_STAIR_RECIPE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_VANILLA_STAIR_RECIPE_DEFAULT, Settings.REPLACE_VANILLA_STAIR_RECIPE_COMMENT, Settings.REPLACE_VANILLA_STAIR_RECIPES_LABEL);
         Settings.replacePurplePillarRecipe = configuration.getBoolean(Settings.REPLACE_PURPUR_PILLAR_RECIPE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
-        Settings.replacePumpkin = configuration.getBoolean(Settings.REPLACE_CRAFTING_TABLE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
+        Settings.replaceCraftingTable = configuration.getBoolean(Settings.REPLACE_CRAFTING_TABLE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
         Settings.replacePumpkin = configuration.getBoolean(Settings.REPLACE_PUMPKIN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PUMPKIN_DEFAULT, Settings.REPLACE_PUMPKIN_COMMENT, Settings.REPLACE_PUMPKIN_LABEL);
-
+        
         if (configuration.hasChanged())
         {
             configuration.save();

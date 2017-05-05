@@ -18,6 +18,7 @@ item.fermentedSpiderEye.name=Fermented Arthropod Eye
 # Items
 item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
 item.minecraftboom.pinecone.name=Pinecone
+item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 
 # Blocks
@@ -59,6 +60,7 @@ tile.minecraftboom.gunpowder_block.name=Gunpowder Block
 tile.minecraftboom.blaze_powder_block.name=Blaze Powder Block
 tile.minecraftboom.magma_cream_block.name=Magma Cream Block
 tile.minecraftboom.prismarine_crystal_block.name=Prismarine Crystal Block
+tile.minecraftboom.charred_bone_block.name=Charred Bone Block
 
 tile.minecraftboom.pillar_smooth_granite.name=Polished Granite Pillar
 tile.minecraftboom.pillar_smooth_diorite.name=Polished Diorite Pillar

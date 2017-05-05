@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "minecraftboom:charred_bone_block" },
+        "axis=z": { "model": "minecraftboom:charred_bone_block", "x": 90 },
+        "axis=x": { "model": "minecraftboom:charred_bone_block", "x": 90, "y": 90 }
+    }
+}

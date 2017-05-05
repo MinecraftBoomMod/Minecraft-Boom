@@ -24,6 +24,7 @@ public class ModItems
     public static final Item ITEM_ELDER_GUARDIAN_SPIKE;
     public static final Item ITEM_PINECONE;
     public static final Item ITEM_PUMPKIN_SLICE;
+    public static final Item ITEM_WITHER_BONE;
 
     //An example of an item with potion effects
     //public static final Item POTION_FOOD_EXAMPLE;
@@ -41,6 +42,7 @@ public class ModItems
         
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
+        ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {

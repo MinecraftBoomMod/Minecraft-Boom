@@ -9,10 +9,12 @@ import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPrismarine;
+import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.BlockWorkbench;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -62,6 +64,7 @@ public class ModBlocks
     public static final BlockBase BLOCK_BLAZE_POWDER;
     public static final BlockMagmaCream BLOCK_MAGMA_CREAM;
     public static final BlockBase BLOCK_PRISMARINE_CRYSTAL;
+    public static final BlockPillarBase BLOCK_CHARRED_BONE;
 
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
@@ -100,8 +103,8 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
-    public static final BlockCraftingTable BLOCK_CRAFTING_TABLE;
-    public static final BlockNewPumpkin BLOCK_PUMPKIN;
+    public static final BlockWorkbench BLOCK_CRAFTING_TABLE;
+    public static final BlockPumpkin BLOCK_PUMPKIN;
 
     static
     {
@@ -124,6 +127,7 @@ public class ModBlocks
         BLOCK_BLAZE_POWDER = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
         BLOCK_MAGMA_CREAM = (BlockMagmaCream) registerBlock(new BlockMagmaCream().setHardness(0.1F));
         BLOCK_PRISMARINE_CRYSTAL = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
+        BLOCK_CHARRED_BONE = (BlockPillarBase) registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
@@ -174,7 +178,7 @@ public class ModBlocks
         }
         else 
         {
-            BLOCK_CRAFTING_TABLE = null;
+            BLOCK_CRAFTING_TABLE = (BlockWorkbench) Blocks.CRAFTING_TABLE;
         }
         
         if (ConfigurationHandler.Settings.replacePumpkin)
@@ -184,7 +188,7 @@ public class ModBlocks
         }
         else 
         {
-            BLOCK_PUMPKIN = null;
+            BLOCK_PUMPKIN = (BlockPumpkin) Blocks.PUMPKIN;
         }
     }
 

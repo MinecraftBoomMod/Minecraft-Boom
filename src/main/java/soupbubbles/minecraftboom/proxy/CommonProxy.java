@@ -16,14 +16,13 @@ public abstract class CommonProxy implements IProxy
     public void preInit(FMLPreInitializationEvent event)
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        
+
         ModBlocks.registerBlocks();
         ModBlocks.registerTileEntities();
         
         /* This calls registerItems in the ModItems which you might see doesn't contain anything
         All this does is it makes sure that the static initializer runs in the ModItems class */             
         ModItems.registerItems();
-       
         ModRecipes.init();
     }
 

@@ -24,6 +24,7 @@ public class BlockCraftingTable extends BlockWorkbench
         setHardness(2.5F);
         setSoundType(SoundType.WOOD);
         setUnlocalizedName(Names.BLOCK_CRAFTING_TABLE_UNLOCALIZED);
+        setCreativeTab(null);
     }
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)

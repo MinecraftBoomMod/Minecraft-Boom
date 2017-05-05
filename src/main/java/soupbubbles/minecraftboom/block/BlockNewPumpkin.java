@@ -47,6 +47,7 @@ public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
         setUnlocalizedName(BASE_NAME);
         setHardness(1.0F);
         setSoundType(SoundType.WOOD);
+        setCreativeTab(null);
     }
 
     @Override

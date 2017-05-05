@@ -65,6 +65,7 @@ public class Names
     public static final String BLOCK_BLAZE_POWDER = "blaze_powder_block";
     public static final String BLOCK_MAGMA_CREAM = "magma_cream_block";
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
+    public static final String BLOCK_CHARRED_BONE = "charred_bone_block";
 
     public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
     public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
@@ -82,7 +83,7 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
     
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
-    public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
     public static final String ITEM_PINECONE = "pinecone";
-
+    public static final String ITEM_WITHER_BONE = "wither_bone";
+    public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
 }
