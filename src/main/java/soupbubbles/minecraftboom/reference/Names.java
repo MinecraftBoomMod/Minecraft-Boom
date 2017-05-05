@@ -44,6 +44,7 @@ public class Names
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
     public static final String BLOCK_PUMPKIN = "mod_pumpkin";
+    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
 
     public static final String BLOCK_BOOKSHELF = "bookshelf";
 

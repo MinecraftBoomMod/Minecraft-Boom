@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockCraftingTable;
+import soupbubbles.minecraftboom.block.BlockGoldenBars;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
@@ -105,6 +106,7 @@ public class ModBlocks
 
     public static final BlockWorkbench BLOCK_CRAFTING_TABLE;
     public static final BlockPumpkin BLOCK_PUMPKIN;
+    public static final BlockGoldenBars BLOCK_GOLDEN_BARS;
 
     static
     {
@@ -158,6 +160,8 @@ public class ModBlocks
         BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
         BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
+        BLOCK_GOLDEN_BARS = registerBlock(new BlockGoldenBars());
+        
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabHalf();
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabDouble();
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabHalf2();
