@@ -41,11 +41,9 @@ public class Names
     public static final String RED_NETHER_BRICK = "red_nether_brick";
     public static final String PUMPKIN = "pumpkin";
     
-    public static final String BLOCK_SUGAR_CANE = "sugar_cane_block";
-    public static final String BLOCK_PUMPKIN = "mod_" + PUMPKIN;
- 
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
+    public static final String BLOCK_PUMPKIN = "mod_" + PUMPKIN;
 
     public static final String BLOCK_BOOKSHELF = "bookshelf";
 
@@ -57,7 +55,11 @@ public class Names
     public static final String BLOCK_SMOOTH_DARK_PRISMARINE = "smooth_dark_prismarine";
     public static final String BLOCK_SMOOTH_END_STONE = "smooth_end_stone";
     public static final String BLOCK_SMOOTH_NETHERRACK = "smooth_netherrack";
-    
+   
+    public static final String BLOCK_SUGAR = "sugar_block";
+    public static final String BLOCK_SUGAR_CANE = "sugar_cane_block";
+    public static final String BLOCK_GUNPOWDER = "gunpowder_block";
+
     public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
     public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
     public static final String BLOCK_PILLAR_SMOOTH_ANDESITE = "pillar_smooth_andesite";

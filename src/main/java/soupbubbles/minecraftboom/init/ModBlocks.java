@@ -46,13 +46,15 @@ public class ModBlocks
 
     public static final BlockBookShelf BLOCK_BOOKSHELF;
 
-    public static final BlockBase BLOCK_SUGAR_CANE_BLOCK;
-
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
 
     public static final BlockPolished BLOCK_POLISHED;
 
+    public static final BlockBase BLOCK_SUGAR;
+    public static final BlockBase BLOCK_SUGAR_CANE;
+    public static final BlockBase BLOCK_GUNPOWDER;
+    
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_ANDESITE;
@@ -105,7 +107,9 @@ public class ModBlocks
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
 
-        BLOCK_SUGAR_CANE_BLOCK = (BlockBase) registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
+        BLOCK_SUGAR = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_SUGAR, SoundType.SAND).setHardness(0.1F));
+        BLOCK_SUGAR_CANE = (BlockBase) registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
+        BLOCK_GUNPOWDER = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_GUNPOWDER, SoundType.SAND).setHardness(0.1F));
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
