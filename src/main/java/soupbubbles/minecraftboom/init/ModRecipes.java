@@ -58,7 +58,9 @@ public class ModRecipes
     private static void initRecipes()
     {
         //Bricks
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 4), "xx", "xx", 'x', new ItemStack(Blocks.HARDENED_CLAY, 1));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.COBBLESTONE);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.MOSSY_COBBLESTONE);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 4), "xx", "xx", 'x', Blocks.HARDENED_CLAY);
         
         for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
         {
@@ -74,8 +76,20 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.DARK_OAK.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()), 'y', Items.BOOK);
         
         //Storage Blocks
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_CHARCOAL), "xxx", "xxx", "xxx", 'x', new ItemStack(Items.COAL, 1, 1));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.COAL, 9, 1), ModBlocks.BLOCK_CHARCOAL);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SUGAR), "xxx", "xxx", "xxx", 'x', Items.SUGAR);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR, 9), ModBlocks.BLOCK_SUGAR);
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SUGAR_CANE), "xxx", "xxx", "xxx", 'x', Items.REEDS);
         GameRegistry.addShapelessRecipe(new ItemStack(Items.REEDS, 9), ModBlocks.BLOCK_SUGAR_CANE);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GUNPOWDER), "xxx", "xxx", "xxx", 'x', Items.GUNPOWDER);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.GUNPOWDER, 9), ModBlocks.BLOCK_GUNPOWDER);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), "xxx", "xxx", "xxx", 'x', Items.BLAZE_POWDER);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.BLAZE_POWDER, 9), ModBlocks.BLOCK_BLAZE_POWDER);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MAGMA_CREAM), "xxx", "xxx", "xxx", 'x', Items.MAGMA_CREAM);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.MAGMA_CREAM, 9), ModBlocks.BLOCK_MAGMA_CREAM);
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PRISMARINE_CRYSTAL), "xxx", "xxx", "xxx", 'x', Items.PRISMARINE_CRYSTALS);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.PRISMARINE_CRYSTALS, 9), ModBlocks.BLOCK_PRISMARINE_CRYSTAL);
 
         // Polished Blocks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));

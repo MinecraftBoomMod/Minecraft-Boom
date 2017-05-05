@@ -27,6 +27,8 @@ tile.minecraftboom.jungle_bookshelf.name=Jungle Bookshelf
 tile.minecraftboom.dark_oak_bookshelf.name=Dark Oak Bookshelf
 tile.minecraftboom.acacia_bookshelf.name=Acacia Bookshelf
 
+tile.minecraftboom.cobblestone_bricks.name=Cobblestone Bricks
+tile.minecraftboom.mossy_cobblestone_bricks.name=Mossy Cobbblestone Bricks
 tile.minecraftboom.hardened_clay_bricks.name=Hardened Clay Bricks
 tile.minecraftboom.white_stained_hardened_clay_bricks.name=White Hardened Clay Bricks
 tile.minecraftboom.orange_stained_hardened_clay_bricks.name=Orange Hardened Clay Bricks
@@ -50,9 +52,13 @@ tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
 tile.minecraftboom.smooth_end_stone.name=Polished End Stone
 tile.minecraftboom.smooth_netherrack.name=Polished Netherrack
 
+tile.minecraftboom.charcoal_block.name=Charcoal Block
 tile.minecraftboom.sugar_block.name=Sugar Block
 tile.minecraftboom.sugar_cane_block.name=Sugar Cane Block
 tile.minecraftboom.gunpowder_block.name=Gunpowder Block
+tile.minecraftboom.blaze_powder_block.name=Blaze Powder Block
+tile.minecraftboom.magma_cream_block.name=Magma Cream Block
+tile.minecraftboom.prismarine_crystal_block.name=Prismarine Crystal Block
 
 tile.minecraftboom.pillar_smooth_granite.name=Polished Granite Pillar
 tile.minecraftboom.pillar_smooth_diorite.name=Polished Diorite Pillar

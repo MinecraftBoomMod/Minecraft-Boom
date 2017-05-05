@@ -86,10 +86,12 @@ public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
                 
                 world.setBlockState(pos, state.withProperty(VARIANT, BlockNewPumpkin.EnumType.CARVED).withProperty(FACING, facing));
                 stack.damageItem(1, player);
+                
+                return true;
             }
         }
         
-        return true;
+        return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
     }
     
     @Override

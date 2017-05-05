@@ -21,10 +21,12 @@ import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockCraftingTable;
+import soupbubbles.minecraftboom.block.BlockGunpowder;
+import soupbubbles.minecraftboom.block.BlockMagmaCream;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
-import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
+import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
@@ -46,15 +48,21 @@ public class ModBlocks
 
     public static final BlockBookShelf BLOCK_BOOKSHELF;
 
+    public static final BlockBase BLOCK_COBBLESTONE_BRICKS;
+    public static final BlockBase BLOCK_MOSSY_COBBLESTONE_BRICKS;
     public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
     public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
 
     public static final BlockPolished BLOCK_POLISHED;
 
+    public static final BlockBase BLOCK_CHARCOAL;
     public static final BlockBase BLOCK_SUGAR;
     public static final BlockBase BLOCK_SUGAR_CANE;
-    public static final BlockBase BLOCK_GUNPOWDER;
-    
+    public static final BlockGunpowder BLOCK_GUNPOWDER;
+    public static final BlockBase BLOCK_BLAZE_POWDER;
+    public static final BlockMagmaCream BLOCK_MAGMA_CREAM;
+    public static final BlockBase BLOCK_PRISMARINE_CRYSTAL;
+
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
     public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_ANDESITE;
@@ -100,6 +108,8 @@ public class ModBlocks
         BLOCK_BOOKSHELF = new BlockBookShelf();
         registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
 
+        BLOCK_COBBLESTONE_BRICKS = registerBlock(new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS));
+        BLOCK_MOSSY_COBBLESTONE_BRICKS = registerBlock(new BlockBase(Names.BLOCK_MOSSY_COBBELSTONE_BRICKS));
         BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
         registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS, new ItemBlockMeta(BLOCK_STAINED_CLAY_BRICKS, Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS));
@@ -107,9 +117,13 @@ public class ModBlocks
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
 
+        BLOCK_CHARCOAL = (BlockBase) registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(0.1F));
         BLOCK_SUGAR = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_SUGAR, SoundType.SAND).setHardness(0.1F));
         BLOCK_SUGAR_CANE = (BlockBase) registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
-        BLOCK_GUNPOWDER = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_GUNPOWDER, SoundType.SAND).setHardness(0.1F));
+        BLOCK_GUNPOWDER = (BlockGunpowder) registerBlock(new BlockGunpowder().setHardness(0.1F));
+        BLOCK_BLAZE_POWDER = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
+        BLOCK_MAGMA_CREAM = (BlockMagmaCream) registerBlock(new BlockMagmaCream().setHardness(0.1F));
+        BLOCK_PRISMARINE_CRYSTAL = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));

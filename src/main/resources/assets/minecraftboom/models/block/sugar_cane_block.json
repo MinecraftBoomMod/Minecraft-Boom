@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "minecraftboom:blocks/sugar_cane_top",
-        "side": "minecraftboom:blocks/sugar_cane"
+        "end": "minecraftboom:blocks/sugar_cane_block_top",
+        "side": "minecraftboom:blocks/sugar_cane_block"
     }
 }
