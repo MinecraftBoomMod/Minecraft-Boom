@@ -89,6 +89,8 @@ public class Names
     public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
     public static final String ITEM_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
     public static final String ITEM_TELESCOPE = "telescope";
+    public static final String ITEM_LEVITATION_DUST = "levitation_dust";
+    public static final String ITEM_LEVITATION_POTION = "levitation_potion";
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
 }

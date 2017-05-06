@@ -21,6 +21,7 @@ item.minecraftboom.pinecone.name=Pinecone
 item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
+item.minecraftboom.levitation_dust.name=Levitation Dust
 
 # Blocks
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
