@@ -9,21 +9,22 @@ import net.minecraft.world.World;
 public class EntityGrenade extends EntityThrowable
 {
 
-    public EntityGrenade(World worldIn)
+    public EntityGrenade(World world)
     {
-        super(worldIn);
+        super(world);
     }
 
-    public EntityGrenade(World worldIn, EntityLivingBase throwerIn)
+    public EntityGrenade(World world, EntityLivingBase thrower)
     {
-        super(worldIn, throwerIn);
+        super(world, thrower);
     }
 
-    public EntityGrenade(World worldIn, double x, double y, double z)
+    public EntityGrenade(World world, double x, double y, double z)
     {
-        super(worldIn, x, y, z);
+        super(world, x, y, z);
     }
 
+    @Override
     protected void onImpact(RayTraceResult result)
     {
         if (!world.isRemote)

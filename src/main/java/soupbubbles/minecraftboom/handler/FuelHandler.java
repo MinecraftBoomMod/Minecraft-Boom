@@ -30,6 +30,7 @@ public class FuelHandler implements IFuelHandler
     
     static
     {
+        fuelBurnTime.add(new FuelStack(new ItemStack(Items.BLAZE_POWDER), 1200));
         fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_PINECONE), 300));
         fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARCOAL), TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK))));
         fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), 12000));

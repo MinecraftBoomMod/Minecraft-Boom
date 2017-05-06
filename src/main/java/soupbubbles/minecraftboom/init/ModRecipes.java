@@ -13,6 +13,7 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
+import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
@@ -22,8 +23,11 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
+import soupbubbles.minecraftboom.block.BlockModSlab;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlab;
+import soupbubbles.minecraftboom.block.BlockVanillaStoneSlab2;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
@@ -34,6 +38,8 @@ public class ModRecipes
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
 
     public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK};
+
+    public static final ItemStack[] REMOVE_ITEMSTACK_RECIPE_LIST = {new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SAND.getMetadata()), new ItemStack(Blocks.STONE_SLAB2, 1, BlockStoneSlabNew.EnumType.RED_SANDSTONE.getMetadata())};
 
     private static int stairOutputAmount = 4;
 
@@ -121,7 +127,32 @@ public class ModRecipes
             GameRegistry.addShapelessRecipe(new ItemStack(Items.PUMPKIN_PIE), Items.SUGAR, Items.EGG, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE);
             //GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.CARVED.getMetadata()), new ItemStack(Items.SHEARS.setContainerItem(Items.SHEARS), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ModBlocks.BLOCK_PUMPKIN, 1, BlockNewPumpkin.EnumType.DEFAULT.getMetadata()));
         }
-
+        
+        //Slabs
+        addSlabRecipe(Blocks.STONEBRICK, BlockStoneBrick.DEFAULT_META, Blocks.STONE_SLAB, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata());
+        addSlabRecipe(Blocks.STONEBRICK, BlockStoneBrick.CHISELED_META, Blocks.STONE_SLAB, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata());
+        addSlabRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.DEFAULT.getMetadata(), Blocks.STONE_SLAB, BlockStoneSlab.EnumType.SAND.getMetadata());
+        addSlabRecipe(Blocks.RED_SANDSTONE, BlockRedSandstone.EnumType.DEFAULT.getMetadata(), Blocks.STONE_SLAB2, BlockStoneSlabNew.EnumType.RED_SANDSTONE.getMetadata());
+        addSlabRecipe(Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.SMOOTH_GRANITE.getMetadata());
+        addSlabRecipe(Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.SMOOTH_DIORITE.getMetadata());
+        addSlabRecipe(Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.SMOOTH_ANDESITE.getMetadata());
+        addSlabRecipe(Blocks.MOSSY_COBBLESTONE, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.MOSSY_COBBLESTONE.getMetadata());
+        addSlabRecipe(Blocks.STONEBRICK, BlockStoneBrick.MOSSY_META, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.MOSSY_STONEBRICK.getMetadata());
+        addSlabRecipe(Blocks.STONEBRICK, BlockStoneBrick.CRACKED_META, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.CRACKED_STONEBRICK.getMetadata());
+        addSlabRecipe(Blocks.HARDENED_CLAY, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, BlockVanillaStoneSlab.EnumType.HARDENED_CLAY.getMetadata());
+        addSlabRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.CHISELED.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.CHISLED_SANDSTONE.getMetadata());
+        addSlabRecipe(Blocks.SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.SMOOTH_SANDSTONE.getMetadata());
+        addSlabRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.CHISELED.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.CHISLED_RED_SANDSTONE.getMetadata());
+        addSlabRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.SMOOTH_RED_SANDSTONE.getMetadata());  
+        addSlabRecipe(Blocks.PRISMARINE, BlockPrismarine.BRICKS_META, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.PRISMARINE_BRICKS.getMetadata());
+        addSlabRecipe(Blocks.PRISMARINE, BlockPrismarine.DARK_META, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.DARK_PRISMARINE.getMetadata());
+        addSlabRecipe(Blocks.END_BRICKS, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.END_STONE_BRICKS.getMetadata());
+        addSlabRecipe(Blocks.RED_NETHER_BRICK, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.RED_NETHER_BRICKS.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_PRISMARINE.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_END_STONE.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_NETHERRACK.getMetadata());  
+        
         // Stairs
         addStairRecipe(BlockStone.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
         addStairRecipe(BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_GRANITE);
@@ -199,6 +230,17 @@ public class ModRecipes
                 if (outputStack != null)
                 {
                     if (outputStack.getItem() == Item.getItemFromBlock(block))
+                    {
+                        ir.remove();
+                    }
+                }
+            }
+            
+            for (ItemStack stack : REMOVE_ITEMSTACK_RECIPE_LIST)
+            {
+                if (outputStack != null)
+                {
+                    if (outputStack.getItem() == stack.getItem() && outputStack.getItemDamage() == stack.getItemDamage())
                     {
                         ir.remove();
                     }
@@ -287,6 +329,21 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(output, "  x", " xx", "xxx", 'x', input);
     }
 
+    private static void addSlabRecipe(Block input, BlockSlab output, int outputMeta)
+    {
+        addSlabRecipe(input, 0, output, outputMeta);
+    }
+    
+    private static void addSlabRecipe(Block input, int inputMeta, BlockSlab output, int outputMeta)
+    {
+        addSlabRecipe(new ItemStack(input, 1, inputMeta), output, outputMeta);
+    }
+    
+    private static void addSlabRecipe(ItemStack input, BlockSlab output, int outputMeta)
+    {
+        addSlabRecipe(input, new ItemStack(output, 6, outputMeta));
+    }
+    
     private static void addSlabRecipe(ItemStack input, ItemStack output)
     {
         GameRegistry.addShapedRecipe(output, "xxx", 'x', input);

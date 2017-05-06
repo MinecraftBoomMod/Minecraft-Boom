@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.block;
 
+import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -16,21 +17,34 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.IBlockMeta;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockBookShelf extends BlockBase implements IBlockMeta
+public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
 {
     public static final PropertyEnum<BlockBookShelf.EnumType> VARIANT = PropertyEnum.<BlockBookShelf.EnumType>create("variant", BlockBookShelf.EnumType.class);
+    
+    protected final String BASE_NAME = Names.BLOCK_BOOKSHELF;
 
     public BlockBookShelf()
     {
-        super(Material.WOOD, Names.BLOCK_BOOKSHELF, SoundType.WOOD);
+        super();
         setDefaultState(blockState.getBaseState().withProperty(VARIANT, BlockBookShelf.EnumType.SPRUCE));
+        setRegistryName(BASE_NAME);
+        setUnlocalizedName(BASE_NAME);
         setHardness(2.0F);
         setResistance(5.0F);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setSoundType(SoundType.WOOD);
     }
 
+    @Override
+    public String getUnlocalizedName()
+    {
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
+    }
+    
     @Override
     public String getSpecialName(int meta)
     {
