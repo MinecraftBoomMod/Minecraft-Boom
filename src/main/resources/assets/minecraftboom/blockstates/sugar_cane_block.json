@@ -1,5 +1,7 @@
 {
     "variants": {
-        "normal": { "model": "minecraftboom:sugar_cane_block" }
+        "axis=y": { "model": "minecraftboom:sugar_cane_block" },
+        "axis=z": { "model": "minecraftboom:sugar_cane_block", "x": 90 },
+        "axis=x": { "model": "minecraftboom:sugar_cane_block", "x": 90, "y": 90 }
     }
 }

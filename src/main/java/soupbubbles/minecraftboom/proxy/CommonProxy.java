@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.init.ModRecipes;
 
@@ -20,9 +21,9 @@ public abstract class CommonProxy implements IProxy
         ModBlocks.registerBlocks();
         ModBlocks.registerTileEntities();
         
-        /* This calls registerItems in the ModItems which you might see doesn't contain anything
-        All this does is it makes sure that the static initializer runs in the ModItems class */             
         ModItems.registerItems();
+        ModEntities.initEntities();
+        
         ModRecipes.init();
     }
 

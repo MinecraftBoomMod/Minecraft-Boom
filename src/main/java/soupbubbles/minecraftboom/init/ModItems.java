@@ -3,49 +3,30 @@ package soupbubbles.minecraftboom.init;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.item.ItemGrenade;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
-import soupbubbles.minecraftboom.item.base.ItemGrenadeBase;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class ModItems
 {
-	//The list of all items in our mod
     public static final Set<Item> ITEMS = new HashSet<>();
 
-    //Our item object, notice that it is final so you can't change the item
-    //The name of the object should be in ALL CAPS since it is final
-    //This is pretty much how vanilla does it too
     public static final Item ITEM_ELDER_GUARDIAN_SPIKE;
     public static final Item ITEM_PINECONE;
     public static final Item ITEM_PUMPKIN_SLICE;
     public static final Item ITEM_WITHER_BONE;
     public static final Item ITEM_POPPED_CHORUS_GRENADE;
 
-    //An example of an item with potion effects
-    //public static final Item POTION_FOOD_EXAMPLE;
-    
-    //public static final Item ITEM_WITH_SUBITEMS; 
-
-    //The static initializer
-    //Here is where we create the objects for out mod items
     static
     {
-        //We set the item to the return of the registerItem method
-        //This will be the item we give as a parameter to the registerItem method
-        //The ItemBase class was previously abstract, I've changed that
-        //All ItemBase takes is the unlocalized item name which we set in the Names class
-        
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
         ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
-        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenadeBase(Names.ITEM_POPPED_CHORUS_GRENADE));
+        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
         
 
         if (ConfigurationHandler.Settings.replacePumpkin)
@@ -56,22 +37,12 @@ public class ModItems
         {
             ITEM_PUMPKIN_SLICE = null;
         }
-        
-        //POTION_FOOD_EXAMPLE = registerItem(new ItemFoodBase(Names.ITEM_POTION_FOOD_EXAMPLE, 0, false, new PotionEffect(MobEffects.HASTE, 60/*2 secs*/, 2)/*You can add more by doing , new Potio....*/));
-        
-        //A item with subitems (just for demonstration)
-        //This will add 4 new items to the game
-        //ITEM_WITH_SUBITEMS = registerItem(new ItemBase("red", "yellow", "green", "blue"));
     }
 
-    //Method to make sure that the static initializer runs
     public static void registerItems()
     {
     }
 
-    //A method for registering our items
-    //It registers them with GameRegistry and then adds the item to the list of all our mod items
-    //Finally it returns our item
     private static <T extends Item> T registerItem(T item)
     {
         GameRegistry.register(item);
@@ -79,40 +50,4 @@ public class ModItems
 
         return item;
     }
-    
-    private static <T extends ItemGrenadeBase> T registerItem(T item)
-    {
-        GameRegistry.register(item);
-        ITEMS.add(item);
-
-        return item;
-    }
-    
-    /**
-     * Old Methods
-     * There if we want to keep them
-     */
-    
-    /*
-	public static void init() {
-		elderGuardianSpike = new ItemBasic();
-	}
-	
-	public static void register() {
-		registerItem(elderGuardianSpike);
-	}
-	
-	public static void registerRenders() {
-		registerRender(elderGuardianSpike);
-	}
-	
-	public static void registerItem(Item item) {
-		item.setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-		GameRegistry.register(item);
-	}
-	
-	public static void registerRender(Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, item.getUnlocalizedName().substring(5)), "inventory"));
-	}
-	*/
 }

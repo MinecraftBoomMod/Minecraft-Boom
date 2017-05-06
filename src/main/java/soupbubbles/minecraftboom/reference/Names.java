@@ -88,4 +88,6 @@ public class Names
     public static final String ITEM_WITHER_BONE = "wither_bone";
     public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
     public static final String ITEM_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
+    
+    public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
 }

@@ -36,6 +36,7 @@ import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
+import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
@@ -59,10 +60,10 @@ public class ModBlocks
     public static final BlockPolished BLOCK_POLISHED;
 
     public static final BlockBase BLOCK_CHARCOAL;
-    public static final BlockBase BLOCK_SUGAR;
-    public static final BlockBase BLOCK_SUGAR_CANE;
+    public static final BlockFallingBase BLOCK_SUGAR;
+    public static final BlockPillarBase BLOCK_SUGAR_CANE;
     public static final BlockGunpowder BLOCK_GUNPOWDER;
-    public static final BlockBase BLOCK_BLAZE_POWDER;
+    public static final BlockFallingBase BLOCK_BLAZE_POWDER;
     public static final BlockMagmaCream BLOCK_MAGMA_CREAM;
     public static final BlockBase BLOCK_PRISMARINE_CRYSTAL;
     public static final BlockPillarBase BLOCK_CHARRED_BONE;
@@ -123,10 +124,10 @@ public class ModBlocks
         registerBlockMeta(BLOCK_POLISHED);
 
         BLOCK_CHARCOAL = (BlockBase) registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(0.1F));
-        BLOCK_SUGAR = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_SUGAR, SoundType.SAND).setHardness(0.1F));
-        BLOCK_SUGAR_CANE = (BlockBase) registerBlock(new BlockBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
+        BLOCK_SUGAR = (BlockFallingBase) registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(0.1F));
+        BLOCK_SUGAR_CANE = (BlockPillarBase) registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
         BLOCK_GUNPOWDER = (BlockGunpowder) registerBlock(new BlockGunpowder().setHardness(0.1F));
-        BLOCK_BLAZE_POWDER = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
+        BLOCK_BLAZE_POWDER = (BlockFallingBase) registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
         BLOCK_MAGMA_CREAM = (BlockMagmaCream) registerBlock(new BlockMagmaCream().setHardness(0.1F));
         BLOCK_PRISMARINE_CRYSTAL = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
         BLOCK_CHARRED_BONE = (BlockPillarBase) registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
@@ -254,10 +255,10 @@ public class ModBlocks
                 GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlockMeta(block, Names.BLOCK_PUMPKIN));
                 BLOCKS.add(block);
             }
-//            else
-//            {
-//                GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
-//            }
+//          else
+//          {
+//              GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+//          }
         }
         catch (ExistingSubstitutionException e)
         {

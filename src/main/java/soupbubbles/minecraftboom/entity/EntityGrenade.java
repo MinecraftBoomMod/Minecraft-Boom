@@ -2,16 +2,16 @@ package soupbubbles.minecraftboom.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntitySnowball;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityGrenade extends EntitySnowball {
+public class EntityGrenade extends EntityThrowable
+{
 
     public EntityGrenade(World worldIn)
     {
         super(worldIn);
-        
     }
 
     public EntityGrenade(World worldIn, EntityLivingBase throwerIn)
@@ -23,19 +23,14 @@ public class EntityGrenade extends EntitySnowball {
     {
         super(worldIn, x, y, z);
     }
-    
-    
+
     protected void onImpact(RayTraceResult result)
     {
-        
-        this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, 2.0F, false, false);
-
-        if (!this.world.isRemote)
+        if (!world.isRemote)
         {
-            this.world.setEntityState(this, (byte)3);
-            this.setDead();
+            world.createExplosion(getThrower(), posX, posY, posZ, 0.2F, true);
+            world.setEntityState(this, (byte) 3);
+            setDead();
         }
     }
-
-
 }

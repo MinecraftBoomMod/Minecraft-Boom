@@ -20,6 +20,7 @@ item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
 item.minecraftboom.pinecone.name=Pinecone
 item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
+item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
 
 # Blocks
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
@@ -62,13 +63,13 @@ tile.minecraftboom.magma_cream_block.name=Magma Cream Block
 tile.minecraftboom.prismarine_crystal_block.name=Prismarine Crystal Block
 tile.minecraftboom.charred_bone_block.name=Charred Bone Block
 
-tile.minecraftboom.pillar_smooth_granite.name=Polished Granite Pillar
-tile.minecraftboom.pillar_smooth_diorite.name=Polished Diorite Pillar
-tile.minecraftboom.pillar_smooth_andesite.name=Polished Andesite Pillar
-tile.minecraftboom.pillar_smooth_prismarine.name=Polished Prismarine Pillar
-tile.minecraftboom.pillar_smooth_dark_prismarine.name=Polished Dark Prismarine Pillar
-tile.minecraftboom.pillar_smooth_end_stone.name=Polished End Stone Pillar
-tile.minecraftboom.pillar_smooth_netherrack.name=Polished Netherrack Pillar
+tile.minecraftboom.pillar_smooth_granite.name=Granite Pillar
+tile.minecraftboom.pillar_smooth_diorite.name=Diorite Pillar
+tile.minecraftboom.pillar_smooth_andesite.name=Andesite Pillar
+tile.minecraftboom.pillar_smooth_prismarine.name=Prismarine Pillar
+tile.minecraftboom.pillar_smooth_dark_prismarine.name=Dark Prismarine Pillar
+tile.minecraftboom.pillar_smooth_end_stone.name=End Stone Pillar
+tile.minecraftboom.pillar_smooth_netherrack.name=Netherrack Pillar
 
 
 # Stairs

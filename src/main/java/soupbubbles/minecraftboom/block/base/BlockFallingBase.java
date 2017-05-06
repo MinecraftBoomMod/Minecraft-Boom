@@ -1,40 +1,34 @@
 package soupbubbles.minecraftboom.block.base;
 
-import net.minecraft.block.BlockRotatedPillar;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockPillarBase extends BlockRotatedPillar
+public class BlockFallingBase extends BlockFalling
 {
-    private final String BASE_NAME;
+    protected final String BASE_NAME;
 
-    public BlockPillarBase(String name)
+    public BlockFallingBase(String name)
     {
-        this(Material.ROCK, name, SoundType.STONE);
+        this(name, SoundType.SAND);
     }
-
-    public BlockPillarBase(Material material, String name, SoundType sound)
+    
+    public BlockFallingBase(String name, SoundType sound)
     {
-        super(material);
+        super();
         setRegistryName(name);
         setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setSoundType(sound);
-
+        
         BASE_NAME = name;
     }
-
+    
     @Override
     public String getUnlocalizedName()
     {
         return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
-    }
-
-    public BlockPillarBase setSound(SoundType sound)
-    {
-        setSoundType(sound);
-        return this;
     }
 }

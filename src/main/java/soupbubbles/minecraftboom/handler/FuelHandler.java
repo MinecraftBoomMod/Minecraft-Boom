@@ -2,10 +2,12 @@ package soupbubbles.minecraftboom.handler;
 
 import java.util.ArrayList;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.common.IFuelHandler;
+import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
 
 public class FuelHandler implements IFuelHandler
@@ -29,6 +31,8 @@ public class FuelHandler implements IFuelHandler
     static
     {
         fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_PINECONE), 300));
+        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARCOAL), TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK))));
+        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), 12000));
     }
     
     private static class FuelStack

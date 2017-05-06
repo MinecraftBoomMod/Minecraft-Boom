@@ -11,15 +11,15 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import soupbubbles.minecraftboom.block.base.BlockBase;
+import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockGunpowder extends BlockBase
+public class BlockGunpowder extends BlockFallingBase
 {
 
     public BlockGunpowder()
     {
-        super(Material.GROUND, Names.BLOCK_GUNPOWDER, SoundType.SAND);
+        super(Names.BLOCK_GUNPOWDER);
     }
 
     @Override
