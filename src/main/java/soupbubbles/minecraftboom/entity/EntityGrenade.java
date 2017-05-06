@@ -1,6 +1,5 @@
 package soupbubbles.minecraftboom.entity;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.math.RayTraceResult;
@@ -29,7 +28,7 @@ public class EntityGrenade extends EntityThrowable
     {
         if (!world.isRemote)
         {
-            world.createExplosion(getThrower(), posX, posY, posZ, 0.2F, true);
+            world.newExplosion(getThrower(), posX, posY, posZ, 2F, false, false);
             world.setEntityState(this, (byte) 3);
             setDead();
         }
