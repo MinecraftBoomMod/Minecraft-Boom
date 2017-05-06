@@ -2,10 +2,8 @@ package soupbubbles.minecraftboom.init;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockRedSandstone;
@@ -15,7 +13,6 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
@@ -24,7 +21,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
@@ -154,6 +150,7 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', new ItemStack(Items.STICK), 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
 
         //Items
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_POPPED_CHORUS_GRENADE), " x ", "yxy", " y ", 'x', new ItemStack(Items.GUNPOWDER), 'y', new ItemStack(Items.CHORUS_FRUIT_POPPED));
         
         //Vanilla Recipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "xxx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
