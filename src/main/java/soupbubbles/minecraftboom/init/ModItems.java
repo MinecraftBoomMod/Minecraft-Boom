@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.ItemGrenade;
+import soupbubbles.minecraftboom.item.ItemTelescope;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
@@ -20,6 +21,7 @@ public class ModItems
     public static final Item ITEM_PUMPKIN_SLICE;
     public static final Item ITEM_WITHER_BONE;
     public static final Item ITEM_POPPED_CHORUS_GRENADE;
+    public static final Item ITEM_TELESCOPE;
 
     static
     {
@@ -27,7 +29,7 @@ public class ModItems
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
         ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
         ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
-        
+        ITEM_TELESCOPE = registerItem(new ItemTelescope());
 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {

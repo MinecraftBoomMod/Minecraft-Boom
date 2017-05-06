@@ -25,7 +25,6 @@ public class MinecraftBoom
     public void preInit(FMLPreInitializationEvent event)
     {
         proxy.preInit(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 
     @EventHandler
