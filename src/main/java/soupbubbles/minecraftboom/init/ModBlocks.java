@@ -254,10 +254,10 @@ public class ModBlocks
                 GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlockMeta(block, Names.BLOCK_PUMPKIN));
                 BLOCKS.add(block);
             }
-            else
-            {
-                GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
-            }
+//            else
+//            {
+//                GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
+//            }
         }
         catch (ExistingSubstitutionException e)
         {

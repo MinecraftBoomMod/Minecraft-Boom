@@ -4,7 +4,6 @@ import net.minecraft.block.BlockWorkbench;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -24,7 +23,7 @@ public class BlockCraftingTable extends BlockWorkbench
         setHardness(2.5F);
         setSoundType(SoundType.WOOD);
         setUnlocalizedName(Names.BLOCK_CRAFTING_TABLE_UNLOCALIZED);
-        setCreativeTab(null);
+//        setCreativeTab(null);
     }
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
