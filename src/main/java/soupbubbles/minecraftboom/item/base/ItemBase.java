@@ -15,7 +15,7 @@ import soupbubbles.minecraftboom.reference.Assets;
 
 public class ItemBase extends Item
 {
-    private final String BASE_NAME;
+    protected final String BASE_NAME;
     public final String[] VARIANTS;
     private boolean toolTip;
 

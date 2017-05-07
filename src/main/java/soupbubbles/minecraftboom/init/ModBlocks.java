@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockCraftingTable;
+import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockGoldenBars;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
@@ -67,6 +68,7 @@ public class ModBlocks
     public static final Block BLOCK_MAGMA_CREAM;
     public static final Block BLOCK_PRISMARINE_CRYSTAL;
     public static final Block BLOCK_CHARRED_BONE;
+    public static final Block BLOCK_DYE;
 
     public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
@@ -131,7 +133,9 @@ public class ModBlocks
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream().setHardness(0.1F));
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
         BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
-
+        BLOCK_DYE = new BlockDye().setHardness(0.1F);
+        registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
+        
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
         BLOCK_PILLAR_SMOOTH_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_ANDESITE));

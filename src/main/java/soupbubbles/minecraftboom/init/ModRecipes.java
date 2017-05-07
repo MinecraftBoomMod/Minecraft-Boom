@@ -70,6 +70,7 @@ public class ModRecipes
         for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
         {
             GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 4, meta), "xx", "xx", 'x', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, meta));
+            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 8, meta), "xxx", "xyx", "xxx", 'x', ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 'y', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
         }
         
         //Bookshelves
@@ -97,6 +98,14 @@ public class ModRecipes
         GameRegistry.addShapelessRecipe(new ItemStack(Items.PRISMARINE_CRYSTALS, 9), ModBlocks.BLOCK_PRISMARINE_CRYSTAL);
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), "xx", "xx", 'x', ModItems.ITEM_WITHER_BONE);
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_WITHER_BONE, 4), ModBlocks.BLOCK_CHARRED_BONE);
+        
+        for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
+        {
+            if(meta != EnumDyeColor.BLUE.getMetadata())
+            {
+                GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DYE, 1, meta), "xxx", "xxx", "xxx", 'x', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
+            }
+        }
         
         // Polished Blocks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
@@ -219,8 +228,6 @@ public class ModRecipes
     
     private static void initBrewingRecipes()
     {
-        BrewingRecipeRegistry.addRecipe(new ItemStack(Items.POTIONITEM, 1, 4), new ItemStack(ModItems.ITEM_LEVITATION_DUST), new ItemStack(ModItems.ITEM_LEVITATION_POTION));
-        BrewingRecipeRegistry.addRecipe(new ItemStack(ModItems.ITEM_LEVITATION_POTION), new ItemStack(Items.REDSTONE), new ItemStack(ModItems.ITEM_LEVITATION_POTION_LONG));
     }
     
     private static void removeVanillaRecipes()

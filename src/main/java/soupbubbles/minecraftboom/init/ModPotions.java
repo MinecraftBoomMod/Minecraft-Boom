@@ -2,10 +2,14 @@ package soupbubbles.minecraftboom.init;
 
 import java.awt.Color;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -16,11 +20,16 @@ import soupbubbles.minecraftboom.reference.Reference;
 
 public class ModPotions
 {
-    public static final Potion LEVITATION;
+    private static final int LEVITATION_DURATION_STANDARD = 20 * 8;
+    private static final int LEVITATION_DURATION_LONG = LEVITATION_DURATION_STANDARD * 2;
+
+    public static final PotionType LEVITATION;
+    public static final PotionType LEVITATION_LONG;
 
     static
     {
-        LEVITATION = registerPotion(new NewPotion(false, 0, Names.POTION_LEVITATION));
+        LEVITATION = createPotionType(new PotionEffect(MobEffects.LEVITATION, LEVITATION_DURATION_STANDARD));
+        LEVITATION_LONG = createPotionType(new PotionEffect(MobEffects.LEVITATION, LEVITATION_DURATION_LONG), Names.POTION_LONG_PREFIX);
     }
 
     public static void init()
@@ -30,6 +39,23 @@ public class ModPotions
     private static <POTION extends Potion> POTION registerPotion(POTION potion)
     {
         return GameRegistry.register(potion);
+    }
+    
+    private static PotionType createPotionType(PotionEffect potionEffect)
+    {
+        return createPotionType(potionEffect, null);
+    }
+
+    private static PotionType createPotionType(PotionEffect potionEffect, @Nullable String prefix)
+    {
+        ResourceLocation potionName = new ResourceLocation(Reference.MOD_ID, potionEffect.getEffectName().replaceAll("effect.", "") + prefix);
+
+        if (prefix == null)
+        {
+            prefix = "";
+        }
+        
+        return GameRegistry.register(new PotionType(potionEffect.getEffectName().replaceAll("effect.", ""), potionEffect).setRegistryName(potionName));
     }
 
     public static class NewPotion extends Potion

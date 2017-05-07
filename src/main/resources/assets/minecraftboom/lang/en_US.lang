@@ -22,11 +22,8 @@ item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
 item.minecraftboom.levitation_dust.name=Levitation Dust
-item.minecraftboom.levitation_potion.name=Levitation Potion
-item.minecraftboom.levitation_potion_long.name=Levitation Potion
 item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
-
 
 # Blocks
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
@@ -68,6 +65,22 @@ tile.minecraftboom.blaze_powder_block.name=Blaze Powder Block
 tile.minecraftboom.magma_cream_block.name=Magma Cream Block
 tile.minecraftboom.prismarine_crystal_block.name=Prismarine Crystal Block
 tile.minecraftboom.charred_bone_block.name=Charred Bone Block
+tile.minecraftboom.white_dye_block.name=White Dye Block
+tile.minecraftboom.orange_dye_block.name=Orange Dye Block
+tile.minecraftboom.magenta_dye_block.name=Magenta Dye Block
+tile.minecraftboom.light_blue_dye_block.name=Light Blue Dye Block
+tile.minecraftboom.yellow_dye_block.name=Yellow Dye Block
+tile.minecraftboom.lime_dye_block.name=Lime Dye Block
+tile.minecraftboom.pink_dye_block.name=Pink Dye Block
+tile.minecraftboom.gray_dye_block.name=Gray Dye Block
+tile.minecraftboom.silver_dye_block.name=Light Gray Dye Block
+tile.minecraftboom.cyan_dye_block.name=Cyan Dye Block
+tile.minecraftboom.purple_dye_block.name=Purple Dye Block
+tile.minecraftboom.blue_dye_block.name=Blue Dye Block
+tile.minecraftboom.brown_dye_block.name=Brown Dye Block
+tile.minecraftboom.green_dye_block.name=Green Dye Block
+tile.minecraftboom.red_dye_block.name=Red Dye Block
+tile.minecraftboom.black_dye_block.name=Black Dye Block
 
 tile.minecraftboom.pillar_smooth_granite.name=Granite Pillar
 tile.minecraftboom.pillar_smooth_diorite.name=Diorite Pillar

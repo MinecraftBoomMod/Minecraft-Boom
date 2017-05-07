@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "color=white": { "model": "minecraftboom:white_dye_block" },
+        "color=orange": { "model": "minecraftboom:orange_dye_block" },
+        "color=magenta": { "model": "minecraftboom:magenta_dye_block" },
+        "color=light_blue": { "model": "minecraftboom:light_blue_dye_block" },
+        "color=yellow": { "model": "minecraftboom:yellow_dye_block" },
+        "color=lime": { "model": "minecraftboom:lime_dye_block" },
+        "color=pink": { "model": "minecraftboom:pink_dye_block" },
+        "color=gray": { "model": "minecraftboom:gray_dye_block" },
+        "color=silver": { "model": "minecraftboom:silver_dye_block" },
+        "color=cyan": { "model": "minecraftboom:cyan_dye_block" },
+        "color=purple": { "model": "minecraftboom:purple_dye_block" },
+        "color=blue": { "model": "lapis_block" },
+        "color=brown": { "model": "minecraftboom:brown_dye_block" },
+        "color=green": { "model": "minecraftboom:green_dye_block" },
+        "color=red": { "model": "minecraftboom:red_dye_block" },
+        "color=black": { "model": "minecraftboom:black_dye_block" }       
+    }
+}

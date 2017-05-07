@@ -67,6 +67,7 @@ public class Names
     public static final String BLOCK_MAGMA_CREAM = "magma_cream_block";
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
     public static final String BLOCK_CHARRED_BONE = "charred_bone_block";
+    public static final String BLOCK_DYE = "dye_block";
 
     public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
     public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
@@ -91,10 +92,11 @@ public class Names
     public static final String ITEM_TELESCOPE = "telescope";
     public static final String ITEM_LEVITATION_DUST = "levitation_dust";
     public static final String ITEM_LEVITATION_POTION = "levitation_potion";
-    public static final String ITEM_LEVITATION_POTION_LONG = "levitation_potion_long";    
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
-    
+    public static final String ENTITY_THROWN_POTION = "thrown_potion";
+
     public static final String POTION_LEVITATION = "levitation";
+    public static final String POTION_LONG_PREFIX = "long_";
 }

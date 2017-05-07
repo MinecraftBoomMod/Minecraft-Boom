@@ -15,7 +15,7 @@ public class ModEntities
 {
     public static void initEntities()
     {
-        registerEntity(EntityGrenade.class, Names.ENTITY_POPPED_CHORUS_GRENADE, 3, 80, 3, true);
+        registerEntity(EntityGrenade.class, Names.ENTITY_POPPED_CHORUS_GRENADE, 0, 80, 3, true);
     }
 
     public static void registerEntityRenderers()

@@ -29,10 +29,10 @@ public abstract class CommonProxy implements IProxy
 
         ModBlocks.registerBlocks();
         ModBlocks.registerTileEntities();
+        ModPotions.init();
         ModItems.registerItems();
         ModEntities.initEntities();
-        ModRecipes.init();
-        
+
         NetworkRegistry.INSTANCE.registerGuiHandler(MinecraftBoom.instance, new GuiHandler());
 
     }
@@ -40,11 +40,10 @@ public abstract class CommonProxy implements IProxy
     @Override
     public void init(FMLInitializationEvent event)
     {
-        ModPotions.init();
-        
+        ModRecipes.init();
+
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
-        MinecraftForge.EVENT_BUS.register(new ClientHandler());
         MinecraftForge.EVENT_BUS.register(new LootHandler());
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
