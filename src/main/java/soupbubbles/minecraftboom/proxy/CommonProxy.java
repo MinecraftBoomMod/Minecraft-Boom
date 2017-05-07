@@ -13,6 +13,7 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
 import soupbubbles.minecraftboom.handler.GuiHandler;
 import soupbubbles.minecraftboom.handler.LivingEventHandler;
+import soupbubbles.minecraftboom.handler.LootHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
@@ -33,6 +34,7 @@ public abstract class CommonProxy implements IProxy
         ModRecipes.init();
         
         NetworkRegistry.INSTANCE.registerGuiHandler(MinecraftBoom.instance, new GuiHandler());
+
     }
 
     @Override
@@ -43,6 +45,7 @@ public abstract class CommonProxy implements IProxy
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
         MinecraftForge.EVENT_BUS.register(new ClientHandler());
+        MinecraftForge.EVENT_BUS.register(new LootHandler());
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
 

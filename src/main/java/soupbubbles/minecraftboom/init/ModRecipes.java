@@ -16,12 +16,12 @@ import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionHelper;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
@@ -220,6 +220,7 @@ public class ModRecipes
     private static void initBrewingRecipes()
     {
         BrewingRecipeRegistry.addRecipe(new ItemStack(Items.POTIONITEM, 1, 4), new ItemStack(ModItems.ITEM_LEVITATION_DUST), new ItemStack(ModItems.ITEM_LEVITATION_POTION));
+        BrewingRecipeRegistry.addRecipe(new ItemStack(ModItems.ITEM_LEVITATION_POTION), new ItemStack(Items.REDSTONE), new ItemStack(ModItems.ITEM_LEVITATION_POTION_LONG));
     }
     
     private static void removeVanillaRecipes()
