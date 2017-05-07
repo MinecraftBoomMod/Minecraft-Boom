@@ -91,6 +91,7 @@ public class Names
     public static final String ITEM_TELESCOPE = "telescope";
     public static final String ITEM_LEVITATION_DUST = "levitation_dust";
     public static final String ITEM_LEVITATION_POTION = "levitation_potion";
+    public static final String ITEM_LEVITATION_POTION_LONG = "levitation_potion_long";    
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
