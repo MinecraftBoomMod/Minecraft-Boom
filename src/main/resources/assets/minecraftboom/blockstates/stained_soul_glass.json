@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "color=white": { "model": "minecraftboom:white_stained_soul_glass" },
+        "color=orange": { "model": "minecraftboom:orange_stained_soul_glass" },
+        "color=magenta": { "model": "minecraftboom:magenta_stained_soul_glass" },
+        "color=light_blue": { "model": "minecraftboom:light_blue_stained_soul_glass" },
+        "color=yellow": { "model": "minecraftboom:yellow_stained_soul_glass" },
+        "color=lime": { "model": "minecraftboom:lime_stained_soul_glass" },
+        "color=pink": { "model": "minecraftboom:pink_stained_soul_glass" },
+        "color=gray": { "model": "minecraftboom:gray_stained_soul_glass" },
+        "color=silver": { "model": "minecraftboom:silver_stained_soul_glass" },
+        "color=cyan": { "model": "minecraftboom:cyan_stained_soul_glass" },
+        "color=purple": { "model": "minecraftboom:purple_stained_soul_glass" },
+        "color=blue": { "model": "minecraftboom:blue_stained_soul_glass" },
+        "color=brown": { "model": "minecraftboom:brown_stained_soul_glass" },
+        "color=green": { "model": "minecraftboom:green_stained_soul_glass" },
+        "color=red": { "model": "minecraftboom:red_stained_soul_glass" },
+        "color=black": { "model": "minecraftboom:black_stained_soul_glass" }       
+    }
+}

@@ -82,6 +82,24 @@ tile.minecraftboom.green_dye_block.name=Green Dye Block
 tile.minecraftboom.red_dye_block.name=Red Dye Block
 tile.minecraftboom.black_dye_block.name=Black Dye Block
 
+tile.minecraftboom.soul_glass.name=Soul Glass
+tile.minecraftboom.white_stained_soul_glass.name=White Stained Soul Glass
+tile.minecraftboom.orange_stained_soul_glass.name=Orange Stained Soul Glass
+tile.minecraftboom.magenta_stained_soul_glass.name=Magenta Stained Soul Glass
+tile.minecraftboom.light_blue_stained_soul_glass.name=Light Blue Stained Soul Glass
+tile.minecraftboom.yellow_stained_soul_glass.name=Yellow Stained Soul Glass
+tile.minecraftboom.lime_stained_soul_glass.name=Lime Stained Soul Glass
+tile.minecraftboom.pink_stained_soul_glass.name=Pink Stained Soul Glass
+tile.minecraftboom.gray_stained_soul_glass.name=Gray Stained Soul Glass
+tile.minecraftboom.silver_stained_soul_glass.name=Light Gray Stained Soul Glass
+tile.minecraftboom.cyan_stained_soul_glass.name=Cyan Stained Soul Glass
+tile.minecraftboom.purple_stained_soul_glass.name=Purple Stained Soul Glass
+tile.minecraftboom.blue_stained_soul_glass.name=Blue Stained Soul Glass
+tile.minecraftboom.brown_stained_soul_glass.name=Brown Stained Soul Glass
+tile.minecraftboom.green_stained_soul_glass.name=Green Stained Soul Glass
+tile.minecraftboom.red_stained_soul_glass.name=Red Stained Soul Glass
+tile.minecraftboom.black_stained_soul_glass.name=Black Stained Soul Glass
+
 tile.minecraftboom.pillar_smooth_granite.name=Granite Pillar
 tile.minecraftboom.pillar_smooth_diorite.name=Diorite Pillar
 tile.minecraftboom.pillar_smooth_andesite.name=Andesite Pillar

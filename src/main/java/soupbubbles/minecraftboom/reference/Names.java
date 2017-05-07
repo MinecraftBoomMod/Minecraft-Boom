@@ -69,6 +69,9 @@ public class Names
     public static final String BLOCK_CHARRED_BONE = "charred_bone_block";
     public static final String BLOCK_DYE = "dye_block";
 
+    public static final String BLOCK_SOUL_GLASS = "soul_glass";
+    public static final String BLOCK_STAINED_SOUL_GLASS = "stained_soul_glass";
+    
     public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
     public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
     public static final String BLOCK_PILLAR_SMOOTH_ANDESITE = "pillar_smooth_andesite";

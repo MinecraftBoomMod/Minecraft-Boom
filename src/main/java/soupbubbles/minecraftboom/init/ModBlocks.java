@@ -31,6 +31,8 @@ import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
+import soupbubbles.minecraftboom.block.BlockSoulGlass;
+import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
@@ -70,6 +72,9 @@ public class ModBlocks
     public static final Block BLOCK_CHARRED_BONE;
     public static final Block BLOCK_DYE;
 
+    public static final Block BLOCK_SOUL_GLASS;
+    public static final Block BLOCK_STAINED_SOUL_GLASS;
+    
     public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
     public static final Block BLOCK_PILLAR_SMOOTH_ANDESITE;
@@ -135,6 +140,10 @@ public class ModBlocks
         BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
         BLOCK_DYE = new BlockDye().setHardness(0.1F);
         registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
+        
+        BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass());
+        BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
+        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS, Names.BLOCK_STAINED_SOUL_GLASS));
         
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minecraftboom:blocks/orange_stained_soul_glass"
+    }
+}
