@@ -27,6 +27,7 @@ public class ConfigurationHandler
         Settings.replacePurplePillarRecipe = configuration.getBoolean(Settings.REPLACE_PURPUR_PILLAR_RECIPE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
         Settings.replaceCraftingTable = configuration.getBoolean(Settings.REPLACE_CRAFTING_TABLE_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PURPUR_PILLAR_RECIPE_DEFAULT, Settings.REPLACE_PURPUR_PILLAR_RECIPE_COMMENT, Settings.REPLACE_PURPUR_PILLAR_RECIPES_LABEL);
         Settings.replacePumpkin = configuration.getBoolean(Settings.REPLACE_PUMPKIN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_PUMPKIN_DEFAULT, Settings.REPLACE_PUMPKIN_COMMENT, Settings.REPLACE_PUMPKIN_LABEL);
+        Settings.replaceWool = configuration.getBoolean(Settings.REPLACE_WOOL_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_WOOL_DEFAULT, Settings.REPLACE_WOOL_COMMENT, Settings.REPLACE_WOOL_LABEL);
         Settings.replaceLoadingScreen = configuration.getBoolean(Settings.REPLACE_LOADING_SCREEN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_LOADING_SCREEN_DEFAULT, Settings.REPLACE_LOADING_SCREEN_COMMENT, Settings.REPLACE_LOADING_SCREEN_LABEL);
   
         if (configuration.hasChanged())
@@ -69,6 +70,12 @@ public class ConfigurationHandler
         private static final String REPLACE_PUMPKIN_LABEL = "replace_pumpkins.label";
         private static final String REPLACE_PUMPKIN_COMMENT = "Return true if the mod should override the vanilla version of Pumpkins. The new version will include a Faceless Pumpkin, Pumpkin Slices and updated recipes";
         private static final boolean REPLACE_PUMPKIN_DEFAULT = true;
+        
+        public static boolean replaceWool;
+        private static final String REPLACE_WOOL_NAME = "Replace Wool";
+        private static final String REPLACE_WOOL_LABEL = "replace_wool.label";
+        private static final String REPLACE_WOOL_COMMENT = "Return true if the mod should override the vanilla version of Wool. The new version will make Wool reduce fall damage";
+        private static final boolean REPLACE_WOOL_DEFAULT = true;
         
         public static boolean replaceLoadingScreen;
         private static final String REPLACE_LOADING_SCREEN_NAME = "Replace Loading Screen";

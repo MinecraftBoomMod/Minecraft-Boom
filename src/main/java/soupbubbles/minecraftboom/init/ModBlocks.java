@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRedSandstone;
@@ -37,6 +38,7 @@ import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
+import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
@@ -112,9 +114,11 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
+    public static final Block BLOCK_GOLDEN_BARS;
+    
     public static final Block BLOCK_CRAFTING_TABLE;
     public static final Block BLOCK_PUMPKIN;
-    public static final Block BLOCK_GOLDEN_BARS;
+    public static final Block BLOCK_WOOL;
 
     static
     {
@@ -174,8 +178,6 @@ public class ModBlocks
         BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
         BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
-        BLOCK_GOLDEN_BARS = registerBlock(new BlockGoldenBars());
-        
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabHalf();
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabDouble();
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabHalf2();
@@ -190,6 +192,8 @@ public class ModBlocks
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
+        BLOCK_GOLDEN_BARS = registerBlock(new BlockGoldenBars());
+        
         if (ConfigurationHandler.Settings.replaceCraftingTable)
         {
             BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
@@ -207,6 +211,15 @@ public class ModBlocks
         else 
         {
             BLOCK_PUMPKIN = (BlockPumpkin) Blocks.PUMPKIN;
+        }
+        
+        if (ConfigurationHandler.Settings.replaceWool)
+        {
+            BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
+        }
+        else
+        {
+            BLOCK_WOOL = (BlockColored) Blocks.WOOL;
         }
     }
 
