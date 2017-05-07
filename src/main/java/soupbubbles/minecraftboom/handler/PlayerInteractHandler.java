@@ -5,6 +5,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -43,6 +44,8 @@ public class PlayerInteractHandler {
 				
 			
 			event.getWorld().setBlockState(event.getPos(), Blocks.PISTON.getBlockState().getBaseState().withProperty(FACING, facing).withProperty(EXTENDED, extended));
+			event.getEntityPlayer().entityDropItem(new ItemStack(Items.SLIME_BALL), 0F);
+			
 			
 		}
 	}
