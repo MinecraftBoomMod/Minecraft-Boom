@@ -19,10 +19,10 @@ import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Reference;
 
 @Mod.EventBusSubscriber
-public class LootHandler 
+public class LootTableEventHandler 
 {
     @SubscribeEvent
-    public static void lootTableLoad(LootTableLoadEvent event) 
+    public void onLootTableLoad(LootTableLoadEvent event) 
     {
         // Main, pool1, pool2
 
@@ -38,11 +38,7 @@ public class LootHandler
                 pool.addEntry(new LootEntryItem(ModItems.ITEM_TELESCOPE, 10, 0, new LootFunction[0], new LootCondition[0], Reference.MOD_ID + ":telescope_starter"));
             }
         }
-    }
-
-    @SubscribeEvent
-    public void Table_Additives(LootTableLoadEvent event) 
-    {
+        
         // for adding a pool make JSon and add the name in the List
         // adding an Entry to a pool use getAdditiveEntry
         String name = event.getName().toString();

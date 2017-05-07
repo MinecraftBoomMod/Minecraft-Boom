@@ -13,11 +13,11 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.client.gui.GuiTelescope;
 import soupbubbles.minecraftboom.init.ModItems;
 
-public class ClientHandler
+public class ClientEventHandler
 {
     private Minecraft mc;
 
-    public ClientHandler()
+    public ClientEventHandler()
     {
         mc = Minecraft.getMinecraft();
     }

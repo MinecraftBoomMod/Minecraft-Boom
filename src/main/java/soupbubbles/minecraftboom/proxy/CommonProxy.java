@@ -7,14 +7,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.MinecraftBoom;
-import soupbubbles.minecraftboom.client.ClientHandler;
+import soupbubbles.minecraftboom.client.ClientEventHandler;
 import soupbubbles.minecraftboom.handler.BlockEventHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.handler.DimensionTravelHandler;
+import soupbubbles.minecraftboom.handler.EntityEventHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
 import soupbubbles.minecraftboom.handler.GuiHandler;
 import soupbubbles.minecraftboom.handler.LivingEventHandler;
-import soupbubbles.minecraftboom.handler.LootHandler;
+import soupbubbles.minecraftboom.handler.LootTableEventHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
@@ -45,8 +45,9 @@ public abstract class CommonProxy implements IProxy
 
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
-        MinecraftForge.EVENT_BUS.register(new LootHandler());
-        MinecraftForge.EVENT_BUS.register(new DimensionTravelHandler());
+        MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
+        MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
 
