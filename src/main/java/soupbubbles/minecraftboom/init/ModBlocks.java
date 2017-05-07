@@ -50,31 +50,31 @@ public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
 
-    public static final BlockBookShelf BLOCK_BOOKSHELF;
+    public static final Block BLOCK_BOOKSHELF;
 
-    public static final BlockBase BLOCK_COBBLESTONE_BRICKS;
-    public static final BlockBase BLOCK_MOSSY_COBBLESTONE_BRICKS;
-    public static final BlockBase BLOCK_HARDENED_CLAY_BRICKS;
-    public static final BlockColoredBase BLOCK_STAINED_CLAY_BRICKS;
+    public static final Block BLOCK_COBBLESTONE_BRICKS;
+    public static final Block BLOCK_MOSSY_COBBLESTONE_BRICKS;
+    public static final Block BLOCK_HARDENED_CLAY_BRICKS;
+    public static final Block BLOCK_STAINED_CLAY_BRICKS;
 
-    public static final BlockPolished BLOCK_POLISHED;
+    public static final Block BLOCK_POLISHED;
 
-    public static final BlockBase BLOCK_CHARCOAL;
-    public static final BlockFallingBase BLOCK_SUGAR;
-    public static final BlockPillarBase BLOCK_SUGAR_CANE;
-    public static final BlockGunpowder BLOCK_GUNPOWDER;
-    public static final BlockFallingBase BLOCK_BLAZE_POWDER;
-    public static final BlockMagmaCream BLOCK_MAGMA_CREAM;
-    public static final BlockBase BLOCK_PRISMARINE_CRYSTAL;
-    public static final BlockPillarBase BLOCK_CHARRED_BONE;
+    public static final Block BLOCK_CHARCOAL;
+    public static final Block BLOCK_SUGAR;
+    public static final Block BLOCK_SUGAR_CANE;
+    public static final Block BLOCK_GUNPOWDER;
+    public static final Block BLOCK_BLAZE_POWDER;
+    public static final Block BLOCK_MAGMA_CREAM;
+    public static final Block BLOCK_PRISMARINE_CRYSTAL;
+    public static final Block BLOCK_CHARRED_BONE;
 
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_GRANITE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DIORITE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_ANDESITE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_PRISMARINE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_END_STONE;
-    public static final BlockPillarBase BLOCK_PILLAR_SMOOTH_NETHERRACK;
+    public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
+    public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
+    public static final Block BLOCK_PILLAR_SMOOTH_ANDESITE;
+    public static final Block BLOCK_PILLAR_SMOOTH_PRISMARINE;
+    public static final Block BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE;
+    public static final Block BLOCK_PILLAR_SMOOTH_END_STONE;
+    public static final Block BLOCK_PILLAR_SMOOTH_NETHERRACK;
 
     public static final BlockStairBase BLOCK_STAIRS_STONE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_GRANITE;
@@ -105,9 +105,9 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
-    public static final BlockWorkbench BLOCK_CRAFTING_TABLE;
-    public static final BlockPumpkin BLOCK_PUMPKIN;
-    public static final BlockGoldenBars BLOCK_GOLDEN_BARS;
+    public static final Block BLOCK_CRAFTING_TABLE;
+    public static final Block BLOCK_PUMPKIN;
+    public static final Block BLOCK_GOLDEN_BARS;
 
     static
     {
@@ -123,14 +123,14 @@ public class ModBlocks
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
 
-        BLOCK_CHARCOAL = (BlockBase) registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(0.1F));
-        BLOCK_SUGAR = (BlockFallingBase) registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(0.1F));
-        BLOCK_SUGAR_CANE = (BlockPillarBase) registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
-        BLOCK_GUNPOWDER = (BlockGunpowder) registerBlock(new BlockGunpowder().setHardness(0.1F));
-        BLOCK_BLAZE_POWDER = (BlockFallingBase) registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
-        BLOCK_MAGMA_CREAM = (BlockMagmaCream) registerBlock(new BlockMagmaCream().setHardness(0.1F));
-        BLOCK_PRISMARINE_CRYSTAL = (BlockBase) registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
-        BLOCK_CHARRED_BONE = (BlockPillarBase) registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
+        BLOCK_CHARCOAL =  registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(0.1F));
+        BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(0.1F));
+        BLOCK_SUGAR_CANE =  registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(0.1F));
+        BLOCK_GUNPOWDER =  registerBlock(new BlockGunpowder().setHardness(0.1F));
+        BLOCK_BLAZE_POWDER =  registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(0.1F));
+        BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream().setHardness(0.1F));
+        BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
+        BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
 
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
@@ -156,10 +156,10 @@ public class ModBlocks
         BLOCK_STAIRS_DARK_PRISMARINE = registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE));
         BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairBase(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
         BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairBase(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
-        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
-        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
-        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BLOCK_POLISHED.getVariants(), BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
+        BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
+        BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
+        BLOCK_STAIRS_SMOOTH_NETHERRACK = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK));
 
         BLOCK_GOLDEN_BARS = registerBlock(new BlockGoldenBars());
         

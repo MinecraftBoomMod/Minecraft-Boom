@@ -22,7 +22,7 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockPolished extends BlockBase implements IBlockMeta
 {
-    protected static final PropertyEnum<BlockPolished.EnumType> VARIANT = PropertyEnum.<BlockPolished.EnumType>create("variant", BlockPolished.EnumType.class);
+    public static final PropertyEnum<BlockPolished.EnumType> VARIANT = PropertyEnum.<BlockPolished.EnumType>create("variant", BlockPolished.EnumType.class);
 
     public BlockPolished()
     {

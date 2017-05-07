@@ -9,11 +9,11 @@ import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.Names;
 
 public class GuiTelescope extends Gui
 {
-    protected static final ResourceLocation TEXTURE_OVERLAY = new ResourceLocation(Assets.ASSET_PREFIX, "textures/misc/telescope.png");
-    protected static final ResourceLocation TEXTURE_OVERLAY_2 = new ResourceLocation(Assets.ASSET_PREFIX, "textures/misc/black.png");
+    protected static final ResourceLocation TEXTURE_OVERLAY = new ResourceLocation(Assets.ASSET_PREFIX, Assets.TEXTURE_MISC_DIR + Names.ITEM_TELESCOPE + Assets.PNG);
 
     private Minecraft mc;
 

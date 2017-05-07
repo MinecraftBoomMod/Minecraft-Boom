@@ -16,11 +16,13 @@ import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockModSlab;
@@ -55,6 +57,7 @@ public class ModRecipes
 
         initRecipes();
         initFurnaceRecipes();
+        initBrewingRecipes();
     }
 
     private static void initRecipes()
@@ -174,14 +177,19 @@ public class ModRecipes
         addStairRecipe(BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE);
         addStairRecipe(BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_END_STONE);
         addStairRecipe(BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_NETHERRACK);
-
         addStairSlabRecipe(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
 
         //Ladders
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x',Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
 
+        //Misc
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GOLDEN_BARS, 16), "xxx", "xxx", 'x', Items.GOLD_INGOT);
+        
         //Items
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_POPPED_CHORUS_GRENADE), " x ", "yxy", " y ", 'x', Items.GUNPOWDER, 'y', Items.CHORUS_FRUIT_POPPED);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.LEATHER, 4), ModItems.ITEM_POLAR_BEAR_FUR);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.PAINTING, 4), "xxx", "xyx", "xxx", 'x', Items.STICK, 'y', ModItems.ITEM_POLAR_BEAR_FUR);
+
         
         //Vanilla Recipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "xxx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
@@ -207,6 +215,11 @@ public class ModRecipes
         {
             GameRegistry.addSmelting(Blocks.PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
         }
+    }
+    
+    private static void initBrewingRecipes()
+    {
+        BrewingRecipeRegistry.addRecipe(new ItemStack(Items.POTIONITEM, 1, 4), new ItemStack(ModItems.ITEM_LEVITATION_DUST), new ItemStack(ModItems.ITEM_LEVITATION_POTION));
     }
     
     private static void removeVanillaRecipes()

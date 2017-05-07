@@ -22,6 +22,10 @@ item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
 item.minecraftboom.levitation_dust.name=Levitation Dust
+item.minecraftboom.levitation_potion.name=Levitation Potion
+item.minecraftboom.telescope.name=Telescope
+item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
+
 
 # Blocks
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
@@ -72,6 +76,7 @@ tile.minecraftboom.pillar_smooth_dark_prismarine.name=Dark Prismarine Pillar
 tile.minecraftboom.pillar_smooth_end_stone.name=End Stone Pillar
 tile.minecraftboom.pillar_smooth_netherrack.name=Netherrack Pillar
 
+tile.minecraftboom.golden_bars.name=Golden Bars
 
 # Stairs
 tile.minecraftboom.stairs_stone.name=Stone Slab Stairs
@@ -139,5 +144,5 @@ tile.minecraftboom.double_slab_mod_smooth_dark_prismarine.name=Polished Dark Pri
 tile.minecraftboom.double_slab_mod_smooth_end_stone.name=Polished End Stone Double Slab
 tile.minecraftboom.double_slab_mod_smooth_netherrack.name=Polished Dark Prismarine Double Slab
 
-
-tile.minecraftboom.golden_bars.name=Golden Bars
+# Potions
+effect.minecraftboom.levitation.name=Levitation

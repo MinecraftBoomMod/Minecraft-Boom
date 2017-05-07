@@ -15,34 +15,21 @@ import soupbubbles.minecraftboom.reference.Assets;
 
 public class ItemBase extends Item
 {
-    //The first name of the item
     private final String BASE_NAME;
-    
-    //If the item has subitems, the names will be stored here
     public final String[] VARIANTS;
-
-    //Only true if the item has a tooltip (most cases false)
     private boolean toolTip;
 
-    
-    //Takes the unlocalized name of the item, and subitem names
     public ItemBase(String name, String... variants)
     {
         super();
-        //sets the registry name
         setRegistryName(name);
-        //sets the unlocalized name
         setUnlocalizedName(name);
-        //puts it in our creativetab
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        //tooltip
         setToolTip(false);
-        //if there is more than 1 name the item has subtypes!
         setHasSubtypes(variants.length > 0);
         
         BASE_NAME = name;
 
-        //stores the subitem names in the VARIANTS array of strings
         if (hasSubtypes)
         {
             VARIANTS = new String[variants.length + 1];
@@ -59,7 +46,6 @@ public class ItemBase extends Item
         }
     }
 
-    //sets the unlocalized name and add the MOD_ID in front so it won't get mixed up with other mods
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
@@ -73,7 +59,6 @@ public class ItemBase extends Item
         }
     }
 
-    //adds the subitems to our creative tab (if the item has subitems)
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
@@ -91,7 +76,6 @@ public class ItemBase extends Item
         }
     }
 
-    //tool tip method, only used if tooltip is set to true
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced)
@@ -102,19 +86,16 @@ public class ItemBase extends Item
         }
     }
 
-    //gets the variant names for registring the item models
     public String[] getVariants()
     {
         return VARIANTS;
     }
 
-    //useless method there just in case
     public boolean hasToolTip()
     {
         return toolTip;
     }
     
-    //this method I will probably remove or change (doesn't do much)
     public ItemBase setToolTip(boolean shouldHaveToolTip)
     {
         toolTip = shouldHaveToolTip;

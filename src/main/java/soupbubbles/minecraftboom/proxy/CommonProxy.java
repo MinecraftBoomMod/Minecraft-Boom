@@ -7,13 +7,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.MinecraftBoom;
+import soupbubbles.minecraftboom.client.ClientHandler;
+import soupbubbles.minecraftboom.handler.BlockEventHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
 import soupbubbles.minecraftboom.handler.GuiHandler;
-import soupbubbles.minecraftboom.handler.TelescopeHandler;
+import soupbubbles.minecraftboom.handler.LivingEventHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.init.ModPotions;
 import soupbubbles.minecraftboom.init.ModRecipes;
 
 public abstract class CommonProxy implements IProxy
@@ -25,10 +28,8 @@ public abstract class CommonProxy implements IProxy
 
         ModBlocks.registerBlocks();
         ModBlocks.registerTileEntities();
-        
         ModItems.registerItems();
         ModEntities.initEntities();
-        
         ModRecipes.init();
         
         NetworkRegistry.INSTANCE.registerGuiHandler(MinecraftBoom.instance, new GuiHandler());
@@ -37,7 +38,11 @@ public abstract class CommonProxy implements IProxy
     @Override
     public void init(FMLInitializationEvent event)
     {
-        MinecraftForge.EVENT_BUS.register(new TelescopeHandler());
+        ModPotions.init();
+        
+        MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
+        MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
+        MinecraftForge.EVENT_BUS.register(new ClientHandler());
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
 
