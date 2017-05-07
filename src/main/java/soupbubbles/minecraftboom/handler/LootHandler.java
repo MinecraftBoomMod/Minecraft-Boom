@@ -46,7 +46,7 @@ public class LootHandler
 	{
 
 		String name = event.getName().toString();
-		List<String> addPool = Arrays.asList("shulker", "wither_skeleton", "silverfish", "polar_bear", "simple_dungeon");
+		List<String> addPool = Arrays.asList("shulker", "wither_skeleton", "silverfish", "polar_bear", "elder_guardian", "simple_dungeon");
 
 		try {
 			
@@ -57,7 +57,7 @@ public class LootHandler
 					event.getTable().addPool(getAdditivePool(Reference.MOD_ID + ":" + actual));
 				}
 			}
-//			System.out.println(name);
+			System.out.println(name);
 
 		} 
 		catch (Exception exc) 

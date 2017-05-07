@@ -3,20 +3,18 @@
     [
         {                
             "name": "minecraftboom:elder_guardian",  
-            "conditions": 
-			[
-				{
-					"condition": "random_chance_with_looting",
-					"chance": 0.75,
-					"looting_multiplier": 0.0625
-				}
-			],
             "rolls": 1,
             "entries": 
             [
                 {
                     "type": "item",
                     "name": "minecraftboom:elder_guardian_spike",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 3
+                        }
+                    ],
                     "weight": 1
                 }                 
             ]
