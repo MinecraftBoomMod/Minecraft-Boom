@@ -215,7 +215,7 @@ public class ModBlocks
         
         if (ConfigurationHandler.Settings.replaceWool)
         {
-            BLOCK_WOOL = replaceBlock(new BlockWool(), "wool");
+            BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
         }
         else
         {

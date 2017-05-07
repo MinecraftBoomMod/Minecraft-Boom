@@ -15,7 +15,7 @@ public class BlockWool extends BlockColored
         super(Material.CLOTH);
         setHardness(0.8F);
         setSoundType(SoundType.CLOTH);
-        setUnlocalizedName(Names.WOOL);
+        setUnlocalizedName(Names.CLOTH);
     }
     
     @Override
