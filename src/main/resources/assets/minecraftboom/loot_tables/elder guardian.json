@@ -2,7 +2,7 @@
     "pools": 
     [
         {                
-            "name": "minecraftboom:wither_skeleton",  
+            "name": "minecraftboom:elder_guardian",  
             "conditions": 
 			[
 				{
@@ -16,7 +16,7 @@
             [
                 {
                     "type": "item",
-                    "name": "minecraftboom:wither_bone",
+                    "name": "minecraftboom:elder_guardian_spike",
                     "weight": 1
                 }                 
             ]

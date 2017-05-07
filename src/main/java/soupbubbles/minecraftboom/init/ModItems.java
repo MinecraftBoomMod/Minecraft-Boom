@@ -35,14 +35,18 @@ public class ModItems
     {
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
-        ITEM_TELESCOPE = registerItem(new ItemTelescope());
-        ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
-        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
         ITEM_LEVITATION_DUST = registerItem(new ItemBase(Names.ITEM_LEVITATION_DUST));
+        ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
+        
+        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
+        ITEM_TELESCOPE = registerItem(new ItemTelescope());
+        
+        ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
+        
+        
 //        ITEM_LEVITATION_POTION = registerItem(new ItemDrinkable(Names.ITEM_LEVITATION_POTION, new PotionEffect(ModPotions.LEVITATION, 20 * 60, 2)));
         ITEM_LEVITATION_POTION = registerItem(new ItemDrinkable(Names.ITEM_LEVITATION_POTION, new PotionEffect(MobEffects.LEVITATION, 160, 0)));
         ITEM_LEVITATION_POTION_LONG = registerItem(new ItemDrinkable(Names.ITEM_LEVITATION_POTION_LONG, new PotionEffect(MobEffects.LEVITATION, 320, 0)));
-        ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {

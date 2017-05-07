@@ -2,13 +2,12 @@
     "pools": 
     [
         {                
-            "name": "minecraftboom:wither_skeleton",  
+            "name": "minecraftboom:simple_dungeon",  
             "conditions": 
 			[
 				{
-					"condition": "random_chance_with_looting",
-					"chance": 0.75,
-					"looting_multiplier": 0.0625
+					"condition": "random_chance",
+					"chance": 0.065
 				}
 			],
             "rolls": 1,
@@ -16,7 +15,7 @@
             [
                 {
                     "type": "item",
-                    "name": "minecraftboom:wither_bone",
+                    "name": "minecraftboom:telescope",
                     "weight": 1
                 }                 
             ]
