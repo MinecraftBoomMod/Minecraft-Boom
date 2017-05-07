@@ -18,22 +18,23 @@ public class ModItems
 
     public static final Item ITEM_ELDER_GUARDIAN_SPIKE;
     public static final Item ITEM_PINECONE;
-    public static final Item ITEM_PUMPKIN_SLICE;
     public static final Item ITEM_WITHER_BONE;
     public static final Item ITEM_POPPED_CHORUS_GRENADE;
     public static final Item ITEM_TELESCOPE;
     public static final Item ITEM_LEVITATION_DUST;
     public static final Item ITEM_POLAR_BEAR_FUR;
+    public static final Item ITEM_PUMPKIN_SLICE;
 
     static
     {
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
-        ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
-        ITEM_TELESCOPE = registerItem(new ItemTelescope());
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
+        ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
         ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
+        ITEM_TELESCOPE = registerItem(new ItemTelescope());
         ITEM_LEVITATION_DUST = registerItem(new ItemBase(Names.ITEM_LEVITATION_DUST));
         ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
+        
 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {

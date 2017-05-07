@@ -10,6 +10,7 @@ import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.client.ClientHandler;
 import soupbubbles.minecraftboom.handler.BlockEventHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.handler.DimensionTravelHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
 import soupbubbles.minecraftboom.handler.GuiHandler;
 import soupbubbles.minecraftboom.handler.LivingEventHandler;
@@ -45,6 +46,7 @@ public abstract class CommonProxy implements IProxy
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
         MinecraftForge.EVENT_BUS.register(new LootHandler());
+        MinecraftForge.EVENT_BUS.register(new DimensionTravelHandler());
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
 
