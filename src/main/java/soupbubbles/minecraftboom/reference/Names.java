@@ -101,10 +101,8 @@ public class Names
     public static final String ITEM_LEVITATION_POTION = "levitation_potion";
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
     public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
-    
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
-    public static final String ENTITY_THROWN_POTION = "thrown_potion";
 
     public static final String POTION_LEVITATION = "levitation";
     public static final String POTION_LONG_PREFIX = "long_";

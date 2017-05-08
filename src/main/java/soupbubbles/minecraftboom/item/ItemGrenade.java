@@ -41,7 +41,6 @@ public class ItemGrenade extends ItemBase
         player.addStat(StatList.getObjectUseStats(this));
 
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-
     }
 
     public boolean hasEffect(ItemStack par1ItemStack, int pass)

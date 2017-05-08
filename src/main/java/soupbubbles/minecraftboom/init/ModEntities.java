@@ -7,6 +7,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.client.renderer.RenderGenericItem;
+import soupbubbles.minecraftboom.client.renderer.RenderPrismarineArrow;
 import soupbubbles.minecraftboom.entity.EntityGrenade;
 import soupbubbles.minecraftboom.entity.EntityPrismarineArrow;
 import soupbubbles.minecraftboom.reference.Names;
@@ -25,7 +26,7 @@ public class ModEntities
     public static void registerEntityRenderers()
     {
     	RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, renderManager -> new RenderGenericItem(renderManager, ModItems.ITEM_POPPED_CHORUS_GRENADE, Minecraft.getMinecraft().getRenderItem()));
-    	RenderingRegistry.registerEntityRenderingHandler(EntityPrismarineArrow.class, renderManager -> new RenderGenericItem(renderManager, ModItems.ITEM_PRISMARINE_ARROW, Minecraft.getMinecraft().getRenderItem()));
+    	RenderingRegistry.registerEntityRenderingHandler(EntityPrismarineArrow.class, renderManager -> new RenderPrismarineArrow(renderManager));
     }
 
     private static void registerEntity(Class<? extends Entity> clazz, String name, int id, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates)
