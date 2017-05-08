@@ -35,7 +35,7 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
         setUnlocalizedName(BASE_NAME);
         setHardness(2.0F);
         setResistance(5.0F);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
         setSoundType(SoundType.WOOD);
     }
 

@@ -23,7 +23,7 @@ public class ItemFoodBase extends ItemFood
         super(amount, saturation, isWolfFood);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_ITEM_TAB);
         
         BASE_NAME = name;
         effects = potionEffects;

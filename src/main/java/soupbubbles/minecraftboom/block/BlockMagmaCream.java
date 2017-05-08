@@ -15,7 +15,7 @@ public class BlockMagmaCream extends BlockSlime
         super();
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
         setSoundType(SoundType.SLIME);
     }
     

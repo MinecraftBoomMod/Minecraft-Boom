@@ -15,7 +15,7 @@ public class BlockGoldenBars extends BlockPane
 		super(Material.IRON, true);
 		setUnlocalizedName(BASE_NAME);
         setRegistryName(BASE_NAME);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
 	}
 	
     @Override
