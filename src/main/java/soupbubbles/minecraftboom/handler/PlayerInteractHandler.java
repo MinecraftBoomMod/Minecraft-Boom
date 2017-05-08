@@ -1,14 +1,12 @@
 package soupbubbles.minecraftboom.handler;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.IGrowable;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -17,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -25,6 +24,12 @@ public class PlayerInteractHandler {
 	
 	@SubscribeEvent
 	public static void PlayerInteract(PlayerInteractEvent event)
+	{
+		
+	}
+	
+	@SubscribeEvent
+	public static void RightClickBlock(RightClickBlock event)
 	{	
 		IBlockState blockstate = event.getWorld().getBlockState(event.getPos());
 		Block block = event.getWorld().getBlockState(event.getPos()).getBlock();
@@ -37,8 +42,6 @@ public class PlayerInteractHandler {
 		final PropertyDirection FACING = PropertyDirection.create("facing");
 		final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
 		
-		
-		//On rightclick not on both musst added
 		
 		if (!world.isRemote)
 		{
@@ -64,9 +67,6 @@ public class PlayerInteractHandler {
 		        	blockstate = blockstate.withProperty(AGE, Integer.valueOf(i + 1));
 		        	worldServer.setBlockState(pos, blockstate, 2);
 		            worldServer.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,  (double) pos.getX()+0.5F, (double) pos.getY(), (double) pos.getZ()+0.5F, 30, 0.2F, 0.4F, 0.2F, 5F);
-		            
-		            
-//		            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(world, pos, blockstate, world.getBlockState(pos));
 		        }
 			}
 //end about netherwarth and blaze powder		
