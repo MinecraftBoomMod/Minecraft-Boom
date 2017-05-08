@@ -7,7 +7,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.EnumDyeColor;
 import soupbubbles.minecraftboom.block.BlockPolished;
-import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class BlockColoredBase extends BlockColored implements IBlockMeta
@@ -24,7 +24,7 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
         super(material);
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
         setHardness(hardness);
         setResistance(resistance);
         setSoundType(sound);

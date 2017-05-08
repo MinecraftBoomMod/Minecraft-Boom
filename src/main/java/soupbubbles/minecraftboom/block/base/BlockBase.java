@@ -3,7 +3,7 @@ package soupbubbles.minecraftboom.block.base;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class BlockBase extends Block
@@ -20,7 +20,7 @@ public class BlockBase extends Block
         super(material);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
         setSoundType(sound);
 
         BASE_NAME = name;

@@ -5,8 +5,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
-import soupbubbles.minecraftboom.creativetab.CreativeTabItems;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class ItemFoodBase extends ItemFood
@@ -24,7 +23,7 @@ public class ItemFoodBase extends ItemFood
         super(amount, saturation, isWolfFood);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTabItems.MINECRAFTBOOM_ITEMS_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_ITEM_TAB);
         
         BASE_NAME = name;
         effects = potionEffects;

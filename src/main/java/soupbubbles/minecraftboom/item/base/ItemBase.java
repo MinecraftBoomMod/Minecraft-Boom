@@ -10,8 +10,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
-import soupbubbles.minecraftboom.creativetab.CreativeTabItems;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class ItemBase extends Item
@@ -25,7 +24,7 @@ public class ItemBase extends Item
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTabItems.MINECRAFTBOOM_ITEMS_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_ITEM_TAB);
         setToolTip(false);
         setHasSubtypes(variants.length > 0);
         
