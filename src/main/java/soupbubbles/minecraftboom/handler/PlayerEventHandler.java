@@ -1,10 +1,11 @@
 package soupbubbles.minecraftboom.handler;
 
+import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockPistonBase;
+import net.minecraft.block.BlockPistonExtension;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemSpade;
@@ -13,9 +14,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -29,49 +28,77 @@ public class PlayerEventHandler
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event)
     {
-        IBlockState blockstate = event.getWorld().getBlockState(event.getPos());
-        ItemStack stack = event.getItemStack();
         World world = event.getWorld();
         BlockPos pos = event.getPos();
+        IBlockState state = world.getBlockState(pos);
+        ItemStack stack = event.getItemStack();
+
 
         if (stack != null)
         {
-            if (stack.getItem() instanceof ItemSpade && blockstate.getBlock() == Blocks.STICKY_PISTON)
+            if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
             {
-                PropertyBool EXTENDED = PropertyBool.create("extended");
-                PropertyDirection FACING = PropertyDirection.create("facing");
-                boolean extended =  (boolean) blockstate.getProperties().get(EXTENDED);
-                EnumFacing facing = (EnumFacing) blockstate.getProperties().get(FACING);
-                
-                blockstate = Blocks.PISTON.getBlockState().getBaseState().withProperty(FACING, facing).withProperty(EXTENDED, extended);
-                world.setBlockState(event.getPos(), blockstate);
-                Utils.spawnEntityItem(world, pos.add(facing.getDirectionVec()), Items.SLIME_BALL);
-                
-                if(!event.getEntityPlayer().capabilities.isCreativeMode)
-                {
-                    stack.damageItem(1, event.getEntityPlayer());
-                }
-            }
-            else if (stack.getItem() == Items.BLAZE_POWDER && blockstate.getBlock() == Blocks.NETHER_WART)
-            {
-                PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
-                int i = ((Integer) blockstate.getValue(AGE)).intValue();
+                int i = ((Integer) state.getValue(BlockNetherWart.AGE)).intValue();
 
                 if (i < 3)
                 {
-                    blockstate = blockstate.withProperty(AGE, Integer.valueOf(i + 1));
-                    world.setBlockState(pos, blockstate, 2);
+                    state = state.withProperty(BlockNetherWart.AGE, Integer.valueOf(i + 1));
+                    world.setBlockState(pos, state, 2);
                     spawnGrowParticles(world, pos, 10);
-                    
-                    if(!event.getEntityPlayer().capabilities.isCreativeMode)
+
+                    if (!event.getEntityPlayer().capabilities.isCreativeMode)
                     {
                         stack.shrink(1);
                     }
                 }
             }
+            else if (stack.getItem() instanceof ItemSpade)
+            {
+                if (state.getBlock() == Blocks.STICKY_PISTON)
+                {
+                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                }
+                else if (state.getBlock() == Blocks.PISTON_HEAD)
+                {
+                    EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
+                    BlockPistonExtension.EnumPistonType type = (BlockPistonExtension.EnumPistonType) state.getProperties().get(BlockPistonExtension.TYPE);
+
+                    if (type == BlockPistonExtension.EnumPistonType.STICKY)
+                    {
+                        pos = pos.add(facing.getOpposite().getDirectionVec());
+                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                    }
+                }
+            }
         }
-        
+
         event.setResult(Result.ALLOW);
+    }
+
+    private static EnumFacing updatePiston(World world, BlockPos pos, IBlockState state, ItemStack stack, EntityPlayer player)
+    {
+        if (state.getBlock() == Blocks.STICKY_PISTON)
+        {
+            EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonBase.FACING);
+            boolean extended = (boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
+            state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended);
+
+            world.setBlockState(pos, state, 3);
+
+            if (extended)
+            {
+                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonExtension.FACING, facing).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT));
+            }
+
+            if (!player.capabilities.isCreativeMode)
+            {
+                stack.damageItem(1, player);
+            }
+
+            return facing;
+        }
+
+        return null;
     }
 
     @SideOnly(Side.CLIENT)
