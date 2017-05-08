@@ -4,6 +4,7 @@ import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.BlockPistonExtension;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -53,20 +54,41 @@ public class PlayerEventHandler
                 }
             }
             else if (stack.getItem() instanceof ItemSpade)
-            {
+            {     		
+            	EnumFacing facing;
                 if (state.getBlock() == Blocks.STICKY_PISTON)
                 {
-                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                	Boolean extended = (Boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
+                	facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
+                	
+                	if(!extended)
+                	{
+                		Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                		
+                	}
+                	else
+                	{
+                        state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, (Boolean) true);
+                        world.setBlockState(pos, state);                		
+                		pos = pos.add(facing.getDirectionVec());
+                		state = Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT);
+                        world.setBlockState(pos, state);
+                	}
                 }
                 else if (state.getBlock() == Blocks.PISTON_HEAD)
                 {
-                    EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
+                    facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
                     BlockPistonExtension.EnumPistonType type = (BlockPistonExtension.EnumPistonType) state.getProperties().get(BlockPistonExtension.TYPE);
 
                     if (type == BlockPistonExtension.EnumPistonType.STICKY)
                     {
+                        state = Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT);
+                        world.setBlockState(pos, state);
                         pos = pos.add(facing.getOpposite().getDirectionVec());
-                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                        state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, (Boolean) true);
+                        world.setBlockState(pos, state);
+                        
+//                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
                     }
                 }
             }
