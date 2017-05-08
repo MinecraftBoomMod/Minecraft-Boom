@@ -40,21 +40,16 @@ public class ModPotions
     {
         return GameRegistry.register(potion);
     }
-    
+
     private static PotionType createPotionType(PotionEffect potionEffect)
     {
-        return createPotionType(potionEffect, null);
+        return createPotionType(potionEffect, "");
     }
 
-    private static PotionType createPotionType(PotionEffect potionEffect, @Nullable String prefix)
+    private static PotionType createPotionType(PotionEffect potionEffect, String prefix)
     {
         ResourceLocation potionName = new ResourceLocation(Reference.MOD_ID, potionEffect.getEffectName().replaceAll("effect.", "") + prefix);
 
-        if (prefix == null)
-        {
-            prefix = "";
-        }
-        
         return GameRegistry.register(new PotionType(potionEffect.getEffectName().replaceAll("effect.", ""), potionEffect).setRegistryName(potionName));
     }
 

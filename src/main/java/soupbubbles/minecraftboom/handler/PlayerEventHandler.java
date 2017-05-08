@@ -34,7 +34,6 @@ public class PlayerEventHandler
         IBlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
 
-
         if (stack != null)
         {
             if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
@@ -53,42 +52,21 @@ public class PlayerEventHandler
                     }
                 }
             }
-            else if (stack.getItem() instanceof ItemSpade)
-            {     		
-            	EnumFacing facing;
+            else if (stack.getItem() instanceof ItemSpade && event.getEntityPlayer().isSneaking())
+            {
                 if (state.getBlock() == Blocks.STICKY_PISTON)
                 {
-                	Boolean extended = (Boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
-                	facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
-                	
-                	if(!extended)
-                	{
-                		Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
-                		
-                	}
-                	else
-                	{
-                        state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, (Boolean) true);
-                        world.setBlockState(pos, state);                		
-                		pos = pos.add(facing.getDirectionVec());
-                		state = Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT);
-                        world.setBlockState(pos, state);
-                	}
+                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
                 }
                 else if (state.getBlock() == Blocks.PISTON_HEAD)
                 {
-                    facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
+                    EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
                     BlockPistonExtension.EnumPistonType type = (BlockPistonExtension.EnumPistonType) state.getProperties().get(BlockPistonExtension.TYPE);
+                    pos = pos.add(facing.getOpposite().getDirectionVec());
 
                     if (type == BlockPistonExtension.EnumPistonType.STICKY)
                     {
-                        state = Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT);
-                        world.setBlockState(pos, state);
-                        pos = pos.add(facing.getOpposite().getDirectionVec());
-                        state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, (Boolean) true);
-                        world.setBlockState(pos, state);
-                        
-//                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
                     }
                 }
             }
@@ -103,13 +81,12 @@ public class PlayerEventHandler
         {
             EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonBase.FACING);
             boolean extended = (boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
-            state = Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended);
 
-            world.setBlockState(pos, state, 3);
+            world.setBlockState(pos, Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended));
 
             if (extended)
             {
-                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonExtension.FACING, facing).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT));
+                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT));
             }
 
             if (!player.capabilities.isCreativeMode)
