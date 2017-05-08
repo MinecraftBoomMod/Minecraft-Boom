@@ -15,7 +15,9 @@ public class Utils
     
     public static void spawnEntityItem(World world, BlockPos pos, ItemStack stack)
     {
-        world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack));
+        if (!world.isRemote)
+        {
+            world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack));
+        }
     }
-
 }
