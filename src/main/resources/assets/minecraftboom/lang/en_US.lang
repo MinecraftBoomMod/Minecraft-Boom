@@ -1,5 +1,6 @@
 # Creative Tab
-itemGroup.minecraftboom=Minecraft Boom
+itemGroup.minecraftboom_blocks=Minecraft Boom Blocks
+itemGroup.minecraftboom_items=Minecraft Boom Items
 
 # Vanilla
 tile.bookshelf.name=Oak Bookshelf

@@ -7,21 +7,24 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Reference;
 
-public class CreativeTab extends CreativeTabs
+public class CreativeTabBlocks extends CreativeTabs
 {
-    public static final CreativeTabs MINECRAFTBOOM_TAB = new CreativeTab(Reference.MOD_ID);
+    public static final CreativeTabs MINECRAFTBOOM_BLOCKS_TAB = new CreativeTabBlocks(Reference.MOD_ID + "_blocks");
     
-    public CreativeTab(String label)
+    public CreativeTabBlocks(String label)
     {
         super(label);
     }
 
+    
     @Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(Blocks.GRASS);
+    	//Icon block can be changed later just did a not vanilla block
+        return new ItemStack(ModBlocks.BLOCK_MAGMA_CREAM);
     }
 
     @SideOnly(Side.CLIENT)

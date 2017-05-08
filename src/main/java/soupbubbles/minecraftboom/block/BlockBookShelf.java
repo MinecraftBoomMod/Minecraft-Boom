@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.IBlockMeta;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
@@ -35,7 +35,7 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
         setUnlocalizedName(BASE_NAME);
         setHardness(2.0F);
         setResistance(5.0F);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
         setSoundType(SoundType.WOOD);
     }
 

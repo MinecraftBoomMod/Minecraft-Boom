@@ -3,7 +3,7 @@ package soupbubbles.minecraftboom.block.base;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class BlockStairBase extends BlockStairs
@@ -24,7 +24,7 @@ public class BlockStairBase extends BlockStairs
 
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
         setHardness(hardness);
         setResistance(resistance);
         setSoundType(sound);

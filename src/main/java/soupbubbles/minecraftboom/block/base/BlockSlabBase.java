@@ -7,7 +7,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
 
 public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
 {
@@ -25,7 +25,7 @@ public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
 
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
 
         useNeighborBrightness = true;
         BASE_NAME = name;

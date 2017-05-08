@@ -2,7 +2,7 @@ package soupbubbles.minecraftboom.block;
 
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
@@ -15,7 +15,7 @@ public class BlockGoldenBars extends BlockPane
 		super(Material.IRON, true);
 		setUnlocalizedName(BASE_NAME);
         setRegistryName(BASE_NAME);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
 	}
 	
     @Override

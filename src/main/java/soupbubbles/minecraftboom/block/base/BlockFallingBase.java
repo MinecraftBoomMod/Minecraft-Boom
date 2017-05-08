@@ -2,7 +2,7 @@ package soupbubbles.minecraftboom.block.base;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.creativetab.CreativeTabBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
@@ -20,7 +20,7 @@ public class BlockFallingBase extends BlockFalling
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTabBlocks.MINECRAFTBOOM_BLOCKS_TAB);
         setSoundType(sound);
         
         BASE_NAME = name;
