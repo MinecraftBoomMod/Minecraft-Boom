@@ -9,6 +9,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -26,26 +27,16 @@ public class PlayerInteractHandler {
 		IBlockState blockstate = event.getWorld().getBlockState(event.getPos());
 		Block block = event.getWorld().getBlockState(event.getPos()).getBlock();
 		ItemStack item = event.getItemStack();
+		World world = event.getWorld();
 		
-//		if(item.getUnlocalizedName().matches(".*shovel.*") && block.equals(Blocks.STICKY_PISTON))
-		if(item.getItem() instanceof ItemSpade && block.equals(Blocks.STICKY_PISTON))
+		if (!world.isRemote)
 		{
-			EnumFacing facing = EnumFacing.UP;
-			Boolean extended = Boolean.valueOf(false);
-
-			if(blockstate.getProperties().get(FACING)==EnumFacing.NORTH)facing = EnumFacing.NORTH;
-			if(blockstate.getProperties().get(FACING)==EnumFacing.WEST) facing = EnumFacing.WEST;
-			if(blockstate.getProperties().get(FACING)==EnumFacing.SOUTH) facing = EnumFacing.SOUTH;
-			if(blockstate.getProperties().get(FACING)==EnumFacing.EAST) facing = EnumFacing.EAST;
-			if(blockstate.getProperties().get(FACING)==EnumFacing.UP) facing = EnumFacing.UP;
-			if(blockstate.getProperties().get(FACING)==EnumFacing.DOWN) facing = EnumFacing.DOWN;
-			
-			if(blockstate.getProperties().get(EXTENDED)==Boolean.valueOf(true)) extended = Boolean.valueOf(true);
-				
-			
-			event.getWorld().setBlockState(event.getPos(), Blocks.PISTON.getBlockState().getBaseState().withProperty(FACING, facing).withProperty(EXTENDED, extended));
-			event.getEntityPlayer().entityDropItem(new ItemStack(Items.SLIME_BALL), 0F);
-			
+//			if(item.getUnlocalizedName().matches(".*shovel.*") && block.equals(Blocks.STICKY_PISTON))
+			if(item.getItem() instanceof ItemSpade && block.equals(Blocks.STICKY_PISTON))
+			{
+				world.setBlockState(event.getPos(), Blocks.PISTON.getBlockState().getBaseState().withProperty(FACING, (EnumFacing) blockstate.getProperties().get(FACING)).withProperty(EXTENDED, (Boolean) blockstate.getProperties().get(EXTENDED)));
+				event.getEntityPlayer().entityDropItem(new ItemStack(Items.SLIME_BALL), 0F);
+			}
 			
 		}
 	}
