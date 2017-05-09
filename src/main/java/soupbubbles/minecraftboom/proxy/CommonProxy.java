@@ -37,7 +37,6 @@ public abstract class CommonProxy implements IProxy
         ModRecipes.init();
 
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
-        MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
         MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
         MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
