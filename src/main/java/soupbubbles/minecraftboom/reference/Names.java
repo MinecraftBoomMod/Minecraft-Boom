@@ -42,6 +42,7 @@ public class Names
     public static final String PUMPKIN = "pumpkin";
     public static final String CLOTH = "cloth";
     public static final String WOOL = "wool";
+    public static final String ROSE = "flower_rose";
 
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";

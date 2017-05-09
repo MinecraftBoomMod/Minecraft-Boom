@@ -14,7 +14,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
+import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -367,11 +369,15 @@ public class EntityPrismarineArrow extends EntityArrow
     protected void onHit(RayTraceResult raytraceResultIn)
     {
         Entity entity = raytraceResultIn.entityHit;
+        double fire = 1D;
+        
+        if (entity instanceof EntityBlaze || entity instanceof EntityMagmaCube) fire = 1.1D;
 
         if (entity != null)
         {
+        	
             float f = MathHelper.sqrt(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
-            int i = MathHelper.ceil((double)f * this.damage);
+            int i = MathHelper.ceil((double)f * this.damage * fire);
 
             if (this.getIsCritical())
             {

@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import soupbubbles.minecraftboom.client.ClientEventHandler;
 import soupbubbles.minecraftboom.client.ModelManager;
 import soupbubbles.minecraftboom.init.ModEntities;
-import soupbubbles.minecraftboom.init.ModItems;
 
 public class ClientProxy extends CommonProxy
 {
@@ -17,7 +16,7 @@ public class ClientProxy extends CommonProxy
         super.preInit(event);
         
         ModelManager.INSTANCE.registerAllModels();
-        ModEntities.registerEntityRenderers();;
+        ModEntities.registerEntityRenderers();
     }
 
     @Override
