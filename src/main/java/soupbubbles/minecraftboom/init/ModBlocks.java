@@ -33,6 +33,7 @@ import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
+import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
@@ -76,6 +77,8 @@ public class ModBlocks
 
     public static final Block BLOCK_SOUL_GLASS;
     public static final Block BLOCK_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_SOUL_GLASS_PANE;
+    public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
     
     public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
@@ -148,6 +151,9 @@ public class ModBlocks
         BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass());
         BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS, Names.BLOCK_STAINED_SOUL_GLASS));
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
+        BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
+        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
         
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));

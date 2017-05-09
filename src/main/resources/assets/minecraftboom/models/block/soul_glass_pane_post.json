@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_post",
+    "textures": {
+        "edge": "minecraftboom:blocks/soul_glass_top",
+        "pane": "minecraftboom:blocks/soul_glass"
+    }
+}
