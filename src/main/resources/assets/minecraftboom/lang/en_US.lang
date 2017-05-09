@@ -25,6 +25,8 @@ item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
 item.minecraftboom.levitation_dust.name=Levitation Dust
 item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
+item.prismarine_arrow.name=Prismarine Arrow
+
 
 # Blocks
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
@@ -110,6 +112,7 @@ tile.minecraftboom.pillar_smooth_end_stone.name=End Stone Pillar
 tile.minecraftboom.pillar_smooth_netherrack.name=Netherrack Pillar
 
 tile.minecraftboom.golden_bars.name=Golden Bars
+tile.flower_rose.name=Rose
 
 # Stairs
 tile.minecraftboom.stairs_stone.name=Stone Slab Stairs

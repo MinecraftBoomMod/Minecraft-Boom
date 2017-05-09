@@ -11,7 +11,7 @@ public class DebugHandler {
     public static void getHurt (LivingHurtEvent event)
     {
 		//No Damage
-		System.out.println(event.getAmount());
-		event.setAmount(0F);
+//		System.out.println(event.getAmount());
+//		event.setAmount(0F);
     }
 }

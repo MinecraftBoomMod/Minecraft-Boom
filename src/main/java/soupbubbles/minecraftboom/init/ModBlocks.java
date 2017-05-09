@@ -9,8 +9,10 @@ import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockPumpkin;
+import net.minecraft.block.BlockRedFlower;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
@@ -27,6 +29,7 @@ import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
+import soupbubbles.minecraftboom.block.BlockModFlower;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
@@ -44,6 +47,7 @@ import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
@@ -73,6 +77,7 @@ public class ModBlocks
     public static final Block BLOCK_PRISMARINE_CRYSTAL;
     public static final Block BLOCK_CHARRED_BONE;
     public static final Block BLOCK_DYE;
+    public static final BlockModFlower BLOCK_ROSE;
 
     public static final Block BLOCK_SOUL_GLASS;
     public static final Block BLOCK_STAINED_SOUL_GLASS;
@@ -142,6 +147,7 @@ public class ModBlocks
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream().setHardness(0.1F));
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
         BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
+        BLOCK_ROSE = registerFlowerBlock(new BlockModFlower(Names.ROSE));
         BLOCK_DYE = new BlockDye().setHardness(0.1F);
         registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
         
@@ -232,12 +238,32 @@ public class ModBlocks
         GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Reference.MOD_ID + ":" + TileEntityCraftingTable.class.getSimpleName());
     }
 
+    protected static <BLOCK extends Block> BlockModFlower registerFlowerBlock(Block block)
+    {
+        return (BlockModFlower) registerFlowerBlock(block, ItemBlock::new);
+    }
+    
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)
     {
         return registerBlock(block, ItemBlock::new);
     }
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block, @Nullable Function<BLOCK, ItemBlock> itemFactory)
+    {
+        GameRegistry.register(block);
+
+        if (itemFactory != null)
+        {
+            final ItemBlock itemBlock = itemFactory.apply(block);
+
+            GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+        }
+
+        BLOCKS.add(block);
+        return block;
+    }
+    
+    protected static <BLOCK extends Block> BLOCK registerFlowerBlock(BLOCK block, @Nullable Function<BLOCK, ItemBlock> itemFactory)
     {
         GameRegistry.register(block);
 
