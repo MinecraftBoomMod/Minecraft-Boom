@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "minecraftboom:blocks/smooth_prismarine",
-        "top": "minecraftboom:blocks/smooth_prismarine",
-        "side": "minecraftboom:blocks/slab_smooth_prismarine_side"
-    }
-}

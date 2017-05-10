@@ -1,9 +1,45 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "#end",
+            "side": "#side"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
     "variants": {
-        "variant=spruce": { "model": "minecraftboom:spruce_bookshelf" },
-        "variant=birch": { "model": "minecraftboom:birch_bookshelf" },
-        "variant=jungle": { "model": "minecraftboom:jungle_bookshelf" },
-        "variant=acacia": { "model": "minecraftboom:acacia_bookshelf" },
-        "variant=dark_oak": { "model": "minecraftboom:dark_oak_bookshelf" }       
+        "variant": {
+            "spruce": {
+                "textures": {
+                    "end": "blocks/planks_spruce",
+                    "side": "minecraftboom:blocks/spruce_bookshelf"
+                }
+            },
+            "birch": {
+                "textures": {
+                    "end": "blocks/planks_birch",
+                    "side": "minecraftboom:blocks/birch_bookshelf"
+                }
+            },
+            "jungle": {
+               "textures": {
+                   "end": "blocks/planks_jungle",
+                    "side": "minecraftboom:blocks/jungle_bookshelf"
+                 }
+            },
+            "acacia": {
+                "textures": {
+                    "end": "blocks/planks_acacia",
+                    "side": "minecraftboom:blocks/acacia_bookshelf"
+                }
+            },
+            "dark_oak": {
+                "textures": {
+                    "end": "blocks/planks_big_oak",
+                    "side": "minecraftboom:blocks/dark_oak_bookshelf"
+                }
+            }
+        }
     }
 }

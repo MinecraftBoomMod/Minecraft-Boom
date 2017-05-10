@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -17,22 +18,29 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
+import soupbubbles.minecraftboom.block.base.IBlockMeta;
 
 public class ItemSlabBase extends ItemBlockMeta
 {
-	private final BlockSlabBase singleSlab;
-	private final BlockSlabBase doubleSlab;
+    private final BlockSlabBase singleSlab;
+    private final BlockSlabBase doubleSlab;
 
-	public ItemSlabBase(BlockSlabBase block, BlockSlabBase singleBlock, BlockSlabBase doubleBlock) 
-	{
-		super(block, "");
-		singleSlab = singleBlock;
-		doubleSlab = doubleBlock;
-        setRegistryPrefix(((BlockSlabBase) block).isDouble() ? "double_slab_" : "half_slab_");
-	}
+    public ItemSlabBase(BlockSlabBase block, BlockSlabBase singleBlock, BlockSlabBase doubleBlock)
+    {
+        super(block, "");
+        singleSlab = singleBlock;
+        doubleSlab = doubleBlock;
 
-	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+        for (int i = 0; i < VARIANTS.length; i++)
+        {
+            VARIANTS[i] = (block.isDouble() ? "" : ",half=bottom") + VARIANTS[i];
+        }
+
+        //setRegistryPrefix(((BlockSlabBase) block).isDouble() ? "double_slab_" : "half_slab_");
+    }
+
+    @Override
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         ItemStack itemstack = player.getHeldItem(hand);
 
@@ -45,7 +53,7 @@ public class ItemSlabBase extends ItemBlockMeta
             {
                 IProperty<?> iproperty = singleSlab.getVariantProperty();
                 Comparable<?> comparable1 = iblockstate.getValue(iproperty);
-                BlockSlab.EnumBlockHalf blockslab$enumblockhalf = (BlockSlab.EnumBlockHalf)iblockstate.getValue(BlockSlab.HALF);
+                BlockSlab.EnumBlockHalf blockslab$enumblockhalf = (BlockSlab.EnumBlockHalf) iblockstate.getValue(BlockSlab.HALF);
 
                 if ((facing == EnumFacing.UP && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.BOTTOM || facing == EnumFacing.DOWN && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.TOP) && comparable1 == comparable)
                 {
@@ -124,6 +132,6 @@ public class ItemSlabBase extends ItemBlockMeta
 
     protected <T extends Comparable<T>> IBlockState makeState(IProperty<T> p_185055_1_, Comparable<?> p_185055_2_)
     {
-        return doubleSlab.getDefaultState().withProperty(p_185055_1_, (T)p_185055_2_);
+        return doubleSlab.getDefaultState().withProperty(p_185055_1_, (T) p_185055_2_);
     }
 }

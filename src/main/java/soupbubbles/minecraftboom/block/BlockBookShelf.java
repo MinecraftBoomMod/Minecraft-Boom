@@ -97,6 +97,12 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
         return VARIANT;
     }
     
+    @Override
+    public String getVariantName()
+    {
+        return "variant";
+    }
+    
     public static enum EnumType implements IStringSerializable
     {
         SPRUCE(0, Names.SPRUCE, MapColor.OBSIDIAN),
@@ -157,5 +163,4 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
             }
         }
     }
-
 }

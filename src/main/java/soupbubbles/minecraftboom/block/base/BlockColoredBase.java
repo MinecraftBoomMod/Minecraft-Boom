@@ -43,4 +43,10 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
     {
         return COLOR;
     }
+
+    @Override
+    public String getVariantName()
+    {
+        return "color";
+    }
 }

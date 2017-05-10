@@ -1,5 +1,13 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "minecraftboom:blocks/sugar_block"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
     "variants": {
-        "normal": { "model": "minecraftboom:sugar_block" }
+        "normal": [{ }]
     }
 }

@@ -75,13 +75,13 @@ public class Names
     public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
     public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
  
-    public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
-    public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
-    public static final String BLOCK_PILLAR_SMOOTH_ANDESITE = "pillar_smooth_andesite";
-    public static final String BLOCK_PILLAR_SMOOTH_PRISMARINE = "pillar_smooth_prismarine";
-    public static final String BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE = "pillar_smooth_dark_prismarine";
-    public static final String BLOCK_PILLAR_SMOOTH_END_STONE = "pillar_smooth_end_stone";
-    public static final String BLOCK_PILLAR_SMOOTH_NETHERRACK = "pillar_smooth_netherrack";
+    public static final String BLOCK_PILLAR_GRANITE = "pillar_granite";
+    public static final String BLOCK_PILLAR_DIORITE = "pillar_diorite";
+    public static final String BLOCK_PILLAR_ANDESITE = "pillar_andesite";
+    public static final String BLOCK_PILLAR_PRISMARINE = "pillar_prismarine";
+    public static final String BLOCK_PILLAR_DARK_PRISMARINE = "pillar_dark_prismarine";
+    public static final String BLOCK_PILLAR_END_STONE = "pillar_end_stone";
+    public static final String BLOCK_PILLAR_NETHERRACK = "pillar_netherrack";
  
     public static final String BLOCK_HALF_SLAB_VANILLA_STONE = "half_slab_vanilla_stone";
     public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE = "double_slab_vanilla_stone";

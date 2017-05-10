@@ -1,5 +1,13 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "minecraftboom:blocks/blaze_powder_block"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
     "variants": {
-        "normal": { "model": "minecraftboom:blaze_powder_block" }
+        "normal": [{ }]
     }
 }

@@ -82,13 +82,13 @@ public class ModBlocks
     public static final Block BLOCK_SOUL_GLASS;
     public static final Block BLOCK_STAINED_SOUL_GLASS;
     
-    public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
-    public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
-    public static final Block BLOCK_PILLAR_SMOOTH_ANDESITE;
-    public static final Block BLOCK_PILLAR_SMOOTH_PRISMARINE;
-    public static final Block BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE;
-    public static final Block BLOCK_PILLAR_SMOOTH_END_STONE;
-    public static final Block BLOCK_PILLAR_SMOOTH_NETHERRACK;
+    public static final Block BLOCK_PILLAR_GRANITE;
+    public static final Block BLOCK_PILLAR_DIORITE;
+    public static final Block BLOCK_PILLAR_ANDESITE;
+    public static final Block BLOCK_PILLAR_PRISMARINE;
+    public static final Block BLOCK_PILLAR_DARK_PRISMARINE;
+    public static final Block BLOCK_PILLAR_END_STONE;
+    public static final Block BLOCK_PILLAR_NETHERRACK;
 
     public static final BlockStairBase BLOCK_STAIRS_STONE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_GRANITE;
@@ -157,13 +157,13 @@ public class ModBlocks
         BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS, Names.BLOCK_STAINED_SOUL_GLASS));
         
-        BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
-        BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
-        BLOCK_PILLAR_SMOOTH_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_ANDESITE));
-        BLOCK_PILLAR_SMOOTH_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_PRISMARINE));
-        BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DARK_PRISMARINE));
-        BLOCK_PILLAR_SMOOTH_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_END_STONE));
-        BLOCK_PILLAR_SMOOTH_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_NETHERRACK));
+        BLOCK_PILLAR_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_GRANITE));
+        BLOCK_PILLAR_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_DIORITE));
+        BLOCK_PILLAR_ANDESITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_ANDESITE));
+        BLOCK_PILLAR_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_PRISMARINE));
+        BLOCK_PILLAR_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_DARK_PRISMARINE));
+        BLOCK_PILLAR_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_END_STONE));
+        BLOCK_PILLAR_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_NETHERRACK));
 
         BLOCK_STAIRS_STONE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE));
         BLOCK_STAIRS_SMOOTH_GRANITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE));

@@ -31,4 +31,10 @@ public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements 
     {
         return COLOR;
     }
+    
+    @Override
+    public String getVariantName()
+    {
+        return "color";
+    }
 }

@@ -1,5 +1,13 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "minecraftboom:blocks/cobblestone_bricks"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
     "variants": {
-        "normal": { "model": "minecraftboom:cobblestone_bricks" }
+        "normal": [{ }]
     }
 }

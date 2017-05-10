@@ -47,49 +47,49 @@ import soupbubbles.minecraftboom.init.ModItems;
 
 public class EntityPrismarineArrow extends EntityArrow
 {
-    public EntityPrismarineArrow(World worldIn)
+    public EntityPrismarineArrow(World world)
     {
-        super(worldIn);
+        super(world);
     }
 
-    public EntityPrismarineArrow(World worldIn, double x, double y, double z)
+    public EntityPrismarineArrow(World world, double x, double y, double z)
     {
-    	super(worldIn, x, y, z);
+        super(world, x, y, z);
     }
 
-    public EntityPrismarineArrow(World worldIn, EntityLivingBase shooter)
+    public EntityPrismarineArrow(World world, EntityLivingBase shooter)
     {
-    	super(worldIn, shooter);
+        super(world, shooter);
     }
 
     @Override
     protected void onHit(RayTraceResult raytrace)
     {
         Entity entity = raytrace.entityHit;
-        
+
         if (entity != null && entity.isImmuneToFire())
         {
-        	setDamage(getDamage() * 1.1F);
+            setDamage(getDamage() * 1.1F);
         }
-        
+
         super.onHit(raytrace);
     }
-    
+
     @Override
     public void onUpdate()
     {
-    	if (!inGround && inWater)
-    	{
-    		for (int i = 0; i < 4; ++i)
+        if (!inGround && inWater)
+        {
+            for (int i = 0; i < 4; ++i)
             {
                 float f3 = 0.25F;
                 world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, posX - motionX * 0.25D, posY - motionY * 0.25D, posZ - motionZ * 0.25D, motionX, motionY, motionZ, new int[0]);
             }
-    	}
-    	 
-    	super.onUpdate();
+        }
+
+        super.onUpdate();
     }
-    
+
     @Override
     public boolean isInWater()
     {
@@ -99,6 +99,6 @@ public class EntityPrismarineArrow extends EntityArrow
     @Override
     protected ItemStack getArrowStack()
     {
-    	return new ItemStack(ModItems.ITEM_PRISMARINE_ARROW);
+        return new ItemStack(ModItems.ITEM_PRISMARINE_ARROW);
     }
 }

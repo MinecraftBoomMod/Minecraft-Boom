@@ -1,11 +1,57 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "#end",
+            "side": "#side"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
     "variants": {
-        "variant=smooth_granite": { "model": "minecraftboom:double_slab_smooth_granite" },
-        "variant=smooth_diorite": { "model": "minecraftboom:double_slab_smooth_diorite" },
-        "variant=smooth_andesite": { "model": "minecraftboom:double_slab_smooth_andesite" },
-        "variant=mossy_cobblestone": { "model": "mossy_cobblestone" },
-        "variant=mossy_stonebrick": { "model": "stonebrick_mossy" },
-        "variant=cracked_stonebrick": { "model": "stonebrick_cracked" },
-        "variant=hardened_clay": { "model": "hardened_clay" }
+        "variant": {
+            "smooth_granite": {
+                "textures": {
+                    "end": "blocks/stone_granite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_granite_side"
+                }
+            },
+            "smooth_diorite": {
+                "textures": {
+                    "end": "blocks/stone_diorite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_diorite_side"
+                }
+            },
+            "smooth_andesite": {
+                "textures": {
+                    "end": "blocks/stone_andesite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_andesite_side"
+                    }
+            },
+            "mossy_cobblestone": {
+                "textures": {
+                    "end": "blocks/cobblestone_mossy",
+                    "side": "#end"
+                }
+            },
+            "mossy_stonebrick": {
+                "textures": {
+                    "end": "blocks/stonebrick_mossy",
+                    "side": "#end"
+                }
+            },
+            "cracked_stonebrick": {
+                "textures": {
+                    "end": "blocks/stonebrick_cracked",
+                    "side": "#end"
+                }
+            },
+            "hardened_clay": {
+                "textures": {
+                    "end": "blocks/hardened_clay",
+                    "side": "#end"
+                }
+            }
+        }
     }
 }

@@ -1,7 +1,24 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "minecraftboom:blocks/sugar_cane_block_top",
+            "side": "minecraftboom:blocks/sugar_cane_block"
+        },
+        "model": "cube_column"
+    },
     "variants": {
-        "axis=y": { "model": "minecraftboom:sugar_cane_block" },
-        "axis=z": { "model": "minecraftboom:sugar_cane_block", "x": 90 },
-        "axis=x": { "model": "minecraftboom:sugar_cane_block", "x": 90, "y": 90 }
+        "normal" : [{ }],
+        "axis": { 
+            "y": {
+            },
+            "z": {
+                "x": 90
+            },
+            "x": {
+                "x": 90,
+                "y": 90 
+            }
+        }
     }
 }

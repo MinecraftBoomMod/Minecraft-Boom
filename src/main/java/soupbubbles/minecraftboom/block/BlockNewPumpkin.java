@@ -172,6 +172,12 @@ public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
     {
         return VARIANT;
     }
+    
+    @Override
+    public String getVariantName()
+    {
+        return "variant";
+    }
 
     public static enum EnumType implements IStringSerializable
     {

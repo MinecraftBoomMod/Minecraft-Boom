@@ -1,20 +1,94 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "#all"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
     "variants": {
-        "color=white": { "model": "minecraftboom:white_stained_hardened_clay_bricks" },
-        "color=orange": { "model": "minecraftboom:orange_stained_hardened_clay_bricks" },
-        "color=magenta": { "model": "minecraftboom:magenta_stained_hardened_clay_bricks" },
-        "color=light_blue": { "model": "minecraftboom:light_blue_stained_hardened_clay_bricks" },
-        "color=yellow": { "model": "minecraftboom:yellow_stained_hardened_clay_bricks" },
-        "color=lime": { "model": "minecraftboom:lime_stained_hardened_clay_bricks" },
-        "color=pink": { "model": "minecraftboom:pink_stained_hardened_clay_bricks" },
-        "color=gray": { "model": "minecraftboom:gray_stained_hardened_clay_bricks" },
-        "color=silver": { "model": "minecraftboom:silver_stained_hardened_clay_bricks" },
-        "color=cyan": { "model": "minecraftboom:cyan_stained_hardened_clay_bricks" },
-        "color=purple": { "model": "minecraftboom:purple_stained_hardened_clay_bricks" },
-        "color=blue": { "model": "minecraftboom:blue_stained_hardened_clay_bricks" },
-        "color=brown": { "model": "minecraftboom:brown_stained_hardened_clay_bricks" },
-        "color=green": { "model": "minecraftboom:green_stained_hardened_clay_bricks" },
-        "color=red": { "model": "minecraftboom:red_stained_hardened_clay_bricks" },
-        "color=black": { "model": "minecraftboom:black_stained_hardened_clay_bricks" }       
+        "color": {
+            "white": {
+                "textures": {
+                    "all": "minecraftboom:blocks/white_stained_hardened_clay_bricks"
+                }
+            },
+            "orange": {
+                "textures": {
+                    "all": "minecraftboom:blocks/orange_stained_hardened_clay_bricks"
+                }
+            },
+            "magenta": {
+               "textures": {
+                   "all": "minecraftboom:blocks/magenta_stained_hardened_clay_bricks"
+                 }
+            },
+            "light_blue": {
+                "textures": {
+                    "all": "minecraftboom:blocks/light_blue_stained_hardened_clay_bricks"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "all": "minecraftboom:blocks/yellow_stained_hardened_clay_bricks"
+                }
+            },
+            "lime": {
+                "textures": {
+                    "all": "minecraftboom:blocks/lime_stained_hardened_clay_bricks"
+                }
+            },
+            "pink": {
+                "textures": {
+                    "all": "minecraftboom:blocks/pink_stained_hardened_clay_bricks"
+                }
+            },
+            "gray": {
+                "textures": {
+                    "all": "minecraftboom:blocks/gray_stained_hardened_clay_bricks"
+                }
+            },
+            "silver": {
+                "textures": {
+                    "all": "minecraftboom:blocks/silver_stained_hardened_clay_bricks"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "all": "minecraftboom:blocks/cyan_stained_hardened_clay_bricks"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "all": "minecraftboom:blocks/purple_stained_hardened_clay_bricks"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "all": "minecraftboom:blocks/blue_stained_hardened_clay_bricks"
+                }
+            },
+            "brown": {
+                "textures": {
+                    "all": "minecraftboom:blocks/brown_stained_hardened_clay_bricks"
+                }
+            },
+            "green": {
+                "textures": {
+                    "all": "minecraftboom:blocks/green_stained_hardened_clay_bricks"
+                }
+            },
+            "red": {
+                "textures": {
+                    "all": "minecraftboom:blocks/red_stained_hardened_clay_bricks"
+                }
+            },
+            "black": {
+                "textures": {
+                    "all": "minecraftboom:blocks/black_stained_hardened_clay_bricks"
+                }
+            }
+        }
     }
 }

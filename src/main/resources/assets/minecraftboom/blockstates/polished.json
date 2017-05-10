@@ -1,8 +1,34 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "#all"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
     "variants": {
-        "variant=smooth_prismarine": { "model": "minecraftboom:smooth_prismarine" },
-        "variant=smooth_dark_prismarine": { "model": "minecraftboom:smooth_dark_prismarine" },
-        "variant=smooth_end_stone": { "model": "minecraftboom:smooth_end_stone" },
-        "variant=smooth_netherrack": { "model": "minecraftboom:smooth_netherrack" }
+        "variant": {
+            "smooth_prismarine": {
+                "textures": {
+                    "all": "minecraftboom:blocks/smooth_prismarine"
+                }
+            },
+            "smooth_dark_prismarine": {
+                "textures": {
+                    "all": "minecraftboom:blocks/smooth_dark_prismarine"
+                }
+            },
+            "smooth_end_stone": {
+               "textures": {
+                   "all": "minecraftboom:blocks/smooth_end_stone"
+                 }
+            },
+            "smooth_netherrack": {
+                "textures": {
+                    "all": "minecraftboom:blocks/smooth_netherrack"
+                }
+            }
+        }
     }
 }

@@ -97,11 +97,13 @@ public class ModelManager
 
                 for (int i = 0; i < itemBlock.getVariants().length; i++)
                 {
-                    modelResources.add(new ModelResourceLocation(Assets.TEXTURE_PREFIX + itemBlock.getRegistryPrefix() + itemBlock.getVariants()[i]));
+                    //modelResources.add(new ModelResourceLocation(Assets.TEXTURE_PREFIX + itemBlock.getRegistryPrefix() + itemBlock.getVariants()[i]));
+                    ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i]));
                 }
 
-                ModelBakery.registerItemVariants(item, modelResources.toArray(new ModelResourceLocation[0]));
-                ModelLoader.setCustomMeshDefinition(item, itemStack -> modelResources.get(itemStack.getMetadata()));
+                
+                //ModelBakery.registerItemVariants(item, modelResources.toArray(new ModelResourceLocation[0]));
+                //ModelLoader.setCustomMeshDefinition(item, itemStack -> modelResources.get(itemStack.getMetadata()));
             }
         }
         else

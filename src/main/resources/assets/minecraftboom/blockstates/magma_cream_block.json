@@ -1,5 +1,15 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "top": "minecraftboom:blocks/magma_cream_block_top",
+            "bottom": "minecraftboom:blocks/magma_cream_block_bottom",
+            "side": "minecraftboom:blocks/magma_cream_block_side"
+        },
+        "model": "cube_bottom_top",
+        "uvlock": true
+    },
     "variants": {
-        "normal": { "model": "minecraftboom:magma_cream_block" }
+        "normal": [{ }]
     }
 }

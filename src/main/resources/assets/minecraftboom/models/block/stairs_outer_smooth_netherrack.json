@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "minecraftboom:blocks/smooth_netherrack",
-        "top": "minecraftboom:blocks/smooth_netherrack",
-        "side": "minecraftboom:blocks/smooth_netherrack"
-    }
-}

@@ -2,8 +2,8 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "end": "minecraftboom:blocks/charred_bone_block_top",
-            "side": "minecraftboom:blocks/charred_bone_block_side"
+            "end": "minecraftboom:blocks/pillar_netherrack_top",
+            "side": "minecraftboom:blocks/pillar_netherrack_side"
         },
         "model": "cube_column"
     },

@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y": { "model": "minecraftboom:pillar_smooth_andesite" },
-        "axis=z": { "model": "minecraftboom:pillar_smooth_andesite", "x": 90 },
-        "axis=x": { "model": "minecraftboom:pillar_smooth_andesite", "x": 90, "y": 90 }
-    }
-}

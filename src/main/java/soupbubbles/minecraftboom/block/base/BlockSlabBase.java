@@ -42,4 +42,10 @@ public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
     {
         return isDouble() ? getStateFromMeta(meta) : facing != EnumFacing.DOWN && (facing == EnumFacing.UP || hitY <= 0.5D) ? getStateFromMeta(meta).withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM) : getStateFromMeta(meta).withProperty(HALF, BlockSlab.EnumBlockHalf.TOP);
     }
+    
+    @Override
+    public String getVariantName()
+    {
+        return "variant";
+    }
 }

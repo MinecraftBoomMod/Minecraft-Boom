@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "minecraftboom:blocks/smooth_prismarine",
-        "top": "minecraftboom:blocks/smooth_prismarine",
-        "side": "minecraftboom:blocks/smooth_prismarine"
-    }
-}

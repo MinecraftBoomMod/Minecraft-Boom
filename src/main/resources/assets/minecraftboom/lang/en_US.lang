@@ -103,13 +103,13 @@ tile.minecraftboom.green_stained_soul_glass.name=Green Stained Soul Glass
 tile.minecraftboom.red_stained_soul_glass.name=Red Stained Soul Glass
 tile.minecraftboom.black_stained_soul_glass.name=Black Stained Soul Glass
 
-tile.minecraftboom.pillar_smooth_granite.name=Granite Pillar
-tile.minecraftboom.pillar_smooth_diorite.name=Diorite Pillar
-tile.minecraftboom.pillar_smooth_andesite.name=Andesite Pillar
-tile.minecraftboom.pillar_smooth_prismarine.name=Prismarine Pillar
-tile.minecraftboom.pillar_smooth_dark_prismarine.name=Dark Prismarine Pillar
-tile.minecraftboom.pillar_smooth_end_stone.name=End Stone Pillar
-tile.minecraftboom.pillar_smooth_netherrack.name=Netherrack Pillar
+tile.minecraftboom.pillar_granite.name=Granite Pillar
+tile.minecraftboom.pillar_diorite.name=Diorite Pillar
+tile.minecraftboom.pillar_andesite.name=Andesite Pillar
+tile.minecraftboom.pillar_prismarine.name=Prismarine Pillar
+tile.minecraftboom.pillar_dark_prismarine.name=Dark Prismarine Pillar
+tile.minecraftboom.pillar_end_stone.name=End Stone Pillar
+tile.minecraftboom.pillar_netherrack.name=Netherrack Pillar
 
 tile.minecraftboom.golden_bars.name=Golden Bars
 tile.minecraftboom.soul_glass_pane.name=Soul Glass Pane

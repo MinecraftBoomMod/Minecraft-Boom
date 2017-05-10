@@ -28,7 +28,6 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockModSlab extends BlockSlabBase
 {
-	
     protected static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create("variant", BlockModSlab.EnumType.class);
 
     public BlockModSlab(String name)

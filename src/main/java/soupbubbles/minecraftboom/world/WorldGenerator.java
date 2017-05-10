@@ -16,19 +16,19 @@ import soupbubbles.minecraftboom.init.ModBlocks;
 
 public class WorldGenerator implements IWorldGenerator
 {
-	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
-	{
-	    Biome biome = world.getBiomeForCoordsBody(new BlockPos(chunkX, 0, chunkZ));
-	    
-		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
-		{
-			generateRoses(world, random, chunkX, chunkZ);
-		}
-	}
-	
-	private void generateRoses(World world, Random random, int chunkX, int chunkZ) 
-	{
+    @Override
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
+    {
+        Biome biome = world.getBiomeForCoordsBody(new BlockPos(chunkX, 0, chunkZ));
+
+        if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
+        {
+            generateRoses(world, random, chunkX, chunkZ);
+        }
+    }
+
+    private void generateRoses(World world, Random random, int chunkX, int chunkZ)
+    {
         int xGen = random.nextInt(16) + chunkX;
         int zGen = random.nextInt(16) + chunkZ;
         BlockPos genPos = world.getHeight(new BlockPos(xGen, 0, zGen));
@@ -36,10 +36,10 @@ public class WorldGenerator implements IWorldGenerator
 
         if (world.isAirBlock(genPos) && !world.provider.hasNoSky() && genPos.getY() < 255)
         {
-              if (((BlockBush) state.getBlock()).canBlockStay(world, genPos.offset(EnumFacing.DOWN), state)) 
-              {
-                  world.setBlockState(genPos, state);
-              }
+            if (((BlockBush) state.getBlock()).canBlockStay(world, genPos.offset(EnumFacing.DOWN), state))
+            {
+                world.setBlockState(genPos, state);
+            }
         }
-	}
+    }
 }
