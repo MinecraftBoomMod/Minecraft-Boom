@@ -1,18 +1,65 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "top": "#end",
+            "bottom": "#end",
+            "side": "#side"
+        },
+        "uvlock": true
+    },
     "variants": {
-        "half=bottom,variant=smooth_granite": { "model": "minecraftboom:half_slab_smooth_granite" },
-        "half=bottom,variant=smooth_diorite": { "model": "minecraftboom:half_slab_smooth_diorite" },
-        "half=bottom,variant=smooth_andesite": { "model": "minecraftboom:half_slab_smooth_andesite" },
-        "half=bottom,variant=mossy_cobblestone": { "model": "minecraftboom:half_slab_mossy_cobblestone" },
-        "half=bottom,variant=mossy_stonebrick": { "model": "minecraftboom:half_slab_mossy_stonebrick" },
-        "half=bottom,variant=cracked_stonebrick": { "model": "minecraftboom:half_slab_cracked_stonebrick" },
-        "half=bottom,variant=hardened_clay": { "model": "minecraftboom:half_slab_hardened_clay" },
-        "half=top,variant=smooth_granite": { "model": "minecraftboom:upper_slab_smooth_granite" },
-        "half=top,variant=smooth_diorite": { "model": "minecraftboom:upper_slab_smooth_diorite" },
-        "half=top,variant=smooth_andesite": { "model": "minecraftboom:upper_slab_smooth_andesite" },
-        "half=top,variant=mossy_cobblestone": { "model": "minecraftboom:upper_slab_mossy_cobblestone" },
-        "half=top,variant=mossy_stonebrick": { "model": "minecraftboom:upper_slab_mossy_stonebrick" },
-        "half=top,variant=cracked_stonebrick": { "model": "minecraftboom:upper_slab_cracked_stonebrick" },
-        "half=top,variant=hardened_clay": { "model": "minecraftboom:upper_slab_hardened_clay" }
+        "half": {
+                "bottom": {
+                    "model": "minecraft:half_slab"
+                },
+                "top": {
+                    "model": "minecraft:upper_slab"
+                }
+        },
+        "variant": {
+            "smooth_granite": {
+                "textures": {
+                    "end": "blocks/stone_granite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_granite_side"
+                }
+            },
+            "smooth_diorite": {
+                "textures": {
+                    "end": "blocks/stone_diorite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_diorite_side"
+                }
+            },
+            "smooth_andesite": {
+                "textures": {
+                    "end": "blocks/stone_andesite_smooth",
+                    "side": "minecraftboom:blocks/slab_smooth_andesite_side"
+                }
+            },
+            "mossy_cobblestone": {
+                "textures": {
+                    "end": "blocks/cobblestone_mossy",
+                    "side": "#end"
+                }
+            },
+            "mossy_stonebrick": {
+                "textures": {
+                    "end": "blocks/stonebrick_mossy",
+                    "side": "#end"
+                }
+            },
+            "cracked_stonebrick": {
+                "textures": {
+                    "end": "blocks/stonebrick_cracked",
+                    "side": "#end"
+                }
+            },
+            "hardened_clay": {
+                "textures": {
+                    "end": "blocks/hardened_clay",
+                    "side": "#end"
+                }
+            }
+        }
     }
 }

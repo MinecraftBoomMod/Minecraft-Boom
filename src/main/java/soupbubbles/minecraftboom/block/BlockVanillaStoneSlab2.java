@@ -86,7 +86,7 @@ public abstract class BlockVanillaStoneSlab2 extends BlockSlabBase
     @Override
     public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        if (item != Item.getItemFromBlock(ModBlocks.BLOCK_DOUBLE_SLAB_VANILLA_STONE_2))
+    	if (item != Item.getItemFromBlock(ModBlocks.BLOCK_DOUBLE_SLAB_VANILLA_STONE_2))
         {
             for (BlockVanillaStoneSlab2.EnumType blockstoneslab$enumtype : BlockVanillaStoneSlab2.EnumType.values())
             {

@@ -30,15 +30,13 @@ public class ItemSlabBase extends ItemBlockMeta
         super(block, "");
         singleSlab = singleBlock;
         doubleSlab = doubleBlock;
-
-        for (int i = 0; i < VARIANTS.length; i++)
-        {
-            VARIANTS[i] = (block.isDouble() ? "" : ",half=bottom") + VARIANTS[i];
-        }
-
-        //setRegistryPrefix(((BlockSlabBase) block).isDouble() ? "double_slab_" : "half_slab_");
     }
 
+    public String getVariantName()
+    {
+    	return (((BlockSlab)block).isDouble() ? "" : "half=bottom,") + super.getVariantName();
+    }
+    
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
