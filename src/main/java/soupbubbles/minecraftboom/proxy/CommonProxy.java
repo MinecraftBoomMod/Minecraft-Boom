@@ -19,7 +19,7 @@ import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.init.ModPotions;
 import soupbubbles.minecraftboom.init.ModRecipes;
-import soupbubbles.minecraftboom.world.ModWorldGenFlowers;
+import soupbubbles.minecraftboom.world.WorldGenerator;
 
 public abstract class CommonProxy implements IProxy
 {
@@ -35,7 +35,6 @@ public abstract class CommonProxy implements IProxy
         ModEntities.initEntities();
 
         NetworkRegistry.INSTANCE.registerGuiHandler(MinecraftBoom.instance, new GuiHandler());
-
     }
 
     @Override
@@ -49,8 +48,7 @@ public abstract class CommonProxy implements IProxy
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
 
         GameRegistry.registerFuelHandler(new FuelHandler());
-        
-        GameRegistry.registerWorldGenerator(new ModWorldGenFlowers(), 0);
+        GameRegistry.registerWorldGenerator(new WorldGenerator(), 0);
     }
 
     @Override

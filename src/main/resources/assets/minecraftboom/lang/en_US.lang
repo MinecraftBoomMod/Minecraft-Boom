@@ -112,7 +112,7 @@ tile.minecraftboom.pillar_smooth_end_stone.name=End Stone Pillar
 tile.minecraftboom.pillar_smooth_netherrack.name=Netherrack Pillar
 
 tile.minecraftboom.golden_bars.name=Golden Bars
-tile.flower_rose.name=Rose
+tile.minecraftboom.flower_rose.name=Rose
 
 # Stairs
 tile.minecraftboom.stairs_stone.name=Stone Slab Stairs

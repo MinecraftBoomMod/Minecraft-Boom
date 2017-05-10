@@ -42,12 +42,10 @@ public class Names
     public static final String PUMPKIN = "pumpkin";
     public static final String CLOTH = "cloth";
     public static final String WOOL = "wool";
-    public static final String ROSE = "flower_rose";
 
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
     public static final String BLOCK_PUMPKIN = "mod_pumpkin";
-    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
 
     public static final String BLOCK_BOOKSHELF = "bookshelf";
 
@@ -91,6 +89,9 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = "double_slab_vanilla_stone_2";
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
+    
+    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
+    public static final String BLOCK_ROSE = "flower_rose";
     
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String ITEM_PINECONE = "pinecone";

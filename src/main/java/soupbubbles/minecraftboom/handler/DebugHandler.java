@@ -10,7 +10,7 @@ public class DebugHandler {
 	@SubscribeEvent
     public static void getHurt (LivingHurtEvent event)
     {
-		//No Damage
+//		No Damage
 //		System.out.println(event.getAmount());
 //		event.setAmount(0F);
     }

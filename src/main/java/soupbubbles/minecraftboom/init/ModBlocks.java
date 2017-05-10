@@ -29,7 +29,7 @@ import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
-import soupbubbles.minecraftboom.block.BlockModFlower;
+import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
@@ -78,7 +78,6 @@ public class ModBlocks
     public static final Block BLOCK_PRISMARINE_CRYSTAL;
     public static final Block BLOCK_CHARRED_BONE;
     public static final Block BLOCK_DYE;
-    public static final BlockModFlower BLOCK_ROSE;
 
     public static final Block BLOCK_SOUL_GLASS;
     public static final Block BLOCK_STAINED_SOUL_GLASS;
@@ -123,7 +122,8 @@ public class ModBlocks
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
     public static final Block BLOCK_GOLDEN_BARS;
-    
+    public static final Block BLOCK_ROSE;
+
     public static final Block BLOCK_CRAFTING_TABLE;
     public static final Block BLOCK_PUMPKIN;
     public static final Block BLOCK_WOOL;
@@ -150,7 +150,6 @@ public class ModBlocks
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream().setHardness(0.1F));
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Material.GROUND, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS).setHardness(0.1F).setLightLevel(0.2F));
         BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(2.0F);
-        BLOCK_ROSE = registerFlowerBlock(new BlockModFlower(Names.ROSE));
         BLOCK_DYE = new BlockDye().setHardness(0.1F);
         registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
         
@@ -205,7 +204,8 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
-        
+        BLOCK_ROSE = registerBlock(new BlockRose());
+  
         if (ConfigurationHandler.Settings.replaceCraftingTable)
         {
             BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
@@ -244,11 +244,6 @@ public class ModBlocks
         GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Reference.MOD_ID + ":" + TileEntityCraftingTable.class.getSimpleName());
     }
 
-    protected static <BLOCK extends Block> BlockModFlower registerFlowerBlock(Block block)
-    {
-        return (BlockModFlower) registerFlowerBlock(block, ItemBlock::new);
-    }
-    
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)
     {
         return registerBlock(block, ItemBlock::new);
@@ -269,21 +264,6 @@ public class ModBlocks
         return block;
     }
     
-    protected static <BLOCK extends Block> BLOCK registerFlowerBlock(BLOCK block, @Nullable Function<BLOCK, ItemBlock> itemFactory)
-    {
-        GameRegistry.register(block);
-
-        if (itemFactory != null)
-        {
-            final ItemBlock itemBlock = itemFactory.apply(block);
-
-            GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
-        }
-
-        BLOCKS.add(block);
-        return block;
-    }
-
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block)
     {
         return registerBlockMeta(block, new ItemBlockMeta(block, ""));
