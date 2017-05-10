@@ -1,7 +1,7 @@
 {
     "parent": "block/pane_side_alt",
     "textures": {
-        "edge": "minecraftboom:blocks/soul_glass_top",
+        "edge": "minecraftboom:blocks/soul_glass_pane_top",
         "pane": "minecraftboom:blocks/soul_glass"
     }
 }

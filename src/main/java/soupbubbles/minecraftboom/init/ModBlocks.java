@@ -81,8 +81,6 @@ public class ModBlocks
 
     public static final Block BLOCK_SOUL_GLASS;
     public static final Block BLOCK_STAINED_SOUL_GLASS;
-    public static final Block BLOCK_SOUL_GLASS_PANE;
-    public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
     
     public static final Block BLOCK_PILLAR_SMOOTH_GRANITE;
     public static final Block BLOCK_PILLAR_SMOOTH_DIORITE;
@@ -122,6 +120,8 @@ public class ModBlocks
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
     public static final Block BLOCK_GOLDEN_BARS;
+    public static final Block BLOCK_SOUL_GLASS_PANE;
+    //public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
     public static final Block BLOCK_CRAFTING_TABLE;
@@ -156,9 +156,6 @@ public class ModBlocks
         BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass());
         BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS, Names.BLOCK_STAINED_SOUL_GLASS));
-        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
-        BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
-        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
         
         BLOCK_PILLAR_SMOOTH_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_GRANITE));
         BLOCK_PILLAR_SMOOTH_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_SMOOTH_DIORITE));
@@ -204,6 +201,9 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
+        //BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
+        //registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
         BLOCK_ROSE = registerBlock(new BlockRose());
   
         if (ConfigurationHandler.Settings.replaceCraftingTable)
