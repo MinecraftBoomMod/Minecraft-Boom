@@ -1,53 +1,51 @@
 package soupbubbles.minecraftboom.creativetab;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import com.google.common.base.Function;
-import com.google.common.collect.Ordering;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Reference;
 
-public class CreativeTab extends CreativeTabs
+public class CreativeTab
 {
-    public static final CreativeTabs MINECRAFTBOOM_TAB = new CreativeTab(Reference.MOD_ID);
-    
-    public CreativeTab(String label)
+    public static final CreativeTabs MINECRAFTBOOM_BLOCK_TAB = new CreativeTabs(Reference.MOD_ID + "_block")
     {
-        super(label);
-    }
-
-    @Override
-    public ItemStack getTabIconItem()
-    {
-        return new ItemStack(Blocks.GRASS);
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void displayAllRelevantItems(NonNullList<ItemStack> stack)
-    {
-        if (ConfigurationHandler.Settings.replaceCraftingTable)
+        @Override
+        public ItemStack getTabIconItem()
         {
-            stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
+            return new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS);
         }
         
-        if (ConfigurationHandler.Settings.replacePumpkin)
+        @SideOnly(Side.CLIENT)
+        @Override
+        public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
-            stack.add(new ItemStack(Blocks.PUMPKIN, 1, 0));
-            stack.add(new ItemStack(Blocks.PUMPKIN, 1, 1));
-        }
+            if (ConfigurationHandler.Settings.replaceCraftingTable)
+            {
+                stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
+            }
+            
+            if (ConfigurationHandler.Settings.replacePumpkin)
+            {
+                stack.add(new ItemStack(Blocks.PUMPKIN, 1, 0));
+                stack.add(new ItemStack(Blocks.PUMPKIN, 1, 1));
+            }
 
-        super.displayAllRelevantItems(stack);
-    }
+            super.displayAllRelevantItems(stack);
+        }
+    };
+    
+    public static final CreativeTabs MINECRAFTBOOM_ITEM_TAB = new CreativeTabs(Reference.MOD_ID + "_item")
+    {
+        @Override
+        public ItemStack getTabIconItem()
+        {
+            return new ItemStack(ModItems.ITEM_LEVITATION_DUST);
+        }
+    };
 }

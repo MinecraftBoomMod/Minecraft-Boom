@@ -46,7 +46,6 @@ public class Names
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
     public static final String BLOCK_PUMPKIN = "mod_pumpkin";
-    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
 
     public static final String BLOCK_BOOKSHELF = "bookshelf";
 
@@ -73,7 +72,9 @@ public class Names
 
     public static final String BLOCK_SOUL_GLASS = "soul_glass";
     public static final String BLOCK_STAINED_SOUL_GLASS = "stained_soul_glass";
-    
+    public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
+    public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
+ 
     public static final String BLOCK_PILLAR_SMOOTH_GRANITE = "pillar_smooth_granite";
     public static final String BLOCK_PILLAR_SMOOTH_DIORITE = "pillar_smooth_diorite";
     public static final String BLOCK_PILLAR_SMOOTH_ANDESITE = "pillar_smooth_andesite";
@@ -89,6 +90,9 @@ public class Names
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
     
+    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
+    public static final String BLOCK_ROSE = "flower_rose";
+    
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String ITEM_PINECONE = "pinecone";
     public static final String ITEM_WITHER_BONE = "wither_bone";
@@ -98,9 +102,9 @@ public class Names
     public static final String ITEM_LEVITATION_DUST = "levitation_dust";
     public static final String ITEM_LEVITATION_POTION = "levitation_potion";
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
+    public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
-    public static final String ENTITY_THROWN_POTION = "thrown_potion";
 
     public static final String POTION_LEVITATION = "levitation";
     public static final String POTION_LONG_PREFIX = "long_";

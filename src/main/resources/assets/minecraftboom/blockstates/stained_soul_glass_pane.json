@@ -1,0 +1,104 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "top": "#all",
+            "bottom": "#all",
+            "side": "#all"
+        },
+        "model": "minecraft:pane_post",
+        "uvlock": true
+    },
+    "variants": {
+        "colour": {
+            "white": {
+                "textures": {
+                    "all": "minecraftboom:blocks/white_stained_soul_glass"
+                }
+            },
+            "orange": {
+                "textures": {
+                    "all": "minecraftboom:blocks/orange_stained_soul_glass"
+                }
+            },
+            "magenta": {
+                "textures": {
+                    "all": "minecraftboom:blocks/magenta_stained_soul_glass"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "all": "minecraftboom:blocks/light_blue_stained_soul_glass"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "all": "minecraftboom:blocks/yellow_stained_soul_glass"
+                }
+            },
+            "lime": {
+                "textures": {
+                    "all": "minecraftboom:blocks/lime_stained_soul_glass"
+                }
+            },
+            "pink": {
+                "textures": {
+                    "all": "minecraftboom:blocks/pink_stained_soul_glass"
+                }
+            },
+            "gray": {
+                "textures": {
+                    "all": "minecraftboom:blocks/gray_stained_soul_glass"
+                }
+            }
+        },
+        "east": {
+            "true": {
+                "submodel": {
+                    "pane_east": {
+                        "model": "minecraft:pane_side",
+                        "y": 90,
+                        "uvlock": true
+                    }
+                }
+            },
+            "false": {}
+        },
+        "north": {
+            "true": {
+                "submodel": {
+                    "pane_north": {
+                        "model": "minecraft:pane_side",
+                        "y": 270,
+                        "uvlock": true
+                    }
+                }
+            },
+            "false": {}
+        },
+        "south": {
+            "true": {
+                "submodel": {
+                    "pane_south": {
+                        "model": "minecraft:pane_side",
+                        "y": 0,
+                        "uvlock": true
+                    }
+                }
+            },
+            "false": {}
+        },
+        "west": {
+            "true": {
+                "submodel": {
+                    "pane_west": {
+                        "model": "minecraft:pane_side",
+                        "y": 180,
+                        "uvlock": true
+                    }
+                }
+            },
+            "false": {}
+        }
+    }
+}

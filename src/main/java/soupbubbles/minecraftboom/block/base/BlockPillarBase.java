@@ -20,7 +20,7 @@ public class BlockPillarBase extends BlockRotatedPillar
         super(material);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
         setSoundType(sound);
 
         BASE_NAME = name;

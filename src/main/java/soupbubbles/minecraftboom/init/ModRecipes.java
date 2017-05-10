@@ -202,8 +202,11 @@ public class ModRecipes
 
         //Items
         GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_POPPED_CHORUS_GRENADE), " x ", "yxy", " y ", 'x', Items.GUNPOWDER, 'y', Items.CHORUS_FRUIT_POPPED);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.LEATHER, 4), ModItems.ITEM_POLAR_BEAR_FUR);
         GameRegistry.addShapedRecipe(new ItemStack(Items.PAINTING, 4), "xxx", "xyx", "xxx", 'x', Items.STICK, 'y', ModItems.ITEM_POLAR_BEAR_FUR);
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_PRISMARINE_ARROW), " f ", " s ", " p ", 'f', Items.FLINT, 's', Items.STICK, 'p', Items.PRISMARINE_SHARD);
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_PRISMARINE_ARROW),Items.ARROW, Items.PRISMARINE_SHARD);
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.LEATHER, 4), ModItems.ITEM_POLAR_BEAR_FUR);
 
         //Vanilla Recipes
         GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "xxx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);

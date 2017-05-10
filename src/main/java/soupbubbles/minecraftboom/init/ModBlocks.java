@@ -9,8 +9,10 @@ import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockPumpkin;
+import net.minecraft.block.BlockRedFlower;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
@@ -25,15 +27,16 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockDye;
-import soupbubbles.minecraftboom.block.BlockGoldenBars;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
+import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
+import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
@@ -42,8 +45,10 @@ import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
+import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
@@ -115,7 +120,10 @@ public class ModBlocks
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
     public static final Block BLOCK_GOLDEN_BARS;
-    
+    public static final Block BLOCK_SOUL_GLASS_PANE;
+    //public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_ROSE;
+
     public static final Block BLOCK_CRAFTING_TABLE;
     public static final Block BLOCK_PUMPKIN;
     public static final Block BLOCK_WOOL;
@@ -192,8 +200,12 @@ public class ModBlocks
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
-        BLOCK_GOLDEN_BARS = registerBlock(new BlockGoldenBars());
-        
+        BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
+        //BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
+        //registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
+        BLOCK_ROSE = registerBlock(new BlockRose());
+  
         if (ConfigurationHandler.Settings.replaceCraftingTable)
         {
             BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
@@ -251,7 +263,7 @@ public class ModBlocks
         BLOCKS.add(block);
         return block;
     }
-
+    
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block)
     {
         return registerBlockMeta(block, new ItemBlockMeta(block, ""));

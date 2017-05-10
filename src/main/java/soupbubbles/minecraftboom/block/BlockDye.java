@@ -14,8 +14,8 @@ public class BlockDye extends BlockColoredBase
 {
     public BlockDye()
     {
-        super(Names.BLOCK_DYE);
-    }
+		super(Names.BLOCK_DYE);
+	}
 
     @SideOnly(Side.CLIENT)
     @Override

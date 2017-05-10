@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "minecraftboom:items/flower_rose"
+    }
+}
