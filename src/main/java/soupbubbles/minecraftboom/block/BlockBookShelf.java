@@ -3,7 +3,6 @@ package soupbubbles.minecraftboom.block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -13,9 +12,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.IBlockMeta;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
@@ -56,6 +56,12 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
     {
         return ((BlockBookShelf.EnumType)state.getValue(VARIANT)).getMetadata();
     }
+    
+	@Override
+	public float getEnchantPowerBonus(World world, BlockPos pos) 
+	{
+		return 1;
+	}
 
     @SideOnly(Side.CLIENT)
     @Override
