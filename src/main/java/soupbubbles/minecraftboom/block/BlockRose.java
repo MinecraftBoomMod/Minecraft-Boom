@@ -22,7 +22,7 @@ public class BlockRose extends BlockBush
         setUnlocalizedName(BASE_NAME);
         setHardness(0.0F);
         setSoundType(SoundType.PLANT);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
     }
 
     @Override

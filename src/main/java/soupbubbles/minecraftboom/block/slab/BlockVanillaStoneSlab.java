@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.block;
+package soupbubbles.minecraftboom.block.slab;
 
 import java.util.Random;
 
@@ -26,11 +26,11 @@ import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
-public abstract class BlockModSlab extends BlockSlabBase
+public abstract class BlockVanillaStoneSlab extends BlockSlabBase
 {
-    protected static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create("variant", BlockModSlab.EnumType.class);
+    protected static final PropertyEnum<BlockVanillaStoneSlab.EnumType> VARIANT = PropertyEnum.<BlockVanillaStoneSlab.EnumType>create("variant", BlockVanillaStoneSlab.EnumType.class);
 
-    public BlockModSlab(String name)
+    public BlockVanillaStoneSlab(String name)
     {
         super(Material.ROCK, name);
         IBlockState iblockstate = blockState.getBaseState();
@@ -40,7 +40,7 @@ public abstract class BlockModSlab extends BlockSlabBase
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
-        setDefaultState(iblockstate.withProperty(VARIANT, BlockModSlab.EnumType.SMOOTH_PRISMARINE));
+        setDefaultState(iblockstate.withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.SMOOTH_GRANITE));
         setHardness(2.0F);
         setResistance(10.0F);
         setSoundType(SoundType.STONE);
@@ -49,19 +49,19 @@ public abstract class BlockModSlab extends BlockSlabBase
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_MOD);
+        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE);
     }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD, 1, state.getValue(VARIANT).getMetadata());
+        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE, 1, state.getValue(VARIANT).getMetadata());
     }
 
     @Override
     public String getUnlocalizedName(int meta)
     {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockModSlab.EnumType.byMetadata(meta).getUnlocalizedName());
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockVanillaStoneSlab.EnumType.byMetadata(meta).getUnlocalizedName());
     }
 
     @Override
@@ -79,16 +79,16 @@ public abstract class BlockModSlab extends BlockSlabBase
     @Override
     public Comparable<?> getTypeForItem(ItemStack stack)
     {
-        return BlockModSlab.EnumType.byMetadata(stack.getMetadata() & 3);
+        return BlockVanillaStoneSlab.EnumType.byMetadata(stack.getMetadata() & 7);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        if (item != Item.getItemFromBlock(ModBlocks.BLOCK_DOUBLE_SLAB_MOD))
+    	if (item != Item.getItemFromBlock(ModBlocks.BLOCK_DOUBLE_SLAB_VANILLA_STONE))
         {
-            for (BlockModSlab.EnumType blockstoneslab$enumtype : BlockModSlab.EnumType.values())
+            for (BlockVanillaStoneSlab.EnumType blockstoneslab$enumtype : BlockVanillaStoneSlab.EnumType.values())
             {
                 list.add(new ItemStack(item, 1, blockstoneslab$enumtype.getMetadata()));
             }
@@ -100,18 +100,18 @@ public abstract class BlockModSlab extends BlockSlabBase
     {
         if (isDouble())
         {
-            return getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta));
+            return getDefaultState().withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.byMetadata(meta));
         }
         else
         {
-            return getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta)).withProperty(HALF, meta < 8 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
+            return getDefaultState().withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.byMetadata(meta)).withProperty(HALF, meta < 8 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
         }
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        BlockModSlab.EnumType type = state.getValue(VARIANT);
+        BlockVanillaStoneSlab.EnumType type = state.getValue(VARIANT);
 
         return type.getMetadata();
     }
@@ -139,21 +139,24 @@ public abstract class BlockModSlab extends BlockSlabBase
     {
         return state.getValue(VARIANT).getMapColor();
     }
-    
+
     @Override
     public PropertyEnum getVariants()
     {
         return VARIANT;
     }
-
+    
     public static enum EnumType implements IStringSerializable
     {
-        SMOOTH_PRISMARINE(0, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),
-        SMOOTH_DARK_PRISMARINE(1, MapColor.STONE, Names.BLOCK_SMOOTH_DARK_PRISMARINE),
-        SMOOTH_END_STONE(2, MapColor.STONE, Names.BLOCK_SMOOTH_END_STONE),
-        SMOOTH_NETHERRACK(3, MapColor.STONE, Names.BLOCK_SMOOTH_NETHERRACK);
+        SMOOTH_GRANITE(0, MapColor.STONE, Names.SMOOTH_GRANITE),
+        SMOOTH_DIORITE(1, MapColor.STONE, Names.SMOOTH_DIORITE),
+        SMOOTH_ANDESITE(2, MapColor.STONE, Names.SMOOTH_ANDESITE),
+        MOSSY_COBBLESTONE(3, MapColor.STONE, Names.MOSSY_COBBLESTONE),
+        MOSSY_STONEBRICK(4, MapColor.STONE, Names.MOSSY_STONEBRICK),
+        CRACKED_STONEBRICK(5, MapColor.STONE, Names.CRACKED_STONEBRICK),
+        HARDENED_CLAY(6, MapColor.STONE, Names.HARDENED_CLAY);
 
-        private static final BlockModSlab.EnumType[] META_LOOKUP = new BlockModSlab.EnumType[values().length];
+        private static final BlockVanillaStoneSlab.EnumType[] META_LOOKUP = new BlockVanillaStoneSlab.EnumType[values().length];
 
         private final int meta;
         private final MapColor mapColor;
@@ -189,7 +192,7 @@ public abstract class BlockModSlab extends BlockSlabBase
             return name;
         }
 
-        public static BlockModSlab.EnumType byMetadata(int meta)
+        public static BlockVanillaStoneSlab.EnumType byMetadata(int meta)
         {
             if (meta < 0 || meta >= META_LOOKUP.length)
             {
@@ -212,7 +215,7 @@ public abstract class BlockModSlab extends BlockSlabBase
 
         static
         {
-            for (BlockModSlab.EnumType blockstoneslab$enumtype : values())
+            for (BlockVanillaStoneSlab.EnumType blockstoneslab$enumtype : values())
             {
                 META_LOOKUP[blockstoneslab$enumtype.getMetadata()] = blockstoneslab$enumtype;
             }

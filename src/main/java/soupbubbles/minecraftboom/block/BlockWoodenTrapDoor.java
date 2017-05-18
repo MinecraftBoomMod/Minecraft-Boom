@@ -1,27 +1,25 @@
-package soupbubbles.minecraftboom.block.base;
+package soupbubbles.minecraftboom.block;
 
-import net.minecraft.block.BlockPane;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.BlockTrapDoor;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.EnumFacing;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockPaneBase extends BlockPane 
+public class BlockWoodenTrapDoor extends BlockTrapDoor
 {
-	protected final String BASE_NAME;
+    protected final String BASE_NAME;
 
-	public BlockPaneBase(Material material, String name, SoundType sound, boolean canDrop) 
-	{
-		super(material, canDrop);
-		setUnlocalizedName(name);
+    public BlockWoodenTrapDoor(String name)
+    {
+        super(Material.WOOD);
         setRegistryName(name);
-        setSoundType(sound);
+        setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
         
         BASE_NAME = name;
-	}
-	
+    }
+
     @Override
     public String getUnlocalizedName()
     {

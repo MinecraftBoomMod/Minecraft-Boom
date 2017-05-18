@@ -15,7 +15,7 @@ public class ItemPrismarineArrow extends ItemArrow
 	{
         setRegistryName(Names.ITEM_PRISMARINE_ARROW);
         setUnlocalizedName(Names.ITEM_PRISMARINE_ARROW);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.client.renderer;
+package soupbubbles.minecraftboom.client.renderer.entity;
 
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;

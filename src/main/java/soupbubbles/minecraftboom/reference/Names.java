@@ -53,7 +53,8 @@ public class Names
     public static final String BLOCK_MOSSY_COBBELSTONE_BRICKS = "mossy_cobblestone_bricks";
     public static final String BLOCK_HARDENED_CLAY_BRICKS = "hardened_clay_bricks";
     public static final String BLOCK_STAINED_HARDENED_CLAY_BRICKS = "stained_hardened_clay_bricks";
-    
+    public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
+
     public static final String BLOCK_POLISHED = "polished";
     public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";
     public static final String BLOCK_SMOOTH_DARK_PRISMARINE = "smooth_dark_prismarine";
@@ -90,6 +91,29 @@ public class Names
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
     
+    public static final String BLOCK_SPRUCE_CHEST = "spruce_chest";
+    public static final String BLOCK_BIRCH_CHEST = "birch_chest";
+    public static final String BLOCK_JUNGLE_CHEST = "jungle_chest";
+    public static final String BLOCK_ACACIA_CHEST = "acacia_chest";
+    public static final String BLOCK_DARK_OAK_CHEST = "dark_oak_chest";
+    public static final String BLOCK_TRAPPED_SPRUCE_CHEST = "trapped_spruce_chest";
+    public static final String BLOCK_TRAPPED_BIRCH_CHEST = "trapped_birch_chest";
+    public static final String BLOCK_TRAPPED_JUNGLE_CHEST = "trapped_jungle_chest";
+    public static final String BLOCK_TRAPPED_ACACIA_CHEST = "trapped_acacia_chest";
+    public static final String BLOCK_TRAPPED_DARK_OAK_CHEST = "trapped_dark_oak_chest";
+    
+    public static final String BLOCK_SPRUCE_LADDER = "spruce_ladder";
+    public static final String BLOCK_BIRCH_LADDER = "birch_ladder";
+    public static final String BLOCK_JUNGLE_LADDER = "jungle_ladder";
+    public static final String BLOCK_ACACIA_LADDER = "acacia_ladder";
+    public static final String BLOCK_DARK_OAK_LADDER = "dark_oak_ladder";
+    
+    public static final String BLOCK_SPRUCE_TRAP_DOOR = "spruce_trap_door";
+    public static final String BLOCK_BIRCH_TRAP_DOOR = "birch_trap_door";
+    public static final String BLOCK_JUNGLE_TRAP_DOOR = "jungle_trap_door";
+    public static final String BLOCK_ACACIA_TRAP_DOOR = "acacia_trap_door";
+    public static final String BLOCK_DARK_OAK_TRAP_DOOR = "dark_oak_trap_door";
+    
     public static final String BLOCK_GOLDEN_BARS = "golden_bars";
     public static final String BLOCK_ROSE = "flower_rose";
     
@@ -103,8 +127,10 @@ public class Names
     public static final String ITEM_LEVITATION_POTION = "levitation_potion";
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
     public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
+    public static final String ITEM_WHEAT_ON_STICK = "wheat_on_stick";
 
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
+    public static final String ENTITY_PRISMARINE_ARROW = "prismarine_arrow";
 
     public static final String POTION_LEVITATION = "levitation";
     public static final String POTION_LONG_PREFIX = "long_";

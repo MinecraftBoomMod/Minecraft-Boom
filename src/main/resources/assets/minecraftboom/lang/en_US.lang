@@ -1,9 +1,8 @@
 # Creative Tab
 itemGroup.minecraftboom_block=Minecraft Boom Blocks
-itemGroup.minecraftboom_item=Minecraft Boom Items
+itemGroup.minecraftboom_decoration_item=Minecraft Boom Decoration and Items
 
 # Vanilla
-tile.bookshelf.name=Oak Bookshelf
 tile.minecraftboom.mod_pumpkin.name=Pumpkin
 tile.minecraftboom.carved_mod_pumpkin.name=Carved Pumpkin
 tile.netherBrick.name=Nether Bricks
@@ -29,6 +28,7 @@ item.prismarine_arrow.name=Prismarine Arrow
 
 
 # Blocks
+tile.bookshelf.name=Oak Bookshelf
 tile.minecraftboom.spruce_bookshelf.name=Spruce Bookshelf
 tile.minecraftboom.birch_bookshelf.name=Birch Bookshelf
 tile.minecraftboom.jungle_bookshelf.name=Jungle Bookshelf
@@ -54,6 +54,7 @@ tile.minecraftboom.brown_stained_hardened_clay_bricks.name=Brown Hardened Clay B
 tile.minecraftboom.green_stained_hardened_clay_bricks.name=Green Hardened Clay Bricks
 tile.minecraftboom.red_stained_hardened_clay_bricks.name=Red Hardened Clay Bricks
 tile.minecraftboom.black_stained_hardened_clay_bricks.name=Black Hardened Clay Bricks
+tile.minecraftboom.magma_bricks.name=Magma Bricks
 
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
@@ -111,6 +112,20 @@ tile.minecraftboom.pillar_dark_prismarine.name=Dark Prismarine Pillar
 tile.minecraftboom.pillar_end_stone.name=End Stone Pillar
 tile.minecraftboom.pillar_netherrack.name=Netherrack Pillar
 
+tile.ladder.name=Oak Ladder
+tile.minecraftboom.spruce_ladder.name=Spruce Ladder
+tile.minecraftboom.birch_ladder.name=Birch Ladder
+tile.minecraftboom.jungle_ladder.name=Jungle Ladder
+tile.minecraftboom.acacia_ladder.name=Acacia Ladder
+tile.minecraftboom.dark_oak_ladder.name=Dark Oak Ladder
+
+tile.trapdoor.name=Oak Trap Door
+tile.minecraftboom.spruce_trap_door.name=Spruce Trap Door
+tile.minecraftboom.birch_trap_door.name=Birch Trap Door
+tile.minecraftboom.jungle_trap_door.name=Jungle Trap Door
+tile.minecraftboom.acacia_trap_door.name=Acacia Trap Door
+tile.minecraftboom.dark_oak_trap_door.name=Dark Oak Trap Door
+
 tile.minecraftboom.golden_bars.name=Golden Bars
 tile.minecraftboom.soul_glass_pane.name=Soul Glass Pane
 tile.minecraftboom.flower_rose.name=Rose
@@ -154,6 +169,10 @@ tile.minecraftboom.half_slab_vanilla_stone_2_prismarine_bricks.name=Prismarine B
 tile.minecraftboom.half_slab_vanilla_stone_2_dark_prismarine.name=Dark Prismarine Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_end_bricks.name=End Stone Bricks Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Bricks Slab
+tile.minecraftboom.half_slab_mod_cobblestone_bricks.name=Polished Cobblestone Bricks Slab
+tile.minecraftboom.half_slab_mod_mossy_cobblestone_bricks.name=Mossy Cobblestone Bricks Slab
+tile.minecraftboom.half_slab_mod_hardened_clay_bricks.name=Hardened Clay Bricks Slab
+tile.minecraftboom.half_slab_mod_magma_bricks.name=Magma Bricks Slab
 tile.minecraftboom.half_slab_mod_smooth_prismarine.name=Polished Prismarine Slab
 tile.minecraftboom.half_slab_mod_smooth_dark_prismarine.name=Polished Dark Prismarine Slab
 tile.minecraftboom.half_slab_mod_smooth_end_stone.name=Polished End Stone Slab
@@ -176,10 +195,11 @@ tile.minecraftboom.double_slab_vanilla_stone_2_prismarine_bricks.name=Prismarine
 tile.minecraftboom.double_slab_vanilla_stone_2_dark_prismarine.name=Dark Prismarine Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_end_bricks.name=End Stone Bricks Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_red_nether_brick.name=Red Nether Bricks Double Slab
+tile.minecraftboom.double_slab_mod_cobblestone_bricks.name=Polished Cobblestone Bricks Double Slab
+tile.minecraftboom.double_slab_mod_mossy_cobblestone_bricks.name=Mossy Cobblestone Bricks Double Slab
+tile.minecraftboom.double_slab_mod_hardened_clay_bricks.name=Hardened Clay Bricks Double Slab
+tile.minecraftboom.double_slab_mod_magma_bricks.name=Magma Bricks Double Slab
 tile.minecraftboom.double_slab_mod_smooth_prismarine.name=Polished Prismarine Double Slab
 tile.minecraftboom.double_slab_mod_smooth_dark_prismarine.name=Polished Dark Prismarine Double Slab
 tile.minecraftboom.double_slab_mod_smooth_end_stone.name=Polished End Stone Double Slab
 tile.minecraftboom.double_slab_mod_smooth_netherrack.name=Polished Dark Prismarine Double Slab
-
-# Potions
-effect.minecraftboom.levitation.name=Levitation

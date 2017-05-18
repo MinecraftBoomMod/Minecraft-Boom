@@ -9,10 +9,8 @@ import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
-import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockPumpkin;
-import net.minecraft.block.BlockRedFlower;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
@@ -29,26 +27,27 @@ import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
-import soupbubbles.minecraftboom.block.BlockRose;
-import soupbubbles.minecraftboom.block.BlockModSlabDouble;
-import soupbubbles.minecraftboom.block.BlockModSlabHalf;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
+import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
-import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabDouble2;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlabHalf2;
+import soupbubbles.minecraftboom.block.BlockWoodenLadder;
+import soupbubbles.minecraftboom.block.BlockWoodenTrapDoor;
 import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
+import soupbubbles.minecraftboom.block.base.BlockChestBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.block.slab.BlockModSlabDouble;
+import soupbubbles.minecraftboom.block.slab.BlockModSlabHalf;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble2;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf2;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
@@ -66,6 +65,7 @@ public class ModBlocks
     public static final Block BLOCK_MOSSY_COBBLESTONE_BRICKS;
     public static final Block BLOCK_HARDENED_CLAY_BRICKS;
     public static final Block BLOCK_STAINED_CLAY_BRICKS;
+    public static final Block BLOCK_MAGMA_BRICKS;
 
     public static final Block BLOCK_POLISHED;
 
@@ -119,6 +119,20 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
+    //public static final Block BLOCK_SPRUCE_CHEST;
+    
+    public static final Block BLOCK_SPRUCE_LADDER;
+    public static final Block BLOCK_BIRCH_LADDER;
+    public static final Block BLOCK_JUNGLE_LADDER;
+    public static final Block BLOCK_ACACIA_LADDER;
+    public static final Block BLOCK_DARK_OAK_LADDER;
+
+    public static final Block BLOCK_SPRUCE_TRAP_DOOR;
+    public static final Block BLOCK_BIRCH_TRAP_DOOR;
+    public static final Block BLOCK_JUNGLE_TRAP_DOOR;
+    public static final Block BLOCK_ACACIA_TRAP_DOOR;
+    public static final Block BLOCK_DARK_OAK_TRAP_DOOR;
+    
     public static final Block BLOCK_GOLDEN_BARS;
     public static final Block BLOCK_SOUL_GLASS_PANE;
     //public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
@@ -138,6 +152,7 @@ public class ModBlocks
         BLOCK_HARDENED_CLAY_BRICKS = registerBlock(new BlockBase(Names.BLOCK_HARDENED_CLAY_BRICKS));
         BLOCK_STAINED_CLAY_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS);
         registerBlockMeta(BLOCK_STAINED_CLAY_BRICKS, new ItemBlockMeta(BLOCK_STAINED_CLAY_BRICKS, Names.BLOCK_STAINED_HARDENED_CLAY_BRICKS));
+        BLOCK_MAGMA_BRICKS = registerBlock(new BlockBase(Names.BLOCK_MAGMA_BRICKS));
 
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
@@ -200,6 +215,20 @@ public class ModBlocks
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
+        //BLOCK_SPRUCE_CHEST = registerBlock(new BlockChestBase(BlockChestBase.ChestType.SPRUCE_BASIC));
+        
+        BLOCK_SPRUCE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_SPRUCE_LADDER));
+        BLOCK_BIRCH_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_BIRCH_LADDER));
+        BLOCK_JUNGLE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_JUNGLE_LADDER));
+        BLOCK_ACACIA_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_ACACIA_LADDER));
+        BLOCK_DARK_OAK_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_DARK_OAK_LADDER));
+
+        BLOCK_SPRUCE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_SPRUCE_TRAP_DOOR));
+        BLOCK_BIRCH_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_BIRCH_TRAP_DOOR));
+        BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
+        BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
+        BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
+        
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
         //BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
@@ -242,6 +271,12 @@ public class ModBlocks
     public static void registerTileEntities()
     {
         GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Reference.MOD_ID + ":" + TileEntityCraftingTable.class.getSimpleName());
+        //GameRegistry.registerTileEntity(TileEntityChestBase.class, TileEntityChestBase.class.getName());
+    }
+    
+    public static void registerTileEntityRenderers()
+    {
+        //ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChestBase.class, new RenderChest());
     }
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)

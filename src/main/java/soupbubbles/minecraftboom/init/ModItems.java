@@ -26,6 +26,7 @@ public class ModItems
     public static final Item ITEM_POLAR_BEAR_FUR;
     public static final Item ITEM_PUMPKIN_SLICE;
     public static final Item ITEM_PRISMARINE_ARROW;
+    public static final Item ITEM_WHEAT_ON_STICK;
 
     static
     {
@@ -38,7 +39,8 @@ public class ModItems
         ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
         ITEM_TELESCOPE = registerItem(new ItemTelescope());
         ITEM_PRISMARINE_ARROW = registerItem(new ItemPrismarineArrow());
-        
+        ITEM_WHEAT_ON_STICK = registerItem(new ItemBase(Names.ITEM_WHEAT_ON_STICK));
+ 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {
             ITEM_PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));

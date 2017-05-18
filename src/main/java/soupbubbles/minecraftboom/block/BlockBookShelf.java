@@ -16,10 +16,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.base.IBlockMeta;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
 {

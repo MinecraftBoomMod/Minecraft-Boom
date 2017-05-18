@@ -25,12 +25,12 @@ import net.minecraft.potion.PotionHelper;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
-import soupbubbles.minecraftboom.block.BlockModSlab;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlab;
-import soupbubbles.minecraftboom.block.BlockVanillaStoneSlab2;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.block.slab.BlockModSlab;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab;
+import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab2;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
 public class ModRecipes
@@ -38,9 +38,7 @@ public class ModRecipes
     private static final List<IRecipe> RECIPES = CraftingManager.getInstance().getRecipeList();
 
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
-
-    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK};
-
+    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK, Blocks.TRAPDOOR};
     public static final ItemStack[] REMOVE_ITEMSTACK_RECIPE_LIST = {new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SAND.getMetadata()), new ItemStack(Blocks.STONE_SLAB2, 1, BlockStoneSlabNew.EnumType.RED_SANDSTONE.getMetadata())};
 
     private static int stairOutputAmount = 4;
@@ -73,6 +71,8 @@ public class ModRecipes
             GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 8, meta), "xxx", "xyx", "xxx", 'x', ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 'y', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
         }
 
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MAGMA_BRICKS, 4), "xx", "xx", 'x', Blocks.MAGMA);
+        
         //Bookshelves
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.BOOKSHELF), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()), 'y', new ItemStack(Items.BOOK));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.SPRUCE.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()), 'y', Items.BOOK);
@@ -166,6 +166,10 @@ public class ModRecipes
         addSlabRecipe(Blocks.PRISMARINE, BlockPrismarine.DARK_META, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.DARK_PRISMARINE.getMetadata());
         addSlabRecipe(Blocks.END_BRICKS, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.END_STONE_BRICKS.getMetadata());
         addSlabRecipe(Blocks.RED_NETHER_BRICK, ModBlocks.BLOCK_HALF_SLAB_VANILLA_STONE_2, BlockVanillaStoneSlab2.EnumType.RED_NETHER_BRICKS.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_COBBLESTONE_BRICKS, ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.COBBLESTONE_BRICKS.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS, ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.MOSSY_COBBLESTONE_BRICKS.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.HARDENED_CLAY_BRICKS.getMetadata());
+        addSlabRecipe(ModBlocks.BLOCK_MAGMA_BRICKS, ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.MAGMA_BRICKS.getMetadata());
         addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_PRISMARINE.getMetadata());
         addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata());
         addSlabRecipe(ModBlocks.BLOCK_POLISHED, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata(), ModBlocks.BLOCK_HALF_SLAB_MOD, BlockModSlab.EnumType.SMOOTH_END_STONE.getMetadata());
@@ -196,7 +200,20 @@ public class ModRecipes
 
         //Ladders
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
 
+        //Trap Doors
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.TRAPDOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
+        
         //Misc
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GOLDEN_BARS, 16), "xxx", "xxx", 'x', Items.GOLD_INGOT);
 

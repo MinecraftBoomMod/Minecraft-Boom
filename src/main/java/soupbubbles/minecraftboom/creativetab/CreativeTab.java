@@ -25,11 +25,6 @@ public class CreativeTab
         @Override
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
-            if (ConfigurationHandler.Settings.replaceCraftingTable)
-            {
-                stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
-            }
-            
             if (ConfigurationHandler.Settings.replacePumpkin)
             {
                 stack.add(new ItemStack(Blocks.PUMPKIN, 1, 0));
@@ -40,12 +35,22 @@ public class CreativeTab
         }
     };
     
-    public static final CreativeTabs MINECRAFTBOOM_ITEM_TAB = new CreativeTabs(Reference.MOD_ID + "_item")
+    public static final CreativeTabs MINECRAFTBOOM_DECORATION_ITEM_TAB = new CreativeTabs(Reference.MOD_ID + "_decoration_item")
     {
         @Override
         public ItemStack getTabIconItem()
         {
             return new ItemStack(ModItems.ITEM_LEVITATION_DUST);
+        }
+        
+        @SideOnly(Side.CLIENT)
+        @Override
+        public void displayAllRelevantItems(NonNullList<ItemStack> stack)
+        {
+            if (ConfigurationHandler.Settings.replaceCraftingTable)
+            {
+                stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
+            }
         }
     };
 }

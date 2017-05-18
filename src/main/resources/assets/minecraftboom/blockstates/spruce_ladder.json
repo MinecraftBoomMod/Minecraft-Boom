@@ -1,0 +1,36 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "texture": "minecraftboom:blocks/spruce_ladder",
+            "particle": "#texture"
+        }
+    },
+    "variants": {
+        "normal" : [{ }],
+        "item": {
+            "true": {
+                "model": "minecraftboom:item/ladder",
+                "textures": {
+                    "layer0": "#texture"
+                }
+            },
+            "false": {
+                "model": "ladder"
+            }
+        },
+        "facing": { 
+            "north": {
+            },
+            "east": {
+                "y": 90
+            },
+            "south": {
+                "y": 180 
+            },
+            "west": {
+                "y": 270 
+            }
+        }
+    }
+}

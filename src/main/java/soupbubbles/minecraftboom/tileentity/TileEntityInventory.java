@@ -17,6 +17,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
+import soupbubbles.minecraftboom.reference.Assets;
 
 @SuppressWarnings("deprecation")
 public class TileEntityInventory extends TileEntityBase implements IInventory
@@ -26,17 +27,17 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     private int size;
     private String name;
 
-    public TileEntityInventory(int size, String name)
+    public TileEntityInventory(int sizeInv, String nameInv)
     {
-        inventory = NonNullList.withSize(size, ItemStack.EMPTY);
-        this.size = size;
-        this.name = name;
+        inventory = NonNullList.withSize(sizeInv, ItemStack.EMPTY);
+        size = sizeInv;
+        name = nameInv;
         initializeItemHandlers();
     }
 
     protected boolean isSyncedSlot(int slot)
     {
-        for (int s : this.syncedSlots)
+        for (int s : syncedSlots)
         {
             if (s == slot)
             {
@@ -139,6 +140,7 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
             setInventorySlotContents(slot, ItemStack.EMPTY);
             return itemStack;
         }
+        
         return ItemStack.EMPTY;
     }
 
@@ -146,11 +148,18 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     public void setInventorySlotContents(int slot, ItemStack stack)
     {
         inventory.set(slot, stack);
+
         if (!stack.isEmpty() && stack.getCount() > getInventoryStackLimit())
+        {
             stack.setCount(getInventoryStackLimit());
+        }
+
         markDirty();
+        
         if (!getWorld().isRemote)
+        {
             getWorld().notifyBlockUpdate(getPos(), getWorld().getBlockState(getPos()), getWorld().getBlockState(getPos()), 3);
+        }
     }
 
     @Override
@@ -186,7 +195,6 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     @Override
     public void setField(int id, int value)
     {
-
     }
 
     @Override
@@ -198,7 +206,7 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     @Override
     public void clear()
     {
-        this.inventory = NonNullList.withSize(size, ItemStack.EMPTY);
+        inventory = NonNullList.withSize(size, ItemStack.EMPTY);
     }
 
     @Override
@@ -209,7 +217,7 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
             if (!stack.isEmpty())
             {
                 return false;
-            } 
+            }
         }
 
         return true;
@@ -224,7 +232,7 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     @Override
     public String getName()
     {
-        return I18n.translateToLocalFormatted("tile.minecraftboom." + name + ".name");
+        return String.format(Assets.CONATINER_PREFIX, Assets.ASSET_PREFIX, name);
     }
 
     @Override

@@ -48,7 +48,7 @@
             },
             "prismarine_bricks": {
                 "textures": {
-                    "top": "blocks/prismarine_dark",
+                    "top": "blocks/prismarine_bricks",
                     "bottom": "#top",
                     "side": "#top"
                 }

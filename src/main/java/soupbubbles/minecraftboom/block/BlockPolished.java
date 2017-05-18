@@ -15,10 +15,10 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.block.base.IBlockMeta;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockPolished extends BlockBase implements IBlockMeta
 {

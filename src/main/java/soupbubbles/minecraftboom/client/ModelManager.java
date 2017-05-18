@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
+import soupbubbles.minecraftboom.block.BlockWoodenLadder;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.item.base.ItemBase;
@@ -97,19 +98,19 @@ public class ModelManager
 
                 for (int i = 0; i < itemBlock.getVariants().length; i++)
                 {
-                    //modelResources.add(new ModelResourceLocation(Assets.TEXTURE_PREFIX + itemBlock.getRegistryPrefix() + itemBlock.getVariants()[i]));
                     ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i]));
                 }
-
-                
-                //ModelBakery.registerItemVariants(item, modelResources.toArray(new ModelResourceLocation[0]));
-                //ModelLoader.setCustomMeshDefinition(item, itemStack -> modelResources.get(itemStack.getMetadata()));
             }
+        }
+        else if (block instanceof BlockWoodenLadder)
+        {
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(block.getRegistryName().toString(), "facing=north,item=true"));
         }
         else
         {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(block.getRegistryName().toString()));
-            itemsRegistered.add(item);
         }
+        
+        itemsRegistered.add(item);
     }
 }

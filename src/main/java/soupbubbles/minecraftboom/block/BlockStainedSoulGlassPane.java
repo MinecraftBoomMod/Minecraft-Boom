@@ -3,10 +3,10 @@ package soupbubbles.minecraftboom.block;
 import net.minecraft.block.BlockStainedGlassPane;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.item.EnumDyeColor;
-import soupbubbles.minecraftboom.block.base.IBlockMeta;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements IBlockMeta
 {
@@ -17,7 +17,7 @@ public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements 
         super();
         setUnlocalizedName(BASE_NAME);
         setRegistryName(BASE_NAME);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
     }
     
     @Override

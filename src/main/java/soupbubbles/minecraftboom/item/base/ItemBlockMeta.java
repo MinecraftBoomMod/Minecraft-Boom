@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.base.IBlockMeta;
+import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class ItemBlockMeta extends ItemBlock
 {
@@ -17,11 +17,6 @@ public class ItemBlockMeta extends ItemBlock
     public ItemBlockMeta(Block block, String name) 
     {
         super(block);
-        
-        if (!(block instanceof IBlockMeta))
-        {
-        	throw new IllegalArgumentException(block.getUnlocalizedName() + " must implement IBlockMeta");
-        }
         
         for (int i = 0; i < VARIANTS.length; i++)
         {

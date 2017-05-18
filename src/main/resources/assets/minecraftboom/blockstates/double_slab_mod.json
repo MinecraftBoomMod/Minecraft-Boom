@@ -10,6 +10,30 @@
     },
     "variants": {
         "variant": {
+            "cobblestone_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/cobblestone_bricks",
+                    "side": "#end"
+                }
+            },
+            "mossy_cobblestone_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/mossy_cobblestone_bricks",
+                    "side": "#end"
+                }
+            },
+            "hardened_clay_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/hardened_clay_bricks",
+                    "side": "#end"
+                }
+            },
+            "magma_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/magma_bricks",
+                    "side": "#end"
+                }
+            },
             "smooth_prismarine": {
                 "textures": {
                     "end": "minecraftboom:blocks/smooth_prismarine",

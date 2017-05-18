@@ -13,7 +13,6 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public class ItemTelescope extends ItemBase
 {
-
     public ItemTelescope()
     {
         super(Names.ITEM_TELESCOPE);

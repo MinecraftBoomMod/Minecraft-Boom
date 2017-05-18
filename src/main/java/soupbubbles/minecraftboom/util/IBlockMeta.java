@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.block.base;
+package soupbubbles.minecraftboom.util;
 
 import net.minecraft.block.properties.PropertyEnum;
 

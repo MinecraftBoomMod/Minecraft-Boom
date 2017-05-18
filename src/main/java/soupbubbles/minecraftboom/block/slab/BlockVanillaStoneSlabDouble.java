@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.block;
+package soupbubbles.minecraftboom.block.slab;
 
 import soupbubbles.minecraftboom.reference.Names;
 

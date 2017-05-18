@@ -24,7 +24,7 @@ public class ItemBase extends Item
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
         setToolTip(false);
         setHasSubtypes(variants.length > 0);
         

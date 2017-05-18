@@ -9,6 +9,7 @@ import net.minecraft.item.EnumDyeColor;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockColoredBase extends BlockColored implements IBlockMeta
 {
