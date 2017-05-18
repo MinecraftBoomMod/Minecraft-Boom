@@ -25,6 +25,7 @@ item.minecraftboom.levitation_dust.name=Levitation Dust
 item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
 item.prismarine_arrow.name=Prismarine Arrow
+item.wheat_on_stick.name=Wheat On A Stick
 
 
 # Blocks
@@ -214,4 +215,4 @@ tile.minecraftboom.dark_oak_pressure_plate.name=Dark Oak Pressure Plate
 
 tile.minecraftboom.golden_bars.name=Golden Bars
 tile.minecraftboom.soul_glass_pane.name=Soul Glass Pane
-tile.minecraftboom.flower_rose.name=Rose
+tile.minecraftboom.rose.name=Rose

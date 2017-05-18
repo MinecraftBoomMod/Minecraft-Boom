@@ -1,5 +1,8 @@
 package soupbubbles.minecraftboom.block;
 
+import java.util.Random;
+
+import net.minecraft.block.BlockFire;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +22,7 @@ public class BlockGunpowder extends BlockFallingBase
     public BlockGunpowder()
     {
         super(Names.BLOCK_GUNPOWDER);
+        setTickRandomly(true);
     }
 
     @Override
@@ -37,6 +41,40 @@ public class BlockGunpowder extends BlockFallingBase
         return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
     }
 
+    @Override
+    public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
+    {
+        super.updateTick(world, pos, state, rand);
+        boolean flag = false;
+        
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                if (world.getBlockState(pos.add(i, 0, j)).getBlock() instanceof BlockFire)
+                {
+                    flag = true;
+                }
+            }
+        }
+        
+        if (world.getBlockState(pos.add(0, 1, 0)).getBlock() instanceof BlockFire)
+        {
+            flag = true;
+        }
+        
+        if (flag && rand.nextFloat() > 0.5)
+        {
+            explode(world, pos, null);
+        }
+    }
+    
+    @Override
+    public void onBlockDestroyedByExplosion(World world, BlockPos pos, Explosion explosion)
+    {
+        explode(world, pos, explosion.getExplosivePlacedBy());
+    }
+    
     @Override
     public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity)
     {

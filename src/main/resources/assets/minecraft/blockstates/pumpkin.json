@@ -1,12 +1,34 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+    },
     "variants": {
-        "facing=north,variant=mod_pumpkin": { "model": "minecraftboom:pumpkin" },
-        "facing=south,variant=mod_pumpkin": { "model": "minecraftboom:pumpkin", "y": 180 },
-        "facing=west,variant=mod_pumpkin":  { "model": "minecraftboom:pumpkin", "y": 270 },
-        "facing=east,variant=mod_pumpkin":  { "model": "minecraftboom:pumpkin", "y": 90 },
-        "facing=north,variant=carved_mod_pumpkin": { "model": "pumpkin" },
-        "facing=south,variant=carved_mod_pumpkin": { "model": "pumpkin", "y": 180 },
-        "facing=west,variant=carved_mod_pumpkin":  { "model": "pumpkin", "y": 270 },
-        "facing=east,variant=carved_mod_pumpkin":  { "model": "pumpkin", "y": 90 }
+        "normal": [{}],
+        "facing": {
+            "north": {
+            },
+            "south": {
+                "y": 180
+            },
+            "east": {
+                "y": 90
+            },
+            "west": {
+                "y": 270
+            }
+        },
+        "variant": {
+            "mod_pumpkin": {
+                "textures": {
+                    "end": "blocks/pumpkin_top",
+                    "side": "blocks/pumpkin_side"
+                },
+                "model": "cube_column"
+            },
+            "carved_mod_pumpkin": {
+                "model": "pumpkin"
+            }
+        }
     }
 }
+

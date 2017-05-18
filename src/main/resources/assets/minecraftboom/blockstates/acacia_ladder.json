@@ -4,21 +4,18 @@
         "textures": {
             "texture": "minecraftboom:blocks/acacia_ladder",
             "particle": "#texture"
-        }
+        },
+        "model": "ladder"
     },
     "variants": {
-        "item": {
-            "true": {
-                "model": "minecraftboom:item/ladder",
+        "normal": [
+            { 
+                "model": "minecraftboom:item/generated",
                 "textures": {
                     "layer0": "#texture"
                 }
-            },
-            "false": {
-                "model": "ladder"
             }
-        },
-        "normal" : [{ }],
+        ],
         "facing": { 
             "north": {
             },

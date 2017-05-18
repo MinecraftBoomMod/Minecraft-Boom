@@ -133,7 +133,7 @@ public class Names
     public static final String BLOCK_DARK_OAK_PRESSURE_PLATE = "dark_oak_pressure_plate";
     
     public static final String BLOCK_GOLDEN_BARS = "golden_bars";
-    public static final String BLOCK_ROSE = "flower_rose";
+    public static final String BLOCK_ROSE = "rose";
     
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String ITEM_PINECONE = "pinecone";

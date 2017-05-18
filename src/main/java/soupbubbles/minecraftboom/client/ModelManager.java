@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockWoodenLadder;
+import soupbubbles.minecraftboom.block.base.BlockCrossBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.item.base.ItemBase;
@@ -102,9 +103,9 @@ public class ModelManager
                 }
             }
         }
-        else if (block instanceof BlockWoodenLadder)
+        else if (block instanceof BlockCrossBase)
         {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(block.getRegistryName().toString(), "facing=north,item=true"));
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(block.getRegistryName().toString(), "item=true"));
         }
         else
         {

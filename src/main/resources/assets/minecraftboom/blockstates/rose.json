@@ -1,0 +1,23 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "cross": "minecraftboom:blocks/rose"
+        },
+        "model": "cross"
+    },
+    "variants": {
+        "item": {
+            "true": {
+                "model": "minecraftboom:item/generated",
+                "textures": {
+                    "layer0": "minecraftboom:blocks/rose"
+                }
+            },
+            "false": {
+                "model": "cross"
+            }
+        },
+        "normal": [{ }]
+    }
+}

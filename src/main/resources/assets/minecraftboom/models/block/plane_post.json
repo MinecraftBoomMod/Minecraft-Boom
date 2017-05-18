@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "#particle",
+        "bars": "#bars"
+    },
+    "elements": [
+        {   "from": [ 7, 0, 8 ],
+            "to": [ 8, 16, 8 ],
+            "faces": {
+                "north": { "uv": [ 7, 0, 8, 16 ], "texture": "#bars" },
+                "south": { "uv": [ 8, 0, 7, 16 ], "texture": "#bars" }
+            }
+        }
+    ]
+}

@@ -1,32 +1,92 @@
 {
-    "multipart": [
-        {   "apply": { "model": "minecraftboom:golden_bars_post_ends" }},
-        {   "when": { "north": false, "east": false, "south": false, "west": false },
-            "apply": { "model": "minecraftboom:golden_bars_post" }
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "bars": "minecraftboom:blocks/golden_bars",
+            "particle": "#bars",
+            "edge": "#bars"
         },
-        {   "when": { "north": true, "east": false, "south": false, "west": false },
-            "apply": { "model": "minecraftboom:golden_bars_cap" }
+        "model": "minecraftboom:plane_edges",
+        "uvlock": true
+    },
+    "variants": {
+        "normal": [
+            { 
+                "model": "minecraftboom:item/generated",
+                "textures": {
+                    "layer0": "#bars"
+                }
+            }
+        ],
+        "north": {
+            "true": {
+                "submodel": {
+                    "side_north": {
+                        "model": "minecraftboom:plane_side"
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_north": {
+                        "model": "minecraftboom:plane_post",
+                        "y": 90
+                    }
+                }
+            }
         },
-        {   "when": { "north": false, "east": true, "south": false, "west": false },
-            "apply": { "model": "minecraftboom:golden_bars_cap", "y": 90 }
+        "south": {
+            "true": {
+                "submodel": {
+                    "side_south": {
+                        "model": "minecraftboom:plane_side",
+                        "y": 180
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_south": {
+                        "model": "minecraftboom:plane_post",
+                        "y": 270
+                    }
+                }
+            }
         },
-        {   "when": { "north": false, "east": false, "south": true, "west": false },
-            "apply": { "model": "minecraftboom:golden_bars_cap_alt" }
+        "east": {
+            "true": {
+                "submodel": {
+                    "side_east": {
+                        "model": "minecraftboom:plane_side",
+                        "y": 90
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_east": {
+                        "model": "minecraftboom:plane_post",
+                        "y": 180
+                    }
+                }
+            }
         },
-        {   "when": { "north": false, "east": false, "south": false, "west": true },
-            "apply": { "model": "minecraftboom:golden_bars_cap_alt", "y": 90 }
-        },
-        {   "when": { "north": true },
-            "apply": { "model": "minecraftboom:golden_bars_side" }
-        },
-        {   "when": { "east": true },
-            "apply": { "model": "minecraftboom:golden_bars_side", "y": 90 }
-        },
-        {   "when": { "south": true },
-            "apply": { "model": "minecraftboom:golden_bars_side_alt" }
-        },
-        {   "when": { "west": true },
-            "apply": { "model": "minecraftboom:golden_bars_side_alt", "y": 90 }
+        "west": {
+            "true": {
+                "submodel": {
+                    "side_west": {
+                        "model": "minecraftboom:plane_side",
+                        "y": 270
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_west": {
+                        "model": "minecraftboom:plane_post"
+                    }
+                }
+            }
         }
-    ]
+    }
 }

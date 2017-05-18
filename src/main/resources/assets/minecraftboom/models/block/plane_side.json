@@ -1,9 +1,9 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "minecraftboom:blocks/golden_bars",
-        "bars": "minecraftboom:blocks/golden_bars",
-        "edge": "minecraftboom:blocks/golden_bars"
+        "particle": "#particle",
+        "bars": "#bars",
+        "edge": "#edge"
     },
     "elements": [
         {   "from": [ 8, 0, 0 ],

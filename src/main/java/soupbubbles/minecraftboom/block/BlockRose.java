@@ -1,28 +1,25 @@
 package soupbubbles.minecraftboom.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import soupbubbles.minecraftboom.block.base.BlockCrossBase;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockRose extends BlockBush
+public class BlockRose extends BlockCrossBase
 {
     private final String BASE_NAME = Names.BLOCK_ROSE;
-
+    
     public BlockRose()
     {
         super();
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
-        setHardness(0.0F);
-        setSoundType(SoundType.PLANT);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
     }
 
     @Override
