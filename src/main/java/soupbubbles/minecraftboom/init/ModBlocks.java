@@ -38,7 +38,6 @@ import soupbubbles.minecraftboom.block.BlockWoodenPressurePlate;
 import soupbubbles.minecraftboom.block.BlockWoodenTrapDoor;
 import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.block.base.BlockChestBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
@@ -53,6 +52,7 @@ import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf2;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.reference.Reference;
 import soupbubbles.minecraftboom.tileentity.TileEntityCraftingTable;
@@ -121,8 +121,6 @@ public class ModBlocks
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
-    //public static final Block BLOCK_SPRUCE_CHEST;
-    
     public static final Block BLOCK_SPRUCE_LADDER;
     public static final Block BLOCK_BIRCH_LADDER;
     public static final Block BLOCK_JUNGLE_LADDER;
@@ -229,8 +227,6 @@ public class ModBlocks
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 
-        //BLOCK_SPRUCE_CHEST = registerBlock(new BlockChestBase(BlockChestBase.ChestType.SPRUCE_BASIC));
-        
         BLOCK_SPRUCE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_SPRUCE_LADDER));
         BLOCK_BIRCH_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_BIRCH_LADDER));
         BLOCK_JUNGLE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_JUNGLE_LADDER));
@@ -296,13 +292,11 @@ public class ModBlocks
 
     public static void registerTileEntities()
     {
-        GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Reference.MOD_ID + ":" + TileEntityCraftingTable.class.getSimpleName());
-        //GameRegistry.registerTileEntity(TileEntityChestBase.class, TileEntityChestBase.class.getName());
+        GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Assets.ASSET_PREFIX + ":" + Names.TILE_ENTITY_CRAFTING_TABLE);
     }
     
     public static void registerTileEntityRenderers()
     {
-        //ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChestBase.class, new RenderChest());
     }
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)
@@ -354,10 +348,6 @@ public class ModBlocks
                 GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlockMeta(block, Names.BLOCK_PUMPKIN));
                 BLOCKS.add(block);
             }
-//          else
-//          {
-//              GameRegistry.addSubstitutionAlias("minecraft:" + name, GameRegistry.Type.ITEM, new ItemBlock(block).setRegistryName(name));
-//          }
         }
         catch (ExistingSubstitutionException e)
         {

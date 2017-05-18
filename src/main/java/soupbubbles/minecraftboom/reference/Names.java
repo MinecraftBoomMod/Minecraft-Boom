@@ -108,6 +108,12 @@ public class Names
     public static final String BLOCK_ACACIA_LADDER = "acacia_ladder";
     public static final String BLOCK_DARK_OAK_LADDER = "dark_oak_ladder";
     
+    public static final String BLOCK_SPRUCE_SIGN = "spruce_sign";
+    public static final String BLOCK_BIRCH_SIGN = "birch_sign";
+    public static final String BLOCK_JUNGLE_SIGN = "jungle_sign";
+    public static final String BLOCK_ACACIA_SIGN = "acacia_sign";
+    public static final String BLOCK_DARK_OAK_SIGN = "dark_oak_sign";
+    
     public static final String BLOCK_SPRUCE_TRAP_DOOR = "spruce_trap_door";
     public static final String BLOCK_BIRCH_TRAP_DOOR = "birch_trap_door";
     public static final String BLOCK_JUNGLE_TRAP_DOOR = "jungle_trap_door";
@@ -144,6 +150,8 @@ public class Names
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
     public static final String ENTITY_PRISMARINE_ARROW = "prismarine_arrow";
 
+    public static final String TILE_ENTITY_CRAFTING_TABLE = "CraftingTable";
+    
     public static final String POTION_LEVITATION = "levitation";
     public static final String POTION_LONG_PREFIX = "long_";
 }
