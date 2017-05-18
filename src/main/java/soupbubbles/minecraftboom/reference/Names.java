@@ -114,6 +114,18 @@ public class Names
     public static final String BLOCK_ACACIA_TRAP_DOOR = "acacia_trap_door";
     public static final String BLOCK_DARK_OAK_TRAP_DOOR = "dark_oak_trap_door";
     
+    public static final String BLOCK_SPRUCE_BUTTON = "spruce_button";
+    public static final String BLOCK_BIRCH_BUTTON = "birch_button";
+    public static final String BLOCK_JUNGLE_BUTTON = "jungle_button";
+    public static final String BLOCK_ACACIA_BUTTON = "acacia_button";
+    public static final String BLOCK_DARK_OAK_BUTTON = "dark_oak_button";
+    
+    public static final String BLOCK_SPRUCE_PRESSURE_PLATE = "spruce_pressure_plate";
+    public static final String BLOCK_BIRCH_PRESSURE_PLATE = "birch_pressure_plate";
+    public static final String BLOCK_JUNGLE_PRESSURE_PLATE = "jungle_pressure_plate";
+    public static final String BLOCK_ACACIA_PRESSURE_PLATE = "acacia_pressure_plate";
+    public static final String BLOCK_DARK_OAK_PRESSURE_PLATE = "dark_oak_pressure_plate";
+    
     public static final String BLOCK_GOLDEN_BARS = "golden_bars";
     public static final String BLOCK_ROSE = "flower_rose";
     

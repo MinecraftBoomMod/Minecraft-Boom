@@ -1,0 +1,42 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "texture": "blocks/planks_spruce"
+        },
+        "uvlock": true
+    },
+    "variants": {
+        "normal" : [{ "model": "wooden_button_inventory" }],
+        "facing": {
+            "up": {
+            },
+            "down": {
+                "x": 180
+            },
+            "north": {
+                "x": 90
+            },
+            "east": {
+                "x": 90,
+                "y": 90
+            },
+            "south": {
+                "x": 90,
+                "y": 180 
+            },
+            "west": {
+                "x": 90,
+                "y": 270 
+            }
+        },
+        "powered": {
+            "true": {
+                "model": "wooden_button_pressed"
+            },
+            "false": {
+                "model": "wooden_button"
+            }
+        }
+    }
+}

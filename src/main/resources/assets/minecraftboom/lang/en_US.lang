@@ -112,24 +112,6 @@ tile.minecraftboom.pillar_dark_prismarine.name=Dark Prismarine Pillar
 tile.minecraftboom.pillar_end_stone.name=End Stone Pillar
 tile.minecraftboom.pillar_netherrack.name=Netherrack Pillar
 
-tile.ladder.name=Oak Ladder
-tile.minecraftboom.spruce_ladder.name=Spruce Ladder
-tile.minecraftboom.birch_ladder.name=Birch Ladder
-tile.minecraftboom.jungle_ladder.name=Jungle Ladder
-tile.minecraftboom.acacia_ladder.name=Acacia Ladder
-tile.minecraftboom.dark_oak_ladder.name=Dark Oak Ladder
-
-tile.trapdoor.name=Oak Trap Door
-tile.minecraftboom.spruce_trap_door.name=Spruce Trap Door
-tile.minecraftboom.birch_trap_door.name=Birch Trap Door
-tile.minecraftboom.jungle_trap_door.name=Jungle Trap Door
-tile.minecraftboom.acacia_trap_door.name=Acacia Trap Door
-tile.minecraftboom.dark_oak_trap_door.name=Dark Oak Trap Door
-
-tile.minecraftboom.golden_bars.name=Golden Bars
-tile.minecraftboom.soul_glass_pane.name=Soul Glass Pane
-tile.minecraftboom.flower_rose.name=Rose
-
 # Stairs
 tile.minecraftboom.stairs_stone.name=Stone Slab Stairs
 tile.minecraftboom.stairs_smooth_granite.name=Polished Granite Stairs
@@ -151,7 +133,6 @@ tile.minecraftboom.stairs_smooth_prismarine.name=Polished Prismarine Stairs
 tile.minecraftboom.stairs_smooth_dark_prismarine.name=Polished Dark Prismarine Stairs
 tile.minecraftboom.stairs_smooth_end_stone.name=Polished End Stone Stairs
 tile.minecraftboom.stairs_smooth_netherrack.name=Polished Netherrack Stairs
-
 
 # Half Slabs
 tile.minecraftboom.half_slab_vanilla_stone_smooth_granite.name=Polished Granite Slab
@@ -178,7 +159,6 @@ tile.minecraftboom.half_slab_mod_smooth_dark_prismarine.name=Polished Dark Prism
 tile.minecraftboom.half_slab_mod_smooth_end_stone.name=Polished End Stone Slab
 tile.minecraftboom.half_slab_mod_smooth_netherrack.name=Polished Netherrack Slab
 
-
 # Double Slabs
 tile.minecraftboom.double_slab_vanilla_stone_smooth_granite.name=Polished Granite Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_smooth_diorite.name=Polished Diorite Double Slab
@@ -203,3 +183,35 @@ tile.minecraftboom.double_slab_mod_smooth_prismarine.name=Polished Prismarine Do
 tile.minecraftboom.double_slab_mod_smooth_dark_prismarine.name=Polished Dark Prismarine Double Slab
 tile.minecraftboom.double_slab_mod_smooth_end_stone.name=Polished End Stone Double Slab
 tile.minecraftboom.double_slab_mod_smooth_netherrack.name=Polished Dark Prismarine Double Slab
+
+tile.ladder.name=Oak Ladder
+tile.minecraftboom.spruce_ladder.name=Spruce Ladder
+tile.minecraftboom.birch_ladder.name=Birch Ladder
+tile.minecraftboom.jungle_ladder.name=Jungle Ladder
+tile.minecraftboom.acacia_ladder.name=Acacia Ladder
+tile.minecraftboom.dark_oak_ladder.name=Dark Oak Ladder
+
+tile.trapdoor.name=Oak Trap Door
+tile.minecraftboom.spruce_trap_door.name=Spruce Trap Door
+tile.minecraftboom.birch_trap_door.name=Birch Trap Door
+tile.minecraftboom.jungle_trap_door.name=Jungle Trap Door
+tile.minecraftboom.acacia_trap_door.name=Acacia Trap Door
+tile.minecraftboom.dark_oak_trap_door.name=Dark Oak Trap Door
+
+tile.buttonWood.name=Oak Button
+tile.minecraftboom.spruce_button.name=Spruce Button
+tile.minecraftboom.birch_button.name=Birch Button
+tile.minecraftboom.jungle_button.name=Jungle Button
+tile.minecraftboom.acacia_button.name=Acacia Button
+tile.minecraftboom.dark_oak_button.name=Dark Oak Button
+
+tile.pressurePlateWood.name=Oak Pressure Plate
+tile.minecraftboom.spruce_pressure_plate.name=Spruce Pressure Plate
+tile.minecraftboom.birch_pressure_plate.name=Birch Pressure Plate
+tile.minecraftboom.jungle_pressure_plate.name=Jungle Pressure Plate
+tile.minecraftboom.acacia_pressure_plate.name=Acacia Pressure Plate
+tile.minecraftboom.dark_oak_pressure_plate.name=Dark Oak Pressure Plate
+
+tile.minecraftboom.golden_bars.name=Golden Bars
+tile.minecraftboom.soul_glass_pane.name=Soul Glass Pane
+tile.minecraftboom.flower_rose.name=Rose

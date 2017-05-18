@@ -38,7 +38,7 @@ public class ModRecipes
     private static final List<IRecipe> RECIPES = CraftingManager.getInstance().getRecipeList();
 
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
-    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK, Blocks.TRAPDOOR};
+    public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK, Blocks.TRAPDOOR, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE};
     public static final ItemStack[] REMOVE_ITEMSTACK_RECIPE_LIST = {new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SAND.getMetadata()), new ItemStack(Blocks.STONE_SLAB2, 1, BlockStoneSlabNew.EnumType.RED_SANDSTONE.getMetadata())};
 
     private static int stairOutputAmount = 4;
@@ -213,6 +213,22 @@ public class ModRecipes
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
+        
+        //Buttons
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.WOODEN_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
+
+        //Pressure Plates
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.WOODEN_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
+        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
         
         //Misc
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GOLDEN_BARS, 16), "xxx", "xxx", 'x', Items.GOLD_INGOT);

@@ -1,6 +1,7 @@
 package soupbubbles.minecraftboom.block;
 
 import net.minecraft.block.BlockLadder;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -19,6 +20,8 @@ public class BlockWoodenLadder extends BlockLadder
         setRegistryName(name);
         setUnlocalizedName(name);
         setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ITEM, false));
+        setHardness(0.5F);
+        setSoundType(SoundType.WOOD);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
         
         BASE_NAME = name;

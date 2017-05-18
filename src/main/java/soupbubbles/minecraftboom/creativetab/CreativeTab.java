@@ -50,6 +50,8 @@ public class CreativeTab
             if (ConfigurationHandler.Settings.replaceCraftingTable)
             {
                 stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
+                
+                super.displayAllRelevantItems(stack);
             }
         }
     };

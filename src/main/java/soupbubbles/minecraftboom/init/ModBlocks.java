@@ -32,7 +32,9 @@ import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
+import soupbubbles.minecraftboom.block.BlockWoodenButton;
 import soupbubbles.minecraftboom.block.BlockWoodenLadder;
+import soupbubbles.minecraftboom.block.BlockWoodenPressurePlate;
 import soupbubbles.minecraftboom.block.BlockWoodenTrapDoor;
 import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
@@ -133,6 +135,18 @@ public class ModBlocks
     public static final Block BLOCK_ACACIA_TRAP_DOOR;
     public static final Block BLOCK_DARK_OAK_TRAP_DOOR;
     
+    public static final Block BLOCK_SPRUCE_BUTTON;
+    public static final Block BLOCK_BIRCH_BUTTON;
+    public static final Block BLOCK_JUNGLE_BUTTON;
+    public static final Block BLOCK_ACACIA_BUTTON;
+    public static final Block BLOCK_DARK_OAK_BUTTON;
+    
+    public static final Block BLOCK_SPRUCE_PRESSURE_PLATE;
+    public static final Block BLOCK_BIRCH_PRESSURE_PLATE;
+    public static final Block BLOCK_JUNGLE_PRESSURE_PLATE;
+    public static final Block BLOCK_ACACIA_PRESSURE_PLATE;
+    public static final Block BLOCK_DARK_OAK_PRESSURE_PLATE;
+    
     public static final Block BLOCK_GOLDEN_BARS;
     public static final Block BLOCK_SOUL_GLASS_PANE;
     //public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
@@ -228,6 +242,18 @@ public class ModBlocks
         BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
         BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
         BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
+        
+        BLOCK_SPRUCE_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_SPRUCE_BUTTON));
+        BLOCK_BIRCH_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_BIRCH_BUTTON));
+        BLOCK_JUNGLE_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_JUNGLE_BUTTON));
+        BLOCK_ACACIA_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_ACACIA_BUTTON));
+        BLOCK_DARK_OAK_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_DARK_OAK_BUTTON));
+        
+        BLOCK_SPRUCE_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_SPRUCE_PRESSURE_PLATE));
+        BLOCK_BIRCH_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_BIRCH_PRESSURE_PLATE));
+        BLOCK_JUNGLE_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_JUNGLE_PRESSURE_PLATE));
+        BLOCK_ACACIA_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_ACACIA_PRESSURE_PLATE));
+        BLOCK_DARK_OAK_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_DARK_OAK_PRESSURE_PLATE));
         
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));

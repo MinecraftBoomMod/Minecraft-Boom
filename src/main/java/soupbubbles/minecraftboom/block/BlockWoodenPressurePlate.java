@@ -1,19 +1,19 @@
 package soupbubbles.minecraftboom.block;
 
-import net.minecraft.block.BlockTrapDoor;
+import net.minecraft.block.BlockButtonWood;
+import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.EnumFacing;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 
-public class BlockWoodenTrapDoor extends BlockTrapDoor
+public class BlockWoodenPressurePlate extends BlockPressurePlate
 {
     protected final String BASE_NAME;
 
-    public BlockWoodenTrapDoor(String name)
+    public BlockWoodenPressurePlate(String name)
     {
-        super(Material.WOOD);
+        super(Material.WOOD, BlockPressurePlate.Sensitivity.EVERYTHING);
         setRegistryName(name);
         setUnlocalizedName(name);
         setHardness(0.5F);
@@ -22,7 +22,7 @@ public class BlockWoodenTrapDoor extends BlockTrapDoor
         
         BASE_NAME = name;
     }
-
+    
     @Override
     public String getUnlocalizedName()
     {
