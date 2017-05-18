@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "texture": "minecraftboom:blocks/birch_trap_door"
+            "texture": "minecraftboom:blocks/spruce_trap_door"
         }
     },
     "variants": {
