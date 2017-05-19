@@ -31,7 +31,9 @@ import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
+import soupbubbles.minecraftboom.block.BlockSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
+import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockWoodenButton;
 import soupbubbles.minecraftboom.block.BlockWoodenLadder;
 import soupbubbles.minecraftboom.block.BlockWoodenPressurePlate;
@@ -54,7 +56,6 @@ import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.reference.Reference;
 import soupbubbles.minecraftboom.tileentity.TileEntityCraftingTable;
 
 public class ModBlocks
@@ -147,7 +148,7 @@ public class ModBlocks
     
     public static final Block BLOCK_GOLDEN_BARS;
     public static final Block BLOCK_SOUL_GLASS_PANE;
-    //public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
     public static final Block BLOCK_CRAFTING_TABLE;
@@ -252,9 +253,9 @@ public class ModBlocks
         BLOCK_DARK_OAK_PRESSURE_PLATE = registerBlock(new BlockWoodenPressurePlate(Names.BLOCK_DARK_OAK_PRESSURE_PLATE));
         
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
-        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false).setHardness(0.3F));
-        //BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
-        //registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
+        BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
+        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
         BLOCK_ROSE = registerBlock(new BlockRose());
   
         if (ConfigurationHandler.Settings.replaceCraftingTable)

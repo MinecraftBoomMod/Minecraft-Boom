@@ -1,29 +1,90 @@
 {
-    "multipart": [
-        {   "apply": { "model": "minecraftboom:soul_glass_pane_post" }},
-        {   "when": { "north": true },
-            "apply": { "model": "minecraftboom:soul_glass_pane_side" }
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "pane": "minecraftboom:blocks/soul_glass",
+            "edge": "minecraftboom:blocks/soul_glass_pane_top",
+            "particle": "#pane"
         },
-        {   "when": { "east": true },
-            "apply": { "model": "minecraftboom:soul_glass_pane_side", "y": 90 }
+        "model": "pane_post",
+        "uvlock": true
+    },
+    "variants": {
+        "normal": [
+            { 
+                "model": "minecraftboom:item/generated",
+                "textures": {
+                    "layer0": "#pane"
+                }
+            }
+        ],
+        "north": {
+            "true": {
+                "submodel": {
+                    "side_north": {
+                        "model": "pane_side"
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_north": {
+                        "model": "pane_noside"
+                    }
+                }
+            }
         },
-        {   "when": { "south": true },
-            "apply": { "model": "minecraftboom:soul_glass_pane_side_alt" }
+        "south": {
+            "true": {
+                "submodel": {
+                    "side_south": {
+                        "model": "pane_side_alt"
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_south": {
+                        "model": "pane_noside_alt",
+                        "y": 90
+                    }
+                }
+            }
         },
-        {   "when": { "west": true },
-            "apply": { "model": "minecraftboom:soul_glass_pane_side_alt", "y": 90 }
+        "east": {
+            "true": {
+                "submodel": {
+                    "side_east": {
+                        "model": "pane_side",
+                        "y": 90
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_east": {
+                        "model": "pane_noside_alt"
+                    }
+                }
+            }
         },
-        {   "when": { "north": false },
-            "apply": { "model": "minecraftboom:soul_glass_pane_noside" }
-        },
-        {   "when": { "east": false },
-            "apply": { "model": "minecraftboom:soul_glass_pane_noside_alt" }
-        },
-        {   "when": { "south": false },
-            "apply": { "model": "minecraftboom:soul_glass_pane_noside_alt", "y": 90 }
-        },
-        {   "when": { "west": false },
-            "apply": { "model": "minecraftboom:soul_glass_pane_noside", "y": 270 }
+        "west": {
+            "true": {
+                "submodel": {
+                    "side_west": {
+                        "model": "pane_side_alt",
+                        "y": 90
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_west": {
+                        "model": "pane_noside",
+                        "y": 270
+                    }
+                }
+            }
         }
-    ]
+    }
 }

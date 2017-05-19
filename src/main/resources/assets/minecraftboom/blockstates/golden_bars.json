@@ -65,7 +65,7 @@
             "false": {
                 "submodel": {
                     "post_east": {
-                        "model": "minecraftboom:plane_post",
+                    "model": "minecraftboom:plane_post",
                         "y": 180
                     }
                 }

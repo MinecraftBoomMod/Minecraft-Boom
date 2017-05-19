@@ -1,0 +1,90 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "item/generated"
+    },
+    "variants": {
+        "color": {
+            "white": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/white_stained_soul_glass"
+                }
+            },
+            "orange": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/orange_stained_soul_glass"
+                }
+            },
+            "magenta": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/magenta_stained_soul_glass"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/light_blue_stained_soul_glass"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/yellow_stained_soul_glass"
+                }
+            },
+            "lime": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/lime_stained_soul_glass"
+                }
+            },
+            "pink": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/pink_stained_soul_glass"
+                }
+            },
+            "gray": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/gray_stained_soul_glass"
+                }
+            },
+            "silver": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/silver_stained_soul_glass"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/cyan_stained_soul_glass"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/purple_stained_soul_glass"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/blue_stained_soul_glass"
+                }
+            },
+            "brown": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/brown_stained_soul_glass"
+                }
+            },
+            "green": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/green_stained_soul_glass"
+                }
+            },
+            "red": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/red_stained_soul_glass"
+                }
+            },
+            "black": {
+                "textures": {
+                    "layer0": "minecraftboom:blocks/black_stained_soul_glass"
+                }
+            }
+        }
+    }
+}

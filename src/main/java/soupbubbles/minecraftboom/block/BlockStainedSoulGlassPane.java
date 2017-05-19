@@ -1,12 +1,15 @@
 package soupbubbles.minecraftboom.block;
 
 import net.minecraft.block.BlockStainedGlassPane;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.item.EnumDyeColor;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.util.IBlockMeta;
+import soupbubbles.minecraftboom.util.IRenderItem;
 
 public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements IBlockMeta
 {
@@ -25,7 +28,7 @@ public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements 
     {
         return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, EnumDyeColor.byMetadata(meta).getName() + "_" + BASE_NAME);
     }
-
+    
     @Override
     public PropertyEnum getVariants()
     {
@@ -35,6 +38,6 @@ public class BlockStainedSoulGlassPane extends BlockStainedGlassPane implements 
     @Override
     public String getVariantName()
     {
-        return "color";
+        return Assets.VARIANT_NAME_COLOR;
     }
 }

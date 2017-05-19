@@ -8,6 +8,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
@@ -47,6 +48,6 @@ public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
     @Override
     public String getVariantName()
     {
-        return "variant";
+        return Assets.VARIANT_NAME_VARIANT;
     }
 }

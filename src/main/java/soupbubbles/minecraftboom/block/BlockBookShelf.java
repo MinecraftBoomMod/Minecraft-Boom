@@ -23,7 +23,7 @@ import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
 {
-    public static final PropertyEnum<BlockBookShelf.EnumType> VARIANT = PropertyEnum.<BlockBookShelf.EnumType>create("variant", BlockBookShelf.EnumType.class);
+    public static final PropertyEnum<BlockBookShelf.EnumType> VARIANT = PropertyEnum.<BlockBookShelf.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockBookShelf.EnumType.class);
     
     protected final String BASE_NAME = Names.BLOCK_BOOKSHELF;
 
@@ -106,7 +106,7 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
     @Override
     public String getVariantName()
     {
-        return "variant";
+        return Assets.VARIANT_NAME_VARIANT;
     }
     
     public static enum EnumType implements IStringSerializable

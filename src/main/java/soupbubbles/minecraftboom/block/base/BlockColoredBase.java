@@ -48,6 +48,6 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
     @Override
     public String getVariantName()
     {
-        return "color";
+        return Assets.VARIANT_NAME_COLOR;
     }
 }

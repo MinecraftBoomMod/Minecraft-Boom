@@ -35,7 +35,7 @@ import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
 {
-    protected static final PropertyEnum<BlockNewPumpkin.EnumType> VARIANT = PropertyEnum.<BlockNewPumpkin.EnumType>create("variant", BlockNewPumpkin.EnumType.class);
+    protected static final PropertyEnum<BlockNewPumpkin.EnumType> VARIANT = PropertyEnum.<BlockNewPumpkin.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockNewPumpkin.EnumType.class);
 
     protected final String BASE_NAME = Names.BLOCK_PUMPKIN;
 
@@ -176,7 +176,7 @@ public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
     @Override
     public String getVariantName()
     {
-        return "variant";
+        return Assets.VARIANT_NAME_VARIANT;
     }
 
     public static enum EnumType implements IStringSerializable

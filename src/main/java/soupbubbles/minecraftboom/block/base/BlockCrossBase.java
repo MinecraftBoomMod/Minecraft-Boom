@@ -4,15 +4,16 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.IRenderItem;
 
-public class BlockCrossBase extends BlockBush
+public class BlockCrossBase extends BlockBush implements IRenderItem
 {
-    public static final IProperty<Boolean> ITEM = PropertyBool.create("item");
-
     public BlockCrossBase()
     {
         super();
@@ -38,5 +39,11 @@ public class BlockCrossBase extends BlockBush
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {ITEM});
+    }
+
+    @Override
+    public PropertyEnum getVariants()
+    {
+        return (PropertyEnum) ITEM;
     }
 }

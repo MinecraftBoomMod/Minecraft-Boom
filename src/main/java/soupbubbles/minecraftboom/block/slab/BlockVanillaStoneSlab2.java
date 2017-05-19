@@ -28,7 +28,7 @@ import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockVanillaStoneSlab2 extends BlockSlabBase
 {
-    protected static final PropertyEnum<BlockVanillaStoneSlab2.EnumType> VARIANT = PropertyEnum.<BlockVanillaStoneSlab2.EnumType>create("variant", BlockVanillaStoneSlab2.EnumType.class);
+    protected static final PropertyEnum<BlockVanillaStoneSlab2.EnumType> VARIANT = PropertyEnum.<BlockVanillaStoneSlab2.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockVanillaStoneSlab2.EnumType.class);
 
     public BlockVanillaStoneSlab2(String name)
     {

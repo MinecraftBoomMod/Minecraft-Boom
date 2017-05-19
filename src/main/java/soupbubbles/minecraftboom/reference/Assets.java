@@ -15,4 +15,8 @@ public class Assets
     public static final String TEXTURE_CHEST_DIR = TEXTURE_ENTITY_DIR + "chest/";
     
     public static final String PNG = ".png";
+    
+    public static final String VARIANT_NAME_VARIANT = "variant";
+    public static final String VARIANT_NAME_COLOR = "color";
+    public static final String VARIANT_NAME_ITEM = "item";
 }
