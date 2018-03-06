@@ -35,17 +35,17 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
 public class ModRecipes
 {
-    private static final List<IRecipe> RECIPES = CraftingManager.getInstance().getRecipeList();
+    /*private static final List<IRecipe> RECIPES = CraftingManager.REGISTRY.getRecipeList();
 
     public static final Item[] REMOVE_ITEM_RECIPE_LIST = {};
     public static final Block[] REMOVE_BLOCK_RECIPE_LIST = {Blocks.STONE_BRICK_STAIRS, Blocks.SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_STAIRS, Blocks.LADDER, Blocks.BOOKSHELF, Blocks.BONE_BLOCK, Blocks.TRAPDOOR, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE};
     public static final ItemStack[] REMOVE_ITEMSTACK_RECIPE_LIST = {new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata()), new ItemStack(Blocks.STONE_SLAB, 1, BlockStoneSlab.EnumType.SAND.getMetadata()), new ItemStack(Blocks.STONE_SLAB2, 1, BlockStoneSlabNew.EnumType.RED_SANDSTONE.getMetadata())};
 
-    private static int stairOutputAmount = 4;
+    private static int stairOutputAmount = 4;*/
 
     public static void init()
     {
-        removeVanillaRecipes();
+    	/*removeVanillaRecipes();
 
         if (ConfigurationHandler.Settings.replaceVanillaStairRecipe)
         {
@@ -55,11 +55,12 @@ public class ModRecipes
 
         initRecipes();
         initFurnaceRecipes();
-        initBrewingRecipes();
+        initBrewingRecipes();*/
     }
 
     private static void initRecipes()
     {
+    	/*
         //Bricks
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.COBBLESTONE);
         GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.MOSSY_COBBLESTONE);
@@ -253,6 +254,7 @@ public class ModRecipes
         GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
         GameRegistry.addShapedRecipe(new ItemStack(Blocks.BONE_BLOCK), "xx", "xx", 'x', Items.BONE);
         GameRegistry.addShapelessRecipe(new ItemStack(Items.BONE, 4), Blocks.BONE_BLOCK);
+        */
     }
 
     private static void initFurnaceRecipes()
@@ -261,7 +263,7 @@ public class ModRecipes
 
         if (ConfigurationHandler.Settings.replacePumpkin)
         {
-            GameRegistry.addSmelting(ModBlocks.BLOCK_PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
+        	//GameRegistry.addSmelting(ModBlocks.BLOCK_PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
         }
         else
         {
@@ -275,6 +277,7 @@ public class ModRecipes
 
     private static void removeVanillaRecipes()
     {
+    	/*
         Iterator<IRecipe> ir = RECIPES.iterator();
 
         while (ir.hasNext())
@@ -324,10 +327,12 @@ public class ModRecipes
             }
 
         }
+        */
     }
 
     private static void replaceVanillaStairRecipe()
     {
+    	/*
         Iterator<IRecipe> ir = RECIPES.iterator();
 
         while (ir.hasNext())
@@ -355,8 +360,10 @@ public class ModRecipes
         addStairRecipe(Blocks.PLANKS, BlockPlanks.EnumType.DARK_OAK.getMetadata(), Blocks.DARK_OAK_STAIRS);
         addStairRecipe(Blocks.RED_SANDSTONE, BlockSandStone.EnumType.DEFAULT.getMetadata(), Blocks.RED_SANDSTONE_STAIRS);
         addStairRecipe(Blocks.PURPUR_BLOCK, Blocks.PURPUR_STAIRS);
+        */
     }
 
+    /*
     private static void addStairRecipe(BlockStairBase output)
     {
         addStairRecipe(0, output);
@@ -412,4 +419,5 @@ public class ModRecipes
     {
         GameRegistry.addShapedRecipe(output, "xxx", 'x', input);
     }
+    */
 }

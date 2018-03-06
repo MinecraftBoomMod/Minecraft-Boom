@@ -31,7 +31,7 @@ public class BlockRose extends BlockCrossBase
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos)
     {
-        return super.getBoundingBox(state, world, pos).move(state.getOffset(world, pos));
+        return super.getBoundingBox(state, world, pos).offset(state.getOffset(world, pos));
     }
 
     @Override

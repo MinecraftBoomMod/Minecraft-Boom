@@ -24,7 +24,7 @@ public class ItemBase extends Item
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setToolTip(false);
         setHasSubtypes(variants.length > 0);
         
@@ -61,22 +61,22 @@ public class ItemBase extends Item
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void getSubItems(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
     {
         if (getHasSubtypes() && VARIANTS.length > 0)
         {
             for (int meta = 0; meta < VARIANTS.length; ++meta)
             {
-                list.add(new ItemStack(this, 1, meta));
+            	items.add(new ItemStack(this, 1, meta));
             }
         }
         else
         {
-            super.getSubItems(item, tab, list);
+            super.getSubItems(tab, items);
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced)
     {
@@ -84,7 +84,7 @@ public class ItemBase extends Item
         {
             tooltip.add(I18n.translateToLocal(getUnlocalizedName(stack) + ".tooltip"));
         }
-    }
+    }*/
 
     public String[] getVariants()
     {

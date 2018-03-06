@@ -25,7 +25,7 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
         super(material);
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setHardness(hardness);
         setResistance(resistance);
         setSoundType(sound);

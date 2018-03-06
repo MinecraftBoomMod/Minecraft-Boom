@@ -24,23 +24,6 @@ public class LootTableEventHandler
     @SubscribeEvent
     public void onLootTableLoad(LootTableLoadEvent event) 
     {
-        // Main, pool1, pool2
-
-        /*
-         * Implementation in source file. No JSon needed. For Implementation
-         * with JSon scroll down.
-         */
-        if (event.getName().equals(LootTableList.CHESTS_SPAWN_BONUS_CHEST)) 
-        {
-            LootPool pool = event.getTable().getPool("main");
-            if (pool != null) 
-            {
-                pool.addEntry(new LootEntryItem(ModItems.ITEM_TELESCOPE, 10, 0, new LootFunction[0], new LootCondition[0], Reference.MOD_ID + ":telescope_starter"));
-            }
-        }
-        
-        // for adding a pool make JSon and add the name in the List
-        // adding an Entry to a pool use getAdditiveEntry
         String name = event.getName().toString();
         List<String> addPool = Arrays.asList("shulker", "wither_skeleton", "silverfish", "polar_bear", "elder_guardian","simple_dungeon");
 

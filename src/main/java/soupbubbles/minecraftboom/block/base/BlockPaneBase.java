@@ -22,7 +22,7 @@ public class BlockPaneBase extends BlockPane
 		setUnlocalizedName(name);
         setRegistryName(name);
         setSoundType(sound);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         
         BASE_NAME = name;
 	}

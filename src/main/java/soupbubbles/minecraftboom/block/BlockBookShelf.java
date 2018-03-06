@@ -13,9 +13,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.block.slab.BlockModSlab;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
@@ -35,7 +37,7 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
         setUnlocalizedName(BASE_NAME);
         setHardness(2.0F);
         setResistance(5.0F);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setSoundType(SoundType.WOOD);
     }
 
@@ -65,11 +67,11 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for (BlockBookShelf.EnumType blockbookshelf$enumtype : BlockBookShelf.EnumType.values())
         {
-            list.add(new ItemStack(item, 1, blockbookshelf$enumtype.getMetadata()));
+            list.add(new ItemStack(this, 1, blockbookshelf$enumtype.getMetadata()));
         }
     }
 
@@ -80,7 +82,7 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state)
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
         return ((BlockBookShelf.EnumType)state.getValue(VARIANT)).getMapColor();
     }

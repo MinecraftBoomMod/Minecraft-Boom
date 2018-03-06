@@ -27,7 +27,7 @@ public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
 
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_STAIRS_AND_SLABS_TAB);
 
         useNeighborBrightness = true;
         BASE_NAME = name;

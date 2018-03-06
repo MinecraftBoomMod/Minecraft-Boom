@@ -12,6 +12,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
@@ -39,9 +41,9 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state)
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return state.getValue(VARIANT).getMapColor();
+        return ((BlockPolished.EnumType)state.getValue(VARIANT)).getMapColor();
     }
 
     @Override
@@ -58,11 +60,11 @@ public class BlockPolished extends BlockBase implements IBlockMeta
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for (BlockPolished.EnumType blockpolished$enumtype : BlockPolished.EnumType.values())
         {
-            list.add(new ItemStack(itemIn, 1, blockpolished$enumtype.getMetadata()));
+            list.add(new ItemStack(this, 1, blockpolished$enumtype.getMetadata()));
         }
     }
 

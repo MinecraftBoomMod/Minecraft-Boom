@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.entity.EntityPrismarineArrow;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class ItemPrismarineArrow extends ItemArrow
@@ -15,9 +16,15 @@ public class ItemPrismarineArrow extends ItemArrow
 	{
         setRegistryName(Names.ITEM_PRISMARINE_ARROW);
         setUnlocalizedName(Names.ITEM_PRISMARINE_ARROW);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
 	}
 	
+    @Override
+    public String getUnlocalizedName(ItemStack stack)
+    {
+        return String.format(Assets.ITEM_PREFIX, Assets.ASSET_PREFIX, Names.ITEM_PRISMARINE_ARROW);
+    }
+    
 	@Override
     public EntityArrow createArrow(World worldIn, ItemStack stack, EntityLivingBase shooter)
     {

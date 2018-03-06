@@ -16,7 +16,7 @@ public class BlockWoodenButton extends BlockButtonWood
         setUnlocalizedName(name);
         setHardness(0.5F);
         setSoundType(SoundType.WOOD);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_DECORATION_ITEM_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         
         BASE_NAME = name;
     }

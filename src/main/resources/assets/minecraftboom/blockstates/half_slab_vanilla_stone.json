@@ -54,6 +54,12 @@
                     "side": "#end"
                 }
             },
+            "chiseled_stonebrick": {
+                "textures": {
+                    "end": "blocks/stonebrick_carved",
+                    "side": "#end"
+                }
+            },
             "hardened_clay": {
                 "textures": {
                     "end": "blocks/hardened_clay",

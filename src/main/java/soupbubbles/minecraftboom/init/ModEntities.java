@@ -19,13 +19,11 @@ public class ModEntities
     {
         int id = -1;
         
-        registerEntity(EntityGrenade.class, Names.ENTITY_POPPED_CHORUS_GRENADE, id++, 80, 3, true);
         registerEntity(EntityPrismarineArrow.class, Names.ENTITY_PRISMARINE_ARROW, id++, 80, 1, true);
     }
 
     public static void registerEntityRenderers()
     {
-    	RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, renderManager -> new RenderGenericItem(renderManager, ModItems.ITEM_POPPED_CHORUS_GRENADE, Minecraft.getMinecraft().getRenderItem()));
     	RenderingRegistry.registerEntityRenderingHandler(EntityPrismarineArrow.class, renderManager -> new RenderPrismarineArrow(renderManager));
     }
 

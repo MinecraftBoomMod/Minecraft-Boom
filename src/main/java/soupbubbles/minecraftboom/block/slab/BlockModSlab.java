@@ -3,6 +3,7 @@ package soupbubbles.minecraftboom.block.slab;
 import java.util.Random;
 
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -18,6 +19,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -84,13 +86,13 @@ public abstract class BlockModSlab extends BlockSlabBase
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        if (item != Item.getItemFromBlock(ModBlocks.BLOCK_DOUBLE_SLAB_MOD))
+        if (this != ModBlocks.BLOCK_DOUBLE_SLAB_MOD)
         {
             for (BlockModSlab.EnumType blockstoneslab$enumtype : BlockModSlab.EnumType.values())
             {
-                list.add(new ItemStack(item, 1, blockstoneslab$enumtype.getMetadata()));
+                list.add(new ItemStack(this, 1, blockstoneslab$enumtype.getMetadata()));
             }
         }
     }
@@ -135,9 +137,9 @@ public abstract class BlockModSlab extends BlockSlabBase
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state)
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return state.getValue(VARIANT).getMapColor();
+        return ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMapColor();
     }
     
     @Override

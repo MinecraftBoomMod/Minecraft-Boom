@@ -20,7 +20,7 @@ public class BlockBase extends Block
         super(material);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_BLOCK_TAB);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setSoundType(sound);
 
         BASE_NAME = name;

@@ -17,7 +17,6 @@ import soupbubbles.minecraftboom.handler.PlayerEventHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.init.ModPotions;
 import soupbubbles.minecraftboom.init.ModRecipes;
 import soupbubbles.minecraftboom.world.WorldGenerator;
 
@@ -30,7 +29,6 @@ public abstract class CommonProxy implements IProxy
 
         ModBlocks.registerBlocks();
         ModBlocks.registerTileEntities();
-        ModPotions.init();
         ModItems.registerItems();
         ModEntities.initEntities();
 

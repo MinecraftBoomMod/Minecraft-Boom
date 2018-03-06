@@ -135,11 +135,11 @@ public class BlockNewPumpkin extends BlockPumpkin implements IBlockMeta
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for (BlockNewPumpkin.EnumType blockpumpkin$enumtype : BlockNewPumpkin.EnumType.values())
         {
-            list.add(new ItemStack(itemIn, 1, blockpumpkin$enumtype.getMetadata()));
+            list.add(new ItemStack(this, 1, blockpumpkin$enumtype.getMetadata()));
         }
     }
     

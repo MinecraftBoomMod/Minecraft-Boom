@@ -8,37 +8,29 @@ import javax.annotation.Nullable;
 import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockPrismarine;
-import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
-import net.minecraft.block.BlockWorkbench;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.ExistingSubstitutionException;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
-import soupbubbles.minecraftboom.block.BlockCraftingTable;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
-import soupbubbles.minecraftboom.block.BlockNewPumpkin;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockSoulGlassPane;
-import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
-import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockWoodenButton;
 import soupbubbles.minecraftboom.block.BlockWoodenLadder;
 import soupbubbles.minecraftboom.block.BlockWoodenPressurePlate;
 import soupbubbles.minecraftboom.block.BlockWoodenTrapDoor;
-import soupbubbles.minecraftboom.block.BlockWool;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
@@ -83,7 +75,6 @@ public class ModBlocks
     public static final Block BLOCK_DYE;
 
     public static final Block BLOCK_SOUL_GLASS;
-    public static final Block BLOCK_STAINED_SOUL_GLASS;
     
     public static final Block BLOCK_PILLAR_GRANITE;
     public static final Block BLOCK_PILLAR_DIORITE;
@@ -148,12 +139,11 @@ public class ModBlocks
     
     public static final Block BLOCK_GOLDEN_BARS;
     public static final Block BLOCK_SOUL_GLASS_PANE;
-    public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
-    public static final Block BLOCK_CRAFTING_TABLE;
-    public static final Block BLOCK_PUMPKIN;
-    public static final Block BLOCK_WOOL;
+    //public static final Block BLOCK_CRAFTING_TABLE;
+    //public static final Block BLOCK_PUMPKIN;
+    //public static final Block BLOCK_WOOL;
 
     static
     {
@@ -182,8 +172,6 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
         
         BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass());
-        BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
-        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS, Names.BLOCK_STAINED_SOUL_GLASS));
         
         BLOCK_PILLAR_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_GRANITE));
         BLOCK_PILLAR_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_DIORITE));
@@ -200,6 +188,7 @@ public class ModBlocks
         BLOCK_STAIRS_MOSSY_COBBLESTONE = registerBlock(new BlockStairBase(Blocks.MOSSY_COBBLESTONE.getDefaultState(), Names.MOSSY_COBBLESTONE));
         BLOCK_STAIRS_MOSSY_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.MOSSY_STONEBRICK));
         BLOCK_STAIRS_CRACKED_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), Names.CRACKED_STONEBRICK));
+        //Chisled Stairs
         BLOCK_STAIRS_HARDENED_CLAY = registerBlock(new BlockStairBase(Blocks.HARDENED_CLAY.getDefaultState(), Names.HARDENED_CLAY));
         BLOCK_STAIRS_CHISELED_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.CHISELED), Names.CHISELED_SANDSTONE));
         BLOCK_STAIRS_SMOOTH_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.SMOOTH), Names.SMOOTH_SANDSTONE));
@@ -209,6 +198,10 @@ public class ModBlocks
         BLOCK_STAIRS_DARK_PRISMARINE = registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE));
         BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairBase(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
         BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairBase(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
+        //Cobblebrick
+        //Mossy cobblebricks
+        //hardened clay bricks
+        //magma bricks
         BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
         BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
         BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
@@ -254,36 +247,34 @@ public class ModBlocks
         
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true));
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
-        BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
-        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, new ItemBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE, Names.BLOCK_STAINED_SOUL_GLASS_PANE));
         BLOCK_ROSE = registerBlock(new BlockRose());
   
         if (ConfigurationHandler.Settings.replaceCraftingTable)
         {
-            BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
+        	//BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
         }
         else 
         {
-            BLOCK_CRAFTING_TABLE = (BlockWorkbench) Blocks.CRAFTING_TABLE;
+        	//BLOCK_CRAFTING_TABLE = (BlockWorkbench) Blocks.CRAFTING_TABLE;
         }
         
         if (ConfigurationHandler.Settings.replacePumpkin)
         {
-            BLOCK_PUMPKIN = new BlockNewPumpkin();
-            replaceBlock(BLOCK_PUMPKIN, Names.PUMPKIN);
+        	//BLOCK_PUMPKIN = new BlockNewPumpkin();
+        	//replaceBlock(BLOCK_PUMPKIN, Names.PUMPKIN);
         }
         else 
         {
-            BLOCK_PUMPKIN = (BlockPumpkin) Blocks.PUMPKIN;
+        	//BLOCK_PUMPKIN = (BlockPumpkin) Blocks.PUMPKIN;
         }
         
         if (ConfigurationHandler.Settings.replaceWool)
         {
-            BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
+        	//BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
         }
         else
         {
-            BLOCK_WOOL = (BlockColored) Blocks.WOOL;
+        	//BLOCK_WOOL = (BlockColored) Blocks.WOOL;
         }
     }
 
@@ -307,13 +298,13 @@ public class ModBlocks
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block, @Nullable Function<BLOCK, ItemBlock> itemFactory)
     {
-        GameRegistry.register(block);
+        ForgeRegistries.BLOCKS.register(block);
 
         if (itemFactory != null)
         {
             final ItemBlock itemBlock = itemFactory.apply(block);
 
-            GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+            ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
         }
 
         BLOCKS.add(block);
@@ -327,8 +318,8 @@ public class ModBlocks
 
     protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block, ItemBlockMeta itemBlock)
     {
-        GameRegistry.register(block);
-        GameRegistry.register(itemBlock);
+    	ForgeRegistries.BLOCKS.register(block);
+    	ForgeRegistries.ITEMS.register(itemBlock);
 
         BLOCKS.add(block);
         return block;
@@ -336,6 +327,7 @@ public class ModBlocks
 
     protected static <BLOCK extends Block> BLOCK replaceBlock(BLOCK block, String name)
     {
+    	/*
         if (block.getRegistryName() == null)
         {
             block.setRegistryName(name);
@@ -356,6 +348,7 @@ public class ModBlocks
             throw new RuntimeException(e);
         }
 
+*/
         return block;
     }
 }

@@ -129,7 +129,7 @@ public class ContainerCraftingTable extends Container
     @Override
     public void onCraftMatrixChanged(IInventory inventory)
     {
-        craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(craftMatrix, world));
+    	//craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(craftMatrix, world));
     }
 
 }

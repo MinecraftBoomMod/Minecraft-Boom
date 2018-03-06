@@ -1,6 +1,6 @@
 # Creative Tab
-itemGroup.minecraftboom_block=Minecraft Boom Blocks
-itemGroup.minecraftboom_decoration_item=Minecraft Boom Decoration and Items
+itemGroup.minecraftboom_tab=Minecraft Boom
+itemGroup.minecraftboom_stairs_and_slabs_tab=Minecraft Boom Stais and Slabs
 
 # Vanilla
 tile.minecraftboom.mod_pumpkin.name=Pumpkin
@@ -20,12 +20,9 @@ item.minecraftboom.elder_guardian_spike.name=Elder Guardian Spike
 item.minecraftboom.pinecone.name=Pinecone
 item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
-item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
-item.minecraftboom.levitation_dust.name=Levitation Dust
-item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
-item.prismarine_arrow.name=Prismarine Arrow
-item.wheat_on_stick.name=Wheat On A Stick
+item.minecraftboom.prismarine_arrow.name=Prismarine Arrow
+item.minecraftboom.wheat_on_stick.name=Wheat On A Stick
 
 
 # Blocks
@@ -142,6 +139,7 @@ tile.minecraftboom.half_slab_vanilla_stone_smooth_andesite.name=Polished Andesit
 tile.minecraftboom.half_slab_vanilla_stone_mossy_cobblestone.name=Mossy Cobblestone Slab
 tile.minecraftboom.half_slab_vanilla_stone_mossy_stonebrick.name=Mossy Stone Bricks Slab
 tile.minecraftboom.half_slab_vanilla_stone_cracked_stonebrick.name=Cracked Stone Bricks Slab
+tile.minecraftboom.half_slab_vanilla_stone_chiseled_stonebrick.name=Chiseled Stone Bricks Slab
 tile.minecraftboom.half_slab_vanilla_stone_hardened_clay.name=Hardened Clay Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_chiseled_sandstone.name=Chiseled Sandstone Slab
 tile.minecraftboom.half_slab_vanilla_stone_2_smooth_sandstone.name=Smooth Sandstone Slab
@@ -167,6 +165,7 @@ tile.minecraftboom.double_slab_vanilla_stone_smooth_andesite.name=Polished Andes
 tile.minecraftboom.double_slab_vanilla_stone_mossy_cobblestone.name=Mossy Cobblestone Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_mossy_stonebrick.name=Mossy Stone Bricks Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_cracked_stonebrick.name=Cracked Stone Bricks Double Slab
+tile.minecraftboom.double_slab_vanilla_stone_chiseled_stonebrick.name=Chiseled Stone Bricks Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_hardened_clay.name=Hardened Clay Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_chiseled_sandstone.name=Chiseled Sandstone Double Slab
 tile.minecraftboom.double_slab_vanilla_stone_2_smooth_sandstone.name=Smooth Sandstone Double Slab

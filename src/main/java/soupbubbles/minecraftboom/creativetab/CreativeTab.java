@@ -13,46 +13,34 @@ import soupbubbles.minecraftboom.reference.Reference;
 
 public class CreativeTab
 {
-    public static final CreativeTabs MINECRAFTBOOM_BLOCK_TAB = new CreativeTabs(Reference.MOD_ID + "_block")
+    public static final CreativeTabs MINECRAFTBOOM_TAB = new CreativeTabs(Reference.MOD_ID + "_tab")
     {
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS);
+            return new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS);
         }
         
-        @SideOnly(Side.CLIENT)
         @Override
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
-            if (ConfigurationHandler.Settings.replacePumpkin)
-            {
-                stack.add(new ItemStack(Blocks.PUMPKIN, 1, 0));
-                stack.add(new ItemStack(Blocks.PUMPKIN, 1, 1));
-            }
-
             super.displayAllRelevantItems(stack);
         }
     };
     
-    public static final CreativeTabs MINECRAFTBOOM_DECORATION_ITEM_TAB = new CreativeTabs(Reference.MOD_ID + "_decoration_item")
+    public static final CreativeTabs MINECRAFTBOOM_STAIRS_AND_SLABS_TAB = new CreativeTabs(Reference.MOD_ID + "_stairs_and_slabs_tab")
     {
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModItems.ITEM_LEVITATION_DUST);
+            return new ItemStack(ModBlocks.BLOCK_STAIRS_DARK_PRISMARINE);
         }
         
         @SideOnly(Side.CLIENT)
         @Override
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
-            if (ConfigurationHandler.Settings.replaceCraftingTable)
-            {
-                stack.add(new ItemStack(Blocks.CRAFTING_TABLE));
-                
-                super.displayAllRelevantItems(stack);
-            }
+            super.displayAllRelevantItems(stack);
         }
     };
 }
