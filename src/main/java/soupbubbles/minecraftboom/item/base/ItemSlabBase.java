@@ -128,8 +128,8 @@ public class ItemSlabBase extends ItemBlockMeta
         return false;
     }
 
-    protected <T extends Comparable<T>> IBlockState makeState(IProperty<T> p_185055_1_, Comparable<?> p_185055_2_)
+    protected <T extends Comparable<T>> IBlockState makeState(IProperty<T> iproperty, Comparable<?> comparable)
     {
-        return doubleSlab.getDefaultState().withProperty(p_185055_1_, (T) p_185055_2_);
+        return doubleSlab.getDefaultState().withProperty(iproperty, (T) comparable);
     }
 }

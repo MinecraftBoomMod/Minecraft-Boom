@@ -1,0 +1,63 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "top": "#end",
+            "bottom": "#end",
+            "side": "#end"
+        },
+        "uvlock": true
+    },
+    "variants": {
+        "half": {
+                "bottom": {
+                    "model": "minecraft:half_slab"
+                },
+                "top": {
+                    "model": "minecraft:upper_slab"
+                }
+        },
+        "variant": {
+            "light_gray": {
+                "textures": {
+                    "end": "blocks/concrete_silver"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "end": "blocks/concrete_cyan"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "end": "blocks/concrete_purple"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "end": "blocks/concrete_blue"
+                }
+            },
+            "brown": {
+                "textures": {
+                    "end": "blocks/concrete_brown"
+                }
+            },
+            "green": {
+                "textures": {
+                    "end": "blocks/concrete_green"
+                }
+            },
+            "red": {
+                "textures": {
+                    "end": "blocks/concrete_red"
+                    }
+            },
+            "black": {
+                "textures": {
+                    "end": "blocks/concrete_black"
+                }
+            }
+        }
+    }
+}

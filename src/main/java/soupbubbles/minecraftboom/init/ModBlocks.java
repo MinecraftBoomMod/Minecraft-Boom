@@ -37,8 +37,16 @@ import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
+import soupbubbles.minecraftboom.block.slab.BlockConcreteSlabDouble;
+import soupbubbles.minecraftboom.block.slab.BlockConcreteSlabDouble2;
+import soupbubbles.minecraftboom.block.slab.BlockConcreteSlabHalf;
+import soupbubbles.minecraftboom.block.slab.BlockConcreteSlabHalf2;
 import soupbubbles.minecraftboom.block.slab.BlockModSlabDouble;
 import soupbubbles.minecraftboom.block.slab.BlockModSlabHalf;
+import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlabDouble;
+import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlabDouble2;
+import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlabHalf;
+import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlabHalf2;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf;
@@ -91,6 +99,7 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_MOSSY_COBBLESTONE;
     public static final BlockStairBase BLOCK_STAIRS_MOSSY_STONEBRICK;
     public static final BlockStairBase BLOCK_STAIRS_CRACKED_STONEBRICK;
+    public static final BlockStairBase BLOCK_STAIRS_CHISLED_STONEBRICK;
     public static final BlockStairBase BLOCK_STAIRS_HARDENED_CLAY;
     public static final BlockStairBase BLOCK_STAIRS_CHISELED_SANDSTONE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_SANDSTONE;
@@ -100,6 +109,10 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_DARK_PRISMARINE;
     public static final BlockStairBase BLOCK_STAIRS_END_BRICKS;
     public static final BlockStairBase BLOCK_STAIRS_RED_NETHER_BRICK;
+    public static final BlockStairBase BLOCK_STAIRS_COBBLESTONE_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_MOSSY_COBBLESTONE_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_HARDENED_CLAY_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_MAGMA_BRICKS;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_PRISMARINE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE;
     public static final BlockStairBase BLOCK_STAIRS_SMOOTH_END_STONE;
@@ -109,7 +122,14 @@ public class ModBlocks
     public static final BlockVanillaStoneSlabDouble BLOCK_DOUBLE_SLAB_VANILLA_STONE;
     public static final BlockVanillaStoneSlabHalf2 BLOCK_HALF_SLAB_VANILLA_STONE_2;
     public static final BlockVanillaStoneSlabDouble2 BLOCK_DOUBLE_SLAB_VANILLA_STONE_2;
-
+    public static final BlockTerracottaSlabHalf BLOCK_HALF_SLAB_TERRACOTTA;
+    public static final BlockTerracottaSlabDouble BLOCK_DOUBLE_SLAB_TERRACOTTA;
+    public static final BlockTerracottaSlabHalf2 BLOCK_HALF_SLAB_TERRACOTTA_2;
+    public static final BlockTerracottaSlabDouble2 BLOCK_DOUBLE_SLAB_TERRACOTTA_2;
+    public static final BlockConcreteSlabHalf BLOCK_HALF_SLAB_CONCRETE;
+    public static final BlockConcreteSlabDouble BLOCK_DOUBLE_SLAB_CONCRETE;
+    public static final BlockConcreteSlabHalf2 BLOCK_HALF_SLAB_CONCRETE_2;
+    public static final BlockConcreteSlabDouble2 BLOCK_DOUBLE_SLAB_CONCRETE_2;
     public static final BlockModSlabHalf BLOCK_HALF_SLAB_MOD;
     public static final BlockModSlabDouble BLOCK_DOUBLE_SLAB_MOD;
 
@@ -186,9 +206,9 @@ public class ModBlocks
         BLOCK_STAIRS_SMOOTH_DIORITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE));
         BLOCK_STAIRS_SMOOTH_ANDESITE = registerBlock(new BlockStairBase(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE_SMOOTH), Names.SMOOTH_ANDESITE));
         BLOCK_STAIRS_MOSSY_COBBLESTONE = registerBlock(new BlockStairBase(Blocks.MOSSY_COBBLESTONE.getDefaultState(), Names.MOSSY_COBBLESTONE));
-        BLOCK_STAIRS_MOSSY_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.MOSSY_STONEBRICK));
+        BLOCK_STAIRS_MOSSY_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.MOSSY), Names.MOSSY_STONEBRICK));
         BLOCK_STAIRS_CRACKED_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), Names.CRACKED_STONEBRICK));
-        //Chisled Stairs
+        BLOCK_STAIRS_CHISLED_STONEBRICK = registerBlock(new BlockStairBase(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.CHISELED_STONEBRICK));
         BLOCK_STAIRS_HARDENED_CLAY = registerBlock(new BlockStairBase(Blocks.HARDENED_CLAY.getDefaultState(), Names.HARDENED_CLAY));
         BLOCK_STAIRS_CHISELED_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.CHISELED), Names.CHISELED_SANDSTONE));
         BLOCK_STAIRS_SMOOTH_SANDSTONE = registerBlock(new BlockStairBase(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.SMOOTH), Names.SMOOTH_SANDSTONE));
@@ -198,10 +218,10 @@ public class ModBlocks
         BLOCK_STAIRS_DARK_PRISMARINE = registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE));
         BLOCK_STAIRS_END_BRICKS = registerBlock(new BlockStairBase(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS));
         BLOCK_STAIRS_RED_NETHER_BRICK = registerBlock(new BlockStairBase(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK));
-        //Cobblebrick
-        //Mossy cobblebricks
-        //hardened clay bricks
-        //magma bricks
+        BLOCK_STAIRS_COBBLESTONE_BRICKS = registerBlock(new BlockStairBase(BLOCK_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_COBBELSTONE_BRICKS));
+        BLOCK_STAIRS_MOSSY_COBBLESTONE_BRICKS = registerBlock(new BlockStairBase(BLOCK_MOSSY_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_MOSSY_COBBELSTONE_BRICKS));
+        BLOCK_STAIRS_HARDENED_CLAY_BRICKS = registerBlock(new BlockStairBase(BLOCK_HARDENED_CLAY_BRICKS.getDefaultState(), Names.BLOCK_HARDENED_CLAY_BRICKS));
+        BLOCK_STAIRS_MAGMA_BRICKS = registerBlock(new BlockStairBase(BLOCK_MAGMA_BRICKS.getDefaultState(), Names.BLOCK_MAGMA_BRICKS));
         BLOCK_STAIRS_SMOOTH_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE));
         BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE));
         BLOCK_STAIRS_SMOOTH_END_STONE = registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE));
@@ -211,6 +231,14 @@ public class ModBlocks
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlabDouble();
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabHalf2();
         BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlabDouble2();
+        BLOCK_HALF_SLAB_TERRACOTTA = new BlockTerracottaSlabHalf();
+        BLOCK_DOUBLE_SLAB_TERRACOTTA = new BlockTerracottaSlabDouble();
+        BLOCK_HALF_SLAB_TERRACOTTA_2 = new BlockTerracottaSlabHalf2();
+        BLOCK_DOUBLE_SLAB_TERRACOTTA_2 = new BlockTerracottaSlabDouble2();
+        BLOCK_HALF_SLAB_CONCRETE = new BlockConcreteSlabHalf();
+        BLOCK_DOUBLE_SLAB_CONCRETE = new BlockConcreteSlabDouble();
+        BLOCK_HALF_SLAB_CONCRETE_2 = new BlockConcreteSlabHalf2();
+        BLOCK_DOUBLE_SLAB_CONCRETE_2 = new BlockConcreteSlabDouble2();
         BLOCK_HALF_SLAB_MOD = new BlockModSlabHalf();
         BLOCK_DOUBLE_SLAB_MOD = new BlockModSlabDouble();
 
@@ -218,6 +246,14 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
         registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
+        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_DOUBLE_SLAB_TERRACOTTA));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA, BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_DOUBLE_SLAB_TERRACOTTA));
+        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA_2, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_2));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA_2, BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_2));
+        registerBlockMeta(BLOCK_HALF_SLAB_CONCRETE, new ItemSlabBase(BLOCK_HALF_SLAB_CONCRETE, BLOCK_HALF_SLAB_CONCRETE, BLOCK_DOUBLE_SLAB_CONCRETE));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_CONCRETE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_CONCRETE, BLOCK_HALF_SLAB_CONCRETE, BLOCK_DOUBLE_SLAB_CONCRETE));
+        registerBlockMeta(BLOCK_HALF_SLAB_CONCRETE_2, new ItemSlabBase(BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_DOUBLE_SLAB_CONCRETE_2));
+        registerBlockMeta(BLOCK_DOUBLE_SLAB_CONCRETE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_CONCRETE_2, BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_DOUBLE_SLAB_CONCRETE_2));
         registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
 

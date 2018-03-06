@@ -9,6 +9,24 @@ import net.minecraft.block.BlockStoneBrick;
 
 public class Names
 {
+    //Dyes
+    public static final String WHITE = "white";
+    public static final String ORANGE = "orange";
+    public static final String MAGENTA = "magenta";
+    public static final String LIGHT_BLUE = "light_blue";
+    public static final String YELLOW = "yellow";
+    public static final String LIME = "lime";
+    public static final String PINK = "pink";
+    public static final String GRAY = "gray";
+    public static final String LIGHT_GRAY = "light_gray";
+    public static final String CYAN = "cyan";
+    public static final String PURPLE = "purple";
+    public static final String BLUE = "blue";
+    public static final String BROWN = "brown";
+    public static final String GREEN = "green";
+    public static final String RED = "red";
+    public static final String BLACK = "black";
+    
     public static final String STONE = BlockStone.EnumType.STONE.getName();
     public static final String GRANITE = BlockStone.EnumType.GRANITE.getName();
     public static final String SMOOTH_GRANITE = BlockStone.EnumType.GRANITE_SMOOTH.getName();
@@ -42,7 +60,7 @@ public class Names
     public static final String PUMPKIN = "pumpkin";
     public static final String CLOTH = "cloth";
     public static final String WOOL = "wool";
-
+    
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
     public static final String BLOCK_PUMPKIN = "mod_pumpkin";
@@ -88,6 +106,14 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE = "double_slab_vanilla_stone";
     public static final String BLOCK_HALF_SLAB_VANILLA_STONE_2 = "half_slab_vanilla_stone_2";
     public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = "double_slab_vanilla_stone_2";
+    public static final String BLOCK_HALF_SLAB_TERRACOTTA = "half_slab_terracotta";
+    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA = "double_slab_terracotta";
+    public static final String BLOCK_HALF_SLAB_TERRACOTTA_2 = "half_slab_terracotta_2";
+    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_2 = "double_slab_terracotta_2";
+    public static final String BLOCK_HALF_SLAB_CONCRETE = "half_slab_concrete";
+    public static final String BLOCK_DOUBLE_SLAB_CONCRETE = "double_slab_concrete";
+    public static final String BLOCK_HALF_SLAB_CONCRETE_2 = "half_slab_concrete_2";
+    public static final String BLOCK_DOUBLE_SLAB_CONCRETE_2 = "double_slab_concrete_2";
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
     

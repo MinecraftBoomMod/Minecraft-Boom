@@ -14,5 +14,4 @@ public class BlockVanillaStoneSlabDouble extends BlockVanillaStoneSlab
     {
         return true;
     }
-
 }
