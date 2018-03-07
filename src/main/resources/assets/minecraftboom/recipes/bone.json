@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "minecraft:bone",
+    "count": 4
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:bone_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

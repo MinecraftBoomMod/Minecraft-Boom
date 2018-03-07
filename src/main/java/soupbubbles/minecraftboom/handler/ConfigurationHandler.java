@@ -11,7 +11,6 @@ public class ConfigurationHandler
 {
     public static Configuration configuration;
 
-
     public static void init(File configFile)
     {
         if (configuration == null)

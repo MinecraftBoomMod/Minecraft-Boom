@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "minecraftboom:wheat_on_stick"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

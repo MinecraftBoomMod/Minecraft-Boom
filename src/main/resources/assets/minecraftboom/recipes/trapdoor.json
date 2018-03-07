@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraft:trapdoor",
+    "count": 2
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

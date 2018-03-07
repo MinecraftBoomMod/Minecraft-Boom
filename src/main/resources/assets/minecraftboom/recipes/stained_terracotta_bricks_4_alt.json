@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "minecraftboom:stained_terracotta_bricks",
+    "data": 4,
+    "count": 8
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:terracotta_bricks"
+    },
+    "y": {
+      "item": "minecraft:dye",
+      "data": 11
+    }
+  }
+}

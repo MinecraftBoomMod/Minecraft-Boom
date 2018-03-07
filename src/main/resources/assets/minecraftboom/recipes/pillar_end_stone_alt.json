@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:pillar_end_stone"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:polished",
+      "data": 2
+    }
+  }
+}

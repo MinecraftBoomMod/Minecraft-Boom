@@ -18,7 +18,7 @@ public class Names
     public static final String LIME = "lime";
     public static final String PINK = "pink";
     public static final String GRAY = "gray";
-    public static final String LIGHT_GRAY = "light_gray";
+    public static final String SILVER = "silver";
     public static final String CYAN = "cyan";
     public static final String PURPLE = "purple";
     public static final String BLUE = "blue";
@@ -70,10 +70,8 @@ public class Names
 
     public static final String BLOCK_COBBELSTONE_BRICKS = "cobblestone_bricks";
     public static final String BLOCK_MOSSY_COBBELSTONE_BRICKS = "mossy_cobblestone_bricks";
-    public static final String BLOCK_TERRACOTTA_BRICKS = "hardened_clay_bricks";    
-    //rename
-    public static final String TERRACOTTA_BRICKS = "terracotta_bricks";
-    public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_hardened_clay_bricks";
+    public static final String BLOCK_TERRACOTTA_BRICKS = "terracotta_bricks";
+    public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_terracotta_bricks";
     public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
 
     public static final String BLOCK_POLISHED = "polished";

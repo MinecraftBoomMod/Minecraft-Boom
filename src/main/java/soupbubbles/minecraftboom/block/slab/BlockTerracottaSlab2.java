@@ -41,7 +41,7 @@ public abstract class BlockTerracottaSlab2 extends BlockSlabBase
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
-        setDefaultState(iblockstate.withProperty(VARIANT, BlockTerracottaSlab2.EnumType.LIGHT_GRAY));
+        setDefaultState(iblockstate.withProperty(VARIANT, BlockTerracottaSlab2.EnumType.SILVER));
         setHardness(1.25F);
         setResistance(10.0F);
         setSoundType(SoundType.STONE);
@@ -154,7 +154,7 @@ public abstract class BlockTerracottaSlab2 extends BlockSlabBase
 
     public static enum EnumType implements IStringSerializable
     {
-        LIGHT_GRAY(0, MapColor.SILVER_STAINED_HARDENED_CLAY, Names.LIGHT_GRAY),
+        SILVER(0, MapColor.SILVER_STAINED_HARDENED_CLAY, Names.SILVER),
         CYAN(1, MapColor.CYAN_STAINED_HARDENED_CLAY, Names.CYAN),
         PURPLE(2, MapColor.PURPLE_STAINED_HARDENED_CLAY, Names.PURPLE),
         BLUE(3, MapColor.BLUE_STAINED_HARDENED_CLAY, Names.BLUE),

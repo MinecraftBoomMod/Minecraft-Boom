@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:golden_bars",
+    "count": 16
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:gold_ingot"
+    }
+  }
+}

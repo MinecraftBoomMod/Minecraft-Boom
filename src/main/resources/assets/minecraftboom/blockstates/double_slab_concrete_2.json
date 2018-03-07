@@ -10,7 +10,7 @@
     },
     "variants": {
         "variant": {
-            "light_gray": {
+            "silver": {
                 "textures": {
                     "end": "blocks/concrete_silver"
                 }

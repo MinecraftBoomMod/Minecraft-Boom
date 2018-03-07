@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "minecraft:stone_axe"
+  },
+  "pattern": [
+    "xx ",
+    "xy ",
+    " y "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 0
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  }
+}

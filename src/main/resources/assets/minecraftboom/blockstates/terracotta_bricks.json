@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "all": "minecraftboom:blocks/hardened_clay_bricks"
+            "all": "minecraftboom:blocks/terracotta_bricks"
         },
         "model": "cube_all",
         "uvlock": true

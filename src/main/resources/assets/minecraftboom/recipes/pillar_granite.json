@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:pillar_granite"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 2
+    }
+  }
+}

@@ -10,7 +10,7 @@
     },
     "variants": {
         "variant": {
-            "light_gray": {
+            "silver": {
                 "textures": {
                     "end": "blocks/hardened_clay_stained_silver"
                 }

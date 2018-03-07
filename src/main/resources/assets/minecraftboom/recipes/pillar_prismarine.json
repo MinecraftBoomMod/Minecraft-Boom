@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:pillar_prismarine"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:prismarine",
+      "data": 1
+    }
+  }
+}

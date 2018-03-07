@@ -18,44 +18,44 @@
                 }
         },
         "variant": {
-            "light_gray": {
+            "silver": {
                 "textures": {
-                    "end": "minecraftboom:blocks/silver_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/silver_stained_terracotta_bricks"
                 }
             },
             "cyan": {
                 "textures": {
-                    "end": "minecraftboom:blocks/cyan_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/cyan_stained_terracotta_bricks"
                 }
             },
             "purple": {
                 "textures": {
-                    "end": "minecraftboom:blocks/purple_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/purple_stained_terracotta_bricks"
                 }
             },
             "blue": {
                 "textures": {
-                    "end": "minecraftboom:blocks/blue_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/blue_stained_terracotta_bricks"
                 }
             },
             "brown": {
                 "textures": {
-                    "end": "minecraftboom:blocks/brown_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/brown_stained_terracotta_bricks"
                 }
             },
             "green": {
                 "textures": {
-                    "end": "minecraftboom:blocks/green_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/green_stained_terracotta_bricks"
                 }
             },
             "red": {
                 "textures": {
-                    "end": "minecraftboom:blocks/red_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/red_stained_terracotta_bricks"
                     }
             },
             "black": {
                 "textures": {
-                    "end": "minecraftboom:blocks/black_stained_hardened_clay_bricks"
+                    "end": "minecraftboom:blocks/black_stained_terracotta_bricks"
                 }
             }
         }

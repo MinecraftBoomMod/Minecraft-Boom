@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:charcoal_block"
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:coal",
+      "data": 1
+    }
+  }
+}

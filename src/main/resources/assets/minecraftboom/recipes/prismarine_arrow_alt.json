@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "minecraftboom:prismarine_arrow"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:arrow"
+    },
+    {
+      "item": "minecraft:prismarine_shard"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

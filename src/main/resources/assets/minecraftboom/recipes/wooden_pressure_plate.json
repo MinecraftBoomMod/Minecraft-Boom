@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:wooden_pressure_plate"
+  },
+  "pattern": [
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 0
+    }
+  }
+}

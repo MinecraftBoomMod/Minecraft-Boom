@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraftboom:dark_oak_button"
+  },
+  "pattern": [
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 5
+    }
+  }
+}

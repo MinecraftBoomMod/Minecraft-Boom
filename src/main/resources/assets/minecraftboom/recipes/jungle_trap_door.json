@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:jungle_trap_door",
+    "count": 2
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 3
+    }
+  }
+}

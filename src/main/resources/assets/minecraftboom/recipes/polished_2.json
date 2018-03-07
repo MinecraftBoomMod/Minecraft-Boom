@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:polished",
+    "data": 2,
+    "count": 4
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:end_bricks"
+    }
+  }
+}

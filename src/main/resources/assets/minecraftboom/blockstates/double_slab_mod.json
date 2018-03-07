@@ -22,9 +22,9 @@
                     "side": "#end"
                 }
             },
-            "hardened_clay_bricks": {
+            "terracotta_bricks": {
                 "textures": {
-                    "end": "minecraftboom:blocks/hardened_clay_bricks",
+                    "end": "minecraftboom:blocks/terracotta_bricks",
                     "side": "#end"
                 }
             },

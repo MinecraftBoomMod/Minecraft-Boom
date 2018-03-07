@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "minecraftboom:prismarine_arrow"
+  },
+  "pattern": [
+    " p ",
+    " s ",
+    " f "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "f": {
+      "item": "minecraft:feather"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "p": {
+      "item": "minecraft:prismarine_shard"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:soul_glass_pane",
+    "count": 16
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:soul_glass"
+    }
+  }
+}

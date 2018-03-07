@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraft:purpur_pillar"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:purpur_block"
+    }
+  }
+}

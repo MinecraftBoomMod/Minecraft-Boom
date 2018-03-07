@@ -61,82 +61,11 @@ public class ModRecipes
     private static void initRecipes()
     {
     	/*
-        //Bricks
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.COBBLESTONE);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS, 4), "xx", "xx", 'x', Blocks.MOSSY_COBBLESTONE);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 4), "xx", "xx", 'x', Blocks.HARDENED_CLAY);
-
-        for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
-        {
-            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 4, meta), "xx", "xx", 'x', new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, meta));
-            GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_CLAY_BRICKS, 8, meta), "xxx", "xyx", "xxx", 'x', ModBlocks.BLOCK_HARDENED_CLAY_BRICKS, 'y', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
-        }
-
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MAGMA_BRICKS, 4), "xx", "xx", 'x', Blocks.MAGMA);
-        
-        //Bookshelves
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.BOOKSHELF), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()), 'y', new ItemStack(Items.BOOK));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.SPRUCE.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()), 'y', Items.BOOK);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.BIRCH.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()), 'y', Items.BOOK);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.JUNGLE.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()), 'y', Items.BOOK);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.ACACIA.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()), 'y', Items.BOOK);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BOOKSHELF, 1, BlockBookShelf.EnumType.DARK_OAK.getMetadata()), "xxx", "yyy", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()), 'y', Items.BOOK);
-
-        //Storage Blocks
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_CHARCOAL), "xxx", "xxx", "xxx", 'x', new ItemStack(Items.COAL, 1, 1));
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.COAL, 9, 1), ModBlocks.BLOCK_CHARCOAL);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SUGAR), "xxx", "xxx", "xxx", 'x', Items.SUGAR);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR, 9), ModBlocks.BLOCK_SUGAR);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SUGAR_CANE), "xxx", "xxx", "xxx", 'x', Items.REEDS);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.REEDS, 9), ModBlocks.BLOCK_SUGAR_CANE);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GUNPOWDER), "xxx", "xxx", "xxx", 'x', Items.GUNPOWDER);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.GUNPOWDER, 9), ModBlocks.BLOCK_GUNPOWDER);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), "xxx", "xxx", "xxx", 'x', Items.BLAZE_POWDER);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.BLAZE_POWDER, 9), ModBlocks.BLOCK_BLAZE_POWDER);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_MAGMA_CREAM), "xxx", "xxx", "xxx", 'x', Items.MAGMA_CREAM);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.MAGMA_CREAM, 9), ModBlocks.BLOCK_MAGMA_CREAM);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PRISMARINE_CRYSTAL), "xxx", "xxx", "xxx", 'x', Items.PRISMARINE_CRYSTALS);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.PRISMARINE_CRYSTALS, 9), ModBlocks.BLOCK_PRISMARINE_CRYSTAL);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), "xx", "xx", 'x', ModItems.ITEM_WITHER_BONE);
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_WITHER_BONE, 4), ModBlocks.BLOCK_CHARRED_BONE);
-
-        for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
-        {
-            if (meta != EnumDyeColor.BLUE.getMetadata())
-            {
-                GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DYE, 1, meta), "xxx", "xxx", "xxx", 'x', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
-            }
-        }
 
         //Soul glass
         for (int meta = 0; meta < EnumDyeColor.values().length; meta++)
         {
             GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_STAINED_SOUL_GLASS, 1, meta), "xxx", "xyx", "xxx", 'x', ModBlocks.BLOCK_SOUL_GLASS, 'y', new ItemStack(Items.DYE, 1, EnumDyeColor.byMetadata(meta).getDyeDamage()));
-        }
-
-        // Polished Blocks
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.ROUGH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata()), "xx", "xx", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.EnumType.DARK.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata()), "xx", "xx", 'x', Blocks.END_BRICKS);
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), "xx", "xx", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_POLISHED, 4, BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata()), "xx", "xx", 'x', Blocks.NETHERRACK);
-
-        // Pillars
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_GRANITE), "x", "x", 'x', new ItemStack(Blocks.STONE, 1, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_DIORITE), "x", "x", 'x', new ItemStack(Blocks.STONE, 1, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_ANDESITE), "x", "x", 'x', new ItemStack(Blocks.STONE, 1, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_PRISMARINE), "x", "x", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.BRICKS_META));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_PRISMARINE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_PRISMARINE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_DARK_PRISMARINE), "x", "x", 'x', new ItemStack(Blocks.PRISMARINE, 1, BlockPrismarine.DARK_META));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_DARK_PRISMARINE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_END_STONE), "x", "x", 'x', Blocks.END_BRICKS);
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_END_STONE), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_PILLAR_NETHERRACK), "x", "x", 'x', new ItemStack(ModBlocks.BLOCK_POLISHED, 1, BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata()));
-
-        if (ConfigurationHandler.Settings.replacePurplePillarRecipe)
-        {
-            GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_PILLAR), "x", "x", 'x', Blocks.PURPUR_BLOCK);
-            GameRegistry.addShapedRecipe(new ItemStack(Blocks.PURPUR_BLOCK), "x", "x", 'x', Blocks.PURPUR_SLAB);
         }
 
         if (ConfigurationHandler.Settings.replacePumpkin)
@@ -198,63 +127,6 @@ public class ModRecipes
         addStairRecipe(BlockPolished.EnumType.SMOOTH_END_STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_END_STONE);
         addStairRecipe(BlockPolished.EnumType.SMOOTH_NETHERRACK.getMetadata(), ModBlocks.BLOCK_STAIRS_SMOOTH_NETHERRACK);
         addStairSlabRecipe(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), ModBlocks.BLOCK_STAIRS_STONE);
-
-        //Ladders
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_LADDER, 4), "x x", "xyx", "x x", 'x', Items.STICK, 'y', new ItemStack(Blocks.WOODEN_SLAB, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
-
-        //Trap Doors
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.TRAPDOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_TRAP_DOOR, 2), "xxx", "xxx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
-        
-        //Buttons
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.WOODEN_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_BUTTON, 1), "x", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
-
-        //Pressure Plates
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.WOODEN_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_SPRUCE_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_BIRCH_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_JUNGLE_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.JUNGLE.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_ACACIA_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.ACACIA.getMetadata()));
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_DARK_OAK_PRESSURE_PLATE, 1), "xx", 'x', new ItemStack(Blocks.PLANKS, 1, BlockPlanks.EnumType.DARK_OAK.getMetadata()));
-        
-        //Misc
-        GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BLOCK_GOLDEN_BARS, 16), "xxx", "xxx", 'x', Items.GOLD_INGOT);
-
-        //Items
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_POPPED_CHORUS_GRENADE), " x ", "yxy", " y ", 'x', Items.GUNPOWDER, 'y', Items.CHORUS_FRUIT_POPPED);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.PAINTING, 4), "xxx", "xyx", "xxx", 'x', Items.STICK, 'y', ModItems.ITEM_POLAR_BEAR_FUR);
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.ITEM_PRISMARINE_ARROW), " f ", " s ", " p ", 'f', Items.FLINT, 's', Items.STICK, 'p', Items.PRISMARINE_SHARD);
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_PRISMARINE_ARROW), Items.ARROW, Items.PRISMARINE_SHARD);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.LEATHER, 4), ModItems.ITEM_POLAR_BEAR_FUR);
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ITEM_WHEAT_ON_STICK, 1), Items.WHEAT, Items.FISHING_ROD);
-
-        //Vanilla Recipes
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_PICKAXE), "xxx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), " xx", " yx", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_AXE), "xx ", "xy ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), " xx", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_HOE), "xx ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SHOVEL), " x ", " y ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-        GameRegistry.addShapedRecipe(new ItemStack(Items.STONE_SWORD), " x ", " x ", " y ", 'x', Blocks.STONE, 'y', Items.STICK);
-
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.NETHER_WART, 9), Blocks.NETHER_WART_BLOCK);
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.BONE_BLOCK), "xx", "xx", 'x', Items.BONE);
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.BONE, 4), Blocks.BONE_BLOCK);
-        */
     }
 
     private static void initFurnaceRecipes()

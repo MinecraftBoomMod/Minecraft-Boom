@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:pillar_diorite"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 4
+    }
+  }
+}

@@ -6,7 +6,7 @@
             "bottom":"#all",
             "top":"#all",        
             "side":"#all",
-            "all": "minecraftboom:blocks/lime_stained_hardened_clay_bricks"
+            "all": "minecraftboom:blocks/lime_stained_terracotta_bricks"
         },
         "transform":"forge:default-block",
         "uvlock": true

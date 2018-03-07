@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "minecraftboom:dye_block",
+    "data": 3
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:dye",
+      "data": 12
+    }
+  }
+}

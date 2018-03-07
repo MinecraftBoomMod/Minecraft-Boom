@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "minecraft:painting",
+    "count": 4
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stick"
+    },
+    "y": {
+      "item": "minecraftboom:polar_bear_fur"
+    }
+  }
+}

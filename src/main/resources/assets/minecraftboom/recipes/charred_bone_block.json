@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraftboom:charred_bone_block"
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:wither_bone"
+    }
+  }
+}

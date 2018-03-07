@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "minecraftboom:bookshelf",
+    "data": 0
+  },
+  "pattern": [
+    "xxx",
+    "yyy",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 1
+    },
+    "y": {
+      "item": "minecraft:book"
+    }
+  }
+}

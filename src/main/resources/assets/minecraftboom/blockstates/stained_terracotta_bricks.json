@@ -11,82 +11,82 @@
         "color": {
             "white": {
                 "textures": {
-                    "all": "minecraftboom:blocks/white_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/white_stained_terracotta_bricks"
                 }
             },
             "orange": {
                 "textures": {
-                    "all": "minecraftboom:blocks/orange_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/orange_stained_terracotta_bricks"
                 }
             },
             "magenta": {
                "textures": {
-                   "all": "minecraftboom:blocks/magenta_stained_hardened_clay_bricks"
+                   "all": "minecraftboom:blocks/magenta_stained_terracotta_bricks"
                  }
             },
             "light_blue": {
                 "textures": {
-                    "all": "minecraftboom:blocks/light_blue_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/light_blue_stained_terracotta_bricks"
                 }
             },
             "yellow": {
                 "textures": {
-                    "all": "minecraftboom:blocks/yellow_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/yellow_stained_terracotta_bricks"
                 }
             },
             "lime": {
                 "textures": {
-                    "all": "minecraftboom:blocks/lime_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/lime_stained_terracotta_bricks"
                 }
             },
             "pink": {
                 "textures": {
-                    "all": "minecraftboom:blocks/pink_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/pink_stained_terracotta_bricks"
                 }
             },
             "gray": {
                 "textures": {
-                    "all": "minecraftboom:blocks/gray_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/gray_stained_terracotta_bricks"
                 }
             },
             "silver": {
                 "textures": {
-                    "all": "minecraftboom:blocks/silver_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/silver_stained_terracotta_bricks"
                 }
             },
             "cyan": {
                 "textures": {
-                    "all": "minecraftboom:blocks/cyan_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/cyan_stained_terracotta_bricks"
                 }
             },
             "purple": {
                 "textures": {
-                    "all": "minecraftboom:blocks/purple_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/purple_stained_terracotta_bricks"
                 }
             },
             "blue": {
                 "textures": {
-                    "all": "minecraftboom:blocks/blue_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/blue_stained_terracotta_bricks"
                 }
             },
             "brown": {
                 "textures": {
-                    "all": "minecraftboom:blocks/brown_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/brown_stained_terracotta_bricks"
                 }
             },
             "green": {
                 "textures": {
-                    "all": "minecraftboom:blocks/green_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/green_stained_terracotta_bricks"
                 }
             },
             "red": {
                 "textures": {
-                    "all": "minecraftboom:blocks/red_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/red_stained_terracotta_bricks"
                 }
             },
             "black": {
                 "textures": {
-                    "all": "minecraftboom:blocks/black_stained_hardened_clay_bricks"
+                    "all": "minecraftboom:blocks/black_stained_terracotta_bricks"
                 }
             }
         }
