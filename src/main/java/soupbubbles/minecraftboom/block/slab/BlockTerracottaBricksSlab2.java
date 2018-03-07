@@ -27,11 +27,11 @@ import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
 
-public abstract class BlockConcreteSlab2 extends BlockSlabBase
+public abstract class BlockTerracottaBricksSlab2 extends BlockSlabBase
 {
-    protected static final PropertyEnum<BlockConcreteSlab2.EnumType> VARIANT = PropertyEnum.<BlockConcreteSlab2.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockConcreteSlab2.EnumType.class);
+    protected static final PropertyEnum<BlockTerracottaBricksSlab2.EnumType> VARIANT = PropertyEnum.<BlockTerracottaBricksSlab2.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockTerracottaBricksSlab2.EnumType.class);
 
-    public BlockConcreteSlab2(String name)
+    public BlockTerracottaBricksSlab2(String name)
     {
         super(Material.ROCK, name);
         IBlockState iblockstate = blockState.getBaseState();
@@ -41,7 +41,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
-        setDefaultState(iblockstate.withProperty(VARIANT, BlockConcreteSlab2.EnumType.LIGHT_GRAY));
+        setDefaultState(iblockstate.withProperty(VARIANT, BlockTerracottaBricksSlab2.EnumType.LIGHT_GRAY));
         setHardness(1.25F);
         setResistance(10.0F);
         setSoundType(SoundType.STONE);
@@ -50,19 +50,19 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_CONCRETE_2);
+        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2);
     }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_CONCRETE_2, 1, state.getValue(VARIANT).getMetadata());
+        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, 1, state.getValue(VARIANT).getMetadata());
     }
 
     @Override
     public String getUnlocalizedName(int meta)
     {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockConcreteSlab2.EnumType.byMetadata(meta).getUnlocalizedName());
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockTerracottaBricksSlab2.EnumType.byMetadata(meta).getUnlocalizedName());
     }
 
     @Override
@@ -80,16 +80,16 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
     @Override
     public Comparable<?> getTypeForItem(ItemStack stack)
     {
-        return BlockConcreteSlab2.EnumType.byMetadata(stack.getMetadata() & 7);
+        return BlockTerracottaBricksSlab2.EnumType.byMetadata(stack.getMetadata() & 7);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        if (this != ModBlocks.BLOCK_DOUBLE_SLAB_CONCRETE_2)
+        if (this != ModBlocks.BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2)
         {
-            for (BlockConcreteSlab2.EnumType blockstoneslab$enumtype : BlockConcreteSlab2.EnumType.values())
+            for (BlockTerracottaBricksSlab2.EnumType blockstoneslab$enumtype : BlockTerracottaBricksSlab2.EnumType.values())
             {
                 list.add(new ItemStack(this, 1, blockstoneslab$enumtype.getMetadata()));
             }
@@ -99,7 +99,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockConcreteSlab2.EnumType.byMetadata(meta & 7));
+        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockTerracottaBricksSlab2.EnumType.byMetadata(meta & 7));
 
         if (!isDouble())
         {
@@ -113,7 +113,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((BlockConcreteSlab2.EnumType)state.getValue(VARIANT)).getMetadata();
+        i = i | ((BlockTerracottaBricksSlab2.EnumType)state.getValue(VARIANT)).getMetadata();
 
         if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
         {
@@ -144,7 +144,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockConcreteSlab2.EnumType)state.getValue(VARIANT)).getMapColor();
+        return ((BlockTerracottaBricksSlab2.EnumType)state.getValue(VARIANT)).getMapColor();
     }
     
     @Override
@@ -164,7 +164,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
         RED(6, MapColor.RED_STAINED_HARDENED_CLAY, Names.RED),
         BLACK(7, MapColor.BLACK_STAINED_HARDENED_CLAY, Names.BLACK);
 
-        private static final BlockConcreteSlab2.EnumType[] META_LOOKUP = new BlockConcreteSlab2.EnumType[values().length];
+        private static final BlockTerracottaBricksSlab2.EnumType[] META_LOOKUP = new BlockTerracottaBricksSlab2.EnumType[values().length];
 
         private final int meta;
         private final MapColor mapColor;
@@ -200,7 +200,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
             return name;
         }
 
-        public static BlockConcreteSlab2.EnumType byMetadata(int meta)
+        public static BlockTerracottaBricksSlab2.EnumType byMetadata(int meta)
         {
             if (meta < 0 || meta >= META_LOOKUP.length)
             {
@@ -223,7 +223,7 @@ public abstract class BlockConcreteSlab2 extends BlockSlabBase
 
         static
         {
-            for (BlockConcreteSlab2.EnumType blockstoneslab$enumtype : values())
+            for (BlockTerracottaBricksSlab2.EnumType blockstoneslab$enumtype : values())
             {
                 META_LOOKUP[blockstoneslab$enumtype.getMetadata()] = blockstoneslab$enumtype;
             }

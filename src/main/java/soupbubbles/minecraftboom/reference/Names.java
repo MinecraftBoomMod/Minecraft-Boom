@@ -45,7 +45,7 @@ public class Names
     public static final String MOSSY_STONEBRICK = BlockStoneBrick.EnumType.MOSSY.getName();
     public static final String CRACKED_STONEBRICK = BlockStoneBrick.EnumType.CRACKED.getName();
     public static final String CHISELED_STONEBRICK = BlockStoneBrick.EnumType.CHISELED.getName();
-    public static final String HARDENED_CLAY = "hardened_clay";
+    public static final String TERRACOTTA = "terracotta";
     public static final String SANDSTONE = BlockSandStone.EnumType.DEFAULT.getName();
     public static final String CHISELED_SANDSTONE = BlockSandStone.EnumType.CHISELED.getName();
     public static final String SMOOTH_SANDSTONE = BlockSandStone.EnumType.SMOOTH.getName();
@@ -60,7 +60,8 @@ public class Names
     public static final String PUMPKIN = "pumpkin";
     public static final String CLOTH = "cloth";
     public static final String WOOL = "wool";
-    
+    public static final String CONCRETE = "concrete";
+
     public static final String BLOCK_CRAFTING_TABLE = "crafting_table";
     public static final String BLOCK_CRAFTING_TABLE_UNLOCALIZED = "workbench";
     public static final String BLOCK_PUMPKIN = "mod_pumpkin";
@@ -69,8 +70,10 @@ public class Names
 
     public static final String BLOCK_COBBELSTONE_BRICKS = "cobblestone_bricks";
     public static final String BLOCK_MOSSY_COBBELSTONE_BRICKS = "mossy_cobblestone_bricks";
-    public static final String BLOCK_HARDENED_CLAY_BRICKS = "hardened_clay_bricks";
-    public static final String BLOCK_STAINED_HARDENED_CLAY_BRICKS = "stained_hardened_clay_bricks";
+    public static final String BLOCK_TERRACOTTA_BRICKS = "hardened_clay_bricks";    
+    //rename
+    public static final String TERRACOTTA_BRICKS = "terracotta_bricks";
+    public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_hardened_clay_bricks";
     public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
 
     public static final String BLOCK_POLISHED = "polished";
@@ -116,6 +119,10 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_CONCRETE_2 = "double_slab_concrete_2";
     public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
     public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
+    public static final String BLOCK_HALF_SLAB_TERRACOTTA_BRICKS = "half_slab_terracotta_bricks";
+    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS = "double_slab_terracotta_bricks";
+    public static final String BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2 = "half_slab_terracotta_bricks_2";
+    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = "double_slab_terracotta_bricks_2";
     
     public static final String BLOCK_SPRUCE_CHEST = "spruce_chest";
     public static final String BLOCK_BIRCH_CHEST = "birch_chest";

@@ -99,22 +99,28 @@ public abstract class BlockVanillaStoneSlab extends BlockSlabBase
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        if (isDouble())
+        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.byMetadata(meta & 7));
+
+        if (!isDouble())
         {
-            return getDefaultState().withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.byMetadata(meta));
+            iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
         }
-        else
-        {
-            return getDefaultState().withProperty(VARIANT, BlockVanillaStoneSlab.EnumType.byMetadata(meta)).withProperty(HALF, meta < 8 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-        }
+
+        return iblockstate;
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        BlockVanillaStoneSlab.EnumType type = state.getValue(VARIANT);
+        int i = 0;
+        i = i | ((BlockVanillaStoneSlab.EnumType)state.getValue(VARIANT)).getMetadata();
 
-        return type.getMetadata();
+        if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
+        {
+            i |= 8;
+        }
+
+        return i;
     }
 
     @Override
@@ -156,7 +162,7 @@ public abstract class BlockVanillaStoneSlab extends BlockSlabBase
         MOSSY_STONEBRICK(4, MapColor.STONE, Names.MOSSY_STONEBRICK),
         CRACKED_STONEBRICK(5, MapColor.STONE, Names.CRACKED_STONEBRICK),
         CHISELED_STONEBRICK(6, MapColor.STONE, Names.CHISELED_STONEBRICK),
-        HARDENED_CLAY(7, MapColor.STONE, Names.HARDENED_CLAY);
+        HARDENED_CLAY(7, MapColor.STONE, Names.TERRACOTTA);
 
         private static final BlockVanillaStoneSlab.EnumType[] META_LOOKUP = new BlockVanillaStoneSlab.EnumType[values().length];
 

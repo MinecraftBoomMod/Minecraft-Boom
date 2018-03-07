@@ -2,6 +2,7 @@ package soupbubbles.minecraftboom.block.slab;
 
 import java.util.Random;
 
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.SoundType;
@@ -100,22 +101,28 @@ public abstract class BlockModSlab extends BlockSlabBase
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        if (isDouble())
+        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta & 7));
+
+        if (!isDouble())
         {
-            return getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta));
+            iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
         }
-        else
-        {
-            return getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta)).withProperty(HALF, meta < 8 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-        }
+
+        return iblockstate;
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        BlockModSlab.EnumType type = state.getValue(VARIANT);
+        int i = 0;
+        i = i | ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMetadata();
 
-        return type.getMetadata();
+        if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
+        {
+            i |= 8;
+        }
+
+        return i;
     }
 
     @Override
@@ -152,7 +159,7 @@ public abstract class BlockModSlab extends BlockSlabBase
     {
         COBBLESTONE_BRICKS(0, MapColor.STONE, Names.BLOCK_COBBELSTONE_BRICKS),
         MOSSY_COBBLESTONE_BRICKS(1, MapColor.STONE, Names.BLOCK_MOSSY_COBBELSTONE_BRICKS),
-        HARDENED_CLAY_BRICKS(2, MapColor.STONE, Names.BLOCK_HARDENED_CLAY_BRICKS),
+        HARDENED_CLAY_BRICKS(2, MapColor.STONE, Names.BLOCK_TERRACOTTA_BRICKS),
         MAGMA_BRICKS(3, MapColor.STONE, Names.BLOCK_MAGMA_BRICKS),
         SMOOTH_PRISMARINE(4, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),
         SMOOTH_DARK_PRISMARINE(5, MapColor.STONE, Names.BLOCK_SMOOTH_DARK_PRISMARINE),

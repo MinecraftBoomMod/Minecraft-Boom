@@ -99,24 +99,29 @@ public abstract class BlockTerracottaSlab2 extends BlockSlabBase
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        if (isDouble())
+        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockTerracottaSlab2.EnumType.byMetadata(meta & 7));
+
+        if (!isDouble())
         {
-            return getDefaultState().withProperty(VARIANT, BlockTerracottaSlab2.EnumType.byMetadata(meta));
+            iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
         }
-        else
-        {
-            return getDefaultState().withProperty(VARIANT, BlockTerracottaSlab2.EnumType.byMetadata(meta)).withProperty(HALF, meta < 8 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-        }
+
+        return iblockstate;
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        BlockTerracottaSlab2.EnumType type = state.getValue(VARIANT);
+        int i = 0;
+        i = i | ((BlockTerracottaSlab2.EnumType)state.getValue(VARIANT)).getMetadata();
 
-        return type.getMetadata();
+        if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
+        {
+            i |= 8;
+        }
+
+        return i;
     }
-
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {

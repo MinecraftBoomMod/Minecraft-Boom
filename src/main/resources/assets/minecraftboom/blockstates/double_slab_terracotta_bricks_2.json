@@ -1,0 +1,55 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "#end",
+            "side": "#end"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
+    "variants": {
+        "variant": {
+            "light_gray": {
+                "textures": {
+                    "end": "minecraftboom:blocks/silver_stained_hardened_clay_bricks"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "end": "minecraftboom:blocks/cyan_stained_hardened_clay_bricks"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "end": "minecraftboom:blocks/purple_stained_hardened_clay_bricks"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "end": "minecraftboom:blocks/blue_stained_hardened_clay_bricks"
+                }
+            },
+            "brown": {
+                "textures": {
+                    "end": "minecraftboom:blocks/brown_stained_hardened_clay_bricks"
+                }
+            },
+            "green": {
+                "textures": {
+                    "end": "minecraftboom:blocks/green_stained_hardened_clay_bricks"
+                }
+            },
+            "red": {
+                "textures": {
+                    "end": "minecraftboom:blocks/red_stained_hardened_clay_bricks"
+                    }
+            },
+            "black": {
+                "textures": {
+                    "end": "minecraftboom:blocks/black_stained_hardened_clay_bricks"
+                }
+            }
+        }
+    }
+}

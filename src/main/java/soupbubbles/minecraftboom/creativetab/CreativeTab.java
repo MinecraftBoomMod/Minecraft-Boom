@@ -18,7 +18,7 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.BLOCK_HARDENED_CLAY_BRICKS);
+            return new ItemStack(ModBlocks.BLOCK_TERRACOTTA_BRICKS);
         }
         
         @Override

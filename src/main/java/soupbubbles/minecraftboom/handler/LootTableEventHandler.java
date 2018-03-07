@@ -25,7 +25,7 @@ public class LootTableEventHandler
     public void onLootTableLoad(LootTableLoadEvent event) 
     {
         String name = event.getName().toString();
-        List<String> addPool = Arrays.asList("shulker", "wither_skeleton", "silverfish", "polar_bear", "elder_guardian","simple_dungeon");
+        List<String> addPool = Arrays.asList("wither_skeleton", "silverfish", "polar_bear", "elder_guardian");
 
         try 
         {

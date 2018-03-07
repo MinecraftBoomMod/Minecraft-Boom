@@ -52,7 +52,7 @@
                     "side": "#end"
                 }
             },
-            "hardened_clay": {
+            "terracotta": {
                 "textures": {
                     "end": "blocks/hardened_clay",
                     "side": "#end"
