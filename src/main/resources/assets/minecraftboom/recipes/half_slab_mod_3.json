@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_mod",
+    "data": 3,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:magma_bricks"
+    }
+  }
+}

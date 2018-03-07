@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_mod",
+    "data": 5,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:polished",
+      "data": 1
+    }
+  }
+}

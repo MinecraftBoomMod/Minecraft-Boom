@@ -12,7 +12,7 @@ import soupbubbles.minecraftboom.reference.Names;
 @EventBusSubscriber
 public class RegistryHandler
 {
-    private static String[] override = {"bookshelf", "bone_block", "purpur_pillar", "ladder", "wooden_button", "trapdoor", "wooden_pressure_plate"};
+    private static String[] override = {"bookshelf", "bone_block", "purpur_pillar", "ladder", "wooden_button", "trapdoor", "wooden_pressure_plate", "stone_brick_stairs", "sandstone_stairs", "red_sandstone_stairs", "stone_brick_slab", "sandstone_slab", "red_sandstone_slab"};
 
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)

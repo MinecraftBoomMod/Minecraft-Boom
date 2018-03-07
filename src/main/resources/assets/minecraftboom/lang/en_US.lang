@@ -3,8 +3,6 @@ itemGroup.minecraftboom_tab=Minecraft Boom
 itemGroup.minecraftboom_stairs_and_slabs_tab=Minecraft Boom Stairs and Slabs
 
 # Vanilla
-tile.minecraftboom.mod_pumpkin.name=Pumpkin
-tile.minecraftboom.carved_mod_pumpkin.name=Carved Pumpkin
 tile.netherBrick.name=Nether Bricks
 tile.netherFence.name=Nether Bricks Fence
 tile.stairsNetherBrick.name=Nether Bricks Stairs

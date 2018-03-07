@@ -1,20 +1,17 @@
 {
   "result": {
-    "item": "minecraft:bookshelf"
+    "item": "minecraft:stone_slab",
+    "data": 1,
+    "count": 6
   },
   "pattern": [
-    "xxx",
-    "yyy",
     "xxx"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraft:planks",
+      "item": "minecraft:sandstone",
       "data": 0
-    },
-    "y": {
-      "item": "minecraft:book"
     }
   }
 }

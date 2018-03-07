@@ -1,0 +1,9 @@
+{
+    "parent": "block/piston_head",
+    "textures": {
+        "unsticky": "blocks/piston_top_normal",
+        "side": "minecraftboom:blocks/piston_side_sticky",
+        "rod": "blocks/piston_side", 
+        "platform": "blocks/piston_top_sticky"
+    }
+}

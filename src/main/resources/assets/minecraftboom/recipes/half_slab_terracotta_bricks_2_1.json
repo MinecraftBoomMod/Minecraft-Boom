@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_terracotta_bricks_2",
+    "data": 1,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:stained_terracotta_bricks",
+      "data": 9
+    }
+  }
+}

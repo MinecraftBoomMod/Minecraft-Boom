@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraft:stone_slab2",
+    "data": 0,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:red_sandstone",
+      "data": 0
+    }
+  }
+}

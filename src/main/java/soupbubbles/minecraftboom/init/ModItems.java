@@ -32,15 +32,7 @@ public class ModItems
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
         ITEM_PRISMARINE_ARROW = registerItem(new ItemPrismarineArrow());
         ITEM_WHEAT_ON_STICK = registerItem(new ItemBase(Names.ITEM_WHEAT_ON_STICK));
- 
-        if (ConfigurationHandler.Settings.replacePumpkin)
-        {
-            ITEM_PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
-        }
-        else
-        {
-            ITEM_PUMPKIN_SLICE = null;
-        }
+        ITEM_PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
     }
 
     public static void registerItems()

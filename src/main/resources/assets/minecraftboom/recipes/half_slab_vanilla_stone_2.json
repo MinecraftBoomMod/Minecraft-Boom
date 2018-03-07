@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_vanilla_stone",
+    "data": 2,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 6
+    }
+  }
+}

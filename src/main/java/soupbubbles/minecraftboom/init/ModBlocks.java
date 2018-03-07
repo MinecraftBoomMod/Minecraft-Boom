@@ -406,30 +406,11 @@ public class ModBlocks
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
         BLOCK_ROSE = registerBlock(new BlockRose());
 
-        if (ConfigurationHandler.Settings.replaceCraftingTable)
-        {
-            //BLOCK_CRAFTING_TABLE = replaceBlock(new BlockCraftingTable(), Names.BLOCK_CRAFTING_TABLE);
-        }
-        else
-        {
-            //BLOCK_CRAFTING_TABLE = (BlockWorkbench) Blocks.CRAFTING_TABLE;
-        }
-
-        if (ConfigurationHandler.Settings.replacePumpkin)
-        {
-            //BLOCK_PUMPKIN = new BlockNewPumpkin();
-            //replaceBlock(BLOCK_PUMPKIN, Names.PUMPKIN);
-        }
-        else
-        {
-            //BLOCK_PUMPKIN = (BlockPumpkin) Blocks.PUMPKIN;
-        }
-
-        if (ConfigurationHandler.Settings.replaceWool)
+        //if (ConfigurationHandler.Settings.replaceWool)
         {
             //BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
         }
-        else
+        //else
         {
             //BLOCK_WOOL = (BlockColored) Blocks.WOOL;
         }
