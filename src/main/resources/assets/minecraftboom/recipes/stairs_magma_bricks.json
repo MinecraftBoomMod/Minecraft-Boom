@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:stairs_magma_bricks",
+    "count": 4
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:magma_bricks"
+    }
+  }
+}

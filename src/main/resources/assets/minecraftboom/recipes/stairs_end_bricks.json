@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:stairs_end_bricks",
+    "count": 4
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:end_bricks"
+    }
+  }
+}

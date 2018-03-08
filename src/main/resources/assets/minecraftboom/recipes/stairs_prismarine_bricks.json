@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "minecraftboom:stairs_prismarine_bricks",
+    "count": 4
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:prismarine",
+      "data": 1
+    }
+  }
+}

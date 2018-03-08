@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:stairs_terracotta_bricks",
+    "count": 4
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:terracotta_bricks"
+    }
+  }
+}

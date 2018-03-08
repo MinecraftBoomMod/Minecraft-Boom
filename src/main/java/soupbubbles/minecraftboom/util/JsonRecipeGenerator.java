@@ -46,10 +46,10 @@ public class JsonRecipeGenerator
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static File RECIPE_DIR = new File("F:\\Programming\\Minecraft\\1.12.2\\Minecraft-Boom\\src\\main\\resources\\assets\\minecraftboom\\recipes");
     private static final Set<String> USED_OD_NAMES = new TreeSet<>();
-
+    
     public static void init()
     {
-        //generateConstants();
+        generateConstants();
     }
     
     private static void setupDir()
