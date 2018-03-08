@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:faceless_pumpkin"
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:pumpkin_slice"
+    }
+  }
+}

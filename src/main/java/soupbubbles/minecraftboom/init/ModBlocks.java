@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockDye;
+import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
 import soupbubbles.minecraftboom.block.BlockPolished;
@@ -57,12 +58,10 @@ import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabDouble2;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlabHalf2;
-import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.tileentity.TileEntityCraftingTable;
 
 public class ModBlocks
 {
@@ -79,6 +78,7 @@ public class ModBlocks
     public static final Block BLOCK_STAINED_TERRACOTTA_BRICKS;
     public static final Block BLOCK_MAGMA_BRICKS;
     public static final Block BLOCK_POLISHED;
+    public static final Block BLOCK_FACELESS_PUMPKIN;
 
     //Storage Blocks
     public static final Block BLOCK_CHARCOAL;
@@ -230,8 +230,6 @@ public class ModBlocks
     public static final Block BLOCK_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
-    //public static final Block BLOCK_CRAFTING_TABLE;
-    //public static final Block BLOCK_PUMPKIN;
     //public static final Block BLOCK_WOOL;
 
     static
@@ -245,9 +243,9 @@ public class ModBlocks
         BLOCK_STAINED_TERRACOTTA_BRICKS = new BlockColoredBase(Names.BLOCK_STAINED_TERRACOTTA_BRICKS);
         registerBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, new ItemBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, Names.BLOCK_STAINED_TERRACOTTA_BRICKS));
         BLOCK_MAGMA_BRICKS = registerBlock(new BlockBase(Names.BLOCK_MAGMA_BRICKS));
-
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
+        BLOCK_FACELESS_PUMPKIN = registerBlock(new BlockFacelessPumpkin());
 
         BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(0.1F));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(0.1F));
@@ -426,7 +424,6 @@ public class ModBlocks
 
     public static void registerTileEntities()
     {
-        GameRegistry.registerTileEntity(TileEntityCraftingTable.class, Assets.ASSET_PREFIX + ":" + Names.TILE_ENTITY_CRAFTING_TABLE);
     }
 
     public static void registerTileEntityRenderers()

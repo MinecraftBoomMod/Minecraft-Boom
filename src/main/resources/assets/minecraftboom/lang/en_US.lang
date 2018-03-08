@@ -3,6 +3,7 @@ itemGroup.minecraftboom_tab=Minecraft Boom
 itemGroup.minecraftboom_stairs_and_slabs_tab=Minecraft Boom Stairs and Slabs
 
 # Vanilla
+tile.pumpkin.name=Hollowed Pumpkin
 tile.netherBrick.name=Nether Bricks
 tile.netherFence.name=Nether Bricks Fence
 tile.stairsNetherBrick.name=Nether Bricks Stairs
@@ -51,6 +52,7 @@ tile.minecraftboom.green_stained_terracotta_bricks.name=Green Terracotta Bricks
 tile.minecraftboom.red_stained_terracotta_bricks.name=Red Terracotta Bricks
 tile.minecraftboom.black_stained_terracotta_bricks.name=Black Terracotta Bricks
 tile.minecraftboom.magma_bricks.name=Magma Bricks
+tile.minecraftboom.faceless_pumpkin.name=Pumpkin
 
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine

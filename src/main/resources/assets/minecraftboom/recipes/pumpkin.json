@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "minecraft:pumpkin"
+  },
+  "ingredients": [
+    {
+      "item": "minecraftboom:faceless_pumpkin"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

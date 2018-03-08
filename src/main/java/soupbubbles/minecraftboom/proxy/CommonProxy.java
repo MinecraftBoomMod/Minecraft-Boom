@@ -4,21 +4,18 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.handler.BlockEventHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.EntityEventHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
-import soupbubbles.minecraftboom.handler.GuiHandler;
 import soupbubbles.minecraftboom.handler.LootTableEventHandler;
 import soupbubbles.minecraftboom.handler.PlayerEventHandler;
-import soupbubbles.minecraftboom.handler.RegistryHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.init.ModRecipes2;
+import soupbubbles.minecraftboom.init.ModRecipes;
+import soupbubbles.minecraftboom.world.WorldGenEventHandler;
 import soupbubbles.minecraftboom.world.WorldGenerator;
 
 public abstract class CommonProxy implements IProxy
@@ -32,24 +29,21 @@ public abstract class CommonProxy implements IProxy
         ModBlocks.registerTileEntities();
         ModItems.registerItems();
         ModEntities.initEntities();
-
-        NetworkRegistry.INSTANCE.registerGuiHandler(MinecraftBoom.instance, new GuiHandler());
     }
 
     @Override
     public void init(FMLInitializationEvent event)
     {
-        //ModRecipes.init();
+        ModRecipes.init();
 
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
         MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+        MinecraftForge.TERRAIN_GEN_BUS.register(new WorldGenEventHandler());
 
         GameRegistry.registerFuelHandler(new FuelHandler());
         GameRegistry.registerWorldGenerator(new WorldGenerator(), 0);
-        
-        ModRecipes2.init();
     }
 
     @Override

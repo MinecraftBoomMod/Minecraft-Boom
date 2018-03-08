@@ -25,6 +25,7 @@ import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import soupbubbles.minecraftboom.block.BlockPolished;
@@ -33,6 +34,7 @@ import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab2;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModItems;
 
 /**
  * @author williewillus
@@ -49,7 +51,13 @@ public class JsonRecipeGenerator
     
     public static void init()
     {
-        generateConstants();
+        /*
+        addShapedRecipe(new ItemStack(Items.PUMPKIN_SEEDS), "x", 'x', ModItems.ITEM_PUMPKIN_SLICE);
+        addShapelessRecipe(new ItemStack(Items.PUMPKIN_PIE), Items.SUGAR, Items.EGG, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE);
+        addShapedRecipe(new ItemStack(ModBlocks.BLOCK_FACELESS_PUMPKIN), "xxx", "xxx", "xxx", 'x', ModItems.ITEM_PUMPKIN_SLICE);
+        addShapelessRecipe(new ItemStack(Blocks.PUMPKIN), ModBlocks.BLOCK_FACELESS_PUMPKIN, Items.FLINT);
+
+        generateConstants();*/
     }
     
     private static void setupDir()

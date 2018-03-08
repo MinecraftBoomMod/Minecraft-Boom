@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.BlockNewPumpkin;
+import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.item.base.ItemBase;
@@ -81,12 +81,7 @@ public class ModelManager
     {
         Item item = Item.getItemFromBlock(block);
 
-        if (block instanceof BlockNewPumpkin)
-        {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(BlockNewPumpkin.EnumType.DEFAULT.getName()));
-            ModelLoader.setCustomModelResourceLocation(item, 1, new ModelResourceLocation(BlockNewPumpkin.EnumType.CARVED.getName()));
-        }
-        else if (item instanceof ItemBlockMeta)
+        if (item instanceof ItemBlockMeta)
         {
             ItemBlockMeta itemBlock = (ItemBlockMeta) item;
 

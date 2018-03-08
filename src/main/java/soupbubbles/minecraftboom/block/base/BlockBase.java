@@ -5,6 +5,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockBase extends Block
 {
@@ -24,7 +25,7 @@ public class BlockBase extends Block
         setSoundType(sound);
 
         BASE_NAME = name;
-    }
+}
 
     @Override
     public String getUnlocalizedName()

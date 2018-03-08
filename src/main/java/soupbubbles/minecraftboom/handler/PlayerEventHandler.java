@@ -79,7 +79,7 @@ public class PlayerEventHandler
         if (state.getBlock() == Blocks.STICKY_PISTON)
         {
             EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonBase.FACING);
-            boolean extended = (boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
+            Boolean extended = (Boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
 
             world.setBlockState(pos, Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended));
 

@@ -6,9 +6,11 @@ import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
 
+@Mod.EventBusSubscriber
 public class BlockEventHandler
 {
     @SubscribeEvent
