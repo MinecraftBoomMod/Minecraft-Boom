@@ -4,6 +4,7 @@ import net.minecraft.block.BlockSlime;
 import net.minecraft.block.SoundType;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockMagmaCream extends BlockSlime
@@ -16,6 +17,8 @@ public class BlockMagmaCream extends BlockSlime
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        setHardness(BlockValues.SLIME_HARDENESS);
+        setResistance(BlockValues.SLIME_RESISTANCE);
         setSoundType(SoundType.SLIME);
     }
     

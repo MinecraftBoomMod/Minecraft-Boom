@@ -18,7 +18,6 @@ public class BlockCrossBase extends BlockBush implements IRenderItem
     {
         super();
         setDefaultState(blockState.getBaseState().withProperty(ITEM, false));
-        setHardness(0.0F);
         setSoundType(SoundType.PLANT);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
     }

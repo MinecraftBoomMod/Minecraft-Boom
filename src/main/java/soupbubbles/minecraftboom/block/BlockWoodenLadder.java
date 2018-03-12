@@ -18,7 +18,7 @@ public class BlockWoodenLadder extends BlockLadder
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setHardness(0.5F);
+        setHardness(0.4F);
         setSoundType(SoundType.WOOD);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         

@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockVanillaStoneSlab2 extends BlockSlabBase
@@ -42,8 +43,8 @@ public abstract class BlockVanillaStoneSlab2 extends BlockSlabBase
         }
 
         setDefaultState(iblockstate.withProperty(VARIANT, BlockVanillaStoneSlab2.EnumType.CHISLED_SANDSTONE));
-        setHardness(2.0F);
-        setResistance(10.0F);
+        setHardness(BlockValues.STONE_HARDENESS);
+        setResistance(BlockValues.STONE_RESISTANCE);
         setSoundType(SoundType.STONE);
     }
 

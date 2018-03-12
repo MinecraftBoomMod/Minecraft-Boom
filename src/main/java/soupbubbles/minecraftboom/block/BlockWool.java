@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockWool extends BlockColored
@@ -13,7 +14,8 @@ public class BlockWool extends BlockColored
     public BlockWool()
     {
         super(Material.CLOTH);
-        setHardness(0.8F);
+        setHardness(BlockValues.WOOL_HARDENESS);
+        setResistance(BlockValues.WOOL_RESISTANCE);
         setSoundType(SoundType.CLOTH);
         setUnlocalizedName(Names.CLOTH);
     }

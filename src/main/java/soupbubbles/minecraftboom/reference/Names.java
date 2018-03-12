@@ -70,6 +70,7 @@ public class Names
     public static final String BLOCK_TERRACOTTA_BRICKS = "terracotta_bricks";
     public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_terracotta_bricks";
     public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
+    public static final String BLOCK_OBSIDIAN_BRICKS = "obsidian_bricks";
 
     public static final String BLOCK_POLISHED = "polished";
     public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";
@@ -161,6 +162,7 @@ public class Names
     public static final String BLOCK_DARK_OAK_PRESSURE_PLATE = "dark_oak_pressure_plate";
     
     public static final String BLOCK_GOLDEN_BARS = "golden_bars";
+    public static final String BLOCK_RED_NETHER_FENCE = "red_nether_brick_fence";
     public static final String BLOCK_ROSE = "rose";
     
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";

@@ -15,20 +15,12 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
 {
     protected final String BASE_NAME;
 
-    public BlockColoredBase(String name)
-    {
-        this(Material.ROCK, name, 2.0F, 10.0F, SoundType.STONE);
-    }
-
-    public BlockColoredBase(Material material, String name, float hardness, float resistance, SoundType sound)
+    public BlockColoredBase(Material material, String name)
     {
         super(material);
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        setHardness(hardness);
-        setResistance(resistance);
-        setSoundType(sound);
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);    
 
         BASE_NAME = name;
     }

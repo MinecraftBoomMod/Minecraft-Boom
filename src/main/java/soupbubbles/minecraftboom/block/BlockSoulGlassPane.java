@@ -9,6 +9,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.util.IRenderItem;
 
@@ -17,7 +18,8 @@ public class BlockSoulGlassPane extends BlockPaneBase
     public BlockSoulGlassPane()
     {
         super(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false);
-        setHardness(0.3F);
+        setHardness(BlockValues.GLASS_HARDENESS);
+        setResistance(BlockValues.GLASS_RESISTANCE);
     }
 
     @SideOnly(Side.CLIENT)

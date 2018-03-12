@@ -9,6 +9,7 @@ import net.minecraft.world.IBlockAccess;
 import soupbubbles.minecraftboom.block.base.BlockCrossBase;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockRose extends BlockCrossBase
@@ -20,6 +21,8 @@ public class BlockRose extends BlockCrossBase
         super();
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
+        setHardness(BlockValues.FLOWER_HARDENESS);
+        setResistance(BlockValues.FLOWER_RESISTANCE);
     }
 
     @Override

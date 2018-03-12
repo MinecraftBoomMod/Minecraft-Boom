@@ -16,7 +16,7 @@ public class BlockWoodenTrapDoor extends BlockTrapDoor
         super(Material.WOOD);
         setRegistryName(name);
         setUnlocalizedName(name);
-        setHardness(0.5F);
+        setHardness(3.0F);
         setSoundType(SoundType.WOOD);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         

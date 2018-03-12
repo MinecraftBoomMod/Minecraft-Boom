@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockFacelessPumpkin extends BlockBase
@@ -19,7 +20,8 @@ public class BlockFacelessPumpkin extends BlockBase
     public BlockFacelessPumpkin()
     {
         super(Material.GROUND, Names.BLOCK_FACELESS_PUMPKIN, SoundType.WOOD);
-        setHardness(1.0F);
+        setHardness(BlockValues.PUMPKIN_HARDENESS);
+        setResistance(BlockValues.PUMPKIN_RESISTANCE);
         setTickRandomly(true);
     }
 

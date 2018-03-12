@@ -13,10 +13,10 @@ public class BlockStairBase extends BlockStairs
 
     public BlockStairBase(IBlockState modelState, String name)
     {
-        this(modelState, name, 2.0F, 10.0F, SoundType.STONE);
+        this(modelState, name, SoundType.STONE);
     }
     
-    public BlockStairBase(IBlockState modelState, String name, float hardness, float resistance, SoundType sound)
+    public BlockStairBase(IBlockState modelState, String name, SoundType sound)
     {
         super(modelState);
         name = "stairs_" + name;
@@ -25,8 +25,6 @@ public class BlockStairBase extends BlockStairs
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_STAIRS_AND_SLABS_TAB);
-        setHardness(hardness);
-        setResistance(resistance);
         setSoundType(sound);
 
         BASE_NAME = name;

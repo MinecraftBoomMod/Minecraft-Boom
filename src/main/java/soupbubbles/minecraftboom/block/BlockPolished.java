@@ -19,6 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.util.IBlockMeta;
 
@@ -30,8 +31,8 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     {
         super(Names.BLOCK_POLISHED);
         setDefaultState(blockState.getBaseState().withProperty(VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE));
-        setHardness(2.0F);
-        setResistance(10.0F);
+        setHardness(BlockValues.STONE_HARDENESS);
+        setResistance(BlockValues.STONE_RESISTANCE);
     }
 
     @Override

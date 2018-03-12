@@ -14,6 +14,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockSoulGlass extends BlockBase
@@ -21,7 +22,8 @@ public class BlockSoulGlass extends BlockBase
     public BlockSoulGlass()
     {
         super(Material.GLASS, Names.BLOCK_SOUL_GLASS, SoundType.GLASS);
-        setHardness(0.3F);
+        setHardness(BlockValues.GLASS_HARDENESS);
+        setResistance(BlockValues.GLASS_RESISTANCE);
     }
 
     @Override

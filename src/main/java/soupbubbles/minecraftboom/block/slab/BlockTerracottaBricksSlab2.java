@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockTerracottaBricksSlab2 extends BlockSlabBase
@@ -42,8 +43,8 @@ public abstract class BlockTerracottaBricksSlab2 extends BlockSlabBase
         }
 
         setDefaultState(iblockstate.withProperty(VARIANT, BlockTerracottaBricksSlab2.EnumType.SILVER));
-        setHardness(1.25F);
-        setResistance(10.0F);
+        setHardness(BlockValues.TERRACOTTA_HARDENESS);
+        setResistance(BlockValues.TERRACOTTA_RESISTANCE);
         setSoundType(SoundType.STONE);
     }
 

@@ -3,7 +3,7 @@
   "modid": "minecraftboom",
   "name": "Minecraft Boom",
   "description": "Exploiting the potential of the game",
-  "version": "1.0",
+  "version": "1.1",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

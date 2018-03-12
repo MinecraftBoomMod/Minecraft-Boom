@@ -27,6 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public abstract class BlockModSlab extends BlockSlabBase
@@ -44,8 +45,8 @@ public abstract class BlockModSlab extends BlockSlabBase
         }
 
         setDefaultState(iblockstate.withProperty(VARIANT, BlockModSlab.EnumType.SMOOTH_PRISMARINE));
-        setHardness(2.0F);
-        setResistance(10.0F);
+        setHardness(BlockValues.STONE_HARDENESS);
+        setResistance(BlockValues.STONE_RESISTANCE);
         setSoundType(SoundType.STONE);
     }
 

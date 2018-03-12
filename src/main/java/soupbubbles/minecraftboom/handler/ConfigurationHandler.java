@@ -23,6 +23,7 @@ public class ConfigurationHandler
     private static void loadConfiguration()
     {
         Settings.replaceLoadingScreen = configuration.getBoolean(Settings.REPLACE_LOADING_SCREEN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_LOADING_SCREEN_DEFAULT, Settings.REPLACE_LOADING_SCREEN_COMMENT, Settings.REPLACE_LOADING_SCREEN_LABEL);
+        Settings.generateNetherWells = configuration.getBoolean(Settings.GENERATE_NETHER_WELLS_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_NETHER_WELLS_DEFAULT, Settings.GENERATE_NETHER_WELLS_COMMENT, Settings.GENERATE_NETHER_WELLS_LABEL);
         
         if (configuration.hasChanged())
         {
@@ -46,5 +47,11 @@ public class ConfigurationHandler
         private static final String REPLACE_LOADING_SCREEN_LABEL = "replace_loading_screen.label";
         private static final String REPLACE_LOADING_SCREEN_COMMENT = "Return true if the mod should replace the default loading screens for traveling to dimensions with respective block backgrounds";
         private static final boolean REPLACE_LOADING_SCREEN_DEFAULT = true;
+
+        public static boolean generateNetherWells;
+        private static final String GENERATE_NETHER_WELLS_NAME = "Generate Nether Wells";
+        private static final String GENERATE_NETHER_WELLS_LABEL = "generate_nether_wells.label";
+        private static final String GENERATE_NETHER_WELLS_COMMENT = "Return true if Nether Wells should be generated in the Nether";
+        private static final boolean GENERATE_NETHER_WELLS_DEFAULT = true;
     }
 }

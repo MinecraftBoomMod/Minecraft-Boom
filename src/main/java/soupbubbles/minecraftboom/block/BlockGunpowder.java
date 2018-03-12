@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
+import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockGunpowder extends BlockFallingBase
@@ -22,6 +23,8 @@ public class BlockGunpowder extends BlockFallingBase
     public BlockGunpowder()
     {
         super(Names.BLOCK_GUNPOWDER);
+        setHardness(BlockValues.SAND_HARDENESS);
+        setResistance(BlockValues.SAND_RESISTANCE);
         setTickRandomly(true);
     }
 

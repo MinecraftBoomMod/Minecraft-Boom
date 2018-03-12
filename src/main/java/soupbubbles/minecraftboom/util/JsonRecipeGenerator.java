@@ -51,13 +51,7 @@ public class JsonRecipeGenerator
     
     public static void init()
     {
-        /*
-        addShapedRecipe(new ItemStack(Items.PUMPKIN_SEEDS), "x", 'x', ModItems.ITEM_PUMPKIN_SLICE);
-        addShapelessRecipe(new ItemStack(Items.PUMPKIN_PIE), Items.SUGAR, Items.EGG, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE, ModItems.ITEM_PUMPKIN_SLICE);
-        addShapedRecipe(new ItemStack(ModBlocks.BLOCK_FACELESS_PUMPKIN), "xxx", "xxx", "xxx", 'x', ModItems.ITEM_PUMPKIN_SLICE);
-        addShapelessRecipe(new ItemStack(Blocks.PUMPKIN), ModBlocks.BLOCK_FACELESS_PUMPKIN, Items.FLINT);
-
-        generateConstants();*/
+        //generateConstants();
     }
     
     private static void setupDir()
