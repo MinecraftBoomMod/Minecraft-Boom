@@ -1,0 +1,33 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "#end",
+            "side": "#side"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
+    "variants": {
+        "half": {
+            "bottom": {
+            },
+            "top": {
+            }
+        },
+        "variant": {
+            "obsidian": {
+                "textures": {
+                    "end": "blocks/obsidian",
+                    "side": "#end"
+                    }
+            },
+            "obsidian_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/obsidian_bricks",
+                    "side": "#end"
+                }
+            }
+        }
+    }
+}

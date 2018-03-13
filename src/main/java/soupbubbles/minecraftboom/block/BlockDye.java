@@ -14,7 +14,7 @@ public class BlockDye extends BlockColoredBase
 	public BlockDye() 
 	{
 		super(Material.ROCK, Names.BLOCK_DYE);
-        setHardness(BlockValues.DYE_BLOCK_HARDENESS);
+        setHardness(BlockValues.DYE_BLOCK_HARDNESS);
         setResistance(BlockValues.DYE_BLOCK_RESISTANCE);
 	}
 	

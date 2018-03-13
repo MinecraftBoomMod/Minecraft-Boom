@@ -29,24 +29,33 @@ import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
-public abstract class BlockTerracottaSlab extends BlockSlabBase
+public class BlockTerracottaSlab extends BlockSlabBase
 {
     protected static final PropertyEnum<BlockTerracottaSlab.EnumType> VARIANT = PropertyEnum.<BlockTerracottaSlab.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockTerracottaSlab.EnumType.class);
 
-    public BlockTerracottaSlab(String name)
+    protected boolean isDouble;
+
+    public BlockTerracottaSlab(String name, boolean isDouble)
     {
         super(Material.ROCK, name);
         IBlockState iblockstate = blockState.getBaseState();
 
-        if (!isDouble())
+        if (!isDouble)
         {
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
         setDefaultState(iblockstate.withProperty(VARIANT, BlockTerracottaSlab.EnumType.WHITE));
-        setHardness(BlockValues.TERRACOTTA_HARDENESS);
+        setHardness(BlockValues.TERRACOTTA_HARDNESS);
         setResistance(BlockValues.TERRACOTTA_RESISTANCE);
         setSoundType(SoundType.STONE);
+        this.isDouble = isDouble;
+    }
+    
+    @Override
+    public boolean isDouble()
+    {
+        return isDouble;
     }
 
     @Override

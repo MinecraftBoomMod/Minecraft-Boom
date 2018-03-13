@@ -17,7 +17,7 @@ public class BlockPrismarineCrystal extends BlockBase
     public BlockPrismarineCrystal()
     {
         super(Material.GLASS, Names.BLOCK_PRISMARINE_CRYSTAL, SoundType.GLASS);
-        setHardness(BlockValues.GLASS_HARDENESS);
+        setHardness(BlockValues.GLASS_HARDNESS);
         setResistance(BlockValues.GLASS_RESISTANCE);
         setLightLevel(0.2F);
     }

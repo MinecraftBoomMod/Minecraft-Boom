@@ -28,7 +28,7 @@ public class BlockRedNetherBrickFence extends BlockFence
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        setHardness(BlockValues.NETHER_BRICKS_HARDENESS);
+        setHardness(BlockValues.NETHER_BRICKS_HARDNESS);
         setResistance(BlockValues.NETHER_BRICKS_RESISTANCE);
         setSoundType(SoundType.STONE);
     }

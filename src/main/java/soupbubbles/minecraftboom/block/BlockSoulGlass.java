@@ -22,7 +22,7 @@ public class BlockSoulGlass extends BlockBase
     public BlockSoulGlass()
     {
         super(Material.GLASS, Names.BLOCK_SOUL_GLASS, SoundType.GLASS);
-        setHardness(BlockValues.GLASS_HARDENESS);
+        setHardness(BlockValues.GLASS_HARDNESS);
         setResistance(BlockValues.GLASS_RESISTANCE);
     }
 

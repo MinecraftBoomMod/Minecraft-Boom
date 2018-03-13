@@ -9,6 +9,12 @@
         "uvlock": true
     },
     "variants": {
+        "half": {
+            "bottom": {
+            },
+            "top": {
+            }
+        },
         "variant": {
             "smooth_granite": {
                 "textures": {

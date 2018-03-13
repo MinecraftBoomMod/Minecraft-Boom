@@ -28,26 +28,35 @@ import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
-public abstract class BlockVanillaStoneSlab2 extends BlockSlabBase
+public class BlockVanillaStoneSlab2 extends BlockSlabBase
 {
     protected static final PropertyEnum<BlockVanillaStoneSlab2.EnumType> VARIANT = PropertyEnum.<BlockVanillaStoneSlab2.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockVanillaStoneSlab2.EnumType.class);
 
-    public BlockVanillaStoneSlab2(String name)
+    protected boolean isDouble;
+
+    public BlockVanillaStoneSlab2(String name, boolean isDouble)
     {
         super(Material.ROCK, name);
         IBlockState iblockstate = blockState.getBaseState();
 
-        if (!isDouble())
+        if (!isDouble)
         {
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
         setDefaultState(iblockstate.withProperty(VARIANT, BlockVanillaStoneSlab2.EnumType.CHISLED_SANDSTONE));
-        setHardness(BlockValues.STONE_HARDENESS);
+        setHardness(BlockValues.STONE_HARDNESS);
         setResistance(BlockValues.STONE_RESISTANCE);
         setSoundType(SoundType.STONE);
+        this.isDouble = isDouble;
     }
 
+    @Override
+    public boolean isDouble()
+    {
+        return isDouble;
+    }
+    
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {

@@ -17,7 +17,7 @@ public class BlockMagmaCream extends BlockSlime
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        setHardness(BlockValues.SLIME_HARDENESS);
+        setHardness(BlockValues.SLIME_HARDNESS);
         setResistance(BlockValues.SLIME_RESISTANCE);
         setSoundType(SoundType.SLIME);
     }

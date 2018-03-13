@@ -30,13 +30,13 @@ import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 
-public class BlockModSlab extends BlockSlabBase
+public class BlockObsidianSlab extends BlockSlabBase
 {
-    protected static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockModSlab.EnumType.class);
+    protected static final PropertyEnum<BlockObsidianSlab.EnumType> VARIANT = PropertyEnum.<BlockObsidianSlab.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockObsidianSlab.EnumType.class);
 
     protected boolean isDouble;
     
-    public BlockModSlab(String name, boolean isDouble)
+    public BlockObsidianSlab(String name, boolean isDouble)
     {
         super(Material.ROCK, name);
         IBlockState iblockstate = blockState.getBaseState();
@@ -46,9 +46,9 @@ public class BlockModSlab extends BlockSlabBase
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
-        setDefaultState(iblockstate.withProperty(VARIANT, BlockModSlab.EnumType.SMOOTH_PRISMARINE));
-        setHardness(BlockValues.STONE_HARDNESS);
-        setResistance(BlockValues.STONE_RESISTANCE);
+        setDefaultState(iblockstate.withProperty(VARIANT, BlockObsidianSlab.EnumType.OBSIDIAN));
+        setHardness(BlockValues.OBSIDIAN_HARDNESS);
+        setResistance(BlockValues.OBSIDIAN_RESISTANCE);
         setSoundType(SoundType.STONE);
         this.isDouble = isDouble;
     }
@@ -62,19 +62,19 @@ public class BlockModSlab extends BlockSlabBase
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_MOD);
+        return Item.getItemFromBlock(ModBlocks.BLOCK_HALF_SLAB_OBSIDIAN);
     }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD, 1, state.getValue(VARIANT).getMetadata());
+        return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_OBSIDIAN, 1, state.getValue(VARIANT).getMetadata());
     }
 
     @Override
     public String getUnlocalizedName(int meta)
     {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockModSlab.EnumType.byMetadata(meta).getUnlocalizedName());
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME + "_" + BlockObsidianSlab.EnumType.byMetadata(meta).getUnlocalizedName());
     }
 
     @Override
@@ -92,16 +92,16 @@ public class BlockModSlab extends BlockSlabBase
     @Override
     public Comparable<?> getTypeForItem(ItemStack stack)
     {
-        return BlockModSlab.EnumType.byMetadata(stack.getMetadata() & 7);
+        return BlockObsidianSlab.EnumType.byMetadata(stack.getMetadata() & 7);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        if (this != ModBlocks.BLOCK_DOUBLE_SLAB_MOD)
+        if (this != ModBlocks.BLOCK_DOUBLE_SLAB_OBSIDIAN)
         {
-            for (BlockModSlab.EnumType blockstoneslab$enumtype : BlockModSlab.EnumType.values())
+            for (BlockObsidianSlab.EnumType blockstoneslab$enumtype : BlockObsidianSlab.EnumType.values())
             {
                 list.add(new ItemStack(this, 1, blockstoneslab$enumtype.getMetadata()));
             }
@@ -111,7 +111,7 @@ public class BlockModSlab extends BlockSlabBase
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockModSlab.EnumType.byMetadata(meta & 7));
+        IBlockState iblockstate = getDefaultState().withProperty(VARIANT, BlockObsidianSlab.EnumType.byMetadata(meta & 7));
 
         if (!isDouble())
         {
@@ -125,7 +125,7 @@ public class BlockModSlab extends BlockSlabBase
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMetadata();
+        i = i | ((BlockObsidianSlab.EnumType)state.getValue(VARIANT)).getMetadata();
 
         if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
         {
@@ -156,7 +156,7 @@ public class BlockModSlab extends BlockSlabBase
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMapColor();
+        return ((BlockObsidianSlab.EnumType)state.getValue(VARIANT)).getMapColor();
     }
 
     @Override
@@ -167,16 +167,10 @@ public class BlockModSlab extends BlockSlabBase
 
     public static enum EnumType implements IStringSerializable
     {
-        COBBLESTONE_BRICKS(0, MapColor.STONE, Names.BLOCK_COBBELSTONE_BRICKS),
-        MOSSY_COBBLESTONE_BRICKS(1, MapColor.STONE, Names.BLOCK_MOSSY_COBBELSTONE_BRICKS),
-        HARDENED_CLAY_BRICKS(2, MapColor.STONE, Names.BLOCK_TERRACOTTA_BRICKS),
-        MAGMA_BRICKS(3, MapColor.STONE, Names.BLOCK_MAGMA_BRICKS),
-        SMOOTH_PRISMARINE(4, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),
-        SMOOTH_DARK_PRISMARINE(5, MapColor.STONE, Names.BLOCK_SMOOTH_DARK_PRISMARINE),
-        SMOOTH_END_STONE(6, MapColor.STONE, Names.BLOCK_SMOOTH_END_STONE),
-        SMOOTH_NETHERRACK(7, MapColor.STONE, Names.BLOCK_SMOOTH_NETHERRACK);
+        OBSIDIAN(0, MapColor.OBSIDIAN, Names.BLOCK_OBSIDIAN_BRICKS),
+        OBSIDIAN_BRICKS(1, MapColor.OBSIDIAN, Names.OBSIDIAN);
 
-        private static final BlockModSlab.EnumType[] META_LOOKUP = new BlockModSlab.EnumType[values().length];
+        private static final BlockObsidianSlab.EnumType[] META_LOOKUP = new BlockObsidianSlab.EnumType[values().length];
 
         private final int meta;
         private final MapColor mapColor;
@@ -212,7 +206,7 @@ public class BlockModSlab extends BlockSlabBase
             return name;
         }
 
-        public static BlockModSlab.EnumType byMetadata(int meta)
+        public static BlockObsidianSlab.EnumType byMetadata(int meta)
         {
             if (meta < 0 || meta >= META_LOOKUP.length)
             {
@@ -235,7 +229,7 @@ public class BlockModSlab extends BlockSlabBase
 
         static
         {
-            for (BlockModSlab.EnumType blockstoneslab$enumtype : values())
+            for (BlockObsidianSlab.EnumType blockstoneslab$enumtype : values())
             {
                 META_LOOKUP[blockstoneslab$enumtype.getMetadata()] = blockstoneslab$enumtype;
             }

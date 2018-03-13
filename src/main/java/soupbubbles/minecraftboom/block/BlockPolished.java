@@ -31,7 +31,7 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     {
         super(Names.BLOCK_POLISHED);
         setDefaultState(blockState.getBaseState().withProperty(VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE));
-        setHardness(BlockValues.STONE_HARDENESS);
+        setHardness(BlockValues.STONE_HARDNESS);
         setResistance(BlockValues.STONE_RESISTANCE);
     }
 

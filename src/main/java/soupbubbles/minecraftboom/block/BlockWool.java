@@ -14,7 +14,7 @@ public class BlockWool extends BlockColored
     public BlockWool()
     {
         super(Material.CLOTH);
-        setHardness(BlockValues.WOOL_HARDENESS);
+        setHardness(BlockValues.WOOL_HARDNESS);
         setResistance(BlockValues.WOOL_RESISTANCE);
         setSoundType(SoundType.CLOTH);
         setUnlocalizedName(Names.CLOTH);

@@ -20,7 +20,7 @@ public class BlockFacelessPumpkin extends BlockBase
     public BlockFacelessPumpkin()
     {
         super(Material.GROUND, Names.BLOCK_FACELESS_PUMPKIN, SoundType.WOOD);
-        setHardness(BlockValues.PUMPKIN_HARDENESS);
+        setHardness(BlockValues.PUMPKIN_HARDNESS);
         setResistance(BlockValues.PUMPKIN_RESISTANCE);
         setTickRandomly(true);
     }

@@ -21,7 +21,7 @@ public class BlockRose extends BlockCrossBase
         super();
         setRegistryName(BASE_NAME);
         setUnlocalizedName(BASE_NAME);
-        setHardness(BlockValues.FLOWER_HARDENESS);
+        setHardness(BlockValues.FLOWER_HARDNESS);
         setResistance(BlockValues.FLOWER_RESISTANCE);
     }
 

@@ -57,8 +57,6 @@ public class WorldGenNetherWell extends WorldGenerator
                 }
             }
 
-            System.out.println("Generating well, special: " + isSpecial + ". At: x: " + pos.getX() + ", y: " + pos.getY() + ", z: " + pos.getZ());
-
             if (isSpecial)
             {
                 for (int x = -1; x <= 1; ++x)
@@ -74,7 +72,6 @@ public class WorldGenNetherWell extends WorldGenerator
                         }
                     }
                 }
-
             }
             else
             {
@@ -89,6 +86,8 @@ public class WorldGenNetherWell extends WorldGenerator
                     }
                 }
             }
+
+            System.out.println("Generating well, special: " + isSpecial + ". At: x: " + pos.getX() + ", y: " + pos.getY() + ", z: " + pos.getZ());
 
             if (isSpecial)
             {

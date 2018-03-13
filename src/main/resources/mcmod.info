@@ -5,7 +5,7 @@
   "description": "Exploiting the potential of the game",
   "version": "1.1",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://minecraft.curseforge.com/projects/minecraft-boom",
   "updateUrl": "",
   "authorList": ["Soupbubbles", "Eridiah", "merjin", "Kijan"],
   "credits": "RatavierCreations as mod creator and texture artist, Soupbubbles for code",

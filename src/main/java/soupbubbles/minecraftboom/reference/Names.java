@@ -60,6 +60,7 @@ public class Names
     public static final String CLOTH = "cloth";
     public static final String WOOL = "wool";
     public static final String CONCRETE = "concrete";
+    public static final String OBSIDIAN = "obsidian";
 
     public static final String BLOCK_FACELESS_PUMPKIN = "faceless_pumpkin";
 
@@ -119,6 +120,8 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS = "double_slab_terracotta_bricks";
     public static final String BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2 = "half_slab_terracotta_bricks_2";
     public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = "double_slab_terracotta_bricks_2";
+    public static final String BLOCK_HALF_SLAB_OBSIDIAN = "half_slab_obsidian";
+    public static final String BLOCK_DOUBLE_SLAB_OBSIDIAN = "double_slab_obsidian";
     
     public static final String BLOCK_SPRUCE_CHEST = "spruce_chest";
     public static final String BLOCK_BIRCH_CHEST = "birch_chest";

@@ -36,20 +36,69 @@ public class WorldGenerator implements IWorldGenerator
 
     private void generateEnd(World world, Random rand, int x, int z)
     {
+        BlockPos pos = new BlockPos(x, 0, z);
+
+        if(ConfigurationHandler.Settings.generateEndPiles)
+        {
+            if (rand.nextInt(40) == 0)
+            {
+                new WorldGenEndPiles().generate(world, rand, pos.add(rand.nextInt(16) + 8, rand.nextInt(120) + 4, rand.nextInt(16) + 8));
+            }
+        }
     }
 
     private void generateSurface(World world, Random rand, int x, int z)
     {
+        BlockPos pos;
+
+        if(ConfigurationHandler.Settings.generateRoses)
+        {
+            pos = new BlockPos(x, 0, z);
+                    
+            for (int l2 = 0; l2 < 2; ++l2)
+            {
+                int x1 = rand.nextInt(16) + 8;
+                int z1 = rand.nextInt(16) + 8;
+                int y = world.getHeight(pos.add(x1, 0, z1)).getY() + 32;
+
+                if (y > 0)
+                {
+                    int y1 = rand.nextInt(y);
+                    BlockPos blockpos1 = pos.add(x1, y1, z1);
+
+                    if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
+                    {
+                        new WorldGenRoses().generate(world, rand, blockpos1);
+                    }
+                }
+            }
+        }
+
+        if(ConfigurationHandler.Settings.generatePumpkins)
+        {
+            pos = new BlockPos(x, 0, z);
+                    
+            if (rand.nextInt(32) == 0)
+            {
+                int x1 = rand.nextInt(16) + 8;
+                int z1 = rand.nextInt(16) + 8;
+                int y = world.getHeight(pos.add(x1, 0, z1)).getY() * 2;
+
+                if (y > 0)
+                {
+                    int y1 = rand.nextInt(y);
+                    new WorldGenPumpkin().generate(world, rand, pos.add(x1, y1, z1));
+                }
+            }
+        }
     }
 
     private void generateNether(World world, Random rand, int x, int z)
     {
-        BlockPos pos;
+        BlockPos pos = new BlockPos(x, 0, z);
 
-        if(ConfigurationHandler.Settings.generateNetherWells)
+        if (ConfigurationHandler.Settings.generateNetherWells)
         {
-            pos = new BlockPos(x, 0, z);
-
             if (rand.nextInt(300) == 0)
             {
                 new WorldGenNetherWell(rand.nextInt(5) == 0).generate(world, rand, pos.add(rand.nextInt(16) + 8, rand.nextInt(120) + 4, rand.nextInt(16) + 8));

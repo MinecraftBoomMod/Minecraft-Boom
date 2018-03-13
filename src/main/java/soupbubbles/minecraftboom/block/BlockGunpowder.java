@@ -23,7 +23,7 @@ public class BlockGunpowder extends BlockFallingBase
     public BlockGunpowder()
     {
         super(Names.BLOCK_GUNPOWDER);
-        setHardness(BlockValues.SAND_HARDENESS);
+        setHardness(BlockValues.SAND_HARDNESS);
         setResistance(BlockValues.SAND_RESISTANCE);
         setTickRandomly(true);
     }

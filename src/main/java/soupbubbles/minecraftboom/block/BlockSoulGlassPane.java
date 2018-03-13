@@ -18,7 +18,7 @@ public class BlockSoulGlassPane extends BlockPaneBase
     public BlockSoulGlassPane()
     {
         super(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false);
-        setHardness(BlockValues.GLASS_HARDENESS);
+        setHardness(BlockValues.GLASS_HARDNESS);
         setResistance(BlockValues.GLASS_RESISTANCE);
     }
 

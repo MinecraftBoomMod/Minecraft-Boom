@@ -10,6 +10,12 @@
         "uvlock": true
     },
     "variants": {
+        "half": {
+            "bottom": {
+            },
+            "top": {
+            }
+        },
         "variant": {
             "chiseled_sandstone": {
                 "textures": {
