@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.util;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

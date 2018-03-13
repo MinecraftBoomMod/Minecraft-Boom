@@ -183,6 +183,8 @@ tile.minecraftboom.stairs_brown_terracotta_bricks.name=Brown Terracotta Bricks S
 tile.minecraftboom.stairs_green_terracotta_bricks.name=Green Terracotta Bricks Stairs
 tile.minecraftboom.stairs_red_terracotta_bricks.name=Red Terracotta Bricks Stairs
 tile.minecraftboom.stairs_black_terracotta_bricks.name=Black Terracotta Bricks Stairs
+tile.minecraftboom.stairs_obsidian.name=Obsidian Stairs
+tile.minecraftboom.stairs_obsidian_bricks.name=Obsidian Bricks Stairs
 
 
 # Half Slabs
@@ -258,7 +260,8 @@ tile.minecraftboom.half_slab_terracotta_bricks_2_brown.name=Brown Terracotta Bri
 tile.minecraftboom.half_slab_terracotta_bricks_2_green.name=Green Terracotta Bricks Slab
 tile.minecraftboom.half_slab_terracotta_bricks_2_red.name=Red Terracotta Bricks Slab
 tile.minecraftboom.half_slab_terracotta_bricks_2_black.name=Black Terracotta Bricks Slab
-
+tile.minecraftboom.half_slab_obsidian_obsidian.name=Obsidian Slab
+tile.minecraftboom.half_slab_obsidian_obsidian_bricks.name=Obsidian Bricks Slab
 
 # Double Slabs
 tile.minecraftboom.double_slab_vanilla_stone_smooth_granite.name=Polished Granite Double Slab
@@ -333,6 +336,8 @@ tile.minecraftboom.double_slab_terracotta_bricks_2_brown.name=Brown Terracotta B
 tile.minecraftboom.double_slab_terracotta_bricks_2_green.name=Green Terracotta Bricks Double Slab
 tile.minecraftboom.double_slab_terracotta_bricks_2_red.name=Red Terracotta Bricks Double Slab
 tile.minecraftboom.double_slab_terracotta_bricks_2_black.name=Black Terracotta Bricks Double Slab
+tile.minecraftboom.double_slab_obsidian_obsidian.name=Obsidian Double Slab
+tile.minecraftboom.double_slab_obsidian_obsidian_bricks.name=Obsidian Bricks Double Slab
 
 
 tile.ladder.name=Oak Ladder

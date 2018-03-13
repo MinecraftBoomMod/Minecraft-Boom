@@ -173,6 +173,9 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_GREEN_TERRACOTTA_BRICKS;
     public static final BlockStairBase BLOCK_STAIRS_RED_TERRACOTTA_BRICKS;
     public static final BlockStairBase BLOCK_STAIRS_BLACK_TERRACOTTA_BRICKS;
+    public static final BlockStairBase BLOCK_STAIRS_OBSIDIAN;
+    public static final BlockStairBase BLOCK_STAIRS_OBSIDIAN_BRICKS;
+
 
     //Slabs
     public static final BlockVanillaStoneSlab BLOCK_HALF_SLAB_VANILLA_STONE;
@@ -341,7 +344,9 @@ public class ModBlocks
         BLOCK_STAIRS_GREEN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         BLOCK_STAIRS_RED_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         BLOCK_STAIRS_BLACK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-
+        BLOCK_STAIRS_OBSIDIAN = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
+        BLOCK_STAIRS_OBSIDIAN_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_OBSIDIAN_BRICKS.getDefaultState(), Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
+        
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_HALF_SLAB_VANILLA_STONE, false);
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_DOUBLE_SLAB_VANILLA_STONE, true);
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlab2(Names.BLOCK_HALF_SLAB_VANILLA_STONE_2, false);
