@@ -38,8 +38,9 @@ public class LootTableEventHandler
                 }
             }
         } 
-        catch (Exception exc) 
+        catch (Exception ex) 
         {
+            ex.printStackTrace();
         }
     }
 

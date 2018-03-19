@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "minecraft:dye",
+    "data": 1
+  },
+  "ingredients": [
+    {
+      "item": "minecraftboom:rose"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

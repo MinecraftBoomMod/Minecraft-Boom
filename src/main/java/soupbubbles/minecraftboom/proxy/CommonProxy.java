@@ -9,12 +9,14 @@ import soupbubbles.minecraftboom.handler.BlockEventHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.EntityEventHandler;
 import soupbubbles.minecraftboom.handler.FuelHandler;
+import soupbubbles.minecraftboom.handler.LivingEventHandler;
 import soupbubbles.minecraftboom.handler.LootTableEventHandler;
 import soupbubbles.minecraftboom.handler.PlayerEventHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModEntities;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.init.ModRecipes;
+import soupbubbles.minecraftboom.util.Compatability;
 import soupbubbles.minecraftboom.world.WorldGenEventHandler;
 import soupbubbles.minecraftboom.world.WorldGenerator;
 
@@ -34,11 +36,14 @@ public abstract class CommonProxy implements IProxy
     public void init(FMLInitializationEvent event)
     {
         ModRecipes.init();
+        Compatability.initCompat();
 
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
         MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+        MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
+
         MinecraftForge.TERRAIN_GEN_BUS.register(new WorldGenEventHandler());
 
         GameRegistry.registerFuelHandler(new FuelHandler());

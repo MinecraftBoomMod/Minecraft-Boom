@@ -131,7 +131,9 @@ public class WorldGenFallenTree extends WorldGenerator
     
     private boolean isReplaceable(World world, BlockPos pos)
     {
-        if (world.isAirBlock(pos) || world.getBlockState(pos).getMaterial() == Material.PLANTS || world.getBlockState(pos).getMaterial() == Material.VINE || world.getBlockState(pos).getMaterial() == Material.SNOW || world.getBlockState(pos).getMaterial() == Material.WATER)
+        Material material = world.getBlockState(pos).getMaterial();
+        
+        if (world.isAirBlock(pos) || material == Material.PLANTS || material == Material.VINE || material == Material.SNOW || material == Material.WATER || material == Material.LAVA)
         {
             return true;
         }

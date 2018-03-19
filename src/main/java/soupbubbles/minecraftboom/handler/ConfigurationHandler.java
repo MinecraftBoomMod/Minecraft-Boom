@@ -10,6 +10,9 @@ import soupbubbles.minecraftboom.reference.Reference;
 public class ConfigurationHandler
 {
     public static Configuration configuration;
+    
+    public static final String CATEGORY_WORLD_GEN = "worldgen";
+    public static final String CATEGORY_COMPAT = "compatability";
 
     public static void init(File configFile)
     {
@@ -22,12 +25,15 @@ public class ConfigurationHandler
 
     private static void loadConfiguration()
     {
+        Settings.removeRoseIfInspiration = configuration.getBoolean("Remove Rose if Inspirations is installed", CATEGORY_COMPAT, true, "Will remove the Rose from Minecraft Boom if the mod detects that the mod Inspritations is installed.");
+        Settings.tryToGenrateInspirationRoses = configuration.getBoolean("Try to generate Inspirations Roses", CATEGORY_COMPAT, true, "Will try to generate patches of Roses from Inspiration instead of Minecraft Boom, since Inspiration doesn't add worldgen for Roses");
+ 
         Settings.replaceLoadingScreen = configuration.getBoolean(Settings.REPLACE_LOADING_SCREEN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_LOADING_SCREEN_DEFAULT, Settings.REPLACE_LOADING_SCREEN_COMMENT, Settings.REPLACE_LOADING_SCREEN_LABEL);
-        Settings.generateRoses = configuration.getBoolean(Settings.GENERATE_ROSES_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_ROSES_DEFAULT, Settings.GENERATE_ROSES_COMMENT, Settings.GENERATE_ROSES_LABEL);
-        Settings.generatePumpkins = configuration.getBoolean(Settings.GENERATE_PUMPKINS_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_PUMPKINS_DEFAULT, Settings.GENERATE_PUMPKINS_COMMENT, Settings.GENERATE_PUMPKINS_LABEL);
-        Settings.generateFallenTrees = configuration.getBoolean(Settings.GENERATE_FALLEN_TREES_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_FALLEN_TREES_DEFAULT, Settings.GENERATE_FALLEN_TREES_COMMENT, Settings.GENERATE_FALLEN_TREES_LABEL);
-        Settings.generateNetherWells = configuration.getBoolean(Settings.GENERATE_NETHER_WELLS_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_NETHER_WELLS_DEFAULT, Settings.GENERATE_NETHER_WELLS_COMMENT, Settings.GENERATE_NETHER_WELLS_LABEL);
-        Settings.generateEndPiles = configuration.getBoolean(Settings.GENERATE_END_PILES_NAME, configuration.CATEGORY_GENERAL, Settings.GENERATE_END_PILES_DEFAULT, Settings.GENERATE_END_PILES_COMMENT, Settings.GENERATE_END_PILES_LABEL);
+        Settings.generateRoses = configuration.getBoolean(Settings.GENERATE_ROSES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_ROSES_DEFAULT, Settings.GENERATE_ROSES_COMMENT, Settings.GENERATE_ROSES_LABEL);
+        Settings.generatePumpkins = configuration.getBoolean(Settings.GENERATE_PUMPKINS_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_PUMPKINS_DEFAULT, Settings.GENERATE_PUMPKINS_COMMENT, Settings.GENERATE_PUMPKINS_LABEL);
+        Settings.generateFallenTrees = configuration.getBoolean(Settings.GENERATE_FALLEN_TREES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_FALLEN_TREES_DEFAULT, Settings.GENERATE_FALLEN_TREES_COMMENT, Settings.GENERATE_FALLEN_TREES_LABEL);
+        Settings.generateNetherWells = configuration.getBoolean(Settings.GENERATE_NETHER_WELLS_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_NETHER_WELLS_DEFAULT, Settings.GENERATE_NETHER_WELLS_COMMENT, Settings.GENERATE_NETHER_WELLS_LABEL);
+        Settings.generateEndPiles = configuration.getBoolean(Settings.GENERATE_END_PILES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_END_PILES_DEFAULT, Settings.GENERATE_END_PILES_COMMENT, Settings.GENERATE_END_PILES_LABEL);
  
         if (configuration.hasChanged())
         {
@@ -46,6 +52,10 @@ public class ConfigurationHandler
 
     public static class Settings
     {
+        public static boolean removeRoseIfInspiration;
+        public static boolean tryToGenrateInspirationRoses;
+
+        
         public static boolean replaceLoadingScreen;
         private static final String REPLACE_LOADING_SCREEN_NAME = "Replace Loading Screen";
         private static final String REPLACE_LOADING_SCREEN_LABEL = "replace_loading_screen.label";

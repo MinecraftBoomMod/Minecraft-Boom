@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class WorldGenEndPiles extends WorldGenerator
 {
     private static final BlockStateMatcher IS_END_STONE = BlockStateMatcher.forBlock(Blocks.END_STONE);
-    private static final Block[] BLOCK_LIST = {Blocks.GRASS, Blocks.DIRT, Blocks.STONE, Blocks.COBBLESTONE};
+    private static final Block[] BLOCK_LIST = {Blocks.GRASS, Blocks.DIRT, Blocks.STONE, Blocks.COBBLESTONE, Blocks.SAND};
 
     @Override
     public boolean generate(World world, Random rand, BlockPos pos)
@@ -131,5 +131,27 @@ public class WorldGenEndPiles extends WorldGenerator
         }
         
         return BLOCK_LIST[rand.nextInt(BLOCK_LIST.length)].getDefaultState();
+    }
+    
+    private class BlockRarity
+    {
+        private Block block;
+        private int weight;
+        
+        public BlockRarity(Block blockIn, int weightIn)
+        {
+            block = blockIn;
+            weight = weightIn;
+        }
+        
+        public Block getBlock()
+        {
+            return block;
+        }
+        
+        public int getWeight()
+        {
+            return weight;
+        }
     }
 }
