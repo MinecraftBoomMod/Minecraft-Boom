@@ -37,7 +37,7 @@ public class BlockTerracottaSlab extends BlockSlabBase
 
     public BlockTerracottaSlab(String name, boolean isDouble)
     {
-        super(Material.ROCK, name);
+        super(Material.ROCK, name, isDouble);
         IBlockState iblockstate = blockState.getBaseState();
 
         if (!isDouble)

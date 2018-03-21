@@ -14,23 +14,24 @@ import soupbubbles.minecraftboom.util.IBlockMeta;
 public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
 {
     protected final String BASE_NAME;
+    protected boolean isDouble;
 
-    public BlockSlabBase(Material material, String name)
+    public BlockSlabBase(Material material, String name, boolean isDouble)
     {
         super(material);
-        IBlockState iblockstate = blockState.getBaseState();
-
-        if (!isDouble())
-        {
-            iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
-        }
-
         setRegistryName(name);
         setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_STAIRS_AND_SLABS_TAB);
 
         useNeighborBrightness = true;
         BASE_NAME = name;
+        this.isDouble = isDouble;
+    }
+    
+    @Override
+    public boolean isDouble()
+    {
+        return isDouble;
     }
 
     @Override
@@ -39,12 +40,6 @@ public abstract class BlockSlabBase extends BlockSlab implements IBlockMeta
         return getUnlocalizedName(meta);
     }
 
-    @Override
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        return isDouble() ? getStateFromMeta(meta) : facing != EnumFacing.DOWN && (facing == EnumFacing.UP || hitY <= 0.5D) ? getStateFromMeta(meta).withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM) : getStateFromMeta(meta).withProperty(HALF, BlockSlab.EnumBlockHalf.TOP);
-    }
-    
     @Override
     public String getVariantName()
     {

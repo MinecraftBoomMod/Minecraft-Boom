@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
+import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.item.base.ItemBase;
@@ -88,10 +88,27 @@ public class ModelManager
             if (item.getHasSubtypes() && itemBlock.getVariants().length > 0)
             {
                 List<ModelResourceLocation> modelResources = new ArrayList<>();
-
+                
                 for (int i = 0; i < itemBlock.getVariants().length; i++)
                 {
-                    ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i]));
+                    String name = itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i];
+                    
+                    if (block instanceof BlockSlabBase)
+                    {
+                        if (((BlockSlabBase)block).isDouble())
+                        {
+                            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name.replace("variant", "half=top,variant")));
+                        }
+                        else
+                        {
+                            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name));
+                        }
+
+                    }
+                    else
+                    {
+                        ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name));
+                    }
                 }
             }
         }

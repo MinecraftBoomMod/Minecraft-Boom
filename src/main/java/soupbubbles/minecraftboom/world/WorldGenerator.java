@@ -23,6 +23,7 @@ import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.Compatability;
 
 public class WorldGenerator implements IWorldGenerator
 {
@@ -72,9 +73,17 @@ public class WorldGenerator implements IWorldGenerator
                     int y1 = rand.nextInt(y);
                     BlockPos blockpos1 = pos.add(x1, y1, z1);
 
-                    if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
+                    
+                    if (ModBlocks.BLOCK_ROSE != null)
                     {
-                        new WorldGenRoses().generate(world, rand, blockpos1);
+                        if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
+                        {
+                            new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
+                        }
+                    }
+                    else if (Compatability.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.Settings.tryToGenrateInspirationRoses)
+                    {
+                        //Compatability.genrateInspirationRoses(world, rand, blockpos1);
                     }
                 }
             }

@@ -4,7 +4,7 @@
         "textures": {
             "end": "#end",
             "side": "#end"
-        },
+        },       
         "model": "cube_column",
         "uvlock": true
     },

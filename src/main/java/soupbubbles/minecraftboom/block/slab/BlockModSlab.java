@@ -34,11 +34,9 @@ public class BlockModSlab extends BlockSlabBase
 {
     protected static final PropertyEnum<BlockModSlab.EnumType> VARIANT = PropertyEnum.<BlockModSlab.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockModSlab.EnumType.class);
 
-    protected boolean isDouble;
-    
     public BlockModSlab(String name, boolean isDouble)
     {
-        super(Material.ROCK, name);
+        super(Material.ROCK, name, isDouble);
         IBlockState iblockstate = blockState.getBaseState();
 
         if (!isDouble)
@@ -50,15 +48,8 @@ public class BlockModSlab extends BlockSlabBase
         setHardness(BlockValues.STONE_HARDNESS);
         setResistance(BlockValues.STONE_RESISTANCE);
         setSoundType(SoundType.STONE);
-        this.isDouble = isDouble;
     }
     
-    @Override
-    public boolean isDouble()
-    {
-        return isDouble;
-    }
-
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {

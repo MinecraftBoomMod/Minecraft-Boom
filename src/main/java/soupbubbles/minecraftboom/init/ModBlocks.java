@@ -54,10 +54,12 @@ import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlab;
 import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlab2;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab;
 import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab2;
+import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.Compatability;
 
 public class ModBlocks
 {
@@ -417,7 +419,15 @@ public class ModBlocks
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true).setHardness(5.0F).setResistance(10.0F));
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
-        BLOCK_ROSE = registerBlock(new BlockRose());
+        
+        if (Compatability.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.Settings.removeRoseIfInspiration)
+        {
+            BLOCK_ROSE = null;
+        }
+        else
+        {
+            BLOCK_ROSE = registerBlock(new BlockRose());
+        }
 
         //if (ConfigurationHandler.Settings.replaceWool)
         {

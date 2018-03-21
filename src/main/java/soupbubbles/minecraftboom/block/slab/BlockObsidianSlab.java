@@ -38,7 +38,7 @@ public class BlockObsidianSlab extends BlockSlabBase
     
     public BlockObsidianSlab(String name, boolean isDouble)
     {
-        super(Material.ROCK, name);
+        super(Material.ROCK, name, isDouble);
         IBlockState iblockstate = blockState.getBaseState();
 
         if (!isDouble)

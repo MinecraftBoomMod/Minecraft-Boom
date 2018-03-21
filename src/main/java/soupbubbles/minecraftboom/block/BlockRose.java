@@ -6,6 +6,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockCrossBase;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
@@ -15,7 +16,7 @@ import soupbubbles.minecraftboom.reference.Names;
 public class BlockRose extends BlockCrossBase
 {
     private final String BASE_NAME = Names.BLOCK_ROSE;
-    
+
     public BlockRose()
     {
         super();
