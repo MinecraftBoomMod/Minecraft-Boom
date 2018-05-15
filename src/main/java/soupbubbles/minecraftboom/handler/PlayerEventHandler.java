@@ -35,7 +35,7 @@ public class PlayerEventHandler
 
         if (stack != null)
         {
-            if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
+            if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART && ConfigurationHandler.blazeBonemeal)
             {
                 int i = ((Integer) state.getValue(BlockNetherWart.AGE)).intValue();
 
@@ -51,7 +51,7 @@ public class PlayerEventHandler
                     }
                 }
             }
-            else if (stack.getItem() instanceof ItemSpade && event.getEntityPlayer().isSneaking())
+            else if (stack.getItem() instanceof ItemSpade && event.getEntityPlayer().isSneaking() && ConfigurationHandler.removeSlimeBall)
             {
                 if (state.getBlock() == Blocks.STICKY_PISTON)
                 {

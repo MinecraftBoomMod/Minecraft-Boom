@@ -16,7 +16,7 @@ public class BlockEventHandler
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {
-        if (event.getState().getBlock() instanceof BlockOldLeaf)
+        if (event.getState().getBlock() instanceof BlockOldLeaf && ConfigurationHandler.leavesDropSticks)
         {
             event.setDropChance(1.0F);
 

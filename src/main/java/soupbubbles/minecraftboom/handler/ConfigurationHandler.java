@@ -1,44 +1,89 @@
 package soupbubbles.minecraftboom.handler;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class ConfigurationHandler
 {
     public static Configuration configuration;
+
+    public static final Category[] CATEGORY_LIST = new Category[6];
+    private static int i = -1;
+
+    public static final Category CATEGORY_WORLD_GEN = new Category("worldgen", new ItemStack(ModBlocks.BLOCK_ROSE), true);
+    public static final Category CATEGORY_TWEAKS = new Category("tweaks", new ItemStack(Items.DIAMOND_AXE), false);
+    public static final Category CATEGORY_BLOCKS = new Category("blocks", new ItemStack(ModBlocks.BLOCK_STAINED_TERRACOTTA_BRICKS, 1, 5), true);
+    public static final Category CATEGORY_ITEMS = new Category("items", new ItemStack(ModItems.ITEM_TELESCOPE), true);
+    public static final Category CATEGORY_COMPAT = new Category("compatibility", new ItemStack(Items.IRON_PICKAXE), true);
+    public static final Category CATEGORY_GENERAL = new Category(configuration.CATEGORY_GENERAL, new ItemStack(Blocks.ANVIL), false);
     
-    public static final String CATEGORY_WORLD_GEN = "worldgen";
-    public static final String CATEGORY_COMPAT = "compatability";
+    public static boolean generateRoses;
+    public static boolean generatePumpkins;
+    public static boolean generateFallenTrees;
+    public static boolean generateNetherWells;
+    public static boolean generateEndPiles;
+    public static boolean smeltPumpkin;
+    public static boolean blazeBonemeal;
+    public static boolean removeSlimeBall;
+    public static boolean leavesDropSticks;
+    public static boolean removeRose;
+    public static boolean tryGenerateRoses;
+    public static boolean preventFallenTrees;
+    public static boolean minecraftBoomButton;
+    public static boolean replaceLoadingScreen;
 
     public static void init(File configFile)
     {
         if (configuration == null)
         {
             configuration = new Configuration(configFile, true);
-            loadConfiguration();
         }
+
+        loadConfiguration();
     }
 
-    private static void loadConfiguration()
+    public static void loadConfiguration()
     {
-        Settings.removeRoseIfInspiration = configuration.getBoolean("Remove Rose if Inspirations is installed", CATEGORY_COMPAT, true, "Will remove the Rose from Minecraft Boom if the mod detects that the mod Inspritations is installed.");
-        Settings.tryToGenrateInspirationRoses = configuration.getBoolean("Try to generate Inspirations Roses", CATEGORY_COMPAT, true, "Will try to generate patches of Roses from Inspiration instead of Minecraft Boom, since Inspiration doesn't add worldgen for Roses");
- 
-        Settings.replaceLoadingScreen = configuration.getBoolean(Settings.REPLACE_LOADING_SCREEN_NAME, configuration.CATEGORY_GENERAL, Settings.REPLACE_LOADING_SCREEN_DEFAULT, Settings.REPLACE_LOADING_SCREEN_COMMENT, Settings.REPLACE_LOADING_SCREEN_LABEL);
-        Settings.generateRoses = configuration.getBoolean(Settings.GENERATE_ROSES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_ROSES_DEFAULT, Settings.GENERATE_ROSES_COMMENT, Settings.GENERATE_ROSES_LABEL);
-        Settings.generatePumpkins = configuration.getBoolean(Settings.GENERATE_PUMPKINS_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_PUMPKINS_DEFAULT, Settings.GENERATE_PUMPKINS_COMMENT, Settings.GENERATE_PUMPKINS_LABEL);
-        Settings.generateFallenTrees = configuration.getBoolean(Settings.GENERATE_FALLEN_TREES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_FALLEN_TREES_DEFAULT, Settings.GENERATE_FALLEN_TREES_COMMENT, Settings.GENERATE_FALLEN_TREES_LABEL);
-        Settings.generateNetherWells = configuration.getBoolean(Settings.GENERATE_NETHER_WELLS_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_NETHER_WELLS_DEFAULT, Settings.GENERATE_NETHER_WELLS_COMMENT, Settings.GENERATE_NETHER_WELLS_LABEL);
-        Settings.generateEndPiles = configuration.getBoolean(Settings.GENERATE_END_PILES_NAME, CATEGORY_WORLD_GEN, Settings.GENERATE_END_PILES_DEFAULT, Settings.GENERATE_END_PILES_COMMENT, Settings.GENERATE_END_PILES_LABEL);
- 
+        generateRoses = addConfig(CATEGORY_WORLD_GEN, "generateRoses", true);
+        generatePumpkins = addConfig(CATEGORY_WORLD_GEN, "generatePumpkinPatches", true);
+        generateFallenTrees = addConfig(CATEGORY_WORLD_GEN, "generateFallenTrees", true);
+        generateNetherWells = addConfig(CATEGORY_WORLD_GEN, "generateNetherWells", true);
+        generateEndPiles = addConfig(CATEGORY_WORLD_GEN, "generateEndPiles", true);
+        smeltPumpkin = addConfig(CATEGORY_TWEAKS, "smeltPumpkin", true);
+        blazeBonemeal = addConfig(CATEGORY_TWEAKS, "blazeBonemeal", true);
+        removeSlimeBall = addConfig(CATEGORY_TWEAKS, "removeSlimeBall", true);
+        leavesDropSticks = addConfig(CATEGORY_TWEAKS, "leavesDropSticks", true);
+        removeRose = addConfig(CATEGORY_COMPAT, "removeRose", true);
+        tryGenerateRoses = addConfig(CATEGORY_COMPAT, "tryGenerateRoses", true);
+        preventFallenTrees = addConfig(CATEGORY_COMPAT, "preventFallenTrees", true);
+        minecraftBoomButton = addConfig(CATEGORY_GENERAL, "minecraftBoomButton", true);
+        replaceLoadingScreen = addConfig(CATEGORY_GENERAL, "replaceLoadingScreen", true);
+        
         if (configuration.hasChanged())
         {
             configuration.save();
         }
+    }
+    
+    private static void addItemConfig(Item item)
+    {
+        
     }
 
     @SubscribeEvent
@@ -50,46 +95,81 @@ public class ConfigurationHandler
         }
     }
 
-    public static class Settings
+    private static boolean addConfig(Category category, String name, boolean defaultValue)
     {
-        public static boolean removeRoseIfInspiration;
-        public static boolean tryToGenrateInspirationRoses;
+        boolean value = configuration.getBoolean(name, category.getName(), defaultValue, I18n.format(Assets.CONFIG_PREFIX + name + ".comment.name"));
+        boolean flag = true;
 
-        
-        public static boolean replaceLoadingScreen;
-        private static final String REPLACE_LOADING_SCREEN_NAME = "Replace Loading Screen";
-        private static final String REPLACE_LOADING_SCREEN_LABEL = "replace_loading_screen.label";
-        private static final String REPLACE_LOADING_SCREEN_COMMENT = "Return true if the mod should replace the default loading screens for traveling to dimensions with respective block backgrounds";
-        private static final boolean REPLACE_LOADING_SCREEN_DEFAULT = true;
+        for (int i = 0; i < category.getList().size(); i++)
+        {
+            if (new String(category.getProp(i).getName()).equals(name))
+            {
+                flag = false;
+            }
+        }
 
-        public static boolean generateRoses;
-        private static final String GENERATE_ROSES_NAME = "Generate Roses";
-        private static final String GENERATE_ROSES_LABEL = "generate_roses.label";
-        private static final String GENERATE_ROSES_COMMENT = "Return true if Roses should be generated in the Overworld";
-        private static final boolean GENERATE_ROSES_DEFAULT = true;
+        if (flag)
+        {
+            category.addProp(configuration.get(category.getName(), name, defaultValue));
+        }
+
+        return value;
+    }
+
+    public static String getConfigName(String name)
+    {
+        return Assets.CONFIG_PREFIX + name + ".name";
+    }
+
+    public static class Category
+    {
+        private String name;
+        private ItemStack displayStack;
+        private boolean requiresRestart;
+        private List list = new ArrayList();
+
+        public Category(String categoryName, ItemStack stack, boolean restart)
+        {
+            name = "category." + categoryName;
+            displayStack = stack;
+            requiresRestart = restart;
+            i++;
+            CATEGORY_LIST[i] = this;
+        }
+
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getLocalizedName()
+        {
+            return I18n.format(Assets.CONFIG_PREFIX + getName() + ".name");
+        }
+
+        public ItemStack getDisplayStack()
+        {
+            return displayStack;
+        }
         
-        public static boolean generatePumpkins;
-        private static final String GENERATE_PUMPKINS_NAME = "Generate new Pumpkin patches";
-        private static final String GENERATE_PUMPKINS_LABEL = "generate_pumpkins.label";
-        private static final String GENERATE_PUMPKINS_COMMENT = "Return true if the old Pumpkin patches should be replaced by new ones that will generated Faceless Pumkins instead of Hollowed ones";
-        private static final boolean GENERATE_PUMPKINS_DEFAULT = true;
-        
-        public static boolean generateFallenTrees;
-        private static final String GENERATE_FALLEN_TREES_NAME = "Generate Fallen Trees";
-        private static final String GENERATE_FALLEN_TREES_LABEL = "generate_fallen_trees.label";
-        private static final String GENERATE_FALLEN_TREES_COMMENT = "Return true if Fallen Trees should randomly generate in the Overworld";
-        private static final boolean GENERATE_FALLEN_TREES_DEFAULT = true;
-        
-        public static boolean generateNetherWells;
-        private static final String GENERATE_NETHER_WELLS_NAME = "Generate Nether Wells";
-        private static final String GENERATE_NETHER_WELLS_LABEL = "generate_nether_wells.label";
-        private static final String GENERATE_NETHER_WELLS_COMMENT = "Return true if Nether Wells should be generated in the Nether";
-        private static final boolean GENERATE_NETHER_WELLS_DEFAULT = true;
-        
-        public static boolean generateEndPiles;
-        private static final String GENERATE_END_PILES_NAME = "Generate End Piles";
-        private static final String GENERATE_END_PILES_LABEL = "generate_end_piles.label";
-        private static final String GENERATE_END_PILES_COMMENT = "Return true if piles of miscellaneous blocks should be generated in the End to represent stolen blocks by the Endermen";
-        private static final boolean GENERATE_END_PILES_DEFAULT = true;
+        public boolean requiresRestart()
+        {
+            return requiresRestart;
+        }
+
+        public List getList()
+        {
+            return list;
+        }
+
+        public void addProp(Property property)
+        {
+            list.add(property);
+        }
+
+        public Property getProp(int index)
+        {
+            return (Property) list.get(index);
+        }
     }
 }

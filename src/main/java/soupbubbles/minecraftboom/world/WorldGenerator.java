@@ -23,7 +23,7 @@ import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.util.Compatability;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class WorldGenerator implements IWorldGenerator
 {
@@ -45,20 +45,43 @@ public class WorldGenerator implements IWorldGenerator
     {
         BlockPos pos = new BlockPos(x, 0, z);
 
-        if (ConfigurationHandler.Settings.generateEndPiles)
+        if (ConfigurationHandler.generateEndPiles)
         {
             if (rand.nextInt(40) == 0)
             {
                 new WorldGenEndPiles().generate(world, rand, pos.add(rand.nextInt(16) + 8, rand.nextInt(120) + 4, rand.nextInt(16) + 8));
             }
         }
+
+        /*if (ConfigurationHandler.generateObsidianSpikes)
+        {
+            if (rand.nextInt(40) == 0)
+            {
+                pos = new BlockPos(x, 0, z);
+
+                for (int l2 = 0; l2 < 30; ++l2)
+                {
+                    int x1 = rand.nextInt(16) + 16;
+                    int z1 = rand.nextInt(16) + 16;
+                    int y = world.getHeight(pos.add(x1, 0, z1)).getY() + 32;
+
+                    if (y > 0)
+                    {
+                        int y1 = rand.nextInt(y);
+                        BlockPos blockpos1 = pos.add(x1, y1, z1);
+                        
+                        new WorldGenSpikes().generate(world, rand, blockpos1);
+                    }
+                }
+            }
+        }*/
     }
 
     private void generateSurface(World world, Random rand, int x, int z)
     {
         BlockPos pos;
 
-        if (ConfigurationHandler.Settings.generateRoses)
+        if (ConfigurationHandler.generateRoses)
         {
             pos = new BlockPos(x, 0, z);
 
@@ -73,7 +96,6 @@ public class WorldGenerator implements IWorldGenerator
                     int y1 = rand.nextInt(y);
                     BlockPos blockpos1 = pos.add(x1, y1, z1);
 
-                    
                     if (ModBlocks.BLOCK_ROSE != null)
                     {
                         if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
@@ -81,7 +103,7 @@ public class WorldGenerator implements IWorldGenerator
                             new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
                         }
                     }
-                    else if (Compatability.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.Settings.tryToGenrateInspirationRoses)
+                    else if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.tryGenerateRoses)
                     {
                         //Compatability.genrateInspirationRoses(world, rand, blockpos1);
                     }
@@ -89,7 +111,7 @@ public class WorldGenerator implements IWorldGenerator
             }
         }
 
-        if (ConfigurationHandler.Settings.generatePumpkins)
+        if (ConfigurationHandler.generatePumpkins)
         {
             pos = new BlockPos(x, 0, z);
 
@@ -107,7 +129,10 @@ public class WorldGenerator implements IWorldGenerator
             }
         }
 
-        if (ConfigurationHandler.Settings.generateFallenTrees)
+        if (Compatibility.IS_CHOP_DOWN_UPDATED_INSTALLED && ConfigurationHandler.preventFallenTrees)
+        {
+        }
+        else if (ConfigurationHandler.generateFallenTrees)
         {
             generateFallenTrees(world, rand, x, z);
         }
@@ -117,7 +142,7 @@ public class WorldGenerator implements IWorldGenerator
     {
         BlockPos pos = new BlockPos(x, 0, z);
 
-        if (ConfigurationHandler.Settings.generateNetherWells)
+        if (ConfigurationHandler.generateNetherWells)
         {
             if (rand.nextInt(300) == 0)
             {
@@ -125,7 +150,7 @@ public class WorldGenerator implements IWorldGenerator
             }
         }
     }
-    
+
     private void generateFallenTrees(World world, Random rand, int x, int z)
     {
         BlockPos pos = new BlockPos(x, 0, z);

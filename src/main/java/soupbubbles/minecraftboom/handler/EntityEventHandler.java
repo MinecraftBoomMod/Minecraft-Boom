@@ -15,11 +15,11 @@ public class EntityEventHandler
     @SubscribeEvent
     public static void onDimensionTravel(EntityTravelToDimensionEvent event)
     {
-        if (ConfigurationHandler.Settings.replaceLoadingScreen)
+        Field optionsBackground = null;
+        ResourceLocation newBackground;
+        
+        if (ConfigurationHandler.replaceLoadingScreen)
         {
-            Field optionsBackground = null;
-            ResourceLocation newBackground;
-            
             try
             {
                 optionsBackground = Gui.class.getField("OPTIONS_BACKGROUND");
@@ -43,6 +43,19 @@ public class EntityEventHandler
             }
             
             setBackground(newBackground, optionsBackground);
+        }
+        else
+        {
+            try
+            {
+                optionsBackground = Gui.class.getField("OPTIONS_BACKGROUND");
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            
+            setBackground(new ResourceLocation("textures/blocks/dirt.png"), optionsBackground);
         }
     }
 

@@ -232,7 +232,7 @@ public class TileEntityInventory extends TileEntityBase implements IInventory
     @Override
     public String getName()
     {
-        return String.format(Assets.CONATINER_PREFIX, Assets.ASSET_PREFIX, name);
+        return String.format(Assets.CONTAINER_PREFIX, Assets.ASSET_PREFIX, name);
     }
 
     @Override

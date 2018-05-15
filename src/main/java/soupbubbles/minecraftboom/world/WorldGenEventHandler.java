@@ -14,7 +14,7 @@ public class WorldGenEventHandler
     @SubscribeEvent
     public void onDecorateBiome(DecorateBiomeEvent.Decorate event)
     {
-        if (ConfigurationHandler.Settings.generatePumpkins)
+        if (ConfigurationHandler.generatePumpkins)
         {
             if (event.getType() == EventType.PUMPKIN)
             {

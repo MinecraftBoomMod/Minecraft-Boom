@@ -19,6 +19,9 @@ item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
 item.minecraftboom.prismarine_arrow.name=Prismarine Arrow
 item.minecraftboom.wheat_on_stick.name=Wheat On A Stick
+item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grendade
+item.minecraftboom.telescope.name=Telescope
+item.minecraftboom.levitation_dust.name=Levitation Dust
 
 
 # Blocks
@@ -388,4 +391,38 @@ tile.minecraftboom.red_stained_soul_glass_pane.name=Red Stained Soul Glass Pane
 tile.minecraftboom.black_stained_soul_glass_pane.name=Black Stained Soul Glass Pane
 tile.minecraftboom.rose.name=Rose
 tile.minecraftboom.red_nether_brick_fence.name=Red Nether Brick Fence
+
+# Config
+config.minecraftboom.category.worldgen.name=World Generation
+config.minecraftboom.category.tweaks.name=Vanilla Tweaks
+config.minecraftboom.category.blocks.name=Blocks
+config.minecraftboom.category.items.name=Items
+config.minecraftboom.category.compatibility.name=Compatibility
+config.minecraftboom.category.general.name=General Settings
+
+# Worldgen
+config.minecraftboom.generateRoses.name=Generate Roses
+config.minecraftboom.generateRoses.comment.name=Return true if Roses should be generated in the Overworld.
+config.minecraftboom.generatePumpkinPatches.name=Generate Pumpkin Patches
+config.minecraftboom.generatePumpkinPatches.comment.name=Return true if the old Pumpkin patches should be replaced by new ones that will generated Faceless Pumkins instead of Hollowed ones.
+config.minecraftboom.generateFallenTrees.name=Generate Fallen Trees
+config.minecraftboom.generateFallenTrees.comment.name=Return true if Fallen Trees should randomly generate in the Overworld.
+config.minecraftboom.generateNetherWells.name=Generate Nether Wells
+config.minecraftboom.generateNetherWells.comment.name=Return true if Nether Wells should be generated in the Nether.
+config.minecraftboom.generateEndPiles.name=Generate End Piles
+config.minecraftboom.generateEndPiles.comment.name=Return true if piles of miscellaneous blocks should be generated in the End to represent stolen blocks by the Endermen.
+
+# Tweaks
+
+# Compat
+config.minecraftboom.removeRose.name=Remove Roses if Inspiration is installed
+config.minecraftboom.removeRose.comment.name=Will remove the Rose from Minecraft Boom if the mod detects that the mod Inspritations is installed.
+config.minecraftboom.tryGenerateRoses.name=Try generate Inspiration Roses
+config.minecraftboom.tryGenerateRoses.comment.name=Will try to generate patches of Roses from Inspiration instead of Minecraft Boom, since Inspiration doesn't add worldgen for Roses.
+
+# General
+config.minecraftboom.minecraftBoomButton.name=Enable Minecraft Boom Button
+config.minecraftboom.minecraftBoomButton.comment.name=Enables the Minecraft Boom button in the Options menu. Can always be accessed through Mods -> Minecraft Boom -> Config.
+config.minecraftboom.replaceLoadingScreen.name=Replace Default Loading Screen
+config.minecraftboom.replaceLoadingScreen.comment.name=Return true if the mod should replace the default loading screens for traveling to dimensions with respective block backgrounds.
 

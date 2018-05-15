@@ -14,11 +14,12 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Reference;
 import soupbubbles.minecraftboom.world.WorldGenRoses;
 
-public class Compatability
+public class Compatibility
 {
     public static final boolean IS_INSPIRATIONS_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
     public static final boolean IS_QUARK_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
     public static final boolean IS_NETHER_EX_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
+    public static final boolean IS_CHOP_DOWN_UPDATED_INSTALLED = Loader.isModLoaded(Reference.CHOP_DOWN_UPDATED_MOD_ID);
 
     public static void initCompat()
     {
@@ -26,10 +27,15 @@ public class Compatability
         {
             MinecraftBoom.instance.logger.log(Level.INFO, "Found Inspirations installed, Minecraft Boom will be altered. Check config file for more");
             
-            if (ConfigurationHandler.Settings.removeRoseIfInspiration)
+            if (ConfigurationHandler.removeRose)
             {
                 MinecraftBoom.instance.logger.log(Level.INFO, "Removing Minecraft Boom rose and replacing it with Inspiration Rose");
             }
+        }
+        
+        if (IS_CHOP_DOWN_UPDATED_INSTALLED)
+        {
+            MinecraftBoom.instance.logger.log(Level.INFO, "Found Chop Down Updated installed, Minecraft Boom will be altered. Check config file for more");
         }
         
     }

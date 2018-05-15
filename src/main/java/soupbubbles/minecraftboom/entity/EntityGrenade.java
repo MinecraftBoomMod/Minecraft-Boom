@@ -7,7 +7,6 @@ import net.minecraft.world.World;
 
 public class EntityGrenade extends EntityThrowable
 {
-
     public EntityGrenade(World world)
     {
         super(world);
@@ -28,9 +27,16 @@ public class EntityGrenade extends EntityThrowable
     {
         if (!world.isRemote)
         {
-            world.createExplosion(this, posX, posY, posZ, 2F, false);
+            world.createExplosion(this, posX, posY, posZ, 1.0F, false);
             world.setEntityState(this, (byte) 3);
             setDead();
         }
     }
+    
+    @Override
+    protected float getGravityVelocity()
+    {
+        return 0.1F;
+    }
+
 }

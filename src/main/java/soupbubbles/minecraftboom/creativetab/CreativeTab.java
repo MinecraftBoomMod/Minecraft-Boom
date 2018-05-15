@@ -1,14 +1,11 @@
 package soupbubbles.minecraftboom.creativetab;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class CreativeTab

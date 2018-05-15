@@ -29,7 +29,6 @@ public class LootTableEventHandler
 
         try 
         {
-
             for (String actual : addPool) 
             {
                 if (name.matches("minecraft:.*/" + actual)) 

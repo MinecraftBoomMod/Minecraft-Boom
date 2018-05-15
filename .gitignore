@@ -10,6 +10,7 @@ bin
 out
 *.ipr
 *.iws
+*.iml
 .idea
 
 # gradle
@@ -19,4 +20,3 @@ build
 # other
 eclipse
 run
-/classes/

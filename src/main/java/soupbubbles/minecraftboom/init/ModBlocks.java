@@ -59,7 +59,7 @@ import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.Compatability;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ModBlocks
 {
@@ -420,7 +420,7 @@ public class ModBlocks
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
         
-        if (Compatability.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.Settings.removeRoseIfInspiration)
+        if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.removeRose)
         {
             BLOCK_ROSE = null;
         }
