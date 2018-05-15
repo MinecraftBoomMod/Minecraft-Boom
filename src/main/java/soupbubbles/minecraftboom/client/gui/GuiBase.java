@@ -6,6 +6,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class GuiBase extends GuiScreen
@@ -35,7 +36,7 @@ public class GuiBase extends GuiScreen
     {
         drawDefaultBackground();
         drawCenteredString(fontRenderer, title, width / 2, 15, 0xFFFFFF);
-        drawCenteredString(fontRenderer, "Restart game after changes has been made", width / 2, backButton.y + 26, 0xFFFFFF);
+        drawCenteredString(fontRenderer, I18n.format(Assets.CONFIG_GUI_PREFIX + "restart.name"), width / 2, backButton.y + 26, 0xFFFFFF);
         
         super.drawScreen(mouseX, mouseY, partialTicks);
     }

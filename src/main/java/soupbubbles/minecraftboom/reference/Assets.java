@@ -11,6 +11,7 @@ public class Assets
     public static final String ITEM_PREFIX = "item.%s.%s";
     public static final String CONTAINER_PREFIX = "container.%s.%s";
     public static final String CONFIG_PREFIX = "config." + ASSET_PREFIX + ".";
+    public static final String CONFIG_GUI_PREFIX = "config." + ASSET_PREFIX + ".gui.";
 
     public static final String TEXTURE_ENTITY_DIR = "textures/entities/";
     public static final String TEXTURE_POTIONS_DIR = "textures/potions/";

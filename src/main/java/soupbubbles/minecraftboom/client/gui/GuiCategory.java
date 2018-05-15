@@ -55,6 +55,11 @@ public class GuiCategory extends GuiBase
     {
         super.drawScreen(mouseX, mouseY, partialTicks);
 
+        if (category.getName().equals("category.blocks") || category.getName().equals("category.items") )
+        {
+            drawCenteredString(fontRenderer, "Under Construction", width / 2, height / 2 - 66, 0xff0000);
+        }
+        
         for (int i = 0; i < category.getList().size(); i++)
         {
             drawString(mc.fontRenderer, I18n.format(ConfigurationHandler.getConfigName(category.getProp(i).getName())), width / 2 - 120, buttonList.get(i + 1).y + 8, 0xFFFFFF);

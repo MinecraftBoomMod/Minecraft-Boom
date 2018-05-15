@@ -16,6 +16,7 @@ import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
 @Mod.EventBusSubscriber
@@ -33,7 +34,7 @@ public class LootTableEventHandler
             {
                 if (name.matches("minecraft:.*/" + actual)) 
                 {
-                    event.getTable().addPool(getAdditivePool(Reference.MOD_ID + ":" + actual));
+                    event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + actual));
                 }
             }
         } 
@@ -50,6 +51,6 @@ public class LootTableEventHandler
 
     private LootEntryTable getAdditiveEntry(String name, int weight) 
     {
-        return new LootEntryTable(new ResourceLocation(name), weight, 0, new LootCondition[0], Reference.MOD_ID + ":" + name);
+        return new LootEntryTable(new ResourceLocation(name), weight, 0, new LootCondition[0], Assets.TEXTURE_PREFIX + name);
     }
 }

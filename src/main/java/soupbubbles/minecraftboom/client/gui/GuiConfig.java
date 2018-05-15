@@ -8,6 +8,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
+import soupbubbles.minecraftboom.reference.Assets;
 
 public class GuiConfig extends GuiBase
 {
@@ -26,6 +27,9 @@ public class GuiConfig extends GuiBase
             buttonList.add(new GuiButtonCategory(i + 1, (width / 2 - 155) + i % 2 * 160, (height / 6) + i / 2 * 24, ConfigurationHandler.CATEGORY_LIST[i]));
             buttonList.add(new GuiButtonEnable(i + ConfigurationHandler.CATEGORY_LIST.length + 2, (width / 2 - 25) + i % 2 * 160, (height / 6) + i / 2 * 24, ConfigurationHandler.CATEGORY_LIST[i]));
         }
+        
+        buttonList.add(new GuiButton(25, width / 2 - 100, backButton.y - 24, 95, 20, "Reset all"));
+        buttonList.add(new GuiButton(26, width / 2 + 5, backButton.y - 24, 95, 20, ""));
     }
 
     @Override
@@ -41,8 +45,9 @@ public class GuiConfig extends GuiBase
                 
                 if (mouseX > button.x && mouseX < button.x + button.width && mouseY > button.y && mouseY < button.y + button.height)
                 {
-                    String s = !button.isEnabled() ? "Enable All" : "Disable All";
-                    drawHoveringText(s, mouseX, mouseY);
+                    String s = !button.isEnabled() ? "enableall" : "disableall";
+                    
+                    drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name"), mouseX, mouseY);
                 }
             }
         }
@@ -81,9 +86,21 @@ public class GuiConfig extends GuiBase
                         ConfigurationHandler.configuration.get(cat.getName(), cat.getProp(i).getName(), cat.getProp(i).getDefault()).set(true);
                     }
                 }
-                
                 ConfigurationHandler.loadConfiguration();
             }
+        }
+        else if (button.id == 25)
+        {
+            for (int i = 0; i < ConfigurationHandler.CATEGORY_LIST.length; i++)
+            {
+                Category cat = ConfigurationHandler.CATEGORY_LIST[i];
+
+                for (int j = 0; j < cat.getList().size(); j++)
+                {
+                    ConfigurationHandler.configuration.get(cat.getName(), cat.getProp(j).getName(), cat.getProp(j).getDefault()).set(cat.getProp(j).getDefault());
+                }
+            }
+            ConfigurationHandler.loadConfiguration();
         }
     }
 }

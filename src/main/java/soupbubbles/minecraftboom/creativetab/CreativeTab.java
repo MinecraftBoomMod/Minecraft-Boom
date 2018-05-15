@@ -1,11 +1,19 @@
 package soupbubbles.minecraftboom.creativetab;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+import com.google.common.collect.Ordering;
+
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class CreativeTab
