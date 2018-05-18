@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -16,7 +17,8 @@ import soupbubbles.minecraftboom.reference.Reference;
 public class GuiCategory extends GuiBase
 {
     private Category category;
-    
+    private GuiCategoryList list;
+
     private static final ResourceLocation ICONS = new ResourceLocation(Assets.ASSET_PREFIX, Assets.TEXTURE_GUI_DIR + "icons.png");
 
     public GuiCategory(GuiScreen parent, Category category)
@@ -24,6 +26,7 @@ public class GuiCategory extends GuiBase
         super(parent);
         this.category = category;
         title = Reference.MOD_NAME + ": " + category.getLocalizedName();
+        list = new GuiCategoryList(Minecraft.getMinecraft(), parent, category);
     }
 
     @Override
@@ -54,19 +57,27 @@ public class GuiCategory extends GuiBase
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
         super.drawScreen(mouseX, mouseY, partialTicks);
+        //list.drawScreen(mouseX, mouseY, partialTicks);
 
-        if (category.getName().equals("category.blocks") || category.getName().equals("category.items") )
+        if (category.getName().equals("category.blocks") || category.getName().equals("category.items"))
         {
             drawCenteredString(fontRenderer, "Under Construction", width / 2, height / 2 - 66, 0xff0000);
         }
         
         for (int i = 0; i < category.getList().size(); i++)
         {
-            drawString(mc.fontRenderer, I18n.format(ConfigurationHandler.getConfigName(category.getProp(i).getName())), width / 2 - 120, buttonList.get(i + 1).y + 8, 0xFFFFFF);
+            String s = ConfigurationHandler.getConfigName(category.getProp(i).getName());
+
+            if (category.getName().equals("category.items"))
+            {
+                s = "item.minecraftboom." + category.getProp(i).getName() + ".name";
+            }
+
+            drawString(mc.fontRenderer, I18n.format(s), width / 2 - 120, buttonList.get(i + 1).y + 8, 0xFFFFFF);
             boolean flag = mouseX > buttonList.get(i + 1).x + 22 && mouseX < buttonList.get(i + 1).x + 42 && mouseY > buttonList.get(i + 1).y && mouseY < buttonList.get(i + 1).y + 20;
             mc.getTextureManager().bindTexture(ICONS);
             drawTexturedModalRect(buttonList.get(i + 1).x + 22, buttonList.get(i + 1).y, flag ? 20 : 0, 16, 20, 20);
-            
+
             if (flag)
             {
                 String comment = I18n.format(Assets.CONFIG_PREFIX + category.getProp(i).getName() + ".comment.name");

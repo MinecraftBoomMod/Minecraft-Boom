@@ -4,18 +4,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
@@ -27,9 +26,9 @@ public class ConfigurationHandler
     private static int i = -1;
 
     public static final Category CATEGORY_WORLD_GEN = new Category("worldgen", new ItemStack(ModBlocks.BLOCK_ROSE), true);
-    public static final Category CATEGORY_TWEAKS = new Category("tweaks", new ItemStack(Items.DIAMOND_AXE), false);
-    public static final Category CATEGORY_BLOCKS = new Category("blocks", new ItemStack(ModBlocks.BLOCK_STAINED_TERRACOTTA_BRICKS, 1, 5), true);
-    public static final Category CATEGORY_ITEMS = new Category("items", new ItemStack(ModItems.ITEM_TELESCOPE), true);
+    public static final Category CATEGORY_TWEAKS = new Category("tweaks", new ItemStack(Items.WRITABLE_BOOK), false);
+    public static final Category CATEGORY_BLOCKS = new Category("blocks", new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS), true);
+    public static final Category CATEGORY_ITEMS = new Category("items", new ItemStack(Items.IRON_INGOT), true);
     public static final Category CATEGORY_COMPAT = new Category("compatibility", new ItemStack(Items.IRON_PICKAXE), true);
     public static final Category CATEGORY_GENERAL = new Category(configuration.CATEGORY_GENERAL, new ItemStack(Blocks.ANVIL), false);
     
@@ -81,11 +80,6 @@ public class ConfigurationHandler
         }
     }
     
-    private static void addItemConfig(Item item)
-    {
-        
-    }
-
     @SubscribeEvent
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
@@ -95,9 +89,9 @@ public class ConfigurationHandler
         }
     }
 
-    private static boolean addConfig(Category category, String name, boolean defaultValue)
+    public static boolean addConfig(Category category, String name, boolean defaultValue)
     {
-        boolean value = configuration.getBoolean(name, category.getName(), defaultValue, I18n.format(Assets.CONFIG_PREFIX + name + ".comment.name"));
+        boolean value = configuration.getBoolean(name, category.getName(), defaultValue, Assets.CONFIG_PREFIX + name + ".comment.name");
         boolean flag = true;
 
         for (int i = 0; i < category.getList().size(); i++)
@@ -142,6 +136,7 @@ public class ConfigurationHandler
             return name;
         }
 
+        @SideOnly(Side.CLIENT)
         public String getLocalizedName()
         {
             return I18n.format(Assets.CONFIG_PREFIX + getName() + ".name");
@@ -170,6 +165,11 @@ public class ConfigurationHandler
         public Property getProp(int index)
         {
             return (Property) list.get(index);
+        }
+        
+        public int getSize()
+        {
+            return list.size();
         }
     }
 }

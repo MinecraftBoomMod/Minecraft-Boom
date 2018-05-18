@@ -1,6 +1,8 @@
 package soupbubbles.minecraftboom.init;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import net.minecraft.item.Item;
@@ -48,8 +50,9 @@ public class ModItems
 
     private static <T extends Item> T registerItem(T item)
     {
-    	ForgeRegistries.ITEMS.register(item);
+        ForgeRegistries.ITEMS.register(item);
         ITEMS.add(item);
+        ConfigurationHandler.loadConfiguration();
 
         return item;
     }

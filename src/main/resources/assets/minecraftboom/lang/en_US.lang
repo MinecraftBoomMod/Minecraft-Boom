@@ -405,6 +405,8 @@ config.minecraftboom.category.general.name=General Settings
 config.minecraftboom.gui.enableall.name=Enable All
 config.minecraftboom.gui.disableall.name=Disable All
 config.minecraftboom.gui.restart.name=Restart game after changes has been made
+config.minecraftboom.gui.remove.name=Remove 
+
 
 # Worldgen
 config.minecraftboom.generateRoses.name=Generate Roses

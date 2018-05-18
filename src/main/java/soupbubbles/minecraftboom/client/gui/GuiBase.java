@@ -28,7 +28,7 @@ public class GuiBase extends GuiScreen
         super.initGui();
         buttonList.clear();
         
-        buttonList.add(backButton = new GuiButton(0, width / 2 - 100, height / 6 + 168 - 20, 200, 20, I18n.format("gui.done")));
+        buttonList.add(backButton = new GuiButton(0, width / 2 - 100, height / 6 + 168 - 16, 200, 20, I18n.format("gui.done")));
     }
 
     @Override
