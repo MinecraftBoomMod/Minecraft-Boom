@@ -54,6 +54,7 @@ tile.minecraftboom.black_stained_terracotta_bricks.name=Black Terracotta Bricks
 tile.minecraftboom.magma_bricks.name=Magma Bricks
 tile.minecraftboom.obsidian_bricks.name=Obsidian Bricks
 tile.minecraftboom.faceless_pumpkin.name=Pumpkin
+tile.minecraftboom.fine_gravel.name=Fine Gravel
 
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
@@ -396,10 +397,10 @@ tile.minecraftboom.red_nether_brick_fence.name=Red Nether Brick Fence
 # Config
 config.minecraftboom.category.worldgen.name=World Generation
 config.minecraftboom.category.tweaks.name=Vanilla Tweaks
+config.minecraftboom.category.compatibility.name=Compatibility
 config.minecraftboom.category.blocks.name=Blocks
 config.minecraftboom.category.items.name=Items
-config.minecraftboom.category.compatibility.name=Compatibility
-config.minecraftboom.category.general.name=General Settings
+config.minecraftboom.category.mobs.name=Mobs
 
 # Config GUI
 config.minecraftboom.gui.enableall.name=Enable All

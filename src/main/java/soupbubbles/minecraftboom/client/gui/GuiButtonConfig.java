@@ -11,12 +11,12 @@ import soupbubbles.minecraftboom.reference.Reference;
 public class GuiButtonConfig extends GuiButton
 {
     private static final ResourceLocation ICONS = new ResourceLocation(Assets.ASSET_PREFIX, Assets.TEXTURE_GUI_DIR + "icons.png");
-    private Property enabled;
+    public Property prop;
 
-    public GuiButtonConfig(int id, int x, int y, Property bool)
+    public GuiButtonConfig(int id, int x, int y, Property prop)
     {
         super(id, x, y, 20, 20, "");
-        enabled = bool;
+        this.prop = prop;
     }
 
     @Override
@@ -24,6 +24,6 @@ public class GuiButtonConfig extends GuiButton
     {
         Minecraft mc = Minecraft.getMinecraft();
         mc.getTextureManager().bindTexture(ICONS);
-        drawTexturedModalRect(this.x + 2, this.y, enabled.getBoolean() ? 0 : 16, 0, 16, 16);
+        drawTexturedModalRect(this.x + 2, this.y, prop.getBoolean() ? 0 : 16, 0, 16, 16);
     }
 }

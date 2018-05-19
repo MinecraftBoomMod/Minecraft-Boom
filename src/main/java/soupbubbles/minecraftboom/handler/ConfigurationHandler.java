@@ -4,131 +4,142 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Level;
+
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.ConfigurationHelper;
 
 public class ConfigurationHandler
 {
     public static Configuration configuration;
 
-    public static final Category[] CATEGORY_LIST = new Category[6];
-    private static int i = -1;
+    public static boolean firstLoad = false;
 
-    public static final Category CATEGORY_WORLD_GEN = new Category("worldgen", new ItemStack(ModBlocks.BLOCK_ROSE), true);
-    public static final Category CATEGORY_TWEAKS = new Category("tweaks", new ItemStack(Items.WRITABLE_BOOK), false);
-    public static final Category CATEGORY_BLOCKS = new Category("blocks", new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS), true);
-    public static final Category CATEGORY_ITEMS = new Category("items", new ItemStack(Items.IRON_INGOT), true);
-    public static final Category CATEGORY_COMPAT = new Category("compatibility", new ItemStack(Items.IRON_PICKAXE), true);
-    public static final Category CATEGORY_GENERAL = new Category(configuration.CATEGORY_GENERAL, new ItemStack(Blocks.ANVIL), false);
+    public static final List<Category> CATEGORY_LIST = new ArrayList<Category>();
+
+    public static final Category CATEGORY_WORLD_GEN = addCategory("worldgen", new ItemStack(ModBlocks.BLOCK_ROSE));
+    public static final Category CATEGORY_TWEAKS = addCategory("tweaks", new ItemStack(Items.WRITABLE_BOOK));
+    public static final Category CATEGORY_COMPAT = addCategory("compatibility", new ItemStack(Items.IRON_PICKAXE));
+    public static final Category CATEGORY_BLOCKS = addCategory("blocks", new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS));
+    public static final Category CATEGORY_ITEMS = addCategory("items", new ItemStack(Items.IRON_INGOT));
+    public static final Category CATEGORY_MOBS = addCategory("mobs", new ItemStack(Items.WHEAT));
     
+    public static boolean worldgen;
+    public static boolean tweaks;
+    public static boolean compat;
+    public static boolean blocks;
+    public static boolean items;
+    public static boolean mobs;
+
+    //General
+    public static boolean minecraftBoomButton;
+    public static boolean replaceLoadingScreen;
+
+    //Worldgen
     public static boolean generateRoses;
     public static boolean generatePumpkins;
     public static boolean generateFallenTrees;
     public static boolean generateNetherWells;
     public static boolean generateEndPiles;
+
+    //Tweaks
     public static boolean smeltPumpkin;
     public static boolean blazeBonemeal;
     public static boolean removeSlimeBall;
     public static boolean leavesDropSticks;
+
+    //Compat
     public static boolean removeRose;
     public static boolean tryGenerateRoses;
     public static boolean preventFallenTrees;
-    public static boolean minecraftBoomButton;
-    public static boolean replaceLoadingScreen;
 
-    public static void init(File configFile)
+    public static void initConfiguation(File configFile)
     {
-        if (configuration == null)
+        if (!configFile.exists() || configuration == null)
         {
             configuration = new Configuration(configFile, true);
+            firstLoad = true;
+            MinecraftBoom.instance.logger.log(Level.INFO, "No configuration file for Minecraft Boom was found, creating new one");
         }
 
-        loadConfiguration();
+        worldgen = ConfigurationHelper.loadPropBool("worldgen", configuration.CATEGORY_GENERAL, "", true);
+        tweaks = ConfigurationHelper.loadPropBool("tweaks", configuration.CATEGORY_GENERAL, "", true);
+        compat = ConfigurationHelper.loadPropBool("compat", configuration.CATEGORY_GENERAL, "", true);
+        blocks = ConfigurationHelper.loadPropBool("blocks", configuration.CATEGORY_GENERAL, "", true);
+        items = ConfigurationHelper.loadPropBool("items", configuration.CATEGORY_GENERAL, "", true);
+        mobs = ConfigurationHelper.loadPropBool("mobs", configuration.CATEGORY_GENERAL, "", true);
+        minecraftBoomButton = ConfigurationHelper.loadPropBool("minecraftBoomButton", configuration.CATEGORY_GENERAL, "", true);
+
+        generateRoses = ConfigurationHelper.loadPropBool("generateRoses", CATEGORY_WORLD_GEN, "", true);
+        generatePumpkins = ConfigurationHelper.loadPropBool("generatePumpkins", CATEGORY_WORLD_GEN, "", true);
+        generateFallenTrees = ConfigurationHelper.loadPropBool("generateFallenTrees", CATEGORY_WORLD_GEN, "", true);
+        generateNetherWells = ConfigurationHelper.loadPropBool("generateNetherWells", CATEGORY_WORLD_GEN, "", true);
+        generateEndPiles = ConfigurationHelper.loadPropBool("generateEndPiles", CATEGORY_WORLD_GEN, "", true);
+
+        smeltPumpkin = ConfigurationHelper.loadPropBool("smeltPumpkin", CATEGORY_TWEAKS, "", true);
+        blazeBonemeal = ConfigurationHelper.loadPropBool("blazeBonemeal", CATEGORY_TWEAKS, "", true);
+        removeSlimeBall = ConfigurationHelper.loadPropBool("removeSlimeBall", CATEGORY_TWEAKS, "", true);
+        leavesDropSticks = ConfigurationHelper.loadPropBool("leavesDropSticks", CATEGORY_TWEAKS, "", true);
+        replaceLoadingScreen = ConfigurationHelper.loadPropBool("replaceLoadingScreen", CATEGORY_TWEAKS, "", true);
+
+        removeRose = ConfigurationHelper.loadPropBool("removeRose", CATEGORY_COMPAT, "", true);
+        tryGenerateRoses = ConfigurationHelper.loadPropBool("tryGenerateRoses", CATEGORY_COMPAT, "", true);
+        preventFallenTrees = ConfigurationHelper.loadPropBool("preventFallenTrees", CATEGORY_COMPAT, "", true);
+
+        saveConfiguration();
+
+        MinecraftForge.EVENT_BUS.register(configuration);
     }
 
-    public static void loadConfiguration()
+    public static void saveConfiguration()
     {
-        generateRoses = addConfig(CATEGORY_WORLD_GEN, "generateRoses", true);
-        generatePumpkins = addConfig(CATEGORY_WORLD_GEN, "generatePumpkinPatches", true);
-        generateFallenTrees = addConfig(CATEGORY_WORLD_GEN, "generateFallenTrees", true);
-        generateNetherWells = addConfig(CATEGORY_WORLD_GEN, "generateNetherWells", true);
-        generateEndPiles = addConfig(CATEGORY_WORLD_GEN, "generateEndPiles", true);
-        smeltPumpkin = addConfig(CATEGORY_TWEAKS, "smeltPumpkin", true);
-        blazeBonemeal = addConfig(CATEGORY_TWEAKS, "blazeBonemeal", true);
-        removeSlimeBall = addConfig(CATEGORY_TWEAKS, "removeSlimeBall", true);
-        leavesDropSticks = addConfig(CATEGORY_TWEAKS, "leavesDropSticks", true);
-        removeRose = addConfig(CATEGORY_COMPAT, "removeRose", true);
-        tryGenerateRoses = addConfig(CATEGORY_COMPAT, "tryGenerateRoses", true);
-        preventFallenTrees = addConfig(CATEGORY_COMPAT, "preventFallenTrees", true);
-        minecraftBoomButton = addConfig(CATEGORY_GENERAL, "minecraftBoomButton", true);
-        replaceLoadingScreen = addConfig(CATEGORY_GENERAL, "replaceLoadingScreen", true);
-        
         if (configuration.hasChanged())
         {
             configuration.save();
         }
     }
-    
+
     @SubscribeEvent
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
         if (event.getModID().equalsIgnoreCase(Reference.MOD_ID))
         {
-            loadConfiguration();
+            saveConfiguration();
         }
     }
 
-    public static boolean addConfig(Category category, String name, boolean defaultValue)
+    private static Category addCategory(String name, ItemStack displayStack)
     {
-        boolean value = configuration.getBoolean(name, category.getName(), defaultValue, Assets.CONFIG_PREFIX + name + ".comment.name");
-        boolean flag = true;
+        Category category = new Category(name, displayStack);
+        CATEGORY_LIST.add(category);
 
-        for (int i = 0; i < category.getList().size(); i++)
-        {
-            if (new String(category.getProp(i).getName()).equals(name))
-            {
-                flag = false;
-            }
-        }
-
-        if (flag)
-        {
-            category.addProp(configuration.get(category.getName(), name, defaultValue));
-        }
-
-        return value;
-    }
-
-    public static String getConfigName(String name)
-    {
-        return Assets.CONFIG_PREFIX + name + ".name";
+        return category;
     }
 
     public static class Category
     {
         private String name;
         private ItemStack displayStack;
-        private boolean requiresRestart;
-        private List list = new ArrayList();
 
-        public Category(String categoryName, ItemStack stack, boolean restart)
+        public Category(String categoryName, ItemStack stack)
         {
             name = "category." + categoryName;
             displayStack = stack;
-            requiresRestart = restart;
-            i++;
-            CATEGORY_LIST[i] = this;
         }
 
         public String getName()
@@ -136,40 +147,14 @@ public class ConfigurationHandler
             return name;
         }
 
-        @SideOnly(Side.CLIENT)
         public String getLocalizedName()
         {
-            return I18n.format(Assets.CONFIG_PREFIX + getName() + ".name");
+            return Assets.CONFIG_PREFIX + getName() + ".name";
         }
 
         public ItemStack getDisplayStack()
         {
             return displayStack;
-        }
-        
-        public boolean requiresRestart()
-        {
-            return requiresRestart;
-        }
-
-        public List getList()
-        {
-            return list;
-        }
-
-        public void addProp(Property property)
-        {
-            list.add(property);
-        }
-
-        public Property getProp(int index)
-        {
-            return (Property) list.get(index);
-        }
-        
-        public int getSize()
-        {
-            return list.size();
         }
     }
 }

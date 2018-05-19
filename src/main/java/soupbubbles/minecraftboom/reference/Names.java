@@ -72,6 +72,7 @@ public class Names
     public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_terracotta_bricks";
     public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
     public static final String BLOCK_OBSIDIAN_BRICKS = "obsidian_bricks";
+    public static final String BLOCK_FINE_GRAVEL= "fine_gravel";
 
     public static final String BLOCK_POLISHED = "polished";
     public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";

@@ -52,7 +52,6 @@ public class ModItems
     {
         ForgeRegistries.ITEMS.register(item);
         ITEMS.add(item);
-        ConfigurationHandler.loadConfiguration();
 
         return item;
     }

@@ -78,6 +78,7 @@ public class ModBlocks
     public static final Block BLOCK_OBSIDIAN_BRICKS;
     public static final Block BLOCK_POLISHED;
     public static final Block BLOCK_FACELESS_PUMPKIN;
+    public static final Block BLOCK_FINE_GRAVEL;
 
     //Storage Blocks
     public static final Block BLOCK_CHARCOAL;
@@ -252,6 +253,7 @@ public class ModBlocks
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
         BLOCK_FACELESS_PUMPKIN = registerBlock(new BlockFacelessPumpkin());
+        BLOCK_FINE_GRAVEL = registerBlock(new BlockFallingBase(Names.BLOCK_FINE_GRAVEL, SoundType.GROUND).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
 
         BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
