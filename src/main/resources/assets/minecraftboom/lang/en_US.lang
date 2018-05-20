@@ -403,15 +403,14 @@ config.minecraftboom.category.items.name=Items
 config.minecraftboom.category.mobs.name=Mobs
 
 # Config GUI
-config.minecraftboom.gui.enableall.name=Enable All
-config.minecraftboom.gui.disableall.name=Disable All
+config.minecraftboom.gui.enable.name=Enable
+config.minecraftboom.gui.disable.name=Disable
 config.minecraftboom.gui.restart.name=Restart game after changes has been made
-config.minecraftboom.gui.remove.name=Remove 
 
 
 # Worldgen
 config.minecraftboom.generateRoses.name=Generate Roses
-config.minecraftboom.generatePumpkinPatches.name=Generate Pumpkin Patches
+config.minecraftboom.generatePumpkins.name=Generate Pumpkin Patches
 config.minecraftboom.generateFallenTrees.name=Generate Fallen Trees
 config.minecraftboom.generateNetherWells.name=Generate Nether Wells
 config.minecraftboom.generateEndPiles.name=Generate End Piles
@@ -427,6 +426,7 @@ config.minecraftboom.smeltPumpkin.name=Pumpking smelts into Orange Dye
 config.minecraftboom.blazeBonemeal.name=Use Blaze Powder as Bonemeal
 config.minecraftboom.removeSlimeBall.name=Remove Slime Balls from Sticky Pistons
 config.minecraftboom.leavesDropSticks.name=Leaves drop Sticks
+config.minecraftboom.spruceDropsPinecones.name=Spruce Leaves drop Pinecones
 
 config.minecraftboom.smeltPumpkin.comment.name=Enabling allows Pumpkins (Faceless and Hollowed) to smelt into Orange Dye in a Furnace.
 config.minecraftboom.blazeBonemeal.comment.name=Enabling allows Blaze Powder to be used as a Bonemeal on Nether Wart.

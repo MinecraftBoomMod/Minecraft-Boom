@@ -7,6 +7,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
@@ -16,6 +17,8 @@ public class GuiBase extends GuiScreen
     protected GuiScreen parent;
     protected GuiButton backButton;
     protected boolean requiresRestart;
+
+    protected static final int CATEGORY_SIZE = ConfigurationHandler.CATEGORY_LIST.size();
 
     public GuiBase(GuiScreen myParent)
     {
@@ -38,7 +41,7 @@ public class GuiBase extends GuiScreen
         drawCenteredString(fontRenderer, I18n.format(Assets.CONFIG_GUI_PREFIX + "restart.name"), width / 2, backButton.y + 26, 0xFFFFFF);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
-        
+
         drawTooltips(mouseX, mouseY);
     }
 
@@ -86,5 +89,19 @@ public class GuiBase extends GuiScreen
 
     public void drawTooltips(int mouseX, int mouseY)
     {
+    }
+
+    protected String[] getAllCategoryNames()
+    {
+        String[] list = new String[CATEGORY_SIZE + 1];
+        
+        for (int i = 0; i < CATEGORY_SIZE; i++)
+        {
+            list[i] = ConfigurationHandler.CATEGORY_LIST.get(i).getName();
+        }
+
+        list[CATEGORY_SIZE] = ConfigurationHandler.configuration.CATEGORY_GENERAL;
+
+        return list;
     }
 }

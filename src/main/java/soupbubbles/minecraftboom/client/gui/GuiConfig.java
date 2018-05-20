@@ -1,18 +1,19 @@
 package soupbubbles.minecraftboom.client.gui;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class GuiConfig extends GuiBase
 {
-    private static final int CATEGORY_SIZE = ConfigurationHandler.CATEGORY_LIST.size();
-
     public GuiConfig(GuiScreen myParent)
     {
         super(myParent);
@@ -34,7 +35,6 @@ public class GuiConfig extends GuiBase
         buttonList.add(new GuiButton(24, (width / 2 - 155) + 6 % 2 * 160, (height / 6) + 6 / 2 * 24, 150, 20, "General Settings"));
         buttonList.add(new GuiButton(25, (width / 2 - 155) + 7 % 2 * 160, (height / 6) + 7 / 2 * 24, 150, 20, "Reset all"));
         buttonList.add(backButton = new GuiButton(0, width / 2 - 100, (height / 6) + 8 / 2 * 26, 200, 20, I18n.format("gui.done")));
-
     }
 
     @Override
@@ -51,7 +51,19 @@ public class GuiConfig extends GuiBase
         }
         else if (button.id == 25)
         {
-            // RESET ALL
+            for (String s : getAllCategoryNames())
+            {
+                Iterator ir = ConfigurationHandler.configuration.getCategory(s).getValues().entrySet().iterator();
+
+                while (ir.hasNext())
+                {
+                    Map.Entry e = (Map.Entry) ir.next();
+                    Property prop = (Property) e.getValue();
+                    prop.set(prop.getDefault());
+                }
+            }
+
+            ConfigurationHandler.saveConfiguration();
         }
     }
 
@@ -66,9 +78,9 @@ public class GuiConfig extends GuiBase
 
                 if (mouseX > button.x && mouseX < button.x + button.width && mouseY > button.y && mouseY < button.y + button.height)
                 {
-                    String s = !button.prop.getBoolean() ? "enableall" : "disableall";
+                    String s = !button.prop.getBoolean() ? "enable" : "disable";
 
-                    drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name"), mouseX, mouseY);
+                    drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name") + " " + I18n.format(button.prop.getName()), mouseX, mouseY);
                 }
             }
         }

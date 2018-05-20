@@ -62,6 +62,7 @@ public class ConfigurationHandler
     public static boolean blazeBonemeal;
     public static boolean removeSlimeBall;
     public static boolean leavesDropSticks;
+    public static boolean spruceDropsPinecones;
 
     //Compat
     public static boolean removeRose;
@@ -95,6 +96,7 @@ public class ConfigurationHandler
         blazeBonemeal = ConfigurationHelper.loadPropBool("blazeBonemeal", CATEGORY_TWEAKS, "", true);
         removeSlimeBall = ConfigurationHelper.loadPropBool("removeSlimeBall", CATEGORY_TWEAKS, "", true);
         leavesDropSticks = ConfigurationHelper.loadPropBool("leavesDropSticks", CATEGORY_TWEAKS, "", true);
+        leavesDropSticks = ConfigurationHelper.loadPropBool("spruceDropsPinecones", CATEGORY_TWEAKS, "", true);
         replaceLoadingScreen = ConfigurationHelper.loadPropBool("replaceLoadingScreen", CATEGORY_TWEAKS, "", true);
 
         removeRose = ConfigurationHelper.loadPropBool("removeRose", CATEGORY_COMPAT, "", true);

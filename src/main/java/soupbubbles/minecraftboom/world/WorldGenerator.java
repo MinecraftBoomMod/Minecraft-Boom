@@ -9,6 +9,7 @@ import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -167,54 +168,56 @@ public class WorldGenerator implements IWorldGenerator
 
             Biome biome = world.getBiome(position);
             IBlockState state = Blocks.LOG.getDefaultState();
+            int id = biome.getIdForBiome(biome);
             int chance = 1;
             int length = 5;
             boolean flag = true;
+            
 
-            if (biome.getBiomeName() == "Plains" || biome.getBiomeName() == "Sunflower Plains" || biome.getBiomeName() == "Extreme Hills" || biome.getBiomeName() == "Extreme Hills M")
+            if (biome == Biomes.PLAINS || biome == Biomes.MUTATED_PLAINS || biome == Biomes.EXTREME_HILLS || biome == Biomes.MUTATED_EXTREME_HILLS || biome == Biomes.EXTREME_HILLS_EDGE)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK);
                 chance = 20;
             }
-            else if (biome.getBiomeName() == "Forest" || biome.getBiomeName() == "ForestHills" || biome.getBiomeName() == "Flower Forest")
+            else if (biome == Biomes.FOREST|| biome == Biomes.FOREST_HILLS || biome == Biomes.MUTATED_FOREST)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, rand.nextInt(10) < 2 ? BlockPlanks.EnumType.BIRCH : BlockPlanks.EnumType.OAK);
                 chance = 2;
             }
-            else if (biome.getBiomeName() == "Taiga" || biome.getBiomeName() == "TaigaHills" || biome.getBiomeName() == "Cold Taiga" || biome.getBiomeName() == "Cold Taiga Hills" || biome.getBiomeName() == "Mega Taiga" || biome.getBiomeName() == "Mega Taiga Hills" || biome.getBiomeName() == "Taiga M" || biome.getBiomeName() == "Cold Taiga M" || biome.getBiomeName() == "Mega Spruce Taiga" || biome.getBiomeName() == "Redwood Taiga Hills M")
+            else if (biome == Biomes.TAIGA || biome ==Biomes.TAIGA_HILLS || biome == Biomes.COLD_TAIGA || biome == Biomes.COLD_TAIGA_HILLS || biome == Biomes.MUTATED_TAIGA || biome == Biomes.MUTATED_TAIGA_COLD || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.MUTATED_REDWOOD_TAIGA_HILLS || biome == Biomes.REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA_HILLS)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.SPRUCE);
                 chance = 3;
                 length = 8;
             }
-            else if (biome.getBiomeName() == "Swampland" || biome.getBiomeName() == "Swampland M")
+            else if (biome == Biomes.SWAMPLAND || biome == Biomes.MUTATED_SWAMPLAND)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK);
                 chance = 5;
                 length = 7;
             }
-            else if (biome.getBiomeName() == "Jungle" || biome.getBiomeName() == "JungleHills" || biome.getBiomeName() == "JungleEdge" || biome.getBiomeName() == "Jungle M" || biome.getBiomeName() == "JungleEdge M")
+            else if (biome == Biomes.JUNGLE || biome == Biomes.JUNGLE_HILLS || biome == Biomes.JUNGLE_EDGE|| biome == Biomes.MUTATED_JUNGLE || biome == Biomes.MUTATED_JUNGLE_EDGE)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.JUNGLE);
                 chance = 1;
                 length = 9;
             }
-            else if (biome.getBiomeName() == "Birch Forest" || biome.getBiomeName() == "Birch Forest Hills" || biome.getBiomeName() == "Birch Forest M" || biome.getBiomeName() == "Birch Forest Hills M")
+            else if (biome == Biomes.BIRCH_FOREST || biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.MUTATED_BIRCH_FOREST || biome == Biomes.MUTATED_BIRCH_FOREST_HILLS)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.BIRCH);
                 chance = 2;
             }
-            else if (biome.getBiomeName() == "Roofed Forest" || biome.getBiomeName() == "Roofed Forest M")
+            else if (biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
             {
                 state = Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.DARK_OAK);
                 chance = 4;
             }
-            else if (biome.getBiomeName() == "Extreme Hills+" || biome.getBiomeName() == "Extreme Hills+ M")
+            else if (biome == Biomes.EXTREME_HILLS_WITH_TREES || biome == Biomes.MUTATED_EXTREME_HILLS_WITH_TREES)
             {
                 state = state.withProperty(BlockOldLog.VARIANT, rand.nextInt(10) < 2 ? BlockPlanks.EnumType.OAK : BlockPlanks.EnumType.SPRUCE);
                 chance = 8;
             }
-            else if (biome.getBiomeName() == "Savanna" || biome.getBiomeName() == "Savanna Plateau" || biome.getBiomeName() == "Savanna M" || biome.getBiomeName() == "Savanna Plateau M")
+            else if (biome == Biomes.SAVANNA || biome == Biomes.SAVANNA_PLATEAU || biome == Biomes.MUTATED_SAVANNA || biome == Biomes.MUTATED_SAVANNA_ROCK)
             {
                 state = Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.ACACIA);
                 chance = 5;

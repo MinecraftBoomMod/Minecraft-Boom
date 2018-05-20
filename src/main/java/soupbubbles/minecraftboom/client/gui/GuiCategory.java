@@ -62,7 +62,7 @@ public class GuiCategory extends GuiBase
         {
             GuiButtonConfig button = (GuiButtonConfig) buttonList.get(i + 1);
 
-            drawString(mc.fontRenderer, I18n.format(button.prop.getName()), width / 2 - 120, button.y + 8, 0xFFFFFF);
+            drawString(mc.fontRenderer, I18n.format(Assets.CONFIG_PREFIX + button.prop.getName() + ".name"), width / 2 - 120, button.y + 8, 0xFFFFFF);
         }
     }
 }

@@ -16,16 +16,16 @@ public class BlockEventHandler
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {
-        if (event.getState().getBlock() instanceof BlockOldLeaf && ConfigurationHandler.leavesDropSticks)
+        if (event.getState().getBlock() instanceof BlockOldLeaf)
         {
             event.setDropChance(1.0F);
 
-            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < 0.02F)
+            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < 0.02F && ConfigurationHandler.spruceDropsPinecones)
             {
                 event.getDrops().add(new ItemStack(ModItems.ITEM_PINECONE));
             }
             
-            if (event.getWorld().rand.nextFloat() < 0.2F)
+            if (event.getWorld().rand.nextFloat() < 0.2F && ConfigurationHandler.leavesDropSticks)
             {
                 event.getDrops().add(new ItemStack(Items.STICK));
             }
