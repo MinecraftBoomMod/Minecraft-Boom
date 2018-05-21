@@ -18,7 +18,6 @@ public class ClientProxy extends CommonProxy
         super.preInit(event);
         
         ModelManager.INSTANCE.registerAllModels();
-        ModBlocks.registerTileEntityRenderers();
         ModEntities.registerEntityRenderers();
     }
 

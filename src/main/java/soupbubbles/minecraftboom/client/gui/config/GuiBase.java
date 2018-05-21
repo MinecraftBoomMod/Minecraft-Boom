@@ -5,18 +5,18 @@ import java.io.IOException;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
-import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
 
 public class GuiBase extends GuiScreen
 {
     protected String title;
+    protected String bottomText;
+    protected boolean red = false;
     protected GuiScreen parent;
     protected GuiButton backButton;
-    protected boolean requiresRestart;
+    protected boolean drawBackround = true;
 
     protected static final int CATEGORY_SIZE = ConfigurationHandler.CATEGORY_LIST.size();
 
@@ -24,6 +24,7 @@ public class GuiBase extends GuiScreen
     {
         parent = myParent;
         title = Reference.MOD_NAME;
+        bottomText = I18n.format(Assets.CONFIG_GUI_PREFIX + "restart.name");
     }
 
     @Override
@@ -36,12 +37,15 @@ public class GuiBase extends GuiScreen
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
-        drawDefaultBackground();
+        if (drawBackround)
+        {
+            drawDefaultBackground();
+        }
+
         drawCenteredString(fontRenderer, title, width / 2, 15, 0xFFFFFF);
-        drawCenteredString(fontRenderer, I18n.format(Assets.CONFIG_GUI_PREFIX + "restart.name"), width / 2, backButton.y + 26, 0xFFFFFF);
+        drawCenteredString(fontRenderer, bottomText, width / 2, backButton.y + 26, red ? 0xFF0000 : 0xFFFFFF);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
-
         drawTooltips(mouseX, mouseY);
     }
 
@@ -91,17 +95,8 @@ public class GuiBase extends GuiScreen
     {
     }
 
-    protected String[] getAllCategoryNames()
+    public boolean mouseOverButton(int mouseX, int mouseY, GuiButton button)
     {
-        String[] list = new String[CATEGORY_SIZE + 1];
-        
-        for (int i = 0; i < CATEGORY_SIZE; i++)
-        {
-            list[i] = ConfigurationHandler.CATEGORY_LIST.get(i).getName();
-        }
-
-        list[CATEGORY_SIZE] = ConfigurationHandler.configuration.CATEGORY_GENERAL;
-
-        return list;
+        return mouseX > button.x && mouseX < button.x + button.width && mouseY > button.y && mouseY < button.y + button.height && button.visible;
     }
 }

@@ -236,8 +236,6 @@ public class ModBlocks
     public static final Block BLOCK_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
-    //public static final Block BLOCK_WOOL;
-
     static
     {
         BLOCK_BOOKSHELF = new BlockBookShelf();
@@ -422,31 +420,10 @@ public class ModBlocks
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
         
-        if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.removeRose)
-        {
-            BLOCK_ROSE = null;
-        }
-        else
-        {
-            BLOCK_ROSE = registerBlock(new BlockRose());
-        }
-
-        //if (ConfigurationHandler.Settings.replaceWool)
-        {
-            //BLOCK_WOOL = replaceBlock(new BlockWool(), Names.WOOL);
-        }
-        //else
-        {
-            //BLOCK_WOOL = (BlockColored) Blocks.WOOL;
-        }
+        BLOCK_ROSE = registerBlock(new BlockRose());
     }
 
-    public static void registerTileEntities()
-    {
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void registerTileEntityRenderers()
+    public static void registerBlocks()
     {
     }
 
@@ -481,24 +458,6 @@ public class ModBlocks
         ForgeRegistries.ITEMS.register(itemBlock);
 
         BLOCKS.add(block);
-        return block;
-    }
-
-    protected static <BLOCK extends Block> BLOCK replaceBlock(BLOCK block, String name)
-    {
-        /*
-         * if (block.getRegistryName() == null) { block.setRegistryName(name); }
-         * try { GameRegistry.addSubstitutionAlias("minecraft:" + name,
-         * GameRegistry.Type.BLOCK, block);
-         * 
-         * if (block == BLOCK_PUMPKIN) {
-         * GameRegistry.addSubstitutionAlias("minecraft:" + name,
-         * GameRegistry.Type.ITEM, new ItemBlockMeta(block,
-         * Names.BLOCK_PUMPKIN)); BLOCKS.add(block); } } catch
-         * (ExistingSubstitutionException e) { e.printStackTrace(); throw new
-         * RuntimeException(e); }
-         * 
-         */
         return block;
     }
 }

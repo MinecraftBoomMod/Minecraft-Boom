@@ -11,9 +11,9 @@ import net.minecraftforge.fml.client.config.IConfigElement;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Reference;
 
-public class GuiChild extends GuiConfig
+public class GuiSettings extends GuiConfig
 {
-    public GuiChild(GuiScreen parentScreen, ConfigCategory category)
+    public GuiSettings(GuiScreen parentScreen, ConfigCategory category)
     {
         super(parentScreen, getAllElements(category), Reference.MOD_ID, false, false, GuiConfig.getAbridgedConfigPath(ConfigurationHandler.configuration.toString()));
     }
@@ -32,5 +32,4 @@ public class GuiChild extends GuiConfig
         
         return list;
     }
-
 }

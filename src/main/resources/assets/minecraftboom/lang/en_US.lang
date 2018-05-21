@@ -393,59 +393,10 @@ tile.minecraftboom.black_stained_soul_glass_pane.name=Black Stained Soul Glass P
 tile.minecraftboom.rose.name=Rose
 tile.minecraftboom.red_nether_brick_fence.name=Red Nether Brick Fence
 
-
-# Config
-config.minecraftboom.category.worldgen.name=World Generation
-config.minecraftboom.category.tweaks.name=Vanilla Tweaks
-config.minecraftboom.category.compatibility.name=Compatibility
-config.minecraftboom.category.blocks.name=Blocks
-config.minecraftboom.category.items.name=Items
-config.minecraftboom.category.mobs.name=Mobs
-
 # Config GUI
 config.minecraftboom.gui.enable.name=Enable
 config.minecraftboom.gui.disable.name=Disable
 config.minecraftboom.gui.restart.name=Restart game after changes has been made
-
-
-# Worldgen
-config.minecraftboom.generateRoses.name=Generate Roses
-config.minecraftboom.generatePumpkins.name=Generate Pumpkin Patches
-config.minecraftboom.generateFallenTrees.name=Generate Fallen Trees
-config.minecraftboom.generateNetherWells.name=Generate Nether Wells
-config.minecraftboom.generateEndPiles.name=Generate End Piles
-
-config.minecraftboom.generateRoses.comment.name=Enabling allows Roses to naturally spawn in the Overworld.
-config.minecraftboom.generatePumpkinPatches.comment.name=Enabling allows Faceless Pumpkin Patches to naturally spawn in the Overworld.
-config.minecraftboom.generateFallenTrees.comment.name=Enabling allows Fallen Trees to naturally spawn in the Overworld.
-config.minecraftboom.generateNetherWells.comment.name=Enabling allows Nether Wells to spawn in the Nether.
-config.minecraftboom.generateEndPiles.comment.name=Enabling allows End Piles to spawn in the End.
-
-# Tweaks
-config.minecraftboom.smeltPumpkin.name=Pumpking smelts into Orange Dye
-config.minecraftboom.blazeBonemeal.name=Use Blaze Powder as Bonemeal
-config.minecraftboom.removeSlimeBall.name=Remove Slime Balls from Sticky Pistons
-config.minecraftboom.leavesDropSticks.name=Leaves drop Sticks
-config.minecraftboom.spruceDropsPinecones.name=Spruce Leaves drop Pinecones
-
-config.minecraftboom.smeltPumpkin.comment.name=Enabling allows Pumpkins (Faceless and Hollowed) to smelt into Orange Dye in a Furnace.
-config.minecraftboom.blazeBonemeal.comment.name=Enabling allows Blaze Powder to be used as a Bonemeal on Nether Wart.
-config.minecraftboom.removeSlimeBall.comment.name=Enabling allows the Slime Ball being removed from Sticky Pistons by sneaking and right-clicking with a Shovel.
-config.minecraftboom.leavesDropSticks.comment.name=Enabling allows a small chance of Sticks dropping when destroying Leaves.
-
-# Compat
-config.minecraftboom.removeRose.name=Inspiration Compatibility
-config.minecraftboom.tryGenerateRoses.name=Try generate Inspiration Roses
-config.minecraftboom.preventFallenTrees.name=Chop Down Updated Compatibility
-
-config.minecraftboom.removeRose.comment.name=Enabling allows the Minecraft Boom Rose to be removed if Minecraft Boom detects that Inspiration is installed, since the mod adds a Rose.
-config.minecraftboom.tryGenerateRoses.comment.name=Enabling allows Minecraft Boom to generate Inspiration Roses if the mod is detected, since the mod doesn't add worldgen for its Roses.
-config.minecraftboom.preventFallenTrees.comment.name=Enabling prevents Fallen Trees to generate if the mod Chop Down Updated is detected.
-
-# General
-config.minecraftboom.minecraftBoomButton.name=Enable Minecraft Boom Button
-config.minecraftboom.replaceLoadingScreen.name=Replace Default Loading Screen
-
-config.minecraftboom.minecraftBoomButton.comment.name=Enabling allows the Minecraft Boom button to appear in the Options menu. The Minecraft Boom configuration can always be reached through Mods -> Minecraft Boom -> Config.
-config.minecraftboom.replaceLoadingScreen.comment.name=Enabling allows the background in the loading screens to be more appropriate for dimension travel.
-
+config.minecraftboom.gui.true.name=True
+config.minecraftboom.gui.false.name=False
+config.minecraftboom.gui.settings.name=Settings

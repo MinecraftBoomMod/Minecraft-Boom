@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class WorldGenEventHandler
 {
-
     @SubscribeEvent
     public void onDecorateBiome(DecorateBiomeEvent.Decorate event)
     {

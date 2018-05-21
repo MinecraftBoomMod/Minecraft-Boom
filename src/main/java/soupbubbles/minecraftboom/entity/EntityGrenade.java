@@ -36,7 +36,7 @@ public class EntityGrenade extends EntityThrowable
     @Override
     protected float getGravityVelocity()
     {
-        return 0.1F;
+        return 0.07F;
     }
 
 }

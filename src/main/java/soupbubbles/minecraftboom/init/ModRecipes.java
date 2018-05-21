@@ -23,7 +23,7 @@ public class ModRecipes
     {
         GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(ModBlocks.BLOCK_SOUL_GLASS), 0.0F);
         
-        if (ConfigurationHandler.smeltPumpkin)
+        if (ConfigurationHandler.smeltPumpkin && ConfigurationHandler.tweaks)
         {
             GameRegistry.addSmelting(Blocks.PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);
             GameRegistry.addSmelting(ModBlocks.BLOCK_FACELESS_PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);

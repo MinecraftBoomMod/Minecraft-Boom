@@ -9,7 +9,7 @@ public class GuiButtonConfigMenu extends GuiButton
 {
     public GuiButtonConfigMenu(int x, int y)
     {
-        super(-800000, x, y + 150, 150, 20, Reference.MOD_NAME);
+        super(-800000, x, y + 150, 150, 20, Reference.MOD_NAME + "...");
     }
 
     @Override

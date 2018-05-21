@@ -22,7 +22,7 @@ public class ModEntities
         int id = -1;
         
         registerEntity(EntityPrismarineArrow.class, Names.ENTITY_PRISMARINE_ARROW, id++, 80, 1, true);
-        registerEntity(EntityGrenade.class, Names.ENTITY_POPPED_CHORUS_GRENADE, id++, 80, 3, true);
+        registerEntity(EntityGrenade.class, Names.ENTITY_POPPED_CHORUS_GRENADE, id++, 80, 1, true);
     }
 
     @SideOnly(Side.CLIENT)

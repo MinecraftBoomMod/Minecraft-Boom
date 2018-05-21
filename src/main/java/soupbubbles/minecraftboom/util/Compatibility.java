@@ -23,28 +23,32 @@ public class Compatibility
 
     public static void initCompat()
     {
-        if (IS_INSPIRATIONS_INSTALLED)
+        if (ConfigurationHandler.compat)
         {
-            MinecraftBoom.instance.logger.log(Level.INFO, "Found Inspirations installed, Minecraft Boom will be altered. Check config file for more");
-            
-            if (ConfigurationHandler.removeRose)
+            if (IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.inspirations)
             {
-                MinecraftBoom.instance.logger.log(Level.INFO, "Removing Minecraft Boom rose and replacing it with Inspiration Rose");
+                log("Inspirations");
+            }
+            
+            if (IS_QUARK_INSTALLED && ConfigurationHandler.quark)
+            {
+                log("Quark");
+            }
+            
+            if (IS_NETHER_EX_INSTALLED && ConfigurationHandler.netherex)
+            {
+                log("Nether Ex");
+            }
+            
+            if (IS_CHOP_DOWN_UPDATED_INSTALLED && ConfigurationHandler.chopDownUpdated)
+            {
+                log("Chop Down Updated");
             }
         }
-        
-        if (IS_CHOP_DOWN_UPDATED_INSTALLED)
-        {
-            MinecraftBoom.instance.logger.log(Level.INFO, "Found Chop Down Updated installed, Minecraft Boom will be altered. Check config file for more");
-        }
-        
     }
     
-    /*public static void genrateInspirationRoses(World world, Random rand, BlockPos pos)
+    private static void log(String modname)
     {
-        if (InspirationsBuilding.flower.getDefaultState().getMaterial() != Material.AIR)
-        {
-            new WorldGenRoses(InspirationsBuilding.flower.getDefaultState()).generate(world, rand, pos);
-        }
-    }*/
+        MinecraftBoom.instance.logger.log(Level.INFO, "Found " + modname + " installed, Minecraft Boom will be altered. Check config file for more");
+    }
 }

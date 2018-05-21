@@ -76,16 +76,6 @@ public class ItemBase extends Item
         }
     }
 
-    /*@SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced)
-    {
-        if (toolTip)
-        {
-            tooltip.add(I18n.translateToLocal(getUnlocalizedName(stack) + ".tooltip"));
-        }
-    }*/
-
     public String[] getVariants()
     {
         return VARIANTS;

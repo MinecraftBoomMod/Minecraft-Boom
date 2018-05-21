@@ -18,6 +18,7 @@ import soupbubbles.minecraftboom.reference.Names;
 public class ModItems
 {
     public static final Set<Item> ITEMS = new HashSet<>();
+    private static int count = 0;
 
     public static final Item ITEM_ELDER_GUARDIAN_SPIKE;
     public static final Item ITEM_PINECONE;
@@ -50,8 +51,16 @@ public class ModItems
 
     private static <T extends Item> T registerItem(T item)
     {
-        ForgeRegistries.ITEMS.register(item);
-        ITEMS.add(item);
+        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(item.getUnlocalizedName().replace("item.", ""), ConfigurationHandler.CATEGORY_ITEMS, "", true));
+        ConfigurationHandler.saveConfiguration();
+
+        if (ConfigurationHandler.allowedItems.get(count) && ConfigurationHandler.items)
+        {
+            ForgeRegistries.ITEMS.register(item);
+            ITEMS.add(item);
+        }
+        
+        count++;
 
         return item;
     }

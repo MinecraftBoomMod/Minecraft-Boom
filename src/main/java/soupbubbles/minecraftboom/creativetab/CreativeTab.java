@@ -7,6 +7,7 @@ import java.util.List;
 import com.google.common.collect.Ordering;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -23,9 +24,10 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.BLOCK_TERRACOTTA_BRICKS);
+            return getIcon(new ItemStack(ModBlocks.BLOCK_TERRACOTTA_BRICKS));
         }
         
+        @SideOnly(Side.CLIENT)
         @Override
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
@@ -38,7 +40,7 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.BLOCK_STAIRS_DARK_PRISMARINE);
+            return getIcon(new ItemStack(ModBlocks.BLOCK_STAIRS_DARK_PRISMARINE));
         }
         
         @SideOnly(Side.CLIENT)
@@ -48,4 +50,14 @@ public class CreativeTab
             super.displayAllRelevantItems(stack);
         }
     };
+    
+    private static ItemStack getIcon(ItemStack stack)
+    {
+        if (stack == null || stack.getItem() == null)
+        {
+            stack = new ItemStack(Blocks.DIRT);
+        }
+        
+        return stack;
+    }
 }

@@ -104,7 +104,7 @@ public class WorldGenerator implements IWorldGenerator
                             new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
                         }
                     }
-                    else if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.tryGenerateRoses)
+                    else if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.tryGenerateRose)
                     {
                         //Compatability.genrateInspirationRoses(world, rand, blockpos1);
                     }
@@ -130,9 +130,6 @@ public class WorldGenerator implements IWorldGenerator
             }
         }
 
-        if (Compatibility.IS_CHOP_DOWN_UPDATED_INSTALLED && ConfigurationHandler.preventFallenTrees)
-        {
-        }
         else if (ConfigurationHandler.generateFallenTrees)
         {
             generateFallenTrees(world, rand, x, z);

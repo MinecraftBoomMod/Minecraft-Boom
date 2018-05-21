@@ -8,11 +8,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.ConfigCategory;
 
-public class GuiButtonChild extends GuiButton
+public class GuiButtonSettings extends GuiButton
 {
     private ConfigCategory category;
 
-    public GuiButtonChild(int id, int x, int y, ConfigCategory cat)
+    public GuiButtonSettings(int id, int x, int y, ConfigCategory cat)
     {
         super(id, x, y, 20, 20, "");
         category = cat;

@@ -26,7 +26,7 @@ public abstract class CommonProxy implements IProxy
     {
         ConfigurationHandler.initConfiguation(event.getSuggestedConfigurationFile());
 
-        ModBlocks.registerTileEntities();
+        ModBlocks.registerBlocks();
         ModItems.registerItems();
         ModEntities.initEntities();
     }
@@ -37,15 +37,22 @@ public abstract class CommonProxy implements IProxy
         ModRecipes.init();
         Compatibility.initCompat();
 
-        MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
         MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
-        MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
-        MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
 
-        MinecraftForge.TERRAIN_GEN_BUS.register(new WorldGenEventHandler());
+        if (ConfigurationHandler.tweaks)
+        {
+            MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
+            MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+            MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+        }
+
+        if (ConfigurationHandler.worldgen)
+        {
+            MinecraftForge.TERRAIN_GEN_BUS.register(new WorldGenEventHandler());
+            GameRegistry.registerWorldGenerator(new WorldGenerator(), 0);
+        }
 
         GameRegistry.registerFuelHandler(new FuelHandler());
-        GameRegistry.registerWorldGenerator(new WorldGenerator(), 0);
     }
 
     @Override
