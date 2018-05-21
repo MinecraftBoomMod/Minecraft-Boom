@@ -9,7 +9,7 @@ public class Reference
 
     public static final String PROXY_CLIENT = "soupbubbles." + MOD_ID + ".proxy.ClientProxy";
     public static final String PROXY_SERVER = "soupbubbles." + MOD_ID + ".proxy.ServerProxy";
-    public static final String GUI_FACTORY = "soupbubbles." + MOD_ID + ".client.gui.GuiFactory";
+    public static final String GUI_FACTORY = "soupbubbles." + MOD_ID + ".client.gui.config.GuiFactory";
     
     public static final String INSPIRATIONS_MOD_ID = "inspirations";
     public static final String QUARK_MOD_ID = "quark";

@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.client.gui;
+package soupbubbles.minecraftboom.client.gui.config;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -14,6 +14,7 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.ConfigurationHelper;
 
 public class GuiCategory extends GuiBase
 {
@@ -32,16 +33,30 @@ public class GuiCategory extends GuiBase
     public void initGui()
     {
         super.initGui();
-        
+
         buttonList.add(backButton = new GuiButton(0, width / 2 - 100, height / 6 + 168 - 16, 200, 20, I18n.format("gui.done")));
 
-        Iterator ir = category.getValues().entrySet().iterator();
         int size = 0;
 
-        while (ir.hasNext())
+        for (ConfigCategory cat : category.getChildren())
         {
-            Map.Entry e = (Map.Entry) ir.next();
-            buttonList.add(new GuiButtonConfig(size + 1, (width / 2 + 106), (height / 6) + size * 24, ((Property) e.getValue())));
+            for (Property p : cat.getOrderedValues())
+            {
+                if (p.getName().equals(cat.getName()))
+                {
+                    buttonList.add(new GuiButtonConfig(size + 1, (width / 2 + 106), (height / 6) + size * 24, p));
+                }
+            }
+            
+            size++;
+        }
+
+        for (ConfigCategory cat : category.getChildren())
+        {
+            if (cat.getOrderedValues().size() > 1)
+            {
+                buttonList.add(new GuiButtonChild(size + 1, (width / 2 + 106 + 22), ((height / 6) + size / 2 * 24) - 24, cat));
+            }
             size++;
         }
 
@@ -51,6 +66,13 @@ public class GuiCategory extends GuiBase
     protected void actionPerformed(GuiButton button) throws IOException
     {
         super.actionPerformed(button);
+
+        if (button instanceof GuiButtonChild)
+        {
+            GuiButtonChild b = (GuiButtonChild) button;
+
+            mc.displayGuiScreen(new GuiChild(this, b.getCategory()));
+        }
     }
 
     @Override
@@ -58,11 +80,14 @@ public class GuiCategory extends GuiBase
     {
         super.drawScreen(mouseX, mouseY, partialTicks);
 
-        for (int i = 0; i < category.size(); i++)
+        for (GuiButton button : buttonList)
         {
-            GuiButtonConfig button = (GuiButtonConfig) buttonList.get(i + 1);
+            if (button instanceof GuiButtonConfig)
+            {
+                GuiButtonConfig b = (GuiButtonConfig) button;
 
-            drawString(mc.fontRenderer, I18n.format(Assets.CONFIG_PREFIX + button.prop.getName() + ".name"), width / 2 - 120, button.y + 8, 0xFFFFFF);
+                drawString(mc.fontRenderer, I18n.format(Assets.CONFIG_PREFIX + b.prop.getName() + ".name"), width / 2 - 120, b.y + 8, 0xFFFFFF);
+            }
         }
     }
 }

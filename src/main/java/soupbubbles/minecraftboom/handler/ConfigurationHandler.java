@@ -6,18 +6,12 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
@@ -38,7 +32,7 @@ public class ConfigurationHandler
     public static final Category CATEGORY_BLOCKS = addCategory("blocks", new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS));
     public static final Category CATEGORY_ITEMS = addCategory("items", new ItemStack(Items.IRON_INGOT));
     public static final Category CATEGORY_MOBS = addCategory("mobs", new ItemStack(Items.WHEAT));
-    
+
     public static boolean worldgen;
     public static boolean tweaks;
     public static boolean compat;
@@ -48,7 +42,6 @@ public class ConfigurationHandler
 
     //General
     public static boolean minecraftBoomButton;
-    public static boolean replaceLoadingScreen;
 
     //Worldgen
     public static boolean generateRoses;
@@ -62,7 +55,10 @@ public class ConfigurationHandler
     public static boolean blazeBonemeal;
     public static boolean removeSlimeBall;
     public static boolean leavesDropSticks;
+    public static double stickDropRate;
     public static boolean spruceDropsPinecones;
+    public static double pineconeDropRate;
+    public static boolean replaceLoadingScreen;
 
     //Compat
     public static boolean removeRose;
@@ -78,13 +74,13 @@ public class ConfigurationHandler
             MinecraftBoom.instance.logger.log(Level.INFO, "No configuration file for Minecraft Boom was found, creating new one");
         }
 
-        worldgen = ConfigurationHelper.loadPropBool("worldgen", configuration.CATEGORY_GENERAL, "", true);
-        tweaks = ConfigurationHelper.loadPropBool("tweaks", configuration.CATEGORY_GENERAL, "", true);
-        compat = ConfigurationHelper.loadPropBool("compat", configuration.CATEGORY_GENERAL, "", true);
-        blocks = ConfigurationHelper.loadPropBool("blocks", configuration.CATEGORY_GENERAL, "", true);
-        items = ConfigurationHelper.loadPropBool("items", configuration.CATEGORY_GENERAL, "", true);
-        mobs = ConfigurationHelper.loadPropBool("mobs", configuration.CATEGORY_GENERAL, "", true);
-        minecraftBoomButton = ConfigurationHelper.loadPropBool("minecraftBoomButton", configuration.CATEGORY_GENERAL, "", true);
+        worldgen = ConfigurationHelper.loadCategory("worldgen", configuration.CATEGORY_GENERAL, "", true);
+        tweaks = ConfigurationHelper.loadCategory("tweaks", configuration.CATEGORY_GENERAL, "", true);
+        compat = ConfigurationHelper.loadCategory("compat", configuration.CATEGORY_GENERAL, "", true);
+        blocks = ConfigurationHelper.loadCategory("blocks", configuration.CATEGORY_GENERAL, "", true);
+        items = ConfigurationHelper.loadCategory("items", configuration.CATEGORY_GENERAL, "", true);
+        mobs = ConfigurationHelper.loadCategory("mobs", configuration.CATEGORY_GENERAL, "", true);
+        minecraftBoomButton = ConfigurationHelper.loadCategory("minecraftBoomButton", configuration.CATEGORY_GENERAL, "", true);
 
         generateRoses = ConfigurationHelper.loadPropBool("generateRoses", CATEGORY_WORLD_GEN, "", true);
         generatePumpkins = ConfigurationHelper.loadPropBool("generatePumpkins", CATEGORY_WORLD_GEN, "", true);
@@ -96,7 +92,9 @@ public class ConfigurationHandler
         blazeBonemeal = ConfigurationHelper.loadPropBool("blazeBonemeal", CATEGORY_TWEAKS, "", true);
         removeSlimeBall = ConfigurationHelper.loadPropBool("removeSlimeBall", CATEGORY_TWEAKS, "", true);
         leavesDropSticks = ConfigurationHelper.loadPropBool("leavesDropSticks", CATEGORY_TWEAKS, "", true);
-        leavesDropSticks = ConfigurationHelper.loadPropBool("spruceDropsPinecones", CATEGORY_TWEAKS, "", true);
+        stickDropRate = ConfigurationHelper.loadPropDouble("stickDropRate", CATEGORY_TWEAKS, "", 0.2, "leavesDropSticks");
+        spruceDropsPinecones = ConfigurationHelper.loadPropBool("spruceDropsPinecones", CATEGORY_TWEAKS, "", true);
+        pineconeDropRate = ConfigurationHelper.loadPropDouble("pineconeDropRate", CATEGORY_TWEAKS, "", 0.02, "spruceDropsPinecones");
         replaceLoadingScreen = ConfigurationHelper.loadPropBool("replaceLoadingScreen", CATEGORY_TWEAKS, "", true);
 
         removeRose = ConfigurationHelper.loadPropBool("removeRose", CATEGORY_COMPAT, "", true);

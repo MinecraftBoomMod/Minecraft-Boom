@@ -8,8 +8,8 @@ import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import soupbubbles.minecraftboom.client.gui.GuiButtonConfigMenu;
-import soupbubbles.minecraftboom.client.gui.GuiConfig;
+import soupbubbles.minecraftboom.client.gui.config.GuiButtonConfigMenu;
+import soupbubbles.minecraftboom.client.gui.config.GuiConfig;
 
 public class GuiEventHandler
 {

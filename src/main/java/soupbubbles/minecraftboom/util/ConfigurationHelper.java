@@ -6,72 +6,62 @@ import soupbubbles.minecraftboom.handler.ConfigurationHandler.Category;
 
 public class ConfigurationHelper
 {
-    public static boolean needsRestart;
-    public static boolean allNeedRestart = false;
-    public static Property lastProp;
 
-    public static int loadPropInt(String propName, Category category, String desc, int default_)
+    public static int loadPropInt(String name, Category category, String comment, int default_)
     {
-        Property prop = ConfigurationHandler.configuration.get(category.getName(), propName, default_);
-        prop.setComment(desc);
-        setNeedsRestart(prop);
+        Property prop = ConfigurationHandler.configuration.get(category.getName(), name, default_);
+        prop.setComment(comment);
 
-        lastProp = prop;
         return prop.getInt(default_);
     }
 
-    public static double loadPropDouble(String propName, Category category, String desc, double default_)
+    public static double loadPropDouble(String name, Category category, String comment, double default_)
     {
-        Property prop = ConfigurationHandler.configuration.get(category.getName(), propName, default_);
-        prop.setComment(desc);
-        setNeedsRestart(prop);
+        return loadPropDouble(name, category, comment, default_, name);
+        
+    }
+    public static double loadPropDouble(String name, Category category, String comment, double default_, String parent)
+    {
+        Property prop = ConfigurationHandler.configuration.get(category.getName() + "." + parent, name, default_);
+        prop.setComment(comment);
 
-        lastProp = prop;
         return prop.getDouble(default_);
     }
 
-    public static boolean loadPropBool(String propName, Category category, String desc, boolean default_)
+    public static boolean loadPropBool(String name, Category category, String comment, boolean default_)
     {
-        return loadPropBool(propName, category.getName(), desc, default_);
+        return loadPropBool(name, category, comment, default_, name);
     }
     
-    public static boolean loadPropBool(String propName, String category, String desc, boolean default_)
+    public static boolean loadPropBool(String name, Category category, String comment, boolean default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category, propName, default_);
-        prop.setComment(desc);
-        setNeedsRestart(prop);
+        Property prop = ConfigurationHandler.configuration.get(category.getName() + "." + parent, name, default_);
+        prop.setComment(comment);
 
-        lastProp = prop;
         return prop.getBoolean(default_);
     }
 
-    public static String loadPropString(String propName, Category category, String desc, String default_)
+    public static boolean loadCategory(String name, String category, String comment, boolean default_)
     {
-        Property prop = ConfigurationHandler.configuration.get(category.getName(), propName, default_);
-        prop.setComment(desc);
-        setNeedsRestart(prop);
+        Property prop = ConfigurationHandler.configuration.get(category, name, default_);
+        prop.setComment(comment);
 
-        lastProp = prop;
+        return prop.getBoolean(default_);
+    }
+
+    public static String loadPropString(String name, Category category, String comment, String default_)
+    {
+        Property prop = ConfigurationHandler.configuration.get(category.getName(), name, default_);
+        prop.setComment(comment);
+
         return prop.getString();
     }
 
-    public static String[] loadPropStringList(String propName, Category category, String desc, String[] default_)
+    public static String[] loadPropStringList(String name, Category category, String comment, String[] default_)
     {
-        Property prop = ConfigurationHandler.configuration.get(category.getName(), propName, default_);
-        prop.setComment(desc);
-        setNeedsRestart(prop);
+        Property prop = ConfigurationHandler.configuration.get(category.getName(), name, default_);
+        prop.setComment(comment);
 
-        lastProp = prop;
         return prop.getStringList();
-    }
-
-    private static void setNeedsRestart(Property prop)
-    {
-        if (needsRestart)
-        {
-            prop.setRequiresMcRestart(needsRestart);
-        }
-        
-        needsRestart = allNeedRestart;
     }
 }

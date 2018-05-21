@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.client.gui;
+package soupbubbles.minecraftboom.client.gui.config;
 
 import java.util.Set;
 

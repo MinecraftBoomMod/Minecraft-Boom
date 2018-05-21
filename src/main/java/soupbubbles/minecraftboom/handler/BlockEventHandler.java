@@ -20,12 +20,12 @@ public class BlockEventHandler
         {
             event.setDropChance(1.0F);
 
-            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < 0.02F && ConfigurationHandler.spruceDropsPinecones)
+            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < ConfigurationHandler.pineconeDropRate && ConfigurationHandler.spruceDropsPinecones)
             {
                 event.getDrops().add(new ItemStack(ModItems.ITEM_PINECONE));
             }
             
-            if (event.getWorld().rand.nextFloat() < 0.2F && ConfigurationHandler.leavesDropSticks)
+            if (event.getWorld().rand.nextFloat() < ConfigurationHandler.stickDropRate && ConfigurationHandler.leavesDropSticks)
             {
                 event.getDrops().add(new ItemStack(Items.STICK));
             }

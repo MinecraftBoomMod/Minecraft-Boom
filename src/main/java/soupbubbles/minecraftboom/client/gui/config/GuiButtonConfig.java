@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.client.gui;
+package soupbubbles.minecraftboom.client.gui.config;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

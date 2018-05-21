@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.client.gui;
+package soupbubbles.minecraftboom.client.gui.config;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -32,9 +32,9 @@ public class GuiConfig extends GuiBase
             i++;
         }
 
-        buttonList.add(new GuiButton(24, (width / 2 - 155) + 6 % 2 * 160, (height / 6) + 6 / 2 * 24, 150, 20, "General Settings"));
-        buttonList.add(new GuiButton(25, (width / 2 - 155) + 7 % 2 * 160, (height / 6) + 7 / 2 * 24, 150, 20, "Reset all"));
-        buttonList.add(backButton = new GuiButton(0, width / 2 - 100, (height / 6) + 8 / 2 * 26, 200, 20, I18n.format("gui.done")));
+        buttonList.add(new GuiButton(24, (width / 2 - 155) + (CATEGORY_SIZE) % 2 * 160, (height / 6) + (CATEGORY_SIZE) / 2 * 24, 150, 20, "General Settings"));
+        buttonList.add(new GuiButton(25, (width / 2 - 155) + (CATEGORY_SIZE + 1) % 2 * 160, (height / 6) + (CATEGORY_SIZE + 1) / 2 * 24, 150, 20, "Reset all"));
+        buttonList.add(backButton = new GuiButton(0, width / 2 - 100, (height / 6) + (CATEGORY_SIZE + 2) / 2 * 26, 200, 20, I18n.format("gui.done")));
     }
 
     @Override
