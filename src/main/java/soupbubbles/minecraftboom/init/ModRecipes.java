@@ -21,8 +21,9 @@ public class ModRecipes
 
     private static void initFurnaceRecipes()
     {
-        GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(ModBlocks.BLOCK_SOUL_GLASS), 0.0F);
-        
+        GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(ModBlocks.BLOCK_SOUL_GLASS), 0.1F);
+        GameRegistry.addSmelting(Blocks.MAGMA, new ItemStack(ModItems.ITEM_MAGMA_BRICK), 0.1F);
+
         if (ConfigurationHandler.smeltPumpkin && ConfigurationHandler.tweaks)
         {
             GameRegistry.addSmelting(Blocks.PUMPKIN, new ItemStack(Items.DYE, 1, EnumDyeColor.ORANGE.getDyeDamage()), 0.1F);

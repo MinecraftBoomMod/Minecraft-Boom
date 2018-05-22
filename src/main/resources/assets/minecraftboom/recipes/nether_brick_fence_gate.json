@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "minecraftboom:nether_brick_fence_gate",
+    "count": 2
+  },
+  "pattern": [
+    "yxy",
+    "yxy"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:nether_brick"
+    },
+    "y": {
+      "item": "minecraft:nether_brick_fence"
+    }
+  }
+}

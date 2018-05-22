@@ -10,6 +10,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class GuiConfig extends GuiBase
 {
@@ -33,7 +34,7 @@ public class GuiConfig extends GuiBase
 
         buttonList.add(new GuiButton(24, (width / 2 - 155) + (CATEGORY_SIZE) % 2 * 160, (height / 6) + (CATEGORY_SIZE) / 2 * 24, 150, 20, "General Settings"));
         buttonList.add(new GuiButton(25, (width / 2 - 155) + (CATEGORY_SIZE + 1) % 2 * 160, (height / 6) + (CATEGORY_SIZE + 1) / 2 * 24, 150, 20, "Reset all"));
-        buttonList.add(backButton = new GuiButton(200, width / 2 - 100, height / 6 + 162, 200, 20, I18n.format("gui.done")));
+        buttonList.add(backButton = new GuiButton(200, width / 2 - 100, height / 6 + 158, 200, 20, I18n.format("gui.done")));
     }
 
     @Override
@@ -44,6 +45,10 @@ public class GuiConfig extends GuiBase
         if (button instanceof GuiButtonCategory)
         {
             mc.displayGuiScreen(new GuiCategory(this, ConfigurationHandler.CATEGORY_LIST.get(button.id)));
+        }
+        else if(button.id == 24)
+        {
+            mc.displayGuiScreen(new GuiSettings(this, ConfigurationHandler.configuration.getCategory("general")));
         }
         else if (button.id == 25)
         {

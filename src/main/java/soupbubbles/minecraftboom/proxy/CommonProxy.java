@@ -26,6 +26,11 @@ public abstract class CommonProxy implements IProxy
     {
         ConfigurationHandler.initConfiguation(event.getSuggestedConfigurationFile());
 
+        if (ConfigurationHandler.compat)
+        {
+            Compatibility.preInit();
+        }
+        
         ModBlocks.registerBlocks();
         ModItems.registerItems();
         ModEntities.initEntities();
@@ -34,17 +39,14 @@ public abstract class CommonProxy implements IProxy
     @Override
     public void init(FMLInitializationEvent event)
     {
-        ModRecipes.init();
-        Compatibility.initCompat();
-
-        MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
-
         if (ConfigurationHandler.tweaks)
         {
             MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
             MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
             MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
         }
+        
+        MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
 
         if (ConfigurationHandler.worldgen)
         {
@@ -52,6 +54,7 @@ public abstract class CommonProxy implements IProxy
             GameRegistry.registerWorldGenerator(new WorldGenerator(), 0);
         }
 
+        ModRecipes.init();
         GameRegistry.registerFuelHandler(new FuelHandler());
     }
 

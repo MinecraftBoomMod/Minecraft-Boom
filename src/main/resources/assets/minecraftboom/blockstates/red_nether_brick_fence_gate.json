@@ -1,0 +1,40 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"textures": {
+			"texture": "blocks/red_nether_brick"
+		},
+		"uvlock": true
+	},
+	"variants": {
+        "normal": [{
+            "model": "fence_gate_closed"
+        }],
+        "facing":{
+            "east":{"y": 270},
+            "west":{"y": 90},
+            "south":{},
+            "north":{"y": 180}                        
+        },
+        "open": {
+            "true":{
+                "model": "fence_gate_open"
+            },
+            "false":{
+                "model": "fence_gate_closed"
+            }
+        },
+        "in_wall": {
+            "true":{
+            },
+            "false":{
+            }
+        },
+        "powered": {
+            "true":{
+            },
+            "false":{
+            }
+        }
+	}
+}

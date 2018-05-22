@@ -25,9 +25,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
+import soupbubbles.minecraftboom.block.BlockGravelStone;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaBricks;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
+import soupbubbles.minecraftboom.block.BlockNetherBrickFenceGate;
 import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockPrismarineCrystal;
 import soupbubbles.minecraftboom.block.BlockRedNetherBrickFence;
@@ -79,6 +81,7 @@ public class ModBlocks
     public static final Block BLOCK_POLISHED;
     public static final Block BLOCK_FACELESS_PUMPKIN;
     public static final Block BLOCK_FINE_GRAVEL;
+    public static final Block BLOCK_GRAVEL_STONE;
 
     //Storage Blocks
     public static final Block BLOCK_CHARCOAL;
@@ -180,7 +183,6 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_OBSIDIAN;
     public static final BlockStairBase BLOCK_STAIRS_OBSIDIAN_BRICKS;
 
-
     //Slabs
     public static final BlockVanillaStoneSlab BLOCK_HALF_SLAB_VANILLA_STONE;
     public static final BlockVanillaStoneSlab BLOCK_DOUBLE_SLAB_VANILLA_STONE;
@@ -233,6 +235,9 @@ public class ModBlocks
     //Decoration
     public static final Block BLOCK_GOLDEN_BARS;
     public static final Block BLOCK_RED_NETHER_BRICK_FENCE;
+    public static final Block BLOCK_NETHER_BRICK_FENCE_GATE;
+    public static final Block BLOCK_RED_NETHER_BRICK_FENCE_GATE;
+
     public static final Block BLOCK_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
@@ -252,6 +257,8 @@ public class ModBlocks
         registerBlockMeta(BLOCK_POLISHED);
         BLOCK_FACELESS_PUMPKIN = registerBlock(new BlockFacelessPumpkin());
         BLOCK_FINE_GRAVEL = registerBlock(new BlockFallingBase(Names.BLOCK_FINE_GRAVEL, SoundType.GROUND).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
+        BLOCK_GRAVEL_STONE = new BlockGravelStone();
+        registerBlockMeta(BLOCK_GRAVEL_STONE);
 
         BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
@@ -349,7 +356,7 @@ public class ModBlocks
         BLOCK_STAIRS_BLACK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         BLOCK_STAIRS_OBSIDIAN = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
         BLOCK_STAIRS_OBSIDIAN_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_OBSIDIAN_BRICKS.getDefaultState(), Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
-        
+
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_HALF_SLAB_VANILLA_STONE, false);
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_DOUBLE_SLAB_VANILLA_STONE, true);
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlab2(Names.BLOCK_HALF_SLAB_VANILLA_STONE_2, false);
@@ -370,7 +377,7 @@ public class ModBlocks
         BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = new BlockTerracottaBricksSlab2(Names.BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, true);
         BLOCK_HALF_SLAB_OBSIDIAN = new BlockObsidianSlab(Names.BLOCK_HALF_SLAB_OBSIDIAN, false);
         BLOCK_DOUBLE_SLAB_OBSIDIAN = new BlockObsidianSlab(Names.BLOCK_DOUBLE_SLAB_OBSIDIAN, true);
-        
+
         registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
         registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
@@ -391,7 +398,7 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2));
         registerBlockMeta(BLOCK_HALF_SLAB_OBSIDIAN, new ItemSlabBase(BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_DOUBLE_SLAB_OBSIDIAN));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_OBSIDIAN, new ItemSlabBase(BLOCK_DOUBLE_SLAB_OBSIDIAN, BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_DOUBLE_SLAB_OBSIDIAN));
-        
+
         BLOCK_SPRUCE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_SPRUCE_LADDER));
         BLOCK_BIRCH_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_BIRCH_LADDER));
         BLOCK_JUNGLE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_JUNGLE_LADDER));
@@ -418,8 +425,9 @@ public class ModBlocks
 
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true).setHardness(5.0F).setResistance(10.0F));
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
+        BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
+        BLOCK_RED_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_RED_NETHER_FENCE_GATE));
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
-        
         BLOCK_ROSE = registerBlock(new BlockRose());
     }
 

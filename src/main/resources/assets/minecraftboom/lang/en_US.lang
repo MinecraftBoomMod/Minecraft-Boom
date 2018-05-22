@@ -22,6 +22,7 @@ item.minecraftboom.wheat_on_stick.name=Wheat On A Stick
 item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grenade
 item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.levitation_dust.name=Levitation Dust
+item.minecraftboom.magma_brick.name=Magma Brick
 
 
 # Blocks
@@ -55,6 +56,9 @@ tile.minecraftboom.magma_bricks.name=Magma Bricks
 tile.minecraftboom.obsidian_bricks.name=Obsidian Bricks
 tile.minecraftboom.faceless_pumpkin.name=Pumpkin
 tile.minecraftboom.fine_gravel.name=Fine Gravel
+tile.minecraftboom.gravel_stone.name=Gravel Stone
+tile.minecraftboom.fine_gravel_stone.name=Fine Gravel Stone
+tile.minecraftboom.gravel_bricks.name=Gravel Bricks
 
 tile.minecraftboom.smooth_prismarine.name=Polished Prismarine
 tile.minecraftboom.smooth_dark_prismarine.name=Polished Dark Prismarine
@@ -392,6 +396,8 @@ tile.minecraftboom.red_stained_soul_glass_pane.name=Red Stained Soul Glass Pane
 tile.minecraftboom.black_stained_soul_glass_pane.name=Black Stained Soul Glass Pane
 tile.minecraftboom.rose.name=Rose
 tile.minecraftboom.red_nether_brick_fence.name=Red Nether Brick Fence
+tile.minecraftboom.nether_brick_fence_gate.name=Nether Brick Fence Gate
+tile.minecraftboom.red_nether_brick_fence_gate.name=Red Nether Brick Fence Gate
 
 # Config GUI
 config.minecraftboom.gui.enable.name=Enable

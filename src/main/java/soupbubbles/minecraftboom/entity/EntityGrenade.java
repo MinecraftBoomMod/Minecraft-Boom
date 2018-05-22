@@ -27,7 +27,7 @@ public class EntityGrenade extends EntityThrowable
     {
         if (!world.isRemote)
         {
-            world.createExplosion(this, posX, posY, posZ, 1.0F, false);
+            world.createExplosion(this, posX, posY, posZ, 1.5F, false);
             world.setEntityState(this, (byte) 3);
             setDead();
         }

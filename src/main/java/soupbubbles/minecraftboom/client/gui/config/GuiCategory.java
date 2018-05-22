@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class GuiCategory extends GuiBase
 {
@@ -32,7 +33,7 @@ public class GuiCategory extends GuiBase
         if (category.equals("Items") || category.equals("Blocks"))
         {
             isSpecial = true;
-            bottomText = "Warning, disabling " + category.toLowerCase() + " will remove them from the game";
+            bottomText = category.equals("Items") ? "Disabling " + category.toLowerCase() + " have no affect yet. This page is only used for " + category.toLowerCase() + " settings." : "Under Construction";
             red = true;
         }
     }
@@ -83,18 +84,19 @@ public class GuiCategory extends GuiBase
             if (entry instanceof GuiConfigList.ConfigEntry)
             {
                 GuiConfigList.ConfigEntry e = (GuiConfigList.ConfigEntry) entry;
+                String enabled = Compatibility.getActualName(e.prop.getName()) + " is not installed";
 
                 if (mouseOverButton(mouseX, mouseY, e.configButton))
                 {
                     String s = isSpecial ? !e.configButton.prop.getBoolean() ? "enable" : "disable" : e.configButton.prop.getBoolean() + "";
-                    drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name"), mouseX, mouseY);
+                    drawHoveringText(!e.configButton.enabled ? enabled : I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name"), mouseX, mouseY);
                 }
 
                 if (e.settingsButton != null)
                 {
                     if (mouseOverButton(mouseX, mouseY, e.settingsButton))
                     {
-                        drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + "settings.name"), mouseX, mouseY);
+                        drawHoveringText(!e.settingsButton.enabled ? enabled : I18n.format(Assets.CONFIG_GUI_PREFIX + "settings.name"), mouseX, mouseY);
                     }
                 }
             }
@@ -180,6 +182,19 @@ public class GuiCategory extends GuiBase
                 }
 
                 this.prop = prop;
+
+                if (category.getName().contains("Compatibility"))
+                {
+                    if (!Compatibility.isModInstalled(category.getName()))
+                    {
+                        configButton.enabled = false;
+
+                        if (settingsButton != null)
+                        {
+                            settingsButton.enabled = false;
+                        }
+                    }
+                }
             }
 
             @Override

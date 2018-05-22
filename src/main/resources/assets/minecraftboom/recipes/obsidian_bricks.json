@@ -1,6 +1,6 @@
 {
   "result": {
-    "item": "minecraftboom:magma_bricks",
+    "item": "minecraftboom:obsidian_bricks",
     "count": 4
   },
   "pattern": [
@@ -10,7 +10,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:magma_brick"
+      "item": "minecraft:obsidian"
     }
   }
 }

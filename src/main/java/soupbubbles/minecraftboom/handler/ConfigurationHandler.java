@@ -13,6 +13,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ConfigurationHandler
 {
@@ -62,10 +63,16 @@ public class ConfigurationHandler
     public static boolean inspirations;
     public static boolean removeRose;
     public static boolean tryGenerateRose;
+    public static boolean removeWitherBone;
+
     public static boolean quark;
+
     public static boolean netherex;
     public static boolean chopDownUpdated;
-    
+
+    //Blocks
+    public static List<Boolean> allowedBlocks = new ArrayList<Boolean>();
+
     //Items
     public static List<Boolean> allowedItems = new ArrayList<Boolean>();
     public static int pineconeBurnTime;
@@ -105,16 +112,18 @@ public class ConfigurationHandler
         pineconeDropRate = loadPropDouble("Pinecone Drop Rate", CATEGORY_TWEAKS, "", 0.02, "Spruce Leaves drop Pinecones");
         replaceLoadingScreen = loadPropBool("Replace Default Loading Screen", CATEGORY_TWEAKS, "Enabling allows the background in the loading screens to be more appropriate for dimension travel.", true);
 
-        inspirations = loadPropBool("Inspiration Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Inspirations.", true);
-        removeRose = loadPropBool("Remove Minecraft Boom Rose", CATEGORY_COMPAT, "Enabling will remove the Rose added by Minecraft Boom since Inspirations adds its own Rose.", true, "Inspiration Compatibility");
-        tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", true, "Inspiration Compatibility");
+        inspirations = loadPropBool("Inspirations Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Inspirations.", true);
+        removeRose = loadPropBool("Remove Minecraft Boom Rose", CATEGORY_COMPAT, "Enabling will remove the Rose added by Minecraft Boom since Inspirations adds Roses.", true, "Inspirations Compatibility");
+        tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", true, "Inspirations Compatibility");
+        removeWitherBone = loadPropBool("Remove Minecraft Boom Wither Bone", CATEGORY_COMPAT, "Enabling will remove the Wither Bone added by Minecraft Boom since Inspirations adds Withered Bones.", true, "Inspirations Compatibility");
+
         quark = loadPropBool("Quark Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Quark.", true);
         netherex = loadPropBool("Nether Ex Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Nether Ex.", true);
         chopDownUpdated = loadPropBool("Chop Down Updated Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Chop Down Updated.", true);
 
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");
         witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "wither_bone");
-        
+
         saveConfiguration();
 
         MinecraftForge.EVENT_BUS.register(configuration);
@@ -150,7 +159,7 @@ public class ConfigurationHandler
 
     public static int loadPropInt(String name, String category, String comment, int default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category + "." + parent, name, default_);
+        Property prop = configuration.get(category + "." + parent, name, default_);
         prop.setComment(comment);
 
         return prop.getInt(default_);
@@ -163,7 +172,7 @@ public class ConfigurationHandler
 
     public static double loadPropDouble(String name, String category, String comment, double default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category + "." + parent, name, default_);
+        Property prop = configuration.get(category + "." + parent, name, default_);
         prop.setComment(comment);
 
         return prop.getDouble(default_);
@@ -176,7 +185,7 @@ public class ConfigurationHandler
 
     public static boolean loadPropBool(String name, String category, String comment, boolean default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category + "." + parent, name, default_);
+        Property prop = configuration.get(category + "." + parent, name, default_);
         prop.setComment(comment);
 
         return prop.getBoolean(default_);
@@ -189,7 +198,7 @@ public class ConfigurationHandler
 
     public static String loadPropString(String name, String category, String comment, String default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category + "." + parent, name, default_);
+        Property prop = configuration.get(category + "." + parent, name, default_);
         prop.setComment(comment);
 
         return prop.getString();
@@ -202,7 +211,7 @@ public class ConfigurationHandler
 
     public static String[] loadPropStringList(String name, String category, String comment, String[] default_, String parent)
     {
-        Property prop = ConfigurationHandler.configuration.get(category, name, default_);
+        Property prop = configuration.get(category, name, default_);
         prop.setComment(comment);
 
         return prop.getStringList();
@@ -210,7 +219,7 @@ public class ConfigurationHandler
 
     public static boolean loadCategory(String name, String category, String comment, boolean default_)
     {
-        Property prop = ConfigurationHandler.configuration.get(category, name, default_);
+        Property prop = configuration.get(category, name, default_);
         prop.setComment(comment);
 
         return prop.getBoolean(default_);

@@ -27,5 +27,4 @@ public class RenderGenericItem extends RenderSnowball
     {
         return new ItemStack(item, 1, damage);
     }
-
 }

@@ -67,6 +67,7 @@ public class GuiBase extends GuiScreen
     protected void returnToParent()
     {
         mc.displayGuiScreen(parent);
+        ConfigurationHandler.saveConfiguration();
 
         if (mc.currentScreen == null)
         {

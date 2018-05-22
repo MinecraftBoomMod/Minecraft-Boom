@@ -53,29 +53,6 @@ public class WorldGenerator implements IWorldGenerator
                 new WorldGenEndPiles().generate(world, rand, pos.add(rand.nextInt(16) + 8, rand.nextInt(120) + 4, rand.nextInt(16) + 8));
             }
         }
-
-        /*if (ConfigurationHandler.generateObsidianSpikes)
-        {
-            if (rand.nextInt(40) == 0)
-            {
-                pos = new BlockPos(x, 0, z);
-
-                for (int l2 = 0; l2 < 30; ++l2)
-                {
-                    int x1 = rand.nextInt(16) + 16;
-                    int z1 = rand.nextInt(16) + 16;
-                    int y = world.getHeight(pos.add(x1, 0, z1)).getY() + 32;
-
-                    if (y > 0)
-                    {
-                        int y1 = rand.nextInt(y);
-                        BlockPos blockpos1 = pos.add(x1, y1, z1);
-                        
-                        new WorldGenSpikes().generate(world, rand, blockpos1);
-                    }
-                }
-            }
-        }*/
     }
 
     private void generateSurface(World world, Random rand, int x, int z)
@@ -104,9 +81,8 @@ public class WorldGenerator implements IWorldGenerator
                             new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
                         }
                     }
-                    else if (Compatibility.IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.tryGenerateRose)
+                    else if (ConfigurationHandler.tryGenerateRose)
                     {
-                        //Compatability.genrateInspirationRoses(world, rand, blockpos1);
                     }
                 }
             }

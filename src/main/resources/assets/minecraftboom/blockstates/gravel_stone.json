@@ -1,0 +1,29 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "#all"
+        },
+        "model": "cube_all",
+        "uvlock": true
+    },
+    "variants": {
+        "variant": {
+            "gravel_stone": {
+                "textures": {
+                    "all": "minecraftboom:blocks/gravel_stone"
+                }
+            },
+            "fine_gravel_stone": {
+                "textures": {
+                    "all": "minecraftboom:blocks/fine_gravel_stone"
+                }
+            },
+            "gravel_bricks": {
+               "textures": {
+                   "all": "minecraftboom:blocks/gravel_bricks"
+                 }
+            }
+        }
+    }
+}

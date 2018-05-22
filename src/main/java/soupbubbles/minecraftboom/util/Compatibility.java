@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Level;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.Loader;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
@@ -16,39 +17,81 @@ import soupbubbles.minecraftboom.world.WorldGenRoses;
 
 public class Compatibility
 {
-    public static final boolean IS_INSPIRATIONS_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
-    public static final boolean IS_QUARK_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
-    public static final boolean IS_NETHER_EX_INSTALLED = Loader.isModLoaded(Reference.INSPIRATIONS_MOD_ID);
-    public static final boolean IS_CHOP_DOWN_UPDATED_INSTALLED = Loader.isModLoaded(Reference.CHOP_DOWN_UPDATED_MOD_ID);
-
-    public static void initCompat()
+    public static void preInit()
     {
-        if (ConfigurationHandler.compat)
+        load("Inspirations");
+        load("Quark");
+        load("Nether Ex");
+        load("Chop Down Updated");
+    }
+
+    private static void load(String modname)
+    {
+        String s = modname + " Compatibility";
+        Property prop = ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_COMPAT + "." + s, s, true);
+
+        if (!isModInstalled(modname))
         {
-            if (IS_INSPIRATIONS_INSTALLED && ConfigurationHandler.inspirations)
+            prop.set(false);
+            ConfigurationHandler.saveConfiguration();
+        }
+        else
+        {
+            if (!prop.getBoolean())
             {
-                log("Inspirations");
+                prop.set(true);
+                ConfigurationHandler.saveConfiguration();
             }
-            
-            if (IS_QUARK_INSTALLED && ConfigurationHandler.quark)
+
+            MinecraftBoom.instance.logger.log(Level.INFO, "Found " + modname + " installed, Minecraft Boom will be altered. Check config file for more");
+        }
+
+    }
+
+    public static boolean isModInstalled(String modName)
+    {
+        return Loader.isModLoaded(getModID(modName));
+    }
+
+    public static boolean getConfigValue(boolean config, boolean mod)
+    {
+        if (ConfigurationHandler.compat && mod && config)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static String getModID(String modname)
+    {
+        switch (getActualName(modname))
+        {
+            case "Inspirations":
             {
-                log("Quark");
+                return Reference.INSPIRATIONS_MOD_ID;
             }
-            
-            if (IS_NETHER_EX_INSTALLED && ConfigurationHandler.netherex)
+            case "Quark":
             {
-                log("Nether Ex");
+                return Reference.QUARK_MOD_ID;
             }
-            
-            if (IS_CHOP_DOWN_UPDATED_INSTALLED && ConfigurationHandler.chopDownUpdated)
+            case "Nether Ex":
             {
-                log("Chop Down Updated");
+                return Reference.NETHER_EX_MOD_ID;
+            }
+            case "Chop Down Updated":
+            {
+                return Reference.CHOP_DOWN_UPDATED_MOD_ID;
+            }
+            default:
+            {
+                throw new IllegalArgumentException("Invalid mod name: " + modname);
             }
         }
     }
-    
-    private static void log(String modname)
+
+    public static String getActualName(String modname)
     {
-        MinecraftBoom.instance.logger.log(Level.INFO, "Found " + modname + " installed, Minecraft Boom will be altered. Check config file for more");
+        return modname.replace(" Compatibility", "");
     }
 }

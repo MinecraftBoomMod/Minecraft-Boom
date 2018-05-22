@@ -14,11 +14,11 @@ import soupbubbles.minecraftboom.item.ItemTelescope;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ModItems
 {
     public static final Set<Item> ITEMS = new HashSet<>();
-    private static int count = 0;
 
     public static final Item ITEM_ELDER_GUARDIAN_SPIKE;
     public static final Item ITEM_PINECONE;
@@ -30,12 +30,22 @@ public class ModItems
     public static final Item ITEM_POPPED_CHORUS_GRENADE;
     public static final Item ITEM_TELESCOPE;
     public static final Item ITEM_LEVITATION_DUST;
+    public static final Item ITEM_MAGMA_BRICK;
 
     static
     {
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
-        ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
+        
+        if (Compatibility.getConfigValue(ConfigurationHandler.removeWitherBone, ConfigurationHandler.inspirations))
+        {
+            ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
+        }
+        else
+        {
+            ITEM_WITHER_BONE = null;
+        }
+        
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
         ITEM_PRISMARINE_ARROW = registerItem(new ItemPrismarineArrow());
         ITEM_WHEAT_ON_STICK = registerItem(new ItemBase(Names.ITEM_WHEAT_ON_STICK));
@@ -43,6 +53,7 @@ public class ModItems
         ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
         ITEM_TELESCOPE = registerItem(new ItemTelescope());
         ITEM_LEVITATION_DUST = registerItem(new ItemBase(Names.ITEM_LEVITATION_DUST));
+        ITEM_MAGMA_BRICK = registerItem(new ItemBase(Names.ITEM_MAGMA_BRICK));
     }
 
     public static void registerItems()
@@ -53,14 +64,8 @@ public class ModItems
     {
         ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(item.getUnlocalizedName().replace("item.", ""), ConfigurationHandler.CATEGORY_ITEMS, "", true));
         ConfigurationHandler.saveConfiguration();
-
-        if (ConfigurationHandler.allowedItems.get(count) && ConfigurationHandler.items)
-        {
-            ForgeRegistries.ITEMS.register(item);
-            ITEMS.add(item);
-        }
-        
-        count++;
+        ForgeRegistries.ITEMS.register(item);
+        ITEMS.add(item);
 
         return item;
     }
