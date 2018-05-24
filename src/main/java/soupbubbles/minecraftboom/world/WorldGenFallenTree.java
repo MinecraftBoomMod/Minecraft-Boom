@@ -30,7 +30,6 @@ public class WorldGenFallenTree extends WorldGenerator
     @Override
     public boolean generate(World world, Random rand, BlockPos pos)
     {
-        System.out.println("hey");
         while ((world.isAirBlock(pos) || world.getBlockState(pos).getBlock() instanceof BlockLeaves) && pos.getY() > 40)
         {
             pos = pos.down();

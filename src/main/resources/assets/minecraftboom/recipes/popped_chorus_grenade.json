@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:popped_chorus_grenade"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

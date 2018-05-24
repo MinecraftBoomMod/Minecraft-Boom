@@ -1,0 +1,39 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "#end",
+            "side": "#side"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
+    "variants": {
+        "half": {
+            "bottom": {
+            },
+            "top": {
+            }
+        },
+        "variant": {
+            "gravel_stone": {
+                "textures": {
+                    "end": "minecraftboom:blocks/gravel_stone",
+                    "side": "#end"
+                    }
+            },
+            "fine_gravel_stone": {
+                "textures": {
+                    "end": "minecraftboom:blocks/fine_gravel_stone",
+                    "side": "#end"
+                }
+            },
+            "gravel_bricks": {
+                "textures": {
+                    "end": "minecraftboom:blocks/gravel_bricks",
+                    "side": "#end"
+                }
+            }
+        }
+    }
+}

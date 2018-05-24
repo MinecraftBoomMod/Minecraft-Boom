@@ -6,10 +6,11 @@
     "xx",
     "xx"
   ],
-  "type": "minecraft:crafting_shaped",
+  "type": "forge:ore_shaped",
   "key": {
     "x": {
-      "item": "minecraft:bone"
+      "type": "forge:ore_dict",
+      "ore": "bone"
     }
   }
 }

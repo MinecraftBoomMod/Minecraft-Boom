@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.creativetab;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -19,6 +20,14 @@ import soupbubbles.minecraftboom.reference.Reference;
 
 public class CreativeTab
 {
+    public static List<Item> tabList = new ArrayList(); 
+    public static List<Item> stairAndSlabList = new ArrayList(); 
+    private static Comparator<ItemStack> tabSorter;
+    
+    public static void init()
+    {
+    }
+    
     public static final CreativeTabs MINECRAFTBOOM_TAB = new CreativeTabs(Reference.MOD_ID + "_tab")
     {
         @Override
@@ -32,6 +41,8 @@ public class CreativeTab
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
             super.displayAllRelevantItems(stack);
+            tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);
+            stack.sort(tabSorter);
         }
     };
     
@@ -48,6 +59,8 @@ public class CreativeTab
         public void displayAllRelevantItems(NonNullList<ItemStack> stack)
         {
             super.displayAllRelevantItems(stack);
+            tabSorter = Ordering.explicit(stairAndSlabList).onResultOf(ItemStack::getItem);
+            stack.sort(tabSorter);
         }
     };
     

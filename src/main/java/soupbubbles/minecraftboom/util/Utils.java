@@ -13,12 +13,17 @@ public class Utils
     {
         spawnEntityItem(world, pos, new ItemStack(item));
     }
-    
+
     public static void spawnEntityItem(World world, BlockPos pos, ItemStack stack)
     {
         if (!world.isRemote)
         {
             world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
+    }
+
+    public static boolean getConfigValue(boolean config, boolean parent)
+    {
+        return config && parent;
     }
 }

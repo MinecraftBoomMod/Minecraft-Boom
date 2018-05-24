@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_obsidian",
+    "data": 1,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:obsidian_bricks"
+    }
+  }
+}

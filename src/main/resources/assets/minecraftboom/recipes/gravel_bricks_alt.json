@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:gravel_stone",
+    "data": 2
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:gravel_stone",
+      "data": 1
+    }
+  }
+}

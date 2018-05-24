@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -32,6 +33,11 @@ public class PlayerEventHandler
         BlockPos pos = event.getPos();
         IBlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
+        
+        if(event.isCanceled() || !ConfigurationHandler.tweaks)
+        {
+            return;
+        }
 
         if (stack != null)
         {
@@ -70,8 +76,6 @@ public class PlayerEventHandler
                 }
             }
         }
-
-        event.setResult(Result.ALLOW);
     }
 
     private static EnumFacing updatePiston(World world, BlockPos pos, IBlockState state, ItemStack stack, EntityPlayer player)
@@ -130,5 +134,4 @@ public class PlayerEventHandler
             }
         }
     }
-
 }

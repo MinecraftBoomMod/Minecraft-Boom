@@ -99,6 +99,14 @@ public class GuiCategory extends GuiBase
                         drawHoveringText(!e.settingsButton.enabled ? enabled : I18n.format(Assets.CONFIG_GUI_PREFIX + "settings.name"), mouseX, mouseY);
                     }
                 }
+                
+                if (e.commentButton != null)
+                {
+                    if (mouseOverButton(mouseX, mouseY, e.commentButton))
+                    {
+                        drawHoveringText("Comment", mouseX, mouseY);
+                    }
+                }
             }
         }
     }
@@ -156,13 +164,13 @@ public class GuiCategory extends GuiBase
         @Override
         protected int getScrollBarX()
         {
-            return super.getScrollBarX() + 32;
+            return super.getScrollBarX() + 54;
         }
 
         @Override
         public int getListWidth()
         {
-            return super.getListWidth() + 100;
+            return super.getListWidth() + 150;
         }
 
         @SideOnly(Side.CLIENT)
@@ -170,18 +178,28 @@ public class GuiCategory extends GuiBase
         {
             protected final GuiButtonConfig configButton;
             protected GuiButtonSettings settingsButton;
+            protected GuiButtonComment commentButton;
             private final Property prop;
 
             private ConfigEntry(int index, Property prop, ConfigCategory category)
             {
+                this.prop = prop;
                 configButton = new GuiButtonConfig(0, 0, 0, prop);
 
                 if (category.getOrderedValues().size() > 1)
                 {
                     settingsButton = new GuiButtonSettings(0, 0, 0, category);
                 }
-
-                this.prop = prop;
+                
+                String comment = prop.getComment();
+                
+                if (comment != null)
+                {
+                    if (!comment.equals(""))
+                    {
+                        commentButton = new GuiButtonComment(0, 0, 0);
+                    }
+                }
 
                 if (category.getName().contains("Compatibility"))
                 {
@@ -200,19 +218,28 @@ public class GuiCategory extends GuiBase
             @Override
             public void drawEntry(int slotIndex, int x, int y, int listWidth, int slotHeight, int mouseX, int mouseY, boolean isSelected, float partialTicks)
             {
+                boolean flag = commentButton != null;
+                
                 configButton.x = (width / 2 + 106);
                 configButton.y = y;
                 configButton.drawButton(mc, mouseX, mouseY, partialTicks);
 
                 if (settingsButton != null)
                 {
-                    settingsButton.x = (width / 2 + 106) + 22;
+                    settingsButton.x = (width / 2 + 150) - (flag ? 0 : 22);
                     settingsButton.y = y;
                     settingsButton.drawButton(mc, mouseX, mouseY, partialTicks);
                 }
+                
+                if (flag)
+                {
+                    commentButton.x = (width / 2 + 128);
+                    commentButton.y = y;
+                    commentButton.drawButton(mc, mouseX, mouseY, partialTicks);
+                }
 
                 String s = isSpecial ? I18n.format(category.getName().replaceAll("Items", "item.").replace("Blocks", "tile.") + Assets.ASSET_PREFIX + "." + prop.getName() + ".name") : prop.getName();
-                mc.fontRenderer.drawString(s, width / 2 - 120, configButton.y + 8, 0xFFFFFF);
+                mc.fontRenderer.drawString(s, width / 2 - 120, configButton.y + 6, 0xFFFFFF);
             }
 
             @Override
@@ -233,13 +260,24 @@ public class GuiCategory extends GuiBase
 
                     return true;
                 }
-                else if (settingsButton != null)
+                else
                 {
-                    if (settingsButton.mousePressed(mc, mouseX, mouseY))
+                    if (settingsButton != null)
                     {
-                        mc.displayGuiScreen(new GuiSettings(parent, settingsButton.getCategory()));
-                        settingsButton.playPressSound(mc.getSoundHandler());
-                        return true;
+                        if (settingsButton.mousePressed(mc, mouseX, mouseY))
+                        {
+                            mc.displayGuiScreen(new GuiSettings(parent, settingsButton.getCategory()));
+                            settingsButton.playPressSound(mc.getSoundHandler());
+                            return true;
+                        }
+                    }
+                    
+                    if (commentButton != null)
+                    {
+                        if (commentButton.mousePressed(mc, mouseX, mouseY))
+                        {
+                            System.out.println("Comment: " + prop.getComment());
+                        }
                     }
                 }
 

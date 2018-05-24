@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:half_slab_gravel_stone",
+    "data": 1,
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:gravel_stone",
+      "data": 1
+    }
+  }
+}

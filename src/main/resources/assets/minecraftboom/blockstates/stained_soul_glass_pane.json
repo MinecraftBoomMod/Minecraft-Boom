@@ -1,0 +1,182 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "pane": "#pane",
+            "edge": "#edge",
+            "particle": "#pane"
+        },
+        "model": "pane_post",
+        "uvlock": true
+    },
+    "variants": {
+        "north": {
+            "true": {
+                "submodel": {
+                    "side_north": {
+                        "model": "pane_side"
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_north": {
+                        "model": "pane_noside"
+                    }
+                }
+            }
+        },
+        "south": {
+            "true": {
+                "submodel": {
+                    "side_south": {
+                        "model": "pane_side_alt"
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_south": {
+                        "model": "pane_noside_alt",
+                        "y": 90
+                    }
+                }
+            }
+        },
+        "east": {
+            "true": {
+                "submodel": {
+                    "side_east": {
+                        "model": "pane_side",
+                        "y": 90
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_east": {
+                        "model": "pane_noside_alt"
+                    }
+                }
+            }
+        },
+        "west": {
+            "true": {
+                "submodel": {
+                    "side_west": {
+                        "model": "pane_side_alt",
+                        "y": 90
+                    }
+                }
+            },
+            "false": {
+                "submodel": {
+                    "post_west": {
+                        "model": "pane_noside",
+                        "y": 270
+                    }
+                }
+            }
+        },
+        "variant": {
+            "white": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/white_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/white_soul_glass_pane_top"
+                }
+            },
+            "orange": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/orange_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/orange_soul_glass_pane_top"
+                    
+                }
+            },
+            "magenta": {
+               "textures": {
+                   "pane": "minecraftboom:blocks/magenta_stained_soul_glass",
+                   "edge": "minecraftboom:blocks/magenta_soul_glass_pane_top"
+                 }
+            },
+            "light_blue": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/light_blue_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/light_blue_soul_glass_pane_top"
+                    
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/yellow_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/yellow_soul_glass_pane_top"
+                }
+            },
+            "lime": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/lime_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/lime_soul_glass_pane_top"
+                }
+            },
+            "pink": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/pink_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/pink_soul_glass_pane_top"                
+                }
+            },
+            "gray": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/gray_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/gray_soul_glass_pane_top"
+                }
+            },
+            "silver": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/silver_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/silver_soul_glass_pane_top"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/cyan_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/cyan_soul_glass_pane_top"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/purple_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/purple_soul_glass_pane_top"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/blue_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/blue_soul_glass_pane_top"
+                }
+            },
+            "brown": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/brown_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/brown_soul_glass_pane_top"
+                }
+            },
+            "green": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/green_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/green_soul_glass_pane_top"
+                }
+            },
+            "red": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/red_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/red_soul_glass_pane_top"
+                }
+            },
+            "black": {
+                "textures": {
+                    "pane": "minecraftboom:blocks/black_stained_soul_glass",
+                    "edge": "minecraftboom:blocks/black_soul_glass_pane_top"
+                }
+            }
+        }
+    }
+}

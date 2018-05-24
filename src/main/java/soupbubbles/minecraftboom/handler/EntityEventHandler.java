@@ -15,6 +15,11 @@ public class EntityEventHandler
     @SubscribeEvent
     public static void onDimensionTravel(EntityTravelToDimensionEvent event)
     {
+        if(event.isCanceled() || !ConfigurationHandler.tweaks)
+        {
+            return;
+        }
+        
         Field optionsBackground = null;
         ResourceLocation newBackground;
         

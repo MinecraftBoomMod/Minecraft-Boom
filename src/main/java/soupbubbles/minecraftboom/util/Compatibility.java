@@ -55,7 +55,7 @@ public class Compatibility
 
     public static boolean getConfigValue(boolean config, boolean mod)
     {
-        if (ConfigurationHandler.compat && mod && config)
+        if (ConfigurationHandler.compat && Utils.getConfigValue(config, mod))
         {
             return false;
         }

@@ -9,6 +9,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.common.IFuelHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.util.Utils;
 
 public class FuelHandler implements IFuelHandler
 {
@@ -30,20 +31,23 @@ public class FuelHandler implements IFuelHandler
     
     static
     {
-        if (ConfigurationHandler.blazeFuel)
+        if (Utils.getConfigValue(ConfigurationHandler.blazeFuel, ConfigurationHandler.tweaks))
         {
             fuelBurnTime.add(new FuelStack(new ItemStack(Items.BLAZE_POWDER), ConfigurationHandler.blazeBurnTime));
         }
         
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_PINECONE), ConfigurationHandler.pineconeBurnTime));
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARCOAL), TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK))));
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), 12000));
+        if (ModBlocks.BLOCK_CHARCOAL != null)
+        {
+            fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARCOAL), TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK))));
+        }
         
         if (ModItems.ITEM_WITHER_BONE != null)
         {
             fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_WITHER_BONE), ConfigurationHandler.witherBoneBurnTime));
         }
         
+        fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_PINECONE), ConfigurationHandler.pineconeBurnTime));
+        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), 12000));
         fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), 2000));
     }
     

@@ -44,6 +44,7 @@ public class ConfigurationHandler
     public static boolean generateRoses;
     public static boolean generatePumpkins;
     public static boolean generateFallenTrees;
+    public static boolean generateFineGravel;
     public static boolean generateNetherWells;
     public static boolean generateEndPiles;
 
@@ -66,9 +67,17 @@ public class ConfigurationHandler
     public static boolean removeWitherBone;
 
     public static boolean quark;
+    public static boolean removeTrapdoor;
+    public static boolean removeNetherBrickFenceGate;
+    public static boolean removeMagmaBricks;
+    public static boolean removeCharcoalBlock;
+    public static boolean removeSugarCaneBlock;
+    public static boolean removeBookshelf;
 
     public static boolean netherex;
     public static boolean chopDownUpdated;
+    public static boolean preventFallenTrees;
+
 
     //Blocks
     public static List<Boolean> allowedBlocks = new ArrayList<Boolean>();
@@ -80,13 +89,14 @@ public class ConfigurationHandler
 
     public static void initConfiguation(File configFile)
     {
-        if (!configFile.exists() || configuration == null)
+        if (configuration == null)
         {
             configuration = new Configuration(configFile, true);
             firstLoad = true;
             MinecraftBoom.instance.logger.log(Level.INFO, "No configuration file for Minecraft Boom was found, creating new one");
         }
 
+        //General
         worldgen = loadCategory("World Generation", configuration.CATEGORY_GENERAL, "", true);
         tweaks = loadCategory("Tweaks", configuration.CATEGORY_GENERAL, "", true);
         compat = loadCategory("Compatibility", configuration.CATEGORY_GENERAL, "", true);
@@ -95,12 +105,15 @@ public class ConfigurationHandler
         mobs = loadCategory("Mobs", configuration.CATEGORY_GENERAL, "", true);
         minecraftBoomButton = loadCategory("Enable Minecraft Boom Button", configuration.CATEGORY_GENERAL, "Enabling allows the Minecraft Boom button to appear in the Options menu. The Minecraft Boom configuration can always be reached through Mods -> Minecraft Boom -> Config.", true);
 
+        //Worldgen
         generateRoses = loadPropBool("Generate Roses", CATEGORY_WORLD_GEN, "Enabling allows Roses to naturally spawn in the Overworld.", true);
         generatePumpkins = loadPropBool("Generate Pumpkins", CATEGORY_WORLD_GEN, "Enabling allows Faceless Pumpkin Patches to naturally spawn in the Overworld.", true);
         generateFallenTrees = loadPropBool("Generate Fallen Trees", CATEGORY_WORLD_GEN, "Enabling allows Fallen Trees to naturally spawn in the Overworld.", true);
+        generateFineGravel = loadPropBool("Generate Fine Gravel", CATEGORY_WORLD_GEN, "Enabling allows Fine Gravel Patches to naturally spawn in the Overworld.", true);
         generateNetherWells = loadPropBool("Generate Nether Wells", CATEGORY_WORLD_GEN, "Enabling allows Nether Wells to spawn in the Nether.", true);
         generateEndPiles = loadPropBool("Generate End Piles", CATEGORY_WORLD_GEN, "Enabling allows End Piles to spawn in the End.", true);
 
+        //Tweaks
         smeltPumpkin = loadPropBool("Pumpking smelts into Orange Dye", CATEGORY_TWEAKS, "Enabling allows Pumpkins (Faceless and Hollowed) to smelt into Orange Dye in a Furnace.", true);
         blazeBonemeal = loadPropBool("Use Blaze Powder as Bonemeal", CATEGORY_TWEAKS, "Enabling allows Blaze Powder to be used as a Bonemeal on Nether Wart.", true);
         blazeFuel = loadPropBool("Use Blaze Powder as fuel in a Furnace", CATEGORY_TWEAKS, "Enabling allows Blaze Powder to be used as a fuel in a Furnace.", true);
@@ -112,15 +125,25 @@ public class ConfigurationHandler
         pineconeDropRate = loadPropDouble("Pinecone Drop Rate", CATEGORY_TWEAKS, "", 0.02, "Spruce Leaves drop Pinecones");
         replaceLoadingScreen = loadPropBool("Replace Default Loading Screen", CATEGORY_TWEAKS, "Enabling allows the background in the loading screens to be more appropriate for dimension travel.", true);
 
+        //Compat
         inspirations = loadPropBool("Inspirations Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Inspirations.", true);
-        removeRose = loadPropBool("Remove Minecraft Boom Rose", CATEGORY_COMPAT, "Enabling will remove the Rose added by Minecraft Boom since Inspirations adds Roses.", true, "Inspirations Compatibility");
-        tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", true, "Inspirations Compatibility");
-        removeWitherBone = loadPropBool("Remove Minecraft Boom Wither Bone", CATEGORY_COMPAT, "Enabling will remove the Wither Bone added by Minecraft Boom since Inspirations adds Withered Bones.", true, "Inspirations Compatibility");
+        removeRose = loadPropBool("Remove Minecraft Boom Rose", CATEGORY_COMPAT, "Enabling will remove the Rose added by Minecraft Boom since Inspirations adds Roses.", false, "Inspirations Compatibility");
+        tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", false, "Inspirations Compatibility");
+        removeWitherBone = loadPropBool("Remove Minecraft Boom Wither Bone", CATEGORY_COMPAT, "Enabling will remove the Wither Bone added by Minecraft Boom since Inspirations adds Withered Bones.", false, "Inspirations Compatibility");
 
         quark = loadPropBool("Quark Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Quark.", true);
+        removeTrapdoor = loadPropBool("Remove Minecraft Boom Trapdoors", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        removeNetherBrickFenceGate = loadPropBool("Remove Minecraft Boom Nether Brick Fence Gate", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        removeMagmaBricks = loadPropBool("Remove Minecraft Boom Magma Bricks", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        removeCharcoalBlock = loadPropBool("Remove Minecraft Boom Charcoal Block", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        removeSugarCaneBlock = loadPropBool("Remove Minecraft Boom Sugar Cane Block", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        removeBookshelf = loadPropBool("Remove Minecraft Boom Bookshelves", CATEGORY_COMPAT, "", false, "Quark Compatibility");
+        
         netherex = loadPropBool("Nether Ex Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Nether Ex.", true);
         chopDownUpdated = loadPropBool("Chop Down Updated Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Chop Down Updated.", true);
+        preventFallenTrees = loadPropBool("Stop Falling Tree Generation", CATEGORY_COMPAT, "", true, "Chop Down Updated Compatibility");
 
+        //Items
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");
         witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "wither_bone");
 

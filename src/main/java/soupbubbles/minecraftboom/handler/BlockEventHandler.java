@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
 
@@ -16,6 +17,11 @@ public class BlockEventHandler
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {
+        if(event.isCanceled() || !ConfigurationHandler.tweaks)
+        {
+            return;
+        }
+        
         if (event.getState().getBlock() instanceof BlockOldLeaf)
         {
             event.setDropChance(1.0F);

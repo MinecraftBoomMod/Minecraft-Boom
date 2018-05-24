@@ -167,8 +167,8 @@ public class BlockObsidianSlab extends BlockSlabBase
 
     public static enum EnumType implements IStringSerializable
     {
-        OBSIDIAN(0, MapColor.OBSIDIAN, Names.BLOCK_OBSIDIAN_BRICKS),
-        OBSIDIAN_BRICKS(1, MapColor.OBSIDIAN, Names.OBSIDIAN);
+        OBSIDIAN(0, MapColor.OBSIDIAN, Names.OBSIDIAN),
+        OBSIDIAN_BRICKS(1, MapColor.OBSIDIAN, Names.BLOCK_OBSIDIAN_BRICKS);
 
         private static final BlockObsidianSlab.EnumType[] META_LOOKUP = new BlockObsidianSlab.EnumType[values().length];
 

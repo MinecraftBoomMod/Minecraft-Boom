@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "minecraftboom:stained_soul_glass_pane",
+    "data": 8,
+    "count": 16
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:stained_soul_glass",
+      "data": 8
+    }
+  }
+}

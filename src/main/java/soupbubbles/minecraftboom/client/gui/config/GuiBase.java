@@ -98,6 +98,6 @@ public class GuiBase extends GuiScreen
 
     public boolean mouseOverButton(int mouseX, int mouseY, GuiButton button)
     {
-        return mouseX > button.x && mouseX < button.x + button.width && mouseY > button.y && mouseY < button.y + button.height && button.visible;
+        return mouseX >= button.x && mouseX < button.x + button.width && mouseY >= button.y && mouseY < button.y + button.height && button.visible;
     }
 }

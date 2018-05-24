@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
@@ -104,6 +105,10 @@ public class ModelManager
                             ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name));
                         }
 
+                    }
+                    else if (block instanceof BlockStainedSoulGlassPane)
+                    {
+                        ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName() + "_" + itemBlock.getVariants()[i], name));
                     }
                     else
                     {

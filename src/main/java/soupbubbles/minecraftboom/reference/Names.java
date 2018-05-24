@@ -126,6 +126,8 @@ public class Names
     public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = "double_slab_terracotta_bricks_2";
     public static final String BLOCK_HALF_SLAB_OBSIDIAN = "half_slab_obsidian";
     public static final String BLOCK_DOUBLE_SLAB_OBSIDIAN = "double_slab_obsidian";
+    public static final String BLOCK_HALF_SLAB_GRAVEL_STONE = "half_slab_gravel_stone";
+    public static final String BLOCK_DOUBLE_SLAB_GRAVEL_STONE = "double_slab_gravel_stone";
 
     public static final String BLOCK_SPRUCE_CHEST = "spruce_chest";
     public static final String BLOCK_BIRCH_CHEST = "birch_chest";

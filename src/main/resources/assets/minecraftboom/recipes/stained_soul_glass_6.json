@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "minecraftboom:stained_soul_glass",
+    "data": 6,
+    "count": 8
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:soul_glass"
+    },
+    "y": {
+      "type": "forge:ore_dict",
+      "ore": "dyePink"
+    }
+  }
+}

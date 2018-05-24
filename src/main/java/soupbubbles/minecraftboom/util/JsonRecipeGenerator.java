@@ -16,25 +16,16 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPrismarine;
-import net.minecraft.block.BlockRedSandstone;
-import net.minecraft.block.BlockSandStone;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.block.BlockStone;
-import net.minecraft.block.BlockStoneBrick;
-import net.minecraft.block.BlockStoneSlab;
-import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import soupbubbles.minecraftboom.block.BlockPolished;
-import soupbubbles.minecraftboom.block.slab.BlockModSlab;
-import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab;
-import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab2;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import soupbubbles.minecraftboom.block.BlockGravelStone;
+import soupbubbles.minecraftboom.block.slab.BlockObsidianSlab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.init.ModItems;
 
 /**
  * @author williewillus

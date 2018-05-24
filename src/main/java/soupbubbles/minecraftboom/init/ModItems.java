@@ -7,6 +7,7 @@ import java.util.Set;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.ItemGrenade;
 import soupbubbles.minecraftboom.item.ItemPrismarineArrow;
@@ -66,7 +67,8 @@ public class ModItems
         ConfigurationHandler.saveConfiguration();
         ForgeRegistries.ITEMS.register(item);
         ITEMS.add(item);
-
+        CreativeTab.tabList.add(item);
+        
         return item;
     }
 }
