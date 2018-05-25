@@ -86,6 +86,7 @@ public class ConfigurationHandler
     public static List<Boolean> allowedItems = new ArrayList<Boolean>();
     public static int pineconeBurnTime;
     public static int witherBoneBurnTime;
+    public static boolean telescopeLoot;
 
     public static void initConfiguation(File configFile)
     {
@@ -146,6 +147,7 @@ public class ConfigurationHandler
         //Items
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");
         witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "wither_bone");
+        telescopeLoot = loadPropBool("Spawn Telescopes in Dungeon Loot", CATEGORY_ITEMS, "", true, "telescope");
 
         saveConfiguration();
 

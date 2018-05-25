@@ -1,0 +1,17 @@
+{
+    "pools": 
+    [
+        {                
+            "name": "minecraftboom:desert_pyramid",  
+            "rolls": 1,
+            "entries": 
+            [
+                {
+                    "type": "item",
+                    "name": "minecraftboom:telescope",
+                    "weight": 2
+                }                 
+            ]
+        }
+    ]
+}

@@ -4,7 +4,7 @@ public class Reference
 {
     public static final String MOD_ID = "minecraftboom";
     public static final String MOD_NAME = "Minecraft Boom";
-    public static final String MOD_VERSION = "1.4.0";
+    public static final String MOD_VERSION = "1.4.1";
     public static final String ACCEPTED_VERSIONS = "1.12.2";
 
     public static final String PROXY_CLIENT = "soupbubbles." + MOD_ID + ".proxy.ClientProxy";

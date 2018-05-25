@@ -1,0 +1,17 @@
+{
+    "pools": 
+    [
+        {                
+            "name": "minecraftboom:abandoned_mineshaft",  
+            "rolls": 1,
+            "entries": 
+            [
+                {
+                    "type": "item",
+                    "name": "minecraftboom:telescope",
+                    "weight": 1
+                }                 
+            ]
+        }
+    ]
+}

@@ -18,38 +18,51 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.Utils;
 
 @Mod.EventBusSubscriber
-public class LootTableEventHandler 
+public class LootTableEventHandler
 {
     @SubscribeEvent
-    public void onLootTableLoad(LootTableLoadEvent event) 
+    public void onLootTableLoad(LootTableLoadEvent event)
     {
         String name = event.getName().toString();
-        List<String> addPool = Arrays.asList("wither_skeleton", "silverfish", "polar_bear", "elder_guardian");
+        List<String> addPool = Arrays.asList("wither_skeleton", "silverfish", "polar_bear", "elder_guardian", "simple_dungeon", "jungle_temple");
+        List<String> telescope = Arrays.asList("simple_dungeon", "jungle_temple", "abandoned_mineshaft", "desert_pyramid", "nether_bridge");
 
-        try 
+        try
         {
-            for (String actual : addPool) 
+            for (String actual : addPool)
             {
-                if (name.matches("minecraft:.*/" + actual)) 
+                if (name.matches("minecraft:.*/" + actual))
                 {
                     event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + actual));
                 }
             }
-        } 
-        catch (Exception ex) 
+
+            if (Utils.getConfigValue(ConfigurationHandler.telescopeLoot, ConfigurationHandler.items))
+            {
+                for (String actual : telescope)
+                {
+                    if (name.matches("minecraft:.*/" + actual))
+                    {
+                        event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + actual));
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
         {
             ex.printStackTrace();
         }
     }
 
-    private LootPool getAdditivePool(String entryName) 
+    private LootPool getAdditivePool(String entryName)
     {
-        return new LootPool(new LootEntry[] { getAdditiveEntry(entryName, 1) }, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "Additive_pool");
+        return new LootPool(new LootEntry[] {getAdditiveEntry(entryName, 1)}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "Additive_pool");
     }
 
-    private LootEntryTable getAdditiveEntry(String name, int weight) 
+    private LootEntryTable getAdditiveEntry(String name, int weight)
     {
         return new LootEntryTable(new ResourceLocation(name), weight, 0, new LootCondition[0], Assets.TEXTURE_PREFIX + name);
     }
