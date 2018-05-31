@@ -7,6 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import soupbubbles.minecraftboom.util.Compatibility;
 
 @Mod.EventBusSubscriber
 public class EntityEventHandler
@@ -15,7 +16,7 @@ public class EntityEventHandler
     @SubscribeEvent
     public static void onDimensionTravel(EntityTravelToDimensionEvent event)
     {
-        if(event.isCanceled() || !ConfigurationHandler.tweaks)
+        if(event.isCanceled() || !ConfigurationHandler.tweaks || Compatibility.isModInstalled("The Between Lands"))
         {
             return;
         }

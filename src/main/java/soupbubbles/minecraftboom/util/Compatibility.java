@@ -45,7 +45,6 @@ public class Compatibility
 
             MinecraftBoom.instance.logger.log(Level.INFO, "Found " + modname + " installed, Minecraft Boom will be altered. Check config file for more");
         }
-
     }
 
     public static boolean isModInstalled(String modName)
@@ -82,6 +81,10 @@ public class Compatibility
             case "Chop Down Updated":
             {
                 return Reference.CHOP_DOWN_UPDATED_MOD_ID;
+            }
+            case "The Between Lands":
+            {
+                return Reference.THE_BETWEEN_LANDS_MOD_ID;
             }
             default:
             {

@@ -4,7 +4,7 @@ public class Reference
 {
     public static final String MOD_ID = "minecraftboom";
     public static final String MOD_NAME = "Minecraft Boom";
-    public static final String MOD_VERSION = "1.4.1";
+    public static final String MOD_VERSION = "1.4.2";
     public static final String ACCEPTED_VERSIONS = "1.12.2";
 
     public static final String PROXY_CLIENT = "soupbubbles." + MOD_ID + ".proxy.ClientProxy";
@@ -15,4 +15,6 @@ public class Reference
     public static final String QUARK_MOD_ID = "quark";
     public static final String NETHER_EX_MOD_ID = "nex";
     public static final String CHOP_DOWN_UPDATED_MOD_ID = "chopdownupdated";
+    public static final String THE_BETWEEN_LANDS_MOD_ID = "thebetweenlands";
+
 }
