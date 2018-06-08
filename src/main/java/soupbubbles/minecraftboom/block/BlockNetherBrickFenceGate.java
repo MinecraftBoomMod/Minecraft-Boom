@@ -3,10 +3,8 @@ package soupbubbles.minecraftboom.block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockPlanks.EnumType;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockNetherBrickFenceGate extends BlockFenceGate
 {

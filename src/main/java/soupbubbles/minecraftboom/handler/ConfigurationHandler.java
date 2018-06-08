@@ -13,7 +13,6 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.reference.Reference;
-import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ConfigurationHandler
 {
@@ -29,13 +28,6 @@ public class ConfigurationHandler
     public static final String CATEGORY_BLOCKS = addCategory("Blocks");
     public static final String CATEGORY_ITEMS = addCategory("Items");
     public static final String CATEGORY_MOBS = addCategory("Mobs");
-
-    public static boolean worldgen;
-    public static boolean tweaks;
-    public static boolean compat;
-    public static boolean blocks;
-    public static boolean items;
-    public static boolean mobs;
 
     //General
     public static boolean minecraftBoomButton;
@@ -75,8 +67,6 @@ public class ConfigurationHandler
     public static boolean removeBookshelf;
 
     public static boolean netherex;
-    public static boolean chopDownUpdated;
-    public static boolean preventFallenTrees;
 
 
     //Blocks
@@ -98,13 +88,7 @@ public class ConfigurationHandler
         }
 
         //General
-        worldgen = loadCategory("World Generation", configuration.CATEGORY_GENERAL, "", true);
-        tweaks = loadCategory("Tweaks", configuration.CATEGORY_GENERAL, "", true);
-        compat = loadCategory("Compatibility", configuration.CATEGORY_GENERAL, "", true);
-        blocks = loadCategory("Blocks", configuration.CATEGORY_GENERAL, "", true);
-        items = loadCategory("Items", configuration.CATEGORY_GENERAL, "", true);
-        mobs = loadCategory("Mobs", configuration.CATEGORY_GENERAL, "", true);
-        minecraftBoomButton = loadCategory("Enable Minecraft Boom Button", configuration.CATEGORY_GENERAL, "Enabling allows the Minecraft Boom button to appear in the Options menu. The Minecraft Boom configuration can always be reached through Mods -> Minecraft Boom -> Config.", true);
+        minecraftBoomButton = loadCategory("Enable Minecraft Boom Button", Configuration.CATEGORY_GENERAL, "Enabling allows the Minecraft Boom button to appear in the Options menu. The Minecraft Boom configuration can always be reached through Mods -> Minecraft Boom -> Config.", true);
 
         //Worldgen
         generateRoses = loadPropBool("Generate Roses", CATEGORY_WORLD_GEN, "Enabling allows Roses to naturally spawn in the Overworld.", true);
@@ -141,8 +125,6 @@ public class ConfigurationHandler
         removeBookshelf = loadPropBool("Remove Minecraft Boom Bookshelves", CATEGORY_COMPAT, "", false, "Quark Compatibility");
         
         netherex = loadPropBool("Nether Ex Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Nether Ex.", true);
-        chopDownUpdated = loadPropBool("Chop Down Updated Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Chop Down Updated.", true);
-        preventFallenTrees = loadPropBool("Stop Falling Tree Generation", CATEGORY_COMPAT, "", true, "Chop Down Updated Compatibility");
 
         //Items
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");

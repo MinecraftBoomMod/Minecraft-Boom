@@ -1,8 +1,6 @@
 package soupbubbles.minecraftboom.init;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import net.minecraft.item.Item;
@@ -15,7 +13,6 @@ import soupbubbles.minecraftboom.item.ItemTelescope;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ModItems
 {
@@ -38,13 +35,13 @@ public class ModItems
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
         
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeWitherBone, ConfigurationHandler.inspirations))
+        if (ConfigurationHandler.removeWitherBone && ConfigurationHandler.inspirations)
         {
-            ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
+            ITEM_WITHER_BONE = null;
         }
         else
         {
-            ITEM_WITHER_BONE = null;
+            ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
         }
         
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));

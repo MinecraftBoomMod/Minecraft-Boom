@@ -16,53 +16,37 @@ public class EntityEventHandler
     @SubscribeEvent
     public static void onDimensionTravel(EntityTravelToDimensionEvent event)
     {
-        if(event.isCanceled() || !ConfigurationHandler.tweaks || Compatibility.isModInstalled("The Between Lands"))
+        if (event.isCanceled() || !ConfigurationHandler.replaceLoadingScreen || Compatibility.isModInstalled("The Between Lands"))
         {
             return;
         }
-        
+
         Field optionsBackground = null;
         ResourceLocation newBackground;
-        
-        if (ConfigurationHandler.replaceLoadingScreen)
+
+        try
         {
-            try
-            {
-                optionsBackground = Gui.class.getField("OPTIONS_BACKGROUND");
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-            
-            if (event.getDimension() == -1)
-            {
-                newBackground = new ResourceLocation("textures/blocks/netherrack.png");
-            }
-            else if (event.getDimension() == 1)
-            {
-                newBackground = new ResourceLocation("textures/blocks/end_stone.png");
-            }
-            else
-            {
-                newBackground = new ResourceLocation("textures/blocks/dirt.png");
-            }
-            
-            setBackground(newBackground, optionsBackground);
+            optionsBackground = Gui.class.getField("OPTIONS_BACKGROUND");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        if (event.getDimension() == -1)
+        {
+            newBackground = new ResourceLocation("textures/blocks/netherrack.png");
+        }
+        else if (event.getDimension() == 1)
+        {
+            newBackground = new ResourceLocation("textures/blocks/end_stone.png");
         }
         else
         {
-            try
-            {
-                optionsBackground = Gui.class.getField("OPTIONS_BACKGROUND");
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-            
-            setBackground(new ResourceLocation("textures/blocks/dirt.png"), optionsBackground);
+            newBackground = new ResourceLocation("textures/blocks/dirt.png");
         }
+
+        setBackground(newBackground, optionsBackground);
     }
 
     private static void setBackground(ResourceLocation rl, Field optionsBackground)

@@ -2,9 +2,7 @@ package soupbubbles.minecraftboom.block.slab;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSlab;
-import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -116,7 +114,7 @@ public class BlockModSlab extends BlockSlabBase
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMetadata();
+        i = i | state.getValue(VARIANT).getMetadata();
 
         if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
         {
@@ -147,7 +145,7 @@ public class BlockModSlab extends BlockSlabBase
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockModSlab.EnumType)state.getValue(VARIANT)).getMapColor();
+        return state.getValue(VARIANT).getMapColor();
     }
 
     @Override

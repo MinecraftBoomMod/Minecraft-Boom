@@ -9,7 +9,6 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.common.IFuelHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.util.Utils;
 
 public class FuelHandler implements IFuelHandler
 {
@@ -31,7 +30,7 @@ public class FuelHandler implements IFuelHandler
     
     static
     {
-        if (Utils.getConfigValue(ConfigurationHandler.blazeFuel, ConfigurationHandler.tweaks))
+        if (ConfigurationHandler.blazeFuel)
         {
             fuelBurnTime.add(new FuelStack(new ItemStack(Items.BLAZE_POWDER), ConfigurationHandler.blazeBurnTime));
         }

@@ -36,7 +36,7 @@ public class BlockStainedSoulGlassPane extends BlockPaneBase implements IBlockMe
     @Override
     public int damageDropped(IBlockState state)
     {
-        return ((EnumDyeColor) state.getValue(COLOR)).getMetadata();
+        return state.getValue(COLOR).getMetadata();
     }
 
     @Override
@@ -57,7 +57,7 @@ public class BlockStainedSoulGlassPane extends BlockPaneBase implements IBlockMe
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        return ((EnumDyeColor) state.getValue(COLOR)).getMetadata();
+        return state.getValue(COLOR).getMetadata();
     }
 
     @Override

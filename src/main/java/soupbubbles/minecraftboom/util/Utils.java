@@ -1,6 +1,5 @@
 package soupbubbles.minecraftboom.util;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,10 +19,5 @@ public class Utils
         {
             world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
-    }
-
-    public static boolean getConfigValue(boolean config, boolean parent)
-    {
-        return config && parent;
     }
 }

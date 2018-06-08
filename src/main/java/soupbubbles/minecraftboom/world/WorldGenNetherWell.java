@@ -30,6 +30,7 @@ public class WorldGenNetherWell extends WorldGenerator
         isSpecial = special;
     }
 
+    @Override
     public boolean generate(World world, Random rand, BlockPos pos)
     {
         while (world.isAirBlock(pos) && pos.getY() > 2)

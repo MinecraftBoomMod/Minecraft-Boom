@@ -1,19 +1,12 @@
 package soupbubbles.minecraftboom.util;
 
-import java.util.Random;
-
 import org.apache.logging.log4j.Level;
 
-//import knightminer.inspirations.building.InspirationsBuilding;
-import net.minecraft.block.material.Material;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.Loader;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Reference;
-import soupbubbles.minecraftboom.world.WorldGenRoses;
 
 public class Compatibility
 {
@@ -22,7 +15,6 @@ public class Compatibility
         load("Inspirations");
         load("Quark");
         load("Nether Ex");
-        load("Chop Down Updated");
     }
 
     private static void load(String modname)
@@ -52,16 +44,6 @@ public class Compatibility
         return Loader.isModLoaded(getModID(modName));
     }
 
-    public static boolean getConfigValue(boolean config, boolean mod)
-    {
-        if (ConfigurationHandler.compat && Utils.getConfigValue(config, mod))
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     public static String getModID(String modname)
     {
         switch (getActualName(modname))
@@ -77,10 +59,6 @@ public class Compatibility
             case "Nether Ex":
             {
                 return Reference.NETHER_EX_MOD_ID;
-            }
-            case "Chop Down Updated":
-            {
-                return Reference.CHOP_DOWN_UPDATED_MOD_ID;
             }
             case "The Between Lands":
             {

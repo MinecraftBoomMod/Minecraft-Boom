@@ -415,3 +415,4 @@ config.minecraftboom.gui.restart.name=Restart game after changes has been made
 config.minecraftboom.gui.true.name=True
 config.minecraftboom.gui.false.name=False
 config.minecraftboom.gui.settings.name=Settings
+config.minecraftboom.gui.resetAll.name=Reset All

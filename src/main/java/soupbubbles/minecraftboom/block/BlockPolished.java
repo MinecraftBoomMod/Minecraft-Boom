@@ -44,7 +44,7 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockPolished.EnumType)state.getValue(VARIANT)).getMapColor();
+        return state.getValue(VARIANT).getMapColor();
     }
 
     @Override

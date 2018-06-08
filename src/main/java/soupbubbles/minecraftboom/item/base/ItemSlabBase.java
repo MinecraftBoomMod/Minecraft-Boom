@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +17,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
-import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class ItemSlabBase extends ItemBlockMeta
 {
@@ -32,6 +30,7 @@ public class ItemSlabBase extends ItemBlockMeta
         doubleSlab = doubleBlock;
     }
 
+    @Override
     public String getVariantName()
     {
     	return (((BlockSlab)block).isDouble() ? "" : "half=bottom,") + super.getVariantName();
@@ -51,7 +50,7 @@ public class ItemSlabBase extends ItemBlockMeta
             {
                 IProperty<?> iproperty = singleSlab.getVariantProperty();
                 Comparable<?> comparable1 = iblockstate.getValue(iproperty);
-                BlockSlab.EnumBlockHalf blockslab$enumblockhalf = (BlockSlab.EnumBlockHalf) iblockstate.getValue(BlockSlab.HALF);
+                BlockSlab.EnumBlockHalf blockslab$enumblockhalf = iblockstate.getValue(BlockSlab.HALF);
 
                 if ((facing == EnumFacing.UP && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.BOTTOM || facing == EnumFacing.DOWN && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.TOP) && comparable1 == comparable)
                 {

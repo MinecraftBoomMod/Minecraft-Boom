@@ -8,6 +8,6 @@ public class GuiButtonCategory extends GuiButton
 {
     public GuiButtonCategory(int buttonId, int x, int y, String text)
     {
-        super(buttonId, x, y, 128, 20, text + "...");
+        super(buttonId, x, y, 150, 20, text + "...");
     }
 }

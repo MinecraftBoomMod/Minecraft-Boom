@@ -43,7 +43,7 @@ public class BlockGravelStone extends BlockBase implements IBlockMeta
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockGravelStone.EnumType) state.getValue(VARIANT)).getMapColor();
+        return state.getValue(VARIANT).getMapColor();
     }
 
     @Override

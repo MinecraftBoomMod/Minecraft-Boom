@@ -19,24 +19,20 @@ import net.minecraft.world.gen.feature.WorldGenSand;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.util.Utils;
 
 public class WorldGenerator implements IWorldGenerator
 {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
-        if (ConfigurationHandler.worldgen)
+        switch (world.provider.getDimension())
         {
-            switch (world.provider.getDimension())
-            {
-                case -1:
-                    generateNether(world, random, chunkX * 16, chunkZ * 16);
-                case 0:
-                    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-                case 1:
-                    generateEnd(world, random, chunkX * 16, chunkZ * 16);
-            }
+            case -1:
+                generateNether(world, random, chunkX * 16, chunkZ * 16);
+            case 0:
+                generateSurface(world, random, chunkX * 16, chunkZ * 16);
+            case 1:
+                generateEnd(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
@@ -100,7 +96,7 @@ public class WorldGenerator implements IWorldGenerator
             }
         }
 
-        if (ConfigurationHandler.generateFallenTrees && !Utils.getConfigValue(ConfigurationHandler.preventFallenTrees, ConfigurationHandler.chopDownUpdated))
+        if (ConfigurationHandler.generateFallenTrees)
         {
             generateFallenTrees(world, rand, x, z);
         }
@@ -141,7 +137,7 @@ public class WorldGenerator implements IWorldGenerator
 
             Biome biome = world.getBiome(position);
             IBlockState state = Blocks.LOG.getDefaultState();
-            int id = biome.getIdForBiome(biome);
+            int id = Biome.getIdForBiome(biome);
             int chance = 1;
             int length = 5;
             boolean flag = true;

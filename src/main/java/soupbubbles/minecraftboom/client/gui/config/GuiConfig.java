@@ -14,6 +14,8 @@ import soupbubbles.minecraftboom.util.Compatibility;
 
 public class GuiConfig extends GuiBase
 {
+    protected GuiButton resetAll;
+    
     public GuiConfig(GuiScreen myParent)
     {
         super(myParent);
@@ -28,13 +30,13 @@ public class GuiConfig extends GuiBase
         for (String category : ConfigurationHandler.CATEGORY_LIST)
         {
             buttonList.add(new GuiButtonCategory(i, (width / 2 - 155) + i % 2 * 160, (height / 6) + i / 2 * 24, category));
-            buttonList.add(new GuiButtonConfig(i + CATEGORY_SIZE + 1, (width / 2 - 25) + i % 2 * 160, (height / 6) + i / 2 * 24, ConfigurationHandler.configuration.get(ConfigurationHandler.configuration.CATEGORY_GENERAL, category, true)));
             i++;
         }
 
         buttonList.add(new GuiButton(24, (width / 2 - 155) + (CATEGORY_SIZE) % 2 * 160, (height / 6) + (CATEGORY_SIZE) / 2 * 24, 150, 20, "General Settings"));
-        buttonList.add(new GuiButton(25, (width / 2 - 155) + (CATEGORY_SIZE + 1) % 2 * 160, (height / 6) + (CATEGORY_SIZE + 1) / 2 * 24, 150, 20, "Reset all"));
+        buttonList.add(resetAll = new GuiButton(25, (width / 2 - 155) + (CATEGORY_SIZE + 1) % 2 * 160, (height / 6) + (CATEGORY_SIZE + 1) / 2 * 24, 150, 20, I18n.format(Assets.CONFIG_GUI_PREFIX + "resetAll.name")));
         buttonList.add(backButton = new GuiButton(200, width / 2 - 100, height / 6 + 158, 200, 20, I18n.format("gui.done")));
+        resetAll.enabled = false;
     }
 
     @Override
@@ -50,27 +52,8 @@ public class GuiConfig extends GuiBase
         {
             mc.displayGuiScreen(new GuiSettings(this, ConfigurationHandler.configuration.getCategory("general")));
         }
-        else if (button.id == 25)
+        else if (button == resetAll)
         {
-        }
-    }
-
-    @Override
-    public void drawTooltips(int mouseX, int mouseY)
-    {
-        for (int i = 0; i < buttonList.size(); i++)
-        {
-            if (buttonList.get(i) instanceof GuiButtonConfig)
-            {
-                GuiButtonConfig button = (GuiButtonConfig) buttonList.get(i);
-
-                if (mouseOverButton(mouseX, mouseY, button))
-                {
-                    String s = !button.prop.getBoolean() ? "enable" : "disable";
-
-                    drawHoveringText(I18n.format(Assets.CONFIG_GUI_PREFIX + s + ".name") + " " + I18n.format(button.prop.getName()), mouseX, mouseY);
-                }
-            }
         }
     }
 }

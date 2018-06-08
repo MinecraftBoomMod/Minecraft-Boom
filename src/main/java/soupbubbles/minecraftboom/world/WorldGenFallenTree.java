@@ -43,7 +43,7 @@ public class WorldGenFallenTree extends WorldGenerator
             
             if (world.isAirBlock(pos))
             {
-                world.setBlockState(pos, state.withProperty(BlockOldLog.LOG_AXIS, BlockLog.EnumAxis.Y));
+                world.setBlockState(pos, state.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y));
                 
                 for (int j = 0; j < rand.nextInt(8); j++)
                 {
@@ -109,11 +109,11 @@ public class WorldGenFallenTree extends WorldGenerator
                         
                         if (isReplaceable(world, blockpos))
                         {
-                            world.setBlockState(blockpos, state.withProperty(BlockOldLog.LOG_AXIS, axis));
+                            world.setBlockState(blockpos, state.withProperty(BlockLog.LOG_AXIS, axis));
                         }
                         else if (world.isAirBlock(blockpos.up()))
                         {
-                            world.setBlockState(blockpos, state.withProperty(BlockOldLog.LOG_AXIS, axis));
+                            world.setBlockState(blockpos, state.withProperty(BlockLog.LOG_AXIS, axis));
                         }
                         else
                         {

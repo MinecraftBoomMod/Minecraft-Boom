@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.handler;
 
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.BlockPistonExtension;
@@ -16,8 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.Event;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -34,7 +33,7 @@ public class PlayerEventHandler
         IBlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
         
-        if(event.isCanceled() || !ConfigurationHandler.tweaks)
+        if(event.isCanceled())
         {
             return;
         }
@@ -43,7 +42,7 @@ public class PlayerEventHandler
         {
             if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART && ConfigurationHandler.blazeBonemeal)
             {
-                int i = ((Integer) state.getValue(BlockNetherWart.AGE)).intValue();
+                int i = state.getValue(BlockNetherWart.AGE).intValue();
 
                 if (i < 3)
                 {
@@ -65,7 +64,7 @@ public class PlayerEventHandler
                 }
                 else if (state.getBlock() == Blocks.PISTON_HEAD)
                 {
-                    EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonExtension.FACING);
+                    EnumFacing facing = (EnumFacing) state.getProperties().get(BlockDirectional.FACING);
                     BlockPistonExtension.EnumPistonType type = (BlockPistonExtension.EnumPistonType) state.getProperties().get(BlockPistonExtension.TYPE);
                     pos = pos.add(facing.getOpposite().getDirectionVec());
 
@@ -82,14 +81,14 @@ public class PlayerEventHandler
     {
         if (state.getBlock() == Blocks.STICKY_PISTON)
         {
-            EnumFacing facing = (EnumFacing) state.getProperties().get(BlockPistonBase.FACING);
+            EnumFacing facing = (EnumFacing) state.getProperties().get(BlockDirectional.FACING);
             Boolean extended = (Boolean) state.getProperties().get(BlockPistonBase.EXTENDED);
 
-            world.setBlockState(pos, Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended));
+            world.setBlockState(pos, Blocks.PISTON.getBlockState().getBaseState().withProperty(BlockDirectional.FACING, facing).withProperty(BlockPistonBase.EXTENDED, extended));
 
             if (extended)
             {
-                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockPistonBase.FACING, (EnumFacing) state.getProperties().get(BlockPistonBase.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT));
+                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getBlockState().getBaseState().withProperty(BlockDirectional.FACING, (EnumFacing) state.getProperties().get(BlockDirectional.FACING)).withProperty(BlockPistonExtension.SHORT, (Boolean) false).withProperty(BlockPistonExtension.TYPE, BlockPistonExtension.EnumPistonType.DEFAULT));
             }
 
             if (!player.capabilities.isCreativeMode)
@@ -120,7 +119,7 @@ public class PlayerEventHandler
                 double d0 = world.rand.nextGaussian() * 0.02D;
                 double d1 = world.rand.nextGaussian() * 0.02D;
                 double d2 = world.rand.nextGaussian() * 0.02D;
-                world.spawnParticle(EnumParticleTypes.FLAME, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * iblockstate.getBoundingBox(world, pos).maxY, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2, new int[0]);
+                world.spawnParticle(EnumParticleTypes.FLAME, pos.getX() + world.rand.nextFloat(), pos.getY() + world.rand.nextFloat() * iblockstate.getBoundingBox(world, pos).maxY, pos.getZ() + world.rand.nextFloat(), d0, d1, d2, new int[0]);
             }
         }
         else
@@ -130,7 +129,7 @@ public class PlayerEventHandler
                 double d0 = world.rand.nextGaussian() * 0.02D;
                 double d1 = world.rand.nextGaussian() * 0.02D;
                 double d2 = world.rand.nextGaussian() * 0.02D;
-                world.spawnParticle(EnumParticleTypes.FLAME, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * 1.0f, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2, new int[0]);
+                world.spawnParticle(EnumParticleTypes.FLAME, pos.getX() + world.rand.nextFloat(), pos.getY() + (double) world.rand.nextFloat() * 1.0f, pos.getZ() + world.rand.nextFloat(), d0, d1, d2, new int[0]);
             }
         }
     }

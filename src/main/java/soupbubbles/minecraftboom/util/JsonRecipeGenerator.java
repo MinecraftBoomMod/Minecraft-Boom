@@ -16,16 +16,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import soupbubbles.minecraftboom.block.BlockGravelStone;
-import soupbubbles.minecraftboom.block.slab.BlockObsidianSlab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.init.ModBlocks;
 
 /**
  * @author williewillus

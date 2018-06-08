@@ -123,7 +123,7 @@ public class BlockTerracottaSlab2 extends BlockSlabBase
     public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((BlockTerracottaSlab2.EnumType)state.getValue(VARIANT)).getMetadata();
+        i = i | state.getValue(VARIANT).getMetadata();
 
         if (!isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
         {
@@ -153,7 +153,7 @@ public class BlockTerracottaSlab2 extends BlockSlabBase
     @Override
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return ((BlockTerracottaSlab2.EnumType)state.getValue(VARIANT)).getMapColor();
+        return state.getValue(VARIANT).getMapColor();
     }
     
     @Override

@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.BlockRedSandstone;
 import net.minecraft.block.BlockSandStone;
@@ -21,8 +22,6 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
 import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
@@ -67,7 +66,6 @@ import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemSlabBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.Compatibility;
 
 public class ModBlocks
 {
@@ -193,7 +191,6 @@ public class ModBlocks
     public static final BlockStairBase BLOCK_STAIRS_FINE_GRAVEL_STONE;
     public static final BlockStairBase BLOCK_STAIRS_GRAVEL_BRICKS;
 
-
     //Slabs
     public static final BlockVanillaStoneSlab BLOCK_HALF_SLAB_VANILLA_STONE;
     public static final BlockVanillaStoneSlab BLOCK_DOUBLE_SLAB_VANILLA_STONE;
@@ -257,14 +254,14 @@ public class ModBlocks
 
     static
     {
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeBookshelf, ConfigurationHandler.quark))
+        if (ConfigurationHandler.removeBookshelf && ConfigurationHandler.quark)
         {
-            BLOCK_BOOKSHELF = new BlockBookShelf();
-            registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
+            BLOCK_BOOKSHELF = null;
         }
         else
         {
-            BLOCK_BOOKSHELF = null;
+            BLOCK_BOOKSHELF = new BlockBookShelf();
+            registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
         }
 
         BLOCK_COBBLESTONE_BRICKS = registerBlock(new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
@@ -273,13 +270,13 @@ public class ModBlocks
         BLOCK_STAINED_TERRACOTTA_BRICKS = new BlockColoredBase(Material.ROCK, Names.BLOCK_STAINED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE);
         registerBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, new ItemBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, Names.BLOCK_STAINED_TERRACOTTA_BRICKS));
         
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeMagmaBricks, ConfigurationHandler.quark))
+        if (ConfigurationHandler.removeMagmaBricks && ConfigurationHandler.quark)
         {
-            BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks());
+            BLOCK_MAGMA_BRICKS = null;
         }
         else
         {
-            BLOCK_MAGMA_BRICKS = null;
+            BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks());
         }
         
         BLOCK_OBSIDIAN_BRICKS = registerBlock(new BlockBase(Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
@@ -290,24 +287,24 @@ public class ModBlocks
         BLOCK_GRAVEL_STONE = new BlockGravelStone();
         registerBlockMeta(BLOCK_GRAVEL_STONE);
 
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeCharcoalBlock, ConfigurationHandler.quark))
+        if (ConfigurationHandler.removeCharcoalBlock && ConfigurationHandler.quark)
         {
-            BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
+            BLOCK_CHARCOAL = null;
         }
         else
         {
-            BLOCK_CHARCOAL = null;
+            BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
         }
         
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
         
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeSugarCaneBlock, ConfigurationHandler.quark))
+        if (ConfigurationHandler.removeSugarCaneBlock && ConfigurationHandler.quark)
         {
-            BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(BlockValues.PLANT_BLOCK_HARDNESS).setResistance(BlockValues.PLANT_BLOCK_RESISTANCE));
+            BLOCK_SUGAR_CANE = null;
         }
         else
         {
-            BLOCK_SUGAR_CANE = null;
+            BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(BlockValues.PLANT_BLOCK_HARDNESS).setResistance(BlockValues.PLANT_BLOCK_RESISTANCE));
         }
         
         BLOCK_GUNPOWDER = registerBlock(new BlockGunpowder());
@@ -347,71 +344,71 @@ public class ModBlocks
         BLOCK_STAIRS_DARK_PRISMARINE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_END_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.END_BRICKS.getDefaultState(), Names.END_BRICKS).setHardness(BlockValues.END_STONE_HARDNESS).setResistance(BlockValues.END_STONE_RESISTANCE));
         BLOCK_STAIRS_RED_NETHER_BRICK = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK).setHardness(BlockValues.NETHER_BRICKS_HARDNESS).setResistance(BlockValues.NETHER_BRICKS_RESISTANCE).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_WHITE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_ORANGE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_MAGENTA_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_BLUE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_YELLOW_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIME_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_PINK_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_GRAY_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_GRAY_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_CYAN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_PURPLE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BLUE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BROWN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_GREEN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_RED_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BLACK_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_WHITE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_ORANGE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_MAGENTA_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_BLUE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_YELLOW_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_LIME_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_PINK_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_GRAY_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_GRAY_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_CYAN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_PURPLE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_BLUE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_BROWN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_GREEN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_RED_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
-        BLOCK_STAIRS_BLACK_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_WHITE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_ORANGE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_MAGENTA_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_BLUE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_YELLOW_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIME_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_PINK_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_GRAY_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_GRAY_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_CYAN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_PURPLE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BLUE_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BROWN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_GREEN_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_RED_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BLACK_TERRACOTTA = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.TERRACOTTA).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_WHITE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_ORANGE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_MAGENTA_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_BLUE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_YELLOW_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_LIME_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_PINK_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_GRAY_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_GRAY_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_CYAN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_PURPLE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_BLUE_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_BROWN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_GREEN_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_RED_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
+        BLOCK_STAIRS_BLACK_CONCRETE = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.CONCRETE).setHardness(BlockValues.CONCRETE_HARDNESS).setResistance(BlockValues.CONCRETE_RESISTANCE));
         BLOCK_STAIRS_COBBLESTONE_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_STAIRS_MOSSY_COBBLESTONE_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MOSSY_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_STAIRS_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_TERRACOTTA_BRICKS.getDefaultState(), Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         
-        if (BLOCK_MAGMA_BRICKS != null)
+        if (ConfigurationHandler.removeMagmaBricks && ConfigurationHandler.quark)
         {
-            BLOCK_STAIRS_MAGMA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MAGMA_BRICKS.getDefaultState(), Names.BLOCK_MAGMA_BRICKS).setHardness(BlockValues.MAGMA_HARDNESS).setResistance(BlockValues.MAGMA_RESISTANCE));
+            BLOCK_STAIRS_MAGMA_BRICKS = null;
         }
         else
         {
-            BLOCK_STAIRS_MAGMA_BRICKS = null;
+            BLOCK_STAIRS_MAGMA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MAGMA_BRICKS.getDefaultState(), Names.BLOCK_MAGMA_BRICKS).setHardness(BlockValues.MAGMA_HARDNESS).setResistance(BlockValues.MAGMA_RESISTANCE));
         }
         
         BLOCK_STAIRS_SMOOTH_PRISMARINE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_END_STONE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE).setHardness(BlockValues.END_STONE_HARDNESS).setResistance(BlockValues.END_STONE_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_NETHERRACK = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_NETHERRACK), Names.BLOCK_SMOOTH_NETHERRACK).setHardness(BlockValues.NETHERRACK_HARDNESS).setResistance(BlockValues.NETHERRACK_RESISTANCE));
-        BLOCK_STAIRS_WHITE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_ORANGE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_MAGENTA_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_BLUE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_YELLOW_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIME_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_PINK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_GRAY_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_LIGHT_GRAY_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_CYAN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_PURPLE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BLUE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BROWN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_GREEN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_RED_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        BLOCK_STAIRS_BLACK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_WHITE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_ORANGE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_MAGENTA_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_BLUE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_YELLOW_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIME_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_PINK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_GRAY_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_LIGHT_GRAY_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_CYAN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_PURPLE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BLUE_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BROWN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_GREEN_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_RED_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
+        BLOCK_STAIRS_BLACK_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_STAINED_TERRACOTTA_BRICKS.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         BLOCK_STAIRS_OBSIDIAN = (BlockStairBase) registerBlock(new BlockStairBase(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
         BLOCK_STAIRS_OBSIDIAN_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_OBSIDIAN_BRICKS.getDefaultState(), Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
         BLOCK_STAIRS_GRAVEL_STONE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_GRAVEL_STONE.getDefaultState().withProperty(BlockGravelStone.VARIANT, BlockGravelStone.EnumType.GRAVEL_STONE), Names.BLOCK_GRAVEL_STONE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
@@ -471,21 +468,21 @@ public class ModBlocks
         BLOCK_ACACIA_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_ACACIA_LADDER));
         BLOCK_DARK_OAK_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_DARK_OAK_LADDER));
 
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeTrapdoor, ConfigurationHandler.quark))
-        {
-            BLOCK_SPRUCE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_SPRUCE_TRAP_DOOR));
-            BLOCK_BIRCH_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_BIRCH_TRAP_DOOR));
-            BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
-            BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
-            BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
-        }
-        else
+        if (ConfigurationHandler.removeTrapdoor && ConfigurationHandler.quark)
         {
             BLOCK_SPRUCE_TRAP_DOOR = null;
             BLOCK_BIRCH_TRAP_DOOR = null;
             BLOCK_JUNGLE_TRAP_DOOR = null;
             BLOCK_ACACIA_TRAP_DOOR = null;
             BLOCK_DARK_OAK_TRAP_DOOR = null;
+        }
+        else
+        {
+            BLOCK_SPRUCE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_SPRUCE_TRAP_DOOR));
+            BLOCK_BIRCH_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_BIRCH_TRAP_DOOR));
+            BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
+            BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
+            BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
         }
         
         BLOCK_SPRUCE_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_SPRUCE_BUTTON));
@@ -503,13 +500,13 @@ public class ModBlocks
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true).setHardness(5.0F).setResistance(10.0F));
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
         
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeNetherBrickFenceGate, ConfigurationHandler.quark))
+        if (ConfigurationHandler.removeNetherBrickFenceGate && ConfigurationHandler.quark)
         {
-            BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
+            BLOCK_NETHER_BRICK_FENCE_GATE = null;
         }
         else
         {
-            BLOCK_NETHER_BRICK_FENCE_GATE = null;
+            BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
         }
         
         BLOCK_RED_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_RED_NETHER_FENCE_GATE));
@@ -517,13 +514,13 @@ public class ModBlocks
         BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE);
         
-        if (Compatibility.getConfigValue(ConfigurationHandler.removeRose, ConfigurationHandler.inspirations))
+        if (ConfigurationHandler.removeRose && ConfigurationHandler.inspirations)
         {
-            BLOCK_ROSE = registerBlock(new BlockRose());
+            BLOCK_ROSE = null;
         }
         else
         {
-            BLOCK_ROSE = null;
+            BLOCK_ROSE = registerBlock(new BlockRose());
         }
     }
 

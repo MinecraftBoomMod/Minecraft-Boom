@@ -14,7 +14,6 @@ public class Reference
     public static final String INSPIRATIONS_MOD_ID = "inspirations";
     public static final String QUARK_MOD_ID = "quark";
     public static final String NETHER_EX_MOD_ID = "nex";
-    public static final String CHOP_DOWN_UPDATED_MOD_ID = "chopdownupdated";
     public static final String THE_BETWEEN_LANDS_MOD_ID = "thebetweenlands";
 
 }

@@ -4,11 +4,9 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Names;
 
 @Mod.EventBusSubscriber
 public class RegistryHandler

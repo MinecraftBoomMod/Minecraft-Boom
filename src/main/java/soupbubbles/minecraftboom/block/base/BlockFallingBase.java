@@ -4,7 +4,6 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockFallingBase extends BlockFalling
 {

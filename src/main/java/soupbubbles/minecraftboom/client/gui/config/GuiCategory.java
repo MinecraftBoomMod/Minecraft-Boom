@@ -197,7 +197,7 @@ public class GuiCategory extends GuiBase
                 {
                     if (!comment.equals(""))
                     {
-                        commentButton = new GuiButtonComment(0, 0, 0);
+                        //commentButton = new GuiButtonComment(0, 0, 0);
                     }
                 }
 

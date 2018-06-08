@@ -1,12 +1,9 @@
 package soupbubbles.minecraftboom.item.base;
 
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.util.IBlockMeta;
 
 public class ItemBlockMeta extends ItemBlock
