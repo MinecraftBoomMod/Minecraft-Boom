@@ -1,5 +1,6 @@
 package soupbubbles.minecraftboom.handler;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.IDisableable;
 
 @Mod.EventBusSubscriber
 public class LootTableEventHandler
@@ -22,27 +24,40 @@ public class LootTableEventHandler
     public void onLootTableLoad(LootTableLoadEvent event)
     {
         String name = event.getName().toString();
-        List<String> addPool = Arrays.asList("wither_skeleton", "silverfish", "polar_bear", "elder_guardian");
-        List<String> telescope = Arrays.asList("simple_dungeon", "jungle_temple", "abandoned_mineshaft", "desert_pyramid", "nether_bridge");
-
+        List<String> pools = new ArrayList<String>();
+        
+        if (ConfigurationHandler.silverfishDrop)
+        {
+            pools.add("silverfish");
+        }
+        
+        if (ConfigurationHandler.polarBearDrop && ((IDisableable) ModItems.ITEM_POLAR_BEAR_FUR).isEnabled())
+        {
+            pools.add("polar_bear");
+        }
+        
+        if (ConfigurationHandler.witherSkeletonDrop && ((IDisableable) ModItems.ITEM_WITHER_BONE).isEnabled())
+        {
+            pools.add("wither_skeleton");
+        }
+        
+        if (ConfigurationHandler.elderGuardianDrop && ((IDisableable) ModItems.ITEM_ELDER_GUARDIAN_SPIKE).isEnabled())
+        {
+            pools.add("elder_guardian");
+        }
+        
+        if (ConfigurationHandler.telescopeLoot && ((IDisableable) ModItems.ITEM_TELESCOPE).isEnabled())
+        {
+            pools.addAll(Arrays.asList("simple_dungeon", "jungle_temple", "abandoned_mineshaft", "desert_pyramid", "nether_bridge"));
+        }
+        
         try
         {
-            for (String actual : addPool)
+            for (String poolName : pools)
             {
-                if (name.matches("minecraft:.*/" + actual))
+                if (name.matches("minecraft:.*/" + poolName))
                 {
-                    event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + actual));
-                }
-            }
-
-            if (ModItems.ITEM_TELESCOPE != null && ConfigurationHandler.telescopeLoot)
-            {
-                for (String actual : telescope)
-                {
-                    if (name.matches("minecraft:.*/" + actual))
-                    {
-                        event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + actual));
-                    }
+                    event.getTable().addPool(getAdditivePool(Assets.TEXTURE_PREFIX + poolName));
                 }
             }
         }

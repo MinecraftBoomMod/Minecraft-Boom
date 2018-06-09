@@ -51,30 +51,23 @@ public class ConfigurationHandler
     public static boolean spruceDropsPinecones;
     public static double pineconeDropRate;
     public static boolean replaceLoadingScreen;
+    public static boolean silverfishDrop;
+    public static boolean polarBearDrop;
+    public static boolean witherSkeletonDrop;
+    public static boolean elderGuardianDrop;
 
     //Compat
     public static boolean inspirations;
-    public static boolean removeRose;
     public static boolean tryGenerateRose;
-    public static boolean removeWitherBone;
-
-    public static boolean quark;
-    public static boolean removeTrapdoor;
-    public static boolean removeNetherBrickFenceGate;
-    public static boolean removeMagmaBricks;
-    public static boolean removeCharcoalBlock;
-    public static boolean removeSugarCaneBlock;
-    public static boolean removeBookshelf;
-
-    public static boolean netherex;
-
 
     //Blocks
     public static List<Boolean> allowedBlocks = new ArrayList<Boolean>();
 
     //Items
     public static List<Boolean> allowedItems = new ArrayList<Boolean>();
+    public static boolean pineconeFuel;
     public static int pineconeBurnTime;
+    public static boolean witherBoneFuel;
     public static int witherBoneBurnTime;
     public static boolean telescopeLoot;
 
@@ -109,25 +102,19 @@ public class ConfigurationHandler
         spruceDropsPinecones = loadPropBool("Spruce Leaves drop Pinecones", CATEGORY_TWEAKS, "Enabling allows a small chance of Spruce Leaves to drop Pinecones", true);
         pineconeDropRate = loadPropDouble("Pinecone Drop Rate", CATEGORY_TWEAKS, "", 0.02, "Spruce Leaves drop Pinecones");
         replaceLoadingScreen = loadPropBool("Replace Default Loading Screen", CATEGORY_TWEAKS, "Enabling allows the background in the loading screens to be more appropriate for dimension travel.", true);
+        silverfishDrop = loadPropBool("Silverfish drop Iron Nuggets", CATEGORY_TWEAKS, "", true);
+        polarBearDrop = loadPropBool("Polar Bears drop Polar Bear Fur", CATEGORY_TWEAKS, "", true);
+        witherSkeletonDrop = loadPropBool("Wither Skeletons drop Wither Bones", CATEGORY_TWEAKS, "", true);
+        elderGuardianDrop = loadPropBool("Elder Guardians drop Elder Guardian Spikes", CATEGORY_TWEAKS, "", true);
 
         //Compat
         inspirations = loadPropBool("Inspirations Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Inspirations.", true);
-        removeRose = loadPropBool("Remove Minecraft Boom Rose", CATEGORY_COMPAT, "Enabling will remove the Rose added by Minecraft Boom since Inspirations adds Roses.", false, "Inspirations Compatibility");
         tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", false, "Inspirations Compatibility");
-        removeWitherBone = loadPropBool("Remove Minecraft Boom Wither Bone", CATEGORY_COMPAT, "Enabling will remove the Wither Bone added by Minecraft Boom since Inspirations adds Withered Bones.", false, "Inspirations Compatibility");
-
-        quark = loadPropBool("Quark Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Quark.", true);
-        removeTrapdoor = loadPropBool("Remove Minecraft Boom Trapdoors", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        removeNetherBrickFenceGate = loadPropBool("Remove Minecraft Boom Nether Brick Fence Gate", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        removeMagmaBricks = loadPropBool("Remove Minecraft Boom Magma Bricks", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        removeCharcoalBlock = loadPropBool("Remove Minecraft Boom Charcoal Block", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        removeSugarCaneBlock = loadPropBool("Remove Minecraft Boom Sugar Cane Block", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        removeBookshelf = loadPropBool("Remove Minecraft Boom Bookshelves", CATEGORY_COMPAT, "", false, "Quark Compatibility");
-        
-        netherex = loadPropBool("Nether Ex Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Nether Ex.", true);
 
         //Items
+        pineconeFuel = loadPropBool("Use Pinecone as fuel in a Furnace", CATEGORY_ITEMS, "", true, "pinecone");
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");
+        witherBoneFuel = loadPropBool("Use Wither Bones as fuel in a Furnace", CATEGORY_ITEMS, "", true, "wither_bone");
         witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "wither_bone");
         telescopeLoot = loadPropBool("Spawn Telescopes in Dungeon Loot", CATEGORY_ITEMS, "", true, "telescope");
 

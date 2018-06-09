@@ -254,31 +254,14 @@ public class ModBlocks
 
     static
     {
-        if (ConfigurationHandler.removeBookshelf && ConfigurationHandler.quark)
-        {
-            BLOCK_BOOKSHELF = null;
-        }
-        else
-        {
-            BLOCK_BOOKSHELF = new BlockBookShelf();
-            registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
-        }
-
+        BLOCK_BOOKSHELF = new BlockBookShelf();
+        registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
         BLOCK_COBBLESTONE_BRICKS = registerBlock(new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_MOSSY_COBBLESTONE_BRICKS = registerBlock(new BlockBase(Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_TERRACOTTA_BRICKS = registerBlock(new BlockBase(Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
         BLOCK_STAINED_TERRACOTTA_BRICKS = new BlockColoredBase(Material.ROCK, Names.BLOCK_STAINED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE);
         registerBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, new ItemBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, Names.BLOCK_STAINED_TERRACOTTA_BRICKS));
-        
-        if (ConfigurationHandler.removeMagmaBricks && ConfigurationHandler.quark)
-        {
-            BLOCK_MAGMA_BRICKS = null;
-        }
-        else
-        {
-            BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks());
-        }
-        
+        BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks());
         BLOCK_OBSIDIAN_BRICKS = registerBlock(new BlockBase(Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE));
         BLOCK_POLISHED = new BlockPolished();
         registerBlockMeta(BLOCK_POLISHED);
@@ -287,26 +270,9 @@ public class ModBlocks
         BLOCK_GRAVEL_STONE = new BlockGravelStone();
         registerBlockMeta(BLOCK_GRAVEL_STONE);
 
-        if (ConfigurationHandler.removeCharcoalBlock && ConfigurationHandler.quark)
-        {
-            BLOCK_CHARCOAL = null;
-        }
-        else
-        {
-            BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
-        }
-        
+        BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
-        
-        if (ConfigurationHandler.removeSugarCaneBlock && ConfigurationHandler.quark)
-        {
-            BLOCK_SUGAR_CANE = null;
-        }
-        else
-        {
-            BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(BlockValues.PLANT_BLOCK_HARDNESS).setResistance(BlockValues.PLANT_BLOCK_RESISTANCE));
-        }
-        
+        BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase(Material.LEAVES, Names.BLOCK_SUGAR_CANE, SoundType.PLANT).setHardness(BlockValues.PLANT_BLOCK_HARDNESS).setResistance(BlockValues.PLANT_BLOCK_RESISTANCE));
         BLOCK_GUNPOWDER = registerBlock(new BlockGunpowder());
         BLOCK_BLAZE_POWDER = registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, SoundType.SNOW).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream());
@@ -379,16 +345,7 @@ public class ModBlocks
         BLOCK_STAIRS_COBBLESTONE_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_STAIRS_MOSSY_COBBLESTONE_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MOSSY_COBBLESTONE_BRICKS.getDefaultState(), Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE));
         BLOCK_STAIRS_TERRACOTTA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_TERRACOTTA_BRICKS.getDefaultState(), Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE));
-        
-        if (ConfigurationHandler.removeMagmaBricks && ConfigurationHandler.quark)
-        {
-            BLOCK_STAIRS_MAGMA_BRICKS = null;
-        }
-        else
-        {
-            BLOCK_STAIRS_MAGMA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MAGMA_BRICKS.getDefaultState(), Names.BLOCK_MAGMA_BRICKS).setHardness(BlockValues.MAGMA_HARDNESS).setResistance(BlockValues.MAGMA_RESISTANCE));
-        }
-        
+        BLOCK_STAIRS_MAGMA_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_MAGMA_BRICKS.getDefaultState(), Names.BLOCK_MAGMA_BRICKS).setHardness(BlockValues.MAGMA_HARDNESS).setResistance(BlockValues.MAGMA_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_PRISMARINE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_PRISMARINE), Names.BLOCK_SMOOTH_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_DARK_PRISMARINE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_DARK_PRISMARINE), Names.BLOCK_SMOOTH_DARK_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_SMOOTH_END_STONE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_POLISHED.getDefaultState().withProperty(BlockPolished.VARIANT, BlockPolished.EnumType.SMOOTH_END_STONE), Names.BLOCK_SMOOTH_END_STONE).setHardness(BlockValues.END_STONE_HARDNESS).setResistance(BlockValues.END_STONE_RESISTANCE));
@@ -415,7 +372,6 @@ public class ModBlocks
         BLOCK_STAIRS_FINE_GRAVEL_STONE = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_GRAVEL_STONE.getDefaultState().withProperty(BlockGravelStone.VARIANT, BlockGravelStone.EnumType.FINE_GRAVEL_STONE), Names.BLOCK_FINE_GRAVEL_STONE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_STAIRS_GRAVEL_BRICKS = (BlockStairBase) registerBlock(new BlockStairBase(BLOCK_GRAVEL_STONE.getDefaultState().withProperty(BlockGravelStone.VARIANT, BlockGravelStone.EnumType.GRAVEL_BRICKS), Names.BLOCK_GRAVEL_BRICKS).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
 
-        
         BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_HALF_SLAB_VANILLA_STONE, false);
         BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_DOUBLE_SLAB_VANILLA_STONE, true);
         BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlab2(Names.BLOCK_HALF_SLAB_VANILLA_STONE_2, false);
@@ -461,30 +417,19 @@ public class ModBlocks
         registerBlockMeta(BLOCK_DOUBLE_SLAB_OBSIDIAN, new ItemSlabBase(BLOCK_DOUBLE_SLAB_OBSIDIAN, BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_DOUBLE_SLAB_OBSIDIAN));
         registerBlockMeta(BLOCK_HALF_SLAB_GRAVEL_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_DOUBLE_SLAB_GRAVEL_STONE));
         registerBlockMeta(BLOCK_DOUBLE_SLAB_GRAVEL_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_GRAVEL_STONE, BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_DOUBLE_SLAB_GRAVEL_STONE));
-        
+
         BLOCK_SPRUCE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_SPRUCE_LADDER));
         BLOCK_BIRCH_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_BIRCH_LADDER));
         BLOCK_JUNGLE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_JUNGLE_LADDER));
         BLOCK_ACACIA_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_ACACIA_LADDER));
         BLOCK_DARK_OAK_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_DARK_OAK_LADDER));
 
-        if (ConfigurationHandler.removeTrapdoor && ConfigurationHandler.quark)
-        {
-            BLOCK_SPRUCE_TRAP_DOOR = null;
-            BLOCK_BIRCH_TRAP_DOOR = null;
-            BLOCK_JUNGLE_TRAP_DOOR = null;
-            BLOCK_ACACIA_TRAP_DOOR = null;
-            BLOCK_DARK_OAK_TRAP_DOOR = null;
-        }
-        else
-        {
-            BLOCK_SPRUCE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_SPRUCE_TRAP_DOOR));
-            BLOCK_BIRCH_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_BIRCH_TRAP_DOOR));
-            BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
-            BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
-            BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
-        }
-        
+        BLOCK_SPRUCE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_SPRUCE_TRAP_DOOR));
+        BLOCK_BIRCH_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_BIRCH_TRAP_DOOR));
+        BLOCK_JUNGLE_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_JUNGLE_TRAP_DOOR));
+        BLOCK_ACACIA_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_ACACIA_TRAP_DOOR));
+        BLOCK_DARK_OAK_TRAP_DOOR = registerBlock(new BlockWoodenTrapDoor(Names.BLOCK_DARK_OAK_TRAP_DOOR));
+
         BLOCK_SPRUCE_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_SPRUCE_BUTTON));
         BLOCK_BIRCH_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_BIRCH_BUTTON));
         BLOCK_JUNGLE_BUTTON = registerBlock(new BlockWoodenButton(Names.BLOCK_JUNGLE_BUTTON));
@@ -499,29 +444,12 @@ public class ModBlocks
 
         BLOCK_GOLDEN_BARS = registerBlock(new BlockPaneBase(Material.IRON, Names.BLOCK_GOLDEN_BARS, SoundType.METAL, true).setHardness(5.0F).setResistance(10.0F));
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
-        
-        if (ConfigurationHandler.removeNetherBrickFenceGate && ConfigurationHandler.quark)
-        {
-            BLOCK_NETHER_BRICK_FENCE_GATE = null;
-        }
-        else
-        {
-            BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
-        }
-        
+        BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
         BLOCK_RED_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_RED_NETHER_FENCE_GATE));
         BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
         BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE);
-        
-        if (ConfigurationHandler.removeRose && ConfigurationHandler.inspirations)
-        {
-            BLOCK_ROSE = null;
-        }
-        else
-        {
-            BLOCK_ROSE = registerBlock(new BlockRose());
-        }
+        BLOCK_ROSE = registerBlock(new BlockRose());
     }
 
     public static void registerBlocks()
@@ -563,11 +491,11 @@ public class ModBlocks
         addCreativeList(block);
         return block;
     }
-    
+
     private static void addCreativeList(Block block)
     {
         Item item = Item.getItemFromBlock(block);
-        
+
         if (block instanceof BlockStairBase || block instanceof BlockSlabBase)
         {
             CreativeTab.stairAndSlabList.add(item);

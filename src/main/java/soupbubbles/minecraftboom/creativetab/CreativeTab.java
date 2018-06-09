@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.IDisableable;
 
 public class CreativeTab
 {
@@ -36,11 +37,25 @@ public class CreativeTab
 
         @SideOnly(Side.CLIENT)
         @Override
-        public void displayAllRelevantItems(NonNullList<ItemStack> stack)
+        public void displayAllRelevantItems(NonNullList<ItemStack> list)
         {
-            super.displayAllRelevantItems(stack);
+            super.displayAllRelevantItems(list);
+            
+            for (ItemStack stack : list)
+            {
+                Item item = stack.getItem();
+                
+                if (item instanceof IDisableable)
+                {
+                    if (!((IDisableable) item).isEnabled())
+                    {
+                        list.remove(stack);
+                    }
+                }
+            }
+            
             tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);
-            stack.sort(tabSorter);
+            list.sort(tabSorter);
         }
     };
 

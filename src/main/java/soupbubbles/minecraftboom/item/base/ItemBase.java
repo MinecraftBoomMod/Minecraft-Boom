@@ -4,16 +4,18 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
+import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.util.IDisableable;
 
-public class ItemBase extends Item
+public class ItemBase extends Item implements IDisableable
 {
     protected final String BASE_NAME;
     public final String[] VARIANTS;
-    private boolean toolTip;
 
     public ItemBase(String name, String... variants)
     {
@@ -21,7 +23,6 @@ public class ItemBase extends Item
         setRegistryName(name);
         setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        setToolTip(false);
         setHasSubtypes(variants.length > 0);
         
         BASE_NAME = name;
@@ -77,15 +78,16 @@ public class ItemBase extends Item
         return VARIANTS;
     }
 
-    public boolean hasToolTip()
+    @Override
+    public void registerConfig()
     {
-        return toolTip;
+        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(BASE_NAME, ConfigurationHandler.CATEGORY_ITEMS, "", true));
+        ConfigurationHandler.saveConfiguration();
     }
-    
-    public ItemBase setToolTip(boolean shouldHaveToolTip)
-    {
-        toolTip = shouldHaveToolTip;
 
-        return this;
+    @Override
+    public boolean isEnabled()
+    {
+        return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_ITEMS + "." + BASE_NAME, BASE_NAME, true).getBoolean();
     }
 }

@@ -33,8 +33,8 @@ public class GuiCategory extends GuiBase
         if (category.equals("Items") || category.equals("Blocks"))
         {
             isSpecial = true;
-            bottomText = category.equals("Items") ? "Disabling " + category.toLowerCase() + " have no affect yet. This page is only used for " + category.toLowerCase() + " settings." : "Under Construction";
-            red = true;
+            bottomText = category.equals("Items") ? "Disabling items will make them unobtainble through crafting, drops or the creative menu" : "Under Construction";
+            red = category.equals("Blocks");
         }
     }
 

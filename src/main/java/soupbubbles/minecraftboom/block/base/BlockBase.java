@@ -24,7 +24,7 @@ public class BlockBase extends Block
         setSoundType(sound);
 
         BASE_NAME = name;
-}
+    }
 
     @Override
     public String getUnlocalizedName()

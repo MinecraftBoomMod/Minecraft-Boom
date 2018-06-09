@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.util.IDisableable;
 
 @Mod.EventBusSubscriber
 public class BlockEventHandler
@@ -27,7 +28,7 @@ public class BlockEventHandler
         {
             event.setDropChance(1.0F);
 
-            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < ConfigurationHandler.pineconeDropRate && ConfigurationHandler.spruceDropsPinecones)
+            if (event.getState().getValue(BlockOldLeaf.VARIANT).getMetadata() == BlockPlanks.EnumType.SPRUCE.getMetadata() && event.getWorld().rand.nextFloat() < ConfigurationHandler.pineconeDropRate && ConfigurationHandler.spruceDropsPinecones && ((IDisableable) ModItems.ITEM_PINECONE).isEnabled())
             {
                 event.getDrops().add(new ItemStack(ModItems.ITEM_PINECONE));
             }
@@ -37,7 +38,7 @@ public class BlockEventHandler
                 event.getDrops().add(new ItemStack(Items.STICK));
             }
         }
-        else if (event.getState().getBlock() instanceof BlockPumpkin && ConfigurationHandler.generatePumpkins)
+        else if (event.getState().getBlock() instanceof BlockPumpkin && ConfigurationHandler.generatePumpkins && ((IDisableable) ModItems.ITEM_PUMPKIN_SLICE).isEnabled())
         {
             event.getDrops().clear();
             event.getDrops().add(new ItemStack(ModItems.ITEM_PUMPKIN_SLICE, ModBlocks.BLOCK_FACELESS_PUMPKIN.quantityDropped(event.getWorld().rand)));

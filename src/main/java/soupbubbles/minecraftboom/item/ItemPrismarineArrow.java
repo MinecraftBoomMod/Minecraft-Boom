@@ -6,12 +6,15 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemArrow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.entity.EntityPrismarineArrow;
+import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.IDisableable;
 
-public class ItemPrismarineArrow extends ItemArrow
+public class ItemPrismarineArrow extends ItemArrow implements IDisableable
 {
     public ItemPrismarineArrow()
     {
@@ -37,5 +40,18 @@ public class ItemPrismarineArrow extends ItemArrow
     {
         int enchant = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.INFINITY, bow);
         return enchant <= 0 ? false : this.getClass() == ItemPrismarineArrow.class;
+    }
+    
+    @Override
+    public void registerConfig()
+    {
+        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(Names.ITEM_PRISMARINE_ARROW, ConfigurationHandler.CATEGORY_ITEMS, "", true));
+        ConfigurationHandler.saveConfiguration();
+    }
+
+    @Override
+    public boolean isEnabled()
+    {
+        return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_ITEMS + "." + Names.ITEM_PRISMARINE_ARROW, Names.ITEM_PRISMARINE_ARROW, true).getBoolean();
     }
 }

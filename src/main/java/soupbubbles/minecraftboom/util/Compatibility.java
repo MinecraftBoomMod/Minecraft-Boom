@@ -13,8 +13,6 @@ public class Compatibility
     public static void preInit()
     {
         load("Inspirations");
-        load("Quark");
-        load("Nether Ex");
     }
 
     private static void load(String modname)
@@ -51,14 +49,6 @@ public class Compatibility
             case "Inspirations":
             {
                 return Reference.INSPIRATIONS_MOD_ID;
-            }
-            case "Quark":
-            {
-                return Reference.QUARK_MOD_ID;
-            }
-            case "Nether Ex":
-            {
-                return Reference.NETHER_EX_MOD_ID;
             }
             case "The Between Lands":
             {

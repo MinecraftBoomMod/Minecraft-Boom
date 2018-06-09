@@ -13,6 +13,7 @@ import soupbubbles.minecraftboom.item.ItemTelescope;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.util.IDisableable;
 
 public class ModItems
 {
@@ -34,16 +35,7 @@ public class ModItems
     {
         ITEM_ELDER_GUARDIAN_SPIKE = registerItem(new ItemBase(Names.ITEM_ELDER_GUARDIAN_SPIKE));
         ITEM_POLAR_BEAR_FUR = registerItem(new ItemBase(Names.ITEM_POLAR_BEAR_FUR));
-        
-        if (ConfigurationHandler.removeWitherBone && ConfigurationHandler.inspirations)
-        {
-            ITEM_WITHER_BONE = null;
-        }
-        else
-        {
-            ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
-        }
-        
+        ITEM_WITHER_BONE = registerItem(new ItemBase(Names.ITEM_WITHER_BONE));
         ITEM_PINECONE = registerItem(new ItemFoodBase(Names.ITEM_PINECONE, 3, 2.4F, false));
         ITEM_PRISMARINE_ARROW = registerItem(new ItemPrismarineArrow());
         ITEM_WHEAT_ON_STICK = registerItem(new ItemBase(Names.ITEM_WHEAT_ON_STICK));
@@ -60,12 +52,15 @@ public class ModItems
 
     private static <T extends Item> T registerItem(T item)
     {
-        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(item.getUnlocalizedName().replace("item.", ""), ConfigurationHandler.CATEGORY_ITEMS, "", true));
-        ConfigurationHandler.saveConfiguration();
         ForgeRegistries.ITEMS.register(item);
         ITEMS.add(item);
-        CreativeTab.tabList.add(item);
-        
+        ((IDisableable) item).registerConfig();
+
+        //if (((IDisableable) item).isEnabled())
+        {
+            CreativeTab.tabList.add(item);
+        }
+
         return item;
     }
 }

@@ -11,6 +11,7 @@ import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -51,6 +52,11 @@ public class WorldGenerator implements IWorldGenerator
 
     private void generateSurface(World world, Random rand, int x, int z)
     {
+        if (world.getWorldType() == WorldType.FLAT)
+        {
+            return;
+        }
+        
         BlockPos pos = new BlockPos(x, 0, z);
 
         if (ConfigurationHandler.generateRoses)
