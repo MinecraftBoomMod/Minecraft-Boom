@@ -22,9 +22,9 @@ public class ItemBase extends Item implements IDisableable
         super();
         setRegistryName(name);
         setUnlocalizedName(name);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
         setHasSubtypes(variants.length > 0);
-        
+        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+
         BASE_NAME = name;
 
         if (hasSubtypes)
@@ -55,7 +55,7 @@ public class ItemBase extends Item implements IDisableable
             return String.format(Assets.ITEM_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
         }
     }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
@@ -64,7 +64,7 @@ public class ItemBase extends Item implements IDisableable
         {
             for (int meta = 0; meta < VARIANTS.length; ++meta)
             {
-            	items.add(new ItemStack(this, 1, meta));
+                items.add(new ItemStack(this, 1, meta));
             }
         }
         else

@@ -40,7 +40,7 @@ public class ModItems
         ITEM_PRISMARINE_ARROW = registerItem(new ItemPrismarineArrow());
         ITEM_WHEAT_ON_STICK = registerItem(new ItemBase(Names.ITEM_WHEAT_ON_STICK));
         ITEM_PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
-        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade(Names.ITEM_POPPED_CHORUS_GRENADE));
+        ITEM_POPPED_CHORUS_GRENADE = registerItem(new ItemGrenade());
         ITEM_TELESCOPE = registerItem(new ItemTelescope());
         ITEM_LEVITATION_DUST = registerItem(new ItemBase(Names.ITEM_LEVITATION_DUST));
         ITEM_MAGMA_BRICK = registerItem(new ItemBase(Names.ITEM_MAGMA_BRICK));
@@ -56,7 +56,7 @@ public class ModItems
         ITEMS.add(item);
         ((IDisableable) item).registerConfig();
 
-        //if (((IDisableable) item).isEnabled())
+        if (((IDisableable) item).isEnabled())
         {
             CreativeTab.tabList.add(item);
         }

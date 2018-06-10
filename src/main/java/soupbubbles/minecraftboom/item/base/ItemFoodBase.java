@@ -27,11 +27,11 @@ public class ItemFoodBase extends ItemFood implements IDisableable
         setRegistryName(name);
         setUnlocalizedName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
-        
+
         BASE_NAME = name;
         effects = potionEffects;
     }
-    
+
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
@@ -48,7 +48,7 @@ public class ItemFoodBase extends ItemFood implements IDisableable
             player.addPotionEffect(effect);
         }
     }
-    
+
     @Override
     public void registerConfig()
     {

@@ -23,6 +23,12 @@ public class BlockColoredBase extends BlockColored implements IBlockMeta
     }
 
     @Override
+    public String getUnlocalizedName()
+    {
+        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
+    }
+
+    @Override
     public String getSpecialName(int meta)
     {
         return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, EnumDyeColor.byMetadata(meta).getName() + "_" + BASE_NAME);

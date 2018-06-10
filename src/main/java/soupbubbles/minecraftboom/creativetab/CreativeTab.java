@@ -14,6 +14,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Reference;
 import soupbubbles.minecraftboom.util.IDisableable;
 
@@ -40,20 +41,24 @@ public class CreativeTab
         public void displayAllRelevantItems(NonNullList<ItemStack> list)
         {
             super.displayAllRelevantItems(list);
-            
+            List<ItemStack> removeList = new ArrayList<ItemStack>();
+
             for (ItemStack stack : list)
             {
-                Item item = stack.getItem();
-                
-                if (item instanceof IDisableable)
+                if (stack.getItem() instanceof IDisableable)
                 {
-                    if (!((IDisableable) item).isEnabled())
+                    if (!((IDisableable) stack.getItem()).isEnabled())
                     {
-                        list.remove(stack);
+                        removeList.add(stack);
                     }
                 }
             }
-            
+
+            for (ItemStack stack : removeList)
+            {
+                list.remove(stack);
+            }
+
             tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);
             list.sort(tabSorter);
         }

@@ -41,7 +41,7 @@ public class ItemPrismarineArrow extends ItemArrow implements IDisableable
         int enchant = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.INFINITY, bow);
         return enchant <= 0 ? false : this.getClass() == ItemPrismarineArrow.class;
     }
-    
+
     @Override
     public void registerConfig()
     {

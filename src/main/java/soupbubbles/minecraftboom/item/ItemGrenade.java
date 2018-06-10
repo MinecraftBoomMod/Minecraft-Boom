@@ -11,12 +11,13 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.entity.EntityGrenade;
 import soupbubbles.minecraftboom.item.base.ItemBase;
+import soupbubbles.minecraftboom.reference.Names;
 
 public class ItemGrenade extends ItemBase
 {
-    public ItemGrenade(String name, String... variants)
+    public ItemGrenade()
     {
-        super(name, variants);
+        super(Names.ITEM_POPPED_CHORUS_GRENADE);
     }
 
     @Override
