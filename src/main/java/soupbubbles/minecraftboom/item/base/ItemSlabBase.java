@@ -33,7 +33,7 @@ public class ItemSlabBase extends ItemBlockMeta
     @Override
     public String getVariantName()
     {
-    	return (((BlockSlab)block).isDouble() ? "" : "half=bottom,") + super.getVariantName();
+    	return "half=bottom," + super.getVariantName();
     }
     
     @Override

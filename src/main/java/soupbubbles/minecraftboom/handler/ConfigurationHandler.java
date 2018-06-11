@@ -6,13 +6,21 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.MinecraftBoom;
+import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.IBlockMeta;
+import soupbubbles.minecraftboom.util.IStairSlab;
+import soupbubbles.minecraftboom.util.Utils;
 
 public class ConfigurationHandler
 {
@@ -62,6 +70,7 @@ public class ConfigurationHandler
 
     //Blocks
     public static List<Boolean> allowedBlocks = new ArrayList<Boolean>();
+    public static boolean vanillaBlocks;
 
     //Items
     public static List<Boolean> allowedItems = new ArrayList<Boolean>();
@@ -111,12 +120,15 @@ public class ConfigurationHandler
         inspirations = loadPropBool("Inspirations Compatibility", CATEGORY_COMPAT, "Enabling allows compatibility with the mod Inspirations.", true);
         tryGenerateRose = loadPropBool("Try Generating Inspiration Roses", CATEGORY_COMPAT, "Enabling will allow Minecraft Boom to generate the Rose from Inspiration since the mod doesn't add worldgen.", false, "Inspirations Compatibility");
 
+        //Blocks
+        vanillaBlocks = loadPropBool("Vanilla Stairs and Slabs", CATEGORY_BLOCKS, "", true);
+
         //Items
-        pineconeFuel = loadPropBool("Use Pinecone as fuel in a Furnace", CATEGORY_ITEMS, "", true, "pinecone");
-        pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "pinecone");
-        witherBoneFuel = loadPropBool("Use Wither Bones as fuel in a Furnace", CATEGORY_ITEMS, "", true, "wither_bone");
-        witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "wither_bone");
-        telescopeLoot = loadPropBool("Spawn Telescopes in Dungeon Loot", CATEGORY_ITEMS, "", true, "telescope");
+        pineconeFuel = loadPropBool("Use Pinecone as fuel in a Furnace", CATEGORY_ITEMS, "", true, "Pinecone");
+        pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "Pinecone");
+        witherBoneFuel = loadPropBool("Use Wither Bones as fuel in a Furnace", CATEGORY_ITEMS, "", true, "Wither Bone");
+        witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "Wither Bone");
+        telescopeLoot = loadPropBool("Spawn Telescopes in Dungeon Loot", CATEGORY_ITEMS, "", true, "Telescope");
 
         saveConfiguration();
 
@@ -144,6 +156,50 @@ public class ConfigurationHandler
     {
         CATEGORY_LIST.add(name);
         return name;
+    }
+
+    public static void createItemConfig(Item item)
+    {
+        allowedItems.add(loadPropBool(Utils.getConfigName(item), CATEGORY_ITEMS, "", true));
+        saveConfiguration();
+    }
+
+    public static void createBlockConfig(Block block)
+    {
+        allowedBlocks.add(loadPropBool(Utils.getConfigName(block), CATEGORY_BLOCKS, "", true));
+
+        if (block instanceof IBlockMeta)
+        {
+            ItemBlockMeta itemBlock = (ItemBlockMeta) Item.getItemFromBlock(block);
+
+            for (int i = 0; i < itemBlock.getVariants().length; i++)
+            {
+                if (block == ModBlocks.BLOCK_DYE && EnumDyeColor.byMetadata(i) == EnumDyeColor.BLUE)
+                {
+                }
+                else
+                {
+                    loadPropBool(Utils.capitalize(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i))), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
+                    
+                    if (block instanceof IStairSlab && ((IStairSlab) block).hasStair())
+                    {
+                        loadPropBool(Utils.getStairConfigName(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i))), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
+                    }
+                }
+            }
+        }
+        else if (block instanceof IStairSlab && ((IStairSlab) block).hasStair())
+        {
+            loadPropBool(Utils.getStairConfigName(Utils.getConfigName(block)), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
+        }
+
+        saveConfiguration();
+    }
+    
+    public static void createVanillaConfig(Block block)
+    {
+        loadPropBool(Utils.getStairConfigName(Utils.getConfigName(block)), CATEGORY_BLOCKS, "", true, "Vanilla Stairs and Slabs");
+        saveConfiguration();
     }
 
     public static int loadPropInt(String name, String category, String comment, int default_)

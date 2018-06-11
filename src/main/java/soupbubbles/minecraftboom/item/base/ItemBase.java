@@ -4,15 +4,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.util.IDisableable;
+import soupbubbles.minecraftboom.util.Utils;
 
-public class ItemBase extends Item implements IDisableable
+public class ItemBase extends Item
 {
     protected final String BASE_NAME;
     public final String[] VARIANTS;
@@ -76,18 +74,5 @@ public class ItemBase extends Item implements IDisableable
     public String[] getVariants()
     {
         return VARIANTS;
-    }
-
-    @Override
-    public void registerConfig()
-    {
-        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(BASE_NAME, ConfigurationHandler.CATEGORY_ITEMS, "", true));
-        ConfigurationHandler.saveConfiguration();
-    }
-
-    @Override
-    public boolean isEnabled()
-    {
-        return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_ITEMS + "." + BASE_NAME, BASE_NAME, true).getBoolean();
     }
 }

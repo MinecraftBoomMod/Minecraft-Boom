@@ -10,7 +10,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.IDisableable;
 
 public class ItemTelescope extends ItemBase
 {

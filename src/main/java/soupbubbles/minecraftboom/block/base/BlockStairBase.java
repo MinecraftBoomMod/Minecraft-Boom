@@ -10,13 +10,9 @@ public class BlockStairBase extends BlockStairs
 {
     private final IBlockState STATE;
     private final String BASE_NAME;
+    private boolean isVanilla;
 
-    public BlockStairBase(IBlockState modelState, String name)
-    {
-        this(modelState, name, SoundType.STONE);
-    }
-    
-    public BlockStairBase(IBlockState modelState, String name, SoundType sound)
+    public BlockStairBase(IBlockState modelState, String name, boolean vanilla)
     {
         super(modelState);
         name = "stairs_" + name;
@@ -25,9 +21,9 @@ public class BlockStairBase extends BlockStairs
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(CreativeTab.MINECRAFTBOOM_STAIRS_AND_SLABS_TAB);
-        setSoundType(sound);
 
         BASE_NAME = name;
+        isVanilla = vanilla;
     }
 
     @Override
@@ -35,9 +31,14 @@ public class BlockStairBase extends BlockStairs
     {
         return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
     }
-
+    
     public IBlockState getStairBlockState()
     {
         return STATE;
+    }
+    
+    public boolean isVanilla()
+    {
+        return isVanilla;
     }
 }

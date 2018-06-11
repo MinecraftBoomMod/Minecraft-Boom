@@ -58,6 +58,7 @@ tile.minecraftboom.obsidian_bricks.name=Obsidian Bricks
 tile.minecraftboom.faceless_pumpkin.name=Pumpkin
 tile.minecraftboom.fine_gravel.name=Fine Gravel
 tile.minecraftboom.gravel_stone.name=Gravel Stone
+tile.minecraftboom.normal_gravel_stone.name=Gravel Stone
 tile.minecraftboom.fine_gravel_stone.name=Fine Gravel Stone
 tile.minecraftboom.gravel_bricks.name=Gravel Bricks
 
@@ -194,7 +195,7 @@ tile.minecraftboom.stairs_red_terracotta_bricks.name=Red Terracotta Bricks Stair
 tile.minecraftboom.stairs_black_terracotta_bricks.name=Black Terracotta Bricks Stairs
 tile.minecraftboom.stairs_obsidian.name=Obsidian Stairs
 tile.minecraftboom.stairs_obsidian_bricks.name=Obsidian Bricks Stairs
-tile.minecraftboom.stairs_gravel_stone.name=Gravel Stone Stairs
+tile.minecraftboom.stairs_normal_gravel_stone.name=Gravel Stone Stairs
 tile.minecraftboom.stairs_fine_gravel_stone.name=Fine Gravel Stone Stairs
 tile.minecraftboom.stairs_gravel_bricks.name=Gravel Bricks Stairs
 

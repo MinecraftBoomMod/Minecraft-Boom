@@ -94,19 +94,7 @@ public class ModelManager
                 {
                     String name = itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i];
                     
-                    if (block instanceof BlockSlabBase)
-                    {
-                        if (((BlockSlabBase)block).isDouble())
-                        {
-                            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name.replace("variant", "half=top,variant")));
-                        }
-                        else
-                        {
-                            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName(), name));
-                        }
-
-                    }
-                    else if (block instanceof BlockStainedSoulGlassPane)
+                    if (block instanceof BlockStainedSoulGlassPane)
                     {
                         ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName() + "_" + itemBlock.getVariants()[i], name));
                     }

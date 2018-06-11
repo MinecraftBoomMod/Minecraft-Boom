@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.util.IDisableable;
+import soupbubbles.minecraftboom.util.Utils;
 
 @Mod.EventBusSubscriber
 public class LootTableEventHandler
@@ -31,22 +31,22 @@ public class LootTableEventHandler
             pools.add("silverfish");
         }
         
-        if (ConfigurationHandler.polarBearDrop && ((IDisableable) ModItems.ITEM_POLAR_BEAR_FUR).isEnabled())
+        if (ConfigurationHandler.polarBearDrop && Utils.isItemEnabled(ModItems.ITEM_POLAR_BEAR_FUR))
         {
             pools.add("polar_bear");
         }
         
-        if (ConfigurationHandler.witherSkeletonDrop && ((IDisableable) ModItems.ITEM_WITHER_BONE).isEnabled())
+        if (ConfigurationHandler.witherSkeletonDrop && Utils.isItemEnabled(ModItems.ITEM_WITHER_BONE))
         {
             pools.add("wither_skeleton");
         }
         
-        if (ConfigurationHandler.elderGuardianDrop && ((IDisableable) ModItems.ITEM_ELDER_GUARDIAN_SPIKE).isEnabled())
+        if (ConfigurationHandler.elderGuardianDrop && Utils.isItemEnabled(ModItems.ITEM_ELDER_GUARDIAN_SPIKE))
         {
             pools.add("elder_guardian");
         }
         
-        if (ConfigurationHandler.telescopeLoot && ((IDisableable) ModItems.ITEM_TELESCOPE).isEnabled())
+        if (ConfigurationHandler.telescopeLoot && Utils.isItemEnabled(ModItems.ITEM_TELESCOPE))
         {
             pools.addAll(Arrays.asList("simple_dungeon", "jungle_temple", "abandoned_mineshaft", "desert_pyramid", "nether_bridge"));
         }

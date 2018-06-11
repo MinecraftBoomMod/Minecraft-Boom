@@ -33,8 +33,6 @@ public class GuiCategory extends GuiBase
         if (category.equals("Items") || category.equals("Blocks"))
         {
             isSpecial = true;
-            bottomText = category.equals("Items") ? "Disabling items will make them unobtainble through crafting, drops or the creative menu" : "Under Construction";
-            red = category.equals("Blocks");
         }
     }
 
@@ -238,8 +236,7 @@ public class GuiCategory extends GuiBase
                     commentButton.drawButton(mc, mouseX, mouseY, partialTicks);
                 }
 
-                String s = isSpecial ? I18n.format(category.getName().replaceAll("Items", "item.").replace("Blocks", "tile.") + Assets.ASSET_PREFIX + "." + prop.getName() + ".name") : prop.getName();
-                mc.fontRenderer.drawString(s, width / 2 - 120, configButton.y + 6, 0xFFFFFF);
+                mc.fontRenderer.drawString(prop.getName(), width / 2 - 120, configButton.y + 6, 0xFFFFFF);
             }
 
             @Override

@@ -13,7 +13,6 @@ public class GuiBase extends GuiScreen
 {
     protected String title;
     protected String bottomText;
-    protected boolean red = false;
     protected GuiScreen parent;
     protected GuiButton backButton;
     protected boolean drawBackround = true;
@@ -43,7 +42,7 @@ public class GuiBase extends GuiScreen
         }
 
         drawCenteredString(fontRenderer, title, width / 2, 15, 0xFFFFFF);
-        drawCenteredString(fontRenderer, bottomText, width / 2, backButton.y + 26, red ? 0xFF0000 : 0xFFFFFF);
+        drawCenteredString(fontRenderer, bottomText, width / 2, backButton.y + 26, 0xFFFFFF);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
         drawTooltips(mouseX, mouseY);

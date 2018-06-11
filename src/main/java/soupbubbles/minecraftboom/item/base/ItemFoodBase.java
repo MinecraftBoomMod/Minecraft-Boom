@@ -5,13 +5,10 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.util.IDisableable;
 
-public class ItemFoodBase extends ItemFood implements IDisableable
+public class ItemFoodBase extends ItemFood
 {
     private PotionEffect[] effects;
     private final String BASE_NAME;
@@ -47,18 +44,5 @@ public class ItemFoodBase extends ItemFood implements IDisableable
         {
             player.addPotionEffect(effect);
         }
-    }
-
-    @Override
-    public void registerConfig()
-    {
-        ConfigurationHandler.allowedItems.add(ConfigurationHandler.loadPropBool(getUnlocalizedName().replace("item.", ""), ConfigurationHandler.CATEGORY_ITEMS, "", true));
-        ConfigurationHandler.saveConfiguration();
-    }
-
-    @Override
-    public boolean isEnabled()
-    {
-        return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_ITEMS + "." + BASE_NAME, BASE_NAME, true).getBoolean();
     }
 }

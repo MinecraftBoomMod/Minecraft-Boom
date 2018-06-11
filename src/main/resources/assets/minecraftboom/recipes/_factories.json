@@ -1,0 +1,8 @@
+{
+"conditions": 
+    {
+        "prismarine_arrow": "soupbubbles.minecraftboom.util.ConditionFactory",
+        "wheat_on_stick": "soupbubbles.minecraftboom.util.ConditionFactory",
+        "popped_chorus_grenade": "soupbubbles.minecraftboom.util.ConditionFactory"
+    }
+}

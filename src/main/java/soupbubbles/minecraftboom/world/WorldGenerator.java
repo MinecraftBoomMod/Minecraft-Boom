@@ -20,6 +20,7 @@ import net.minecraft.world.gen.feature.WorldGenSand;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
+import soupbubbles.minecraftboom.util.Utils;
 
 public class WorldGenerator implements IWorldGenerator
 {
@@ -56,10 +57,10 @@ public class WorldGenerator implements IWorldGenerator
         {
             return;
         }
-        
+
         BlockPos pos = new BlockPos(x, 0, z);
 
-        if (ConfigurationHandler.generateRoses)
+        if (ConfigurationHandler.generateRoses && Utils.isBlockEnabled(ModBlocks.BLOCK_ROSE))
         {
             for (int l2 = 0; l2 < 2; ++l2)
             {
@@ -72,21 +73,15 @@ public class WorldGenerator implements IWorldGenerator
                     int y1 = rand.nextInt(y);
                     BlockPos blockpos1 = pos.add(x1, y1, z1);
 
-                    if (ModBlocks.BLOCK_ROSE != null)
+                    if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
                     {
-                        if (ModBlocks.BLOCK_ROSE.getDefaultState().getMaterial() != Material.AIR)
-                        {
-                            new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
-                        }
-                    }
-                    else if (ConfigurationHandler.tryGenerateRose)
-                    {
+                        new WorldGenRoses(ModBlocks.BLOCK_ROSE.getDefaultState()).generate(world, rand, blockpos1);
                     }
                 }
             }
         }
 
-        if (ConfigurationHandler.generatePumpkins)
+        if (ConfigurationHandler.generatePumpkins && Utils.isBlockEnabled(ModBlocks.BLOCK_FACELESS_PUMPKIN))
         {
             if (rand.nextInt(32) == 0)
             {
@@ -107,7 +102,7 @@ public class WorldGenerator implements IWorldGenerator
             generateFallenTrees(world, rand, x, z);
         }
 
-        if (ConfigurationHandler.generateFineGravel)
+        if (ConfigurationHandler.generateFineGravel && Utils.isBlockEnabled(ModBlocks.BLOCK_FINE_GRAVEL))
         {
             new WorldGenSand(ModBlocks.BLOCK_FINE_GRAVEL, 4).generate(world, rand, world.getTopSolidOrLiquidBlock(pos));
             new WorldGenMinable(ModBlocks.BLOCK_FINE_GRAVEL.getDefaultState(), 25).generate(world, rand, pos.add(rand.nextInt(16), rand.nextInt(60), rand.nextInt(16)));

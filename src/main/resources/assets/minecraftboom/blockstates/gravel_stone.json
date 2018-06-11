@@ -9,7 +9,7 @@
     },
     "variants": {
         "variant": {
-            "gravel_stone": {
+            "normal_gravel_stone": {
                 "textures": {
                     "all": "minecraftboom:blocks/gravel_stone"
                 }

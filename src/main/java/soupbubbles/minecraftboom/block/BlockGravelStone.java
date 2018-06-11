@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.block.BlockBookShelf.EnumType;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.reference.Assets;
@@ -44,12 +45,6 @@ public class BlockGravelStone extends BlockBase implements IBlockMeta
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
         return state.getValue(VARIANT).getMapColor();
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(ModBlocks.BLOCK_POLISHED);
     }
 
     @Override
@@ -97,10 +92,16 @@ public class BlockGravelStone extends BlockBase implements IBlockMeta
     {
         return Assets.VARIANT_NAME_VARIANT;
     }
+    
+    @Override
+    public Enum byMetadata(int meta)
+    {
+        return EnumType.byMetadata(meta);
+    }
 
     public static enum EnumType implements IStringSerializable
     {
-        GRAVEL_STONE(0, MapColor.STONE, Names.BLOCK_GRAVEL_STONE),
+        GRAVEL_STONE(0, MapColor.STONE, Names.BLOCK_NORMAL_GRAVEL_STONE),
         FINE_GRAVEL_STONE(1, MapColor.STONE, Names.BLOCK_FINE_GRAVEL_STONE),
         GRAVEL_BRICKS(2, MapColor.STONE, Names.BLOCK_GRAVEL_BRICKS);
 

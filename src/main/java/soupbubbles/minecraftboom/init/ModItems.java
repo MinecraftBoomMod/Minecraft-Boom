@@ -13,7 +13,6 @@ import soupbubbles.minecraftboom.item.ItemTelescope;
 import soupbubbles.minecraftboom.item.base.ItemBase;
 import soupbubbles.minecraftboom.item.base.ItemFoodBase;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.IDisableable;
 
 public class ModItems
 {
@@ -54,12 +53,8 @@ public class ModItems
     {
         ForgeRegistries.ITEMS.register(item);
         ITEMS.add(item);
-        ((IDisableable) item).registerConfig();
-
-        if (((IDisableable) item).isEnabled())
-        {
-            CreativeTab.tabList.add(item);
-        }
+        ConfigurationHandler.createItemConfig(item);
+        CreativeTab.tabList.add(item);
 
         return item;
     }

@@ -74,6 +74,7 @@ public class Names
     public static final String BLOCK_OBSIDIAN_BRICKS = "obsidian_bricks";
     public static final String BLOCK_FINE_GRAVEL = "fine_gravel";
     public static final String BLOCK_GRAVEL_STONE = "gravel_stone";
+    public static final String BLOCK_NORMAL_GRAVEL_STONE = "normal_gravel_stone";
     public static final String BLOCK_FINE_GRAVEL_STONE = "fine_gravel_stone";
     public static final String BLOCK_GRAVEL_BRICKS = "gravel_bricks";
 

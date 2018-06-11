@@ -8,6 +8,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
@@ -108,6 +109,12 @@ public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
     public String getVariantName()
     {
         return Assets.VARIANT_NAME_VARIANT;
+    }
+    
+    @Override
+    public Enum byMetadata(int meta)
+    {
+        return EnumType.byMetadata(meta);
     }
     
     public static enum EnumType implements IStringSerializable

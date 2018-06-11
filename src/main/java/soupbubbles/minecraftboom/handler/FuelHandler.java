@@ -9,7 +9,6 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.common.IFuelHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.util.IDisableable;
 
 public class FuelHandler implements IFuelHandler
 {

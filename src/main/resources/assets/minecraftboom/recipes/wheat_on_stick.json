@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:wheat_on_stick",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:wheat_on_stick"
   },

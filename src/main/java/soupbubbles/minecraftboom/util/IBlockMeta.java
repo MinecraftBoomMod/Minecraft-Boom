@@ -6,6 +6,8 @@ public interface IBlockMeta
 {
     public String getSpecialName(int meta);
     
+    public Enum byMetadata(int meta);
+    
     public PropertyEnum getVariants();
     
     public String getVariantName();

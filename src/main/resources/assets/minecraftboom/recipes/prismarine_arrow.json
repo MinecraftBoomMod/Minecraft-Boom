@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:prismarine_arrow",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:prismarine_arrow"
   },

@@ -120,4 +120,10 @@ public class BlockStainedSoulGlassPane extends BlockPaneBase implements IBlockMe
     {
         return Assets.VARIANT_NAME_VARIANT;
     }
+    
+    @Override
+    public Enum byMetadata(int meta)
+    {
+        return EnumDyeColor.byMetadata(meta);
+    }
 }

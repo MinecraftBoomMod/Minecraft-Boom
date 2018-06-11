@@ -13,11 +13,10 @@ import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.init.ModItems;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.IDisableable;
+import soupbubbles.minecraftboom.util.Utils;
 
 public class BlockFacelessPumpkin extends BlockBase
 {
-
     public BlockFacelessPumpkin()
     {
         super(Material.GROUND, Names.BLOCK_FACELESS_PUMPKIN, SoundType.WOOD);
@@ -35,7 +34,7 @@ public class BlockFacelessPumpkin extends BlockBase
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        if (((IDisableable) ModItems.ITEM_PUMPKIN_SLICE).isEnabled())
+        if (Utils.isItemEnabled(ModItems.ITEM_PUMPKIN_SLICE))
         {
             return ModItems.ITEM_PUMPKIN_SLICE;
         }
@@ -46,7 +45,7 @@ public class BlockFacelessPumpkin extends BlockBase
     @Override
     public int quantityDropped(Random rand)
     {
-        if (((IDisableable) ModItems.ITEM_PUMPKIN_SLICE).isEnabled())
+        if (Utils.isItemEnabled(ModItems.ITEM_PUMPKIN_SLICE))
         {
             return 3 + rand.nextInt(5);
         }

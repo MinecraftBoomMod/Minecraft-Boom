@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:popped_chorus_grenade",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:popped_chorus_grenade"
   },

@@ -6,17 +6,19 @@ import java.util.List;
 
 import com.google.common.collect.Ordering;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.init.ModItems;
+import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Reference;
-import soupbubbles.minecraftboom.util.IDisableable;
+import soupbubbles.minecraftboom.util.Utils;
 
 public class CreativeTab
 {
@@ -33,7 +35,7 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return getIcon(new ItemStack(ModBlocks.BLOCK_TERRACOTTA_BRICKS));
+            return new ItemStack(ModBlocks.BLOCK_TERRACOTTA_BRICKS);
         }
 
         @SideOnly(Side.CLIENT)
@@ -45,18 +47,41 @@ public class CreativeTab
 
             for (ItemStack stack : list)
             {
-                if (stack.getItem() instanceof IDisableable)
+                if (!Utils.isItemEnabled(stack.getItem()))
                 {
-                    if (!((IDisableable) stack.getItem()).isEnabled())
+                    removeList.add(stack);
+                }
+
+                if (stack.getItem() instanceof ItemBlockMeta)
+                {
+                    ItemBlockMeta itemBlock = (ItemBlockMeta) stack.getItem();
+
+                    for (int i = 0; i < itemBlock.getVariants().length; i++)
                     {
-                        removeList.add(stack);
+                        if (!Utils.isBlockEnabled(Block.getBlockFromItem(stack.getItem()), i))
+                        {
+                            removeList.add(new ItemStack(stack.getItem(), stack.getCount(), i));
+                        }
                     }
                 }
             }
 
             for (ItemStack stack : removeList)
             {
-                list.remove(stack);
+                if (stack.getItem() instanceof ItemBlock)
+                {
+                    for (ItemStack stack1 : list)
+                    {
+                        if (stack.getItem() == stack1.getItem() && stack.getMetadata() == stack1.getMetadata())
+                        {
+                            list.remove(stack1);
+                        }
+                    }
+                }
+                else
+                {
+                    list.remove(stack);
+                }
             }
 
             tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);
@@ -69,26 +94,40 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return getIcon(new ItemStack(ModBlocks.BLOCK_STAIRS_DARK_PRISMARINE));
+            return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD);
         }
 
         @SideOnly(Side.CLIENT)
         @Override
-        public void displayAllRelevantItems(NonNullList<ItemStack> stack)
+        public void displayAllRelevantItems(NonNullList<ItemStack> list)
         {
-            super.displayAllRelevantItems(stack);
+            super.displayAllRelevantItems(list);
+            List<ItemStack> removeList = new ArrayList<ItemStack>();
+
+            for (ItemStack stack : list)
+            {
+                Block block = Block.getBlockFromItem(stack.getItem());
+
+                if (block instanceof BlockStairBase)
+                {
+                    if (!Utils.isStairEnabled((BlockStairBase) block))
+                    {
+                        removeList.add(stack);
+                    }
+                }
+                else
+                {
+                    //slab
+                }
+            }
+            
+            for (ItemStack stack : removeList)
+            {
+                list.remove(stack);
+            }
+
             tabSorter = Ordering.explicit(stairAndSlabList).onResultOf(ItemStack::getItem);
-            stack.sort(tabSorter);
+            list.sort(tabSorter);
         }
     };
-
-    private static ItemStack getIcon(ItemStack stack)
-    {
-        if (stack == null || stack.getItem() == null)
-        {
-            stack = new ItemStack(Blocks.DIRT);
-        }
-
-        return stack;
-    }
 }
