@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:jungle_button",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:jungle_button"
   },

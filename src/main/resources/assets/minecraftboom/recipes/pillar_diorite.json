@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:pillar_diorite",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:pillar_diorite"
   },

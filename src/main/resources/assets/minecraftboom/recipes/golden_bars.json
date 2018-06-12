@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:golden_bars",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:golden_bars",
     "count": 16

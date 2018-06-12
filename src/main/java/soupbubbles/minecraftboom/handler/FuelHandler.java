@@ -2,10 +2,8 @@ package soupbubbles.minecraftboom.handler;
 
 import java.util.ArrayList;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.fml.common.IFuelHandler;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
@@ -30,25 +28,20 @@ public class FuelHandler implements IFuelHandler
 
     static
     {
-        if (ConfigurationHandler.blazeFuel)
-        {
-            fuelBurnTime.add(new FuelStack(new ItemStack(Items.BLAZE_POWDER), ConfigurationHandler.blazeBurnTime));
-        }
+        addFuel(new ItemStack(Items.BLAZE_POWDER), ConfigurationHandler.blazeBurnTime, ConfigurationHandler.blazeFuel);
+        addFuel(new ItemStack(ModBlocks.BLOCK_CHARCOAL), ConfigurationHandler.charcoalBlockBurnTime, ConfigurationHandler.charcoalBlockFuel);
+        addFuel(new ItemStack(ModItems.ITEM_PINECONE), ConfigurationHandler.pineconeBurnTime, ConfigurationHandler.pineconeFuel);
+        addFuel(new ItemStack(ModItems.ITEM_WITHER_BONE), ConfigurationHandler.witherBoneBurnTime, ConfigurationHandler.witherBoneFuel);
+        addFuel(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), ConfigurationHandler.blazeBlockBurnTime, ConfigurationHandler.blazeBlockFuel);
+        addFuel(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), ConfigurationHandler.witherBoneBlockBurnTime, ConfigurationHandler.witherBoneBlockFuel);
+    }
 
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARCOAL), TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK))));
-        
-        if (ConfigurationHandler.pineconeFuel)
+    private static void addFuel(ItemStack stack, int burnTime, boolean enabled)
+    {
+        if (enabled)
         {
-            fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_PINECONE), ConfigurationHandler.pineconeBurnTime));
+            fuelBurnTime.add(new FuelStack(stack, burnTime));
         }
-        
-        if (ConfigurationHandler.witherBoneFuel)
-        {
-            fuelBurnTime.add(new FuelStack(new ItemStack(ModItems.ITEM_WITHER_BONE), ConfigurationHandler.witherBoneBurnTime));
-        }
-        
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_BLAZE_POWDER), 12000));
-        fuelBurnTime.add(new FuelStack(new ItemStack(ModBlocks.BLOCK_CHARRED_BONE), 2000));
     }
 
     private static class FuelStack

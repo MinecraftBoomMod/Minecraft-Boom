@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:prismarine_crystal_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:prismarine_crystal_block"
   },

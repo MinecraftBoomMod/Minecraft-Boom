@@ -14,10 +14,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
 
 public class CreativeTab
@@ -94,7 +96,7 @@ public class CreativeTab
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.BLOCK_HALF_SLAB_MOD);
+            return new ItemStack(((IStairSlab) ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS).getStair());
         }
 
         @SideOnly(Side.CLIENT)
@@ -117,10 +119,13 @@ public class CreativeTab
                 }
                 else
                 {
-                    //slab
+                    if (!Utils.isSlabEnabled((BlockSlabBase) block))
+                    {
+                        removeList.add(stack);
+                    }
                 }
             }
-            
+
             for (ItemStack stack : removeList)
             {
                 list.remove(stack);

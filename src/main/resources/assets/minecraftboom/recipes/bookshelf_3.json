@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:acacia_bookshelf",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:bookshelf",
     "data": 3

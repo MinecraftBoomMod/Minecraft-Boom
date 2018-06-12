@@ -1,0 +1,27 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "side": "blocks/sandstone_smooth",
+            "top": "blocks/sandstone_top",
+            "bottom": "blocks/sandstone_bottom"
+        },
+        "uvlock": true
+    },
+    "variants": {
+        "normal": [{ 
+        
+        }],
+        "type": {
+            "bottom": {
+                "model": "minecraft:half_slab"
+             },
+             "top": {
+                "model": "minecraft:upper_slab"
+             },
+             "double": {
+                "model": "minecraft:cube_bottom_top"
+             }
+        }
+    }
+}

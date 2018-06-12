@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:charcoal_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:charcoal_block"
   },

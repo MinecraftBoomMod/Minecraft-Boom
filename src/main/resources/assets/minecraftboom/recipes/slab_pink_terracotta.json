@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:slab_pink_terracotta",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stained_hardened_clay",
+      "data": 6
+    }
+  }
+}

@@ -89,11 +89,11 @@ public class ModelManager
             if (item.getHasSubtypes() && itemBlock.getVariants().length > 0)
             {
                 List<ModelResourceLocation> modelResources = new ArrayList<>();
-                
+
                 for (int i = 0; i < itemBlock.getVariants().length; i++)
                 {
                     String name = itemBlock.getVariantName() + "=" + itemBlock.getVariants()[i];
-                    
+
                     if (block instanceof BlockStainedSoulGlassPane)
                     {
                         ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName() + "_" + itemBlock.getVariants()[i], name));
@@ -104,6 +104,10 @@ public class ModelManager
                     }
                 }
             }
+        }
+        else if (block instanceof BlockSlabBase)
+        {
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(block.getRegistryName().toString(), "type=bottom"));
         }
         else if (block instanceof IRenderItem)
         {

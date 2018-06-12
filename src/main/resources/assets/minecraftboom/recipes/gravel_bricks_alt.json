@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:gravel_bricks",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:gravel_stone",
     "data": 2

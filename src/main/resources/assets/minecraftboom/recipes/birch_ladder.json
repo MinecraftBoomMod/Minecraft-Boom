@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:birch_ladder",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:birch_ladder",
     "count": 4

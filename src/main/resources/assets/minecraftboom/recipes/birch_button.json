@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:birch_button",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:birch_button"
   },

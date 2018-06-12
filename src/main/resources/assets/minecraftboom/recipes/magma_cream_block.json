@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:magma_cream_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:magma_cream_block"
   },

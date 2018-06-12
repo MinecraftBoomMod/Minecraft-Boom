@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:acacia_trap_door",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:acacia_trap_door",
     "count": 2

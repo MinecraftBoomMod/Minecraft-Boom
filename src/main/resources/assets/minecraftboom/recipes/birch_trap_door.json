@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:birch_trap_door",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:birch_trap_door",
     "count": 2

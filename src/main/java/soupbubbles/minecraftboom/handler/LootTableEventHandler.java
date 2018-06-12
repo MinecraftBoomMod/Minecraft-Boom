@@ -48,7 +48,7 @@ public class LootTableEventHandler
         
         if (ConfigurationHandler.telescopeLoot && Utils.isItemEnabled(ModItems.ITEM_TELESCOPE))
         {
-            pools.addAll(Arrays.asList("simple_dungeon", "jungle_temple", "abandoned_mineshaft", "desert_pyramid", "nether_bridge"));
+            pools.add("simple_dungeon");
         }
         
         try

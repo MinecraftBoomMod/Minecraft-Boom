@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:dark_oak_ladder",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:dark_oak_ladder",
     "count": 4

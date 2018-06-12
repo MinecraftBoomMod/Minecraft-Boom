@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:slab_magenta_concrete",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:concrete",
+      "data": 2
+    }
+  }
+}

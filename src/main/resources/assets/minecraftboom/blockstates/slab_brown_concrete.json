@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "all": "blocks/concrete_brown",
+            "side": "#all",
+            "top": "#all",
+            "bottom": "#all"
+        },
+        "uvlock": true
+    },
+    "variants": {
+        "normal": [{ 
+        
+        }],
+        "type": {
+            "bottom": {
+                "model": "minecraft:half_slab"
+             },
+             "top": {
+                "model": "minecraft:upper_slab"
+             },
+             "double": {
+                "model": "minecraft:cube_all"
+             }
+        }
+    }
+}

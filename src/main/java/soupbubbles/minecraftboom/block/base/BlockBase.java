@@ -11,7 +11,9 @@ import soupbubbles.minecraftboom.util.IStairSlab;
 public class BlockBase extends Block implements IStairSlab
 {
     protected final String BASE_NAME;
-    private boolean stair = false;
+    private boolean hasStairSlab = false;
+    private BlockStairBase stair;
+    private BlockSlabBase slab;
 
     public BlockBase(String name)
     {
@@ -46,17 +48,42 @@ public class BlockBase extends Block implements IStairSlab
         return this;
     }
     
-    public Block addStair()
+    @Override
+    public Block addStairSlab()
     {
-        ModBlocks.STAIR_LIST.add(this);
-        stair = true;
+        ModBlocks.STAIRSLAB_LIST.add(this);
+        hasStairSlab = true;
         
         return this;
     }
 
     @Override
-    public boolean hasStair()
+    public boolean hasStairSlab()
+    {
+        return hasStairSlab;
+    }
+
+    @Override
+    public BlockStairBase getStair()
     {
         return stair;
+    }
+
+    @Override
+    public BlockSlabBase getSlab()
+    {
+        return slab;
+    }
+
+    @Override
+    public BlockStairBase setStair(BlockStairBase stair)
+    {
+        return this.stair = stair;
+    }
+
+    @Override
+    public BlockSlabBase setSlab(BlockSlabBase slab)
+    {
+        return this.slab = slab;
     }
 }

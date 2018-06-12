@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:dark_oak_trap_door",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:dark_oak_trap_door",
     "count": 2

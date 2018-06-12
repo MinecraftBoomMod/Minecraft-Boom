@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:charred_bone_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:charred_bone_block"
   },

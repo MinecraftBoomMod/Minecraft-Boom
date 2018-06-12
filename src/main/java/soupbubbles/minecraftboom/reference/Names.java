@@ -107,29 +107,6 @@ public class Names
     public static final String BLOCK_PILLAR_END_STONE = "pillar_end_stone";
     public static final String BLOCK_PILLAR_NETHERRACK = "pillar_netherrack";
 
-    public static final String BLOCK_HALF_SLAB_VANILLA_STONE = "half_slab_vanilla_stone";
-    public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE = "double_slab_vanilla_stone";
-    public static final String BLOCK_HALF_SLAB_VANILLA_STONE_2 = "half_slab_vanilla_stone_2";
-    public static final String BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = "double_slab_vanilla_stone_2";
-    public static final String BLOCK_HALF_SLAB_TERRACOTTA = "half_slab_terracotta";
-    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA = "double_slab_terracotta";
-    public static final String BLOCK_HALF_SLAB_TERRACOTTA_2 = "half_slab_terracotta_2";
-    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_2 = "double_slab_terracotta_2";
-    public static final String BLOCK_HALF_SLAB_CONCRETE = "half_slab_concrete";
-    public static final String BLOCK_DOUBLE_SLAB_CONCRETE = "double_slab_concrete";
-    public static final String BLOCK_HALF_SLAB_CONCRETE_2 = "half_slab_concrete_2";
-    public static final String BLOCK_DOUBLE_SLAB_CONCRETE_2 = "double_slab_concrete_2";
-    public static final String BLOCK_HALF_SLAB_MOD = "half_slab_mod";
-    public static final String BLOCK_DOUBLE_SLAB_MOD = "double_slab_mod";
-    public static final String BLOCK_HALF_SLAB_TERRACOTTA_BRICKS = "half_slab_terracotta_bricks";
-    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS = "double_slab_terracotta_bricks";
-    public static final String BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2 = "half_slab_terracotta_bricks_2";
-    public static final String BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = "double_slab_terracotta_bricks_2";
-    public static final String BLOCK_HALF_SLAB_OBSIDIAN = "half_slab_obsidian";
-    public static final String BLOCK_DOUBLE_SLAB_OBSIDIAN = "double_slab_obsidian";
-    public static final String BLOCK_HALF_SLAB_GRAVEL_STONE = "half_slab_gravel_stone";
-    public static final String BLOCK_DOUBLE_SLAB_GRAVEL_STONE = "double_slab_gravel_stone";
-
     public static final String BLOCK_SPRUCE_CHEST = "spruce_chest";
     public static final String BLOCK_BIRCH_CHEST = "birch_chest";
     public static final String BLOCK_JUNGLE_CHEST = "jungle_chest";

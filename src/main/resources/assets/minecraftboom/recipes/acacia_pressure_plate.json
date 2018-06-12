@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:acacia_pressure_plate",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:acacia_pressure_plate"
   },

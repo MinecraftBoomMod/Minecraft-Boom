@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:gunpowder_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:gunpowder_block"
   },

@@ -87,19 +87,19 @@ public class BlockPolished extends BlockBase implements IBlockMeta
     {
         return VARIANT;
     }
-    
+
     @Override
     public String getVariantName()
     {
         return Assets.VARIANT_NAME_VARIANT;
     }
-    
+
     @Override
     public Enum byMetadata(int meta)
     {
         return EnumType.byMetadata(meta);
     }
-    
+
     public static enum EnumType implements IStringSerializable
     {
         SMOOTH_PRISMARINE(0, MapColor.STONE, Names.BLOCK_SMOOTH_PRISMARINE),

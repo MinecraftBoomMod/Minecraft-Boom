@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:dark_oak_bookshelf",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:bookshelf",
     "data": 4

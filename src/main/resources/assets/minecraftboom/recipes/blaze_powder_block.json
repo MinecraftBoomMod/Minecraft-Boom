@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:blaze_powder_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:blaze_powder_block"
   },

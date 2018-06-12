@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:pillar_dark_prismarine",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:pillar_dark_prismarine"
   },

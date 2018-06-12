@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:magma_bricks",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:magma_bricks",
     "count": 4

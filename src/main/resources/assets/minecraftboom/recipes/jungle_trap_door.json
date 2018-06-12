@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:jungle_trap_door",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:jungle_trap_door",
     "count": 2

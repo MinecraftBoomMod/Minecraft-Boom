@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:mossy_cobblestone_bricks",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:mossy_cobblestone_bricks",
     "count": 4

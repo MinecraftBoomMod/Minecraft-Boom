@@ -7,8 +7,11 @@ import java.util.List;
 import org.apache.logging.log4j.Level;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -39,6 +42,7 @@ public class ConfigurationHandler
 
     //General
     public static boolean minecraftBoomButton;
+    public static boolean removeBlockChildren;
 
     //Worldgen
     public static boolean generateRoses;
@@ -71,6 +75,12 @@ public class ConfigurationHandler
     //Blocks
     public static List<Boolean> allowedBlocks = new ArrayList<Boolean>();
     public static boolean vanillaBlocks;
+    public static boolean charcoalBlockFuel;
+    public static int charcoalBlockBurnTime;
+    public static boolean blazeBlockFuel;
+    public static int blazeBlockBurnTime;
+    public static boolean witherBoneBlockFuel;
+    public static int witherBoneBlockBurnTime;
 
     //Items
     public static List<Boolean> allowedItems = new ArrayList<Boolean>();
@@ -91,6 +101,7 @@ public class ConfigurationHandler
 
         //General
         minecraftBoomButton = loadCategory("Enable Minecraft Boom Button", Configuration.CATEGORY_GENERAL, "Enabling allows the Minecraft Boom button to appear in the Options menu. The Minecraft Boom configuration can always be reached through Mods -> Minecraft Boom -> Config.", true);
+        removeBlockChildren = loadCategory("Disable block children if the parent block is disabled", Configuration.CATEGORY_GENERAL, "If this returns true the children blocks (stairs and slabs) will be disabled if their parent block is disabled", true);
 
         //Worldgen
         generateRoses = loadPropBool("Generate Roses", CATEGORY_WORLD_GEN, "Enabling allows Roses to naturally spawn in the Overworld.", true);
@@ -122,9 +133,15 @@ public class ConfigurationHandler
 
         //Blocks
         vanillaBlocks = loadPropBool("Vanilla Stairs and Slabs", CATEGORY_BLOCKS, "", true);
+        charcoalBlockFuel = loadPropBool("Use Charcoal Blocks as fuel in a Furnace", CATEGORY_BLOCKS, "", true, "Charcoal Block");
+        charcoalBlockBurnTime = loadPropInt("Charcoal Block Burn Time", CATEGORY_BLOCKS, "", TileEntityFurnace.getItemBurnTime(new ItemStack(Blocks.COAL_BLOCK)), "Charcoal Block");
+        blazeBlockFuel = loadPropBool("Use Blaze Powder Blocks as fuel in a Furnace", CATEGORY_BLOCKS, "", true, "Blaze Powder Block");
+        blazeBlockBurnTime = loadPropInt("Blaze Powder Block Burn Time", CATEGORY_BLOCKS, "", 12000, "Blaze Powder Block");
+        witherBoneBlockFuel = loadPropBool("Use Charred Bone Blocks as fuel in a Furnace", CATEGORY_BLOCKS, "", true, "Charred Bone Block");
+        witherBoneBlockBurnTime = loadPropInt("Charred Bone Block Burn Time", CATEGORY_BLOCKS, "", 2000, "Charred Bone Block");
 
         //Items
-        pineconeFuel = loadPropBool("Use Pinecone as fuel in a Furnace", CATEGORY_ITEMS, "", true, "Pinecone");
+        pineconeFuel = loadPropBool("Use Pinecones as fuel in a Furnace", CATEGORY_ITEMS, "", true, "Pinecone");
         pineconeBurnTime = loadPropInt("Pinecone Burn Time", CATEGORY_ITEMS, "", 300, "Pinecone");
         witherBoneFuel = loadPropBool("Use Wither Bones as fuel in a Furnace", CATEGORY_ITEMS, "", true, "Wither Bone");
         witherBoneBurnTime = loadPropInt("Wither Bone Burn Time", CATEGORY_ITEMS, "", 500, "Wither Bone");
@@ -180,25 +197,25 @@ public class ConfigurationHandler
                 else
                 {
                     loadPropBool(Utils.capitalize(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i))), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
-                    
-                    if (block instanceof IStairSlab && ((IStairSlab) block).hasStair())
+
+                    if (block instanceof IStairSlab && ((IStairSlab) block).hasStairSlab())
                     {
-                        loadPropBool(Utils.getStairConfigName(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i))), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
+                        loadPropBool(Utils.getStairSlabConfigName(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i)), block), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
                     }
                 }
             }
         }
-        else if (block instanceof IStairSlab && ((IStairSlab) block).hasStair())
+        else if (block instanceof IStairSlab && ((IStairSlab) block).hasStairSlab())
         {
-            loadPropBool(Utils.getStairConfigName(Utils.getConfigName(block)), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
+            loadPropBool(Utils.getStairSlabConfigName(Utils.getConfigName(block), block), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
         }
 
         saveConfiguration();
     }
-    
+
     public static void createVanillaConfig(Block block)
     {
-        loadPropBool(Utils.getStairConfigName(Utils.getConfigName(block)), CATEGORY_BLOCKS, "", true, "Vanilla Stairs and Slabs");
+        loadPropBool(Utils.getStairSlabConfigName(Utils.getConfigName(block), block), CATEGORY_BLOCKS, "", true, "Vanilla Stairs and Slabs");
         saveConfiguration();
     }
 

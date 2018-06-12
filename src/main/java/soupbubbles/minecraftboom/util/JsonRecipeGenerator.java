@@ -21,10 +21,9 @@ import net.minecraft.item.ItemStack;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 
 /**
- * @author williewillus
- * Temporarily here while new recipes are still being added.
- * Will eventually be removed from the mod.
- * Big thanks to williewillus for saving me some hassle :)
+ * @author williewillus Temporarily here while new recipes are still being
+ *         added. Will eventually be removed from the mod. Big thanks to
+ *         williewillus for saving me some hassle :)
  */
 
 public class JsonRecipeGenerator
@@ -32,12 +31,11 @@ public class JsonRecipeGenerator
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static File RECIPE_DIR = new File("F:\\Programming\\Minecraft\\1.12.2\\Minecraft-Boom\\src\\main\\resources\\assets\\minecraftboom\\recipes");
     private static final Set<String> USED_OD_NAMES = new TreeSet<>();
-    
+
     public static void init()
     {
-        //generateConstants();
     }
-    
+
     private static void setupDir()
     {
         if (RECIPE_DIR == null)
@@ -194,6 +192,7 @@ public class JsonRecipeGenerator
     private static void generateConstants()
     {
         List<Map<String, Object>> json = new ArrayList<>();
+
         for (String s : USED_OD_NAMES)
         {
             Map<String, Object> entry = new HashMap<>();

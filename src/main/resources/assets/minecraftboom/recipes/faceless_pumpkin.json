@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:faceless_pumpkin",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:faceless_pumpkin"
   },

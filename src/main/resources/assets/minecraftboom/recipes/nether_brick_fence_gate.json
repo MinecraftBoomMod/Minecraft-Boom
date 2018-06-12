@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:nether_brick_fence_gate",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:nether_brick_fence_gate",
     "count": 2

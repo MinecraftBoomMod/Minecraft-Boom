@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:jungle_bookshelf",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:bookshelf",
     "data": 2

@@ -49,32 +49,22 @@ import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
-import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
-import soupbubbles.minecraftboom.block.slab.BlockConcreteSlab;
-import soupbubbles.minecraftboom.block.slab.BlockConcreteSlab2;
-import soupbubbles.minecraftboom.block.slab.BlockGravelStoneSlab;
-import soupbubbles.minecraftboom.block.slab.BlockModSlab;
-import soupbubbles.minecraftboom.block.slab.BlockObsidianSlab;
-import soupbubbles.minecraftboom.block.slab.BlockTerracottaBricksSlab;
-import soupbubbles.minecraftboom.block.slab.BlockTerracottaBricksSlab2;
-import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlab;
-import soupbubbles.minecraftboom.block.slab.BlockTerracottaSlab2;
-import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab;
-import soupbubbles.minecraftboom.block.slab.BlockVanillaStoneSlab2;
+import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
 import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
-import soupbubbles.minecraftboom.item.base.ItemSlabBase;
+import soupbubbles.minecraftboom.item.base.ItemBlockSlab;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
 import soupbubbles.minecraftboom.util.IBlockMeta;
+import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
 
 public class ModBlocks
 {
     public static final Set<Block> BLOCKS = new HashSet<>();
-    public static final List<Block> STAIR_LIST = new ArrayList<Block>();
+    public static final List<Block> STAIRSLAB_LIST = new ArrayList<Block>();
 
     //Mod Blocks
     public static final Block BLOCK_COBBLESTONE_BRICKS;
@@ -111,30 +101,6 @@ public class ModBlocks
     public static final Block BLOCK_PILLAR_DARK_PRISMARINE;
     public static final Block BLOCK_PILLAR_END_STONE;
     public static final Block BLOCK_PILLAR_NETHERRACK;
-
-    //Slabs
-    public static final BlockVanillaStoneSlab BLOCK_HALF_SLAB_VANILLA_STONE;
-    public static final BlockVanillaStoneSlab BLOCK_DOUBLE_SLAB_VANILLA_STONE;
-    public static final BlockVanillaStoneSlab2 BLOCK_HALF_SLAB_VANILLA_STONE_2;
-    public static final BlockVanillaStoneSlab2 BLOCK_DOUBLE_SLAB_VANILLA_STONE_2;
-    public static final BlockTerracottaSlab BLOCK_HALF_SLAB_TERRACOTTA;
-    public static final BlockTerracottaSlab BLOCK_DOUBLE_SLAB_TERRACOTTA;
-    public static final BlockTerracottaSlab2 BLOCK_HALF_SLAB_TERRACOTTA_2;
-    public static final BlockTerracottaSlab2 BLOCK_DOUBLE_SLAB_TERRACOTTA_2;
-    public static final BlockConcreteSlab BLOCK_HALF_SLAB_CONCRETE;
-    public static final BlockConcreteSlab BLOCK_DOUBLE_SLAB_CONCRETE;
-    public static final BlockConcreteSlab2 BLOCK_HALF_SLAB_CONCRETE_2;
-    public static final BlockConcreteSlab2 BLOCK_DOUBLE_SLAB_CONCRETE_2;
-    public static final BlockModSlab BLOCK_HALF_SLAB_MOD;
-    public static final BlockModSlab BLOCK_DOUBLE_SLAB_MOD;
-    public static final BlockTerracottaBricksSlab BLOCK_HALF_SLAB_TERRACOTTA_BRICKS;
-    public static final BlockTerracottaBricksSlab BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS;
-    public static final BlockTerracottaBricksSlab2 BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2;
-    public static final BlockTerracottaBricksSlab2 BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2;
-    public static final BlockObsidianSlab BLOCK_HALF_SLAB_OBSIDIAN;
-    public static final BlockObsidianSlab BLOCK_DOUBLE_SLAB_OBSIDIAN;
-    public static final BlockGravelStoneSlab BLOCK_HALF_SLAB_GRAVEL_STONE;
-    public static final BlockGravelStoneSlab BLOCK_DOUBLE_SLAB_GRAVEL_STONE;
 
     //Wood Variations
     public static final Block BLOCK_BOOKSHELF;
@@ -177,18 +143,18 @@ public class ModBlocks
     {
         BLOCK_BOOKSHELF = new BlockBookShelf();
         registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
-        BLOCK_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStair());
-        BLOCK_MOSSY_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStair());
-        BLOCK_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStair();
-        BLOCK_STAINED_TERRACOTTA_BRICKS = ((BlockColoredBase) new BlockColoredBase(Material.ROCK, Names.BLOCK_STAINED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE)).addStair();
+        BLOCK_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStairSlab());
+        BLOCK_MOSSY_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStairSlab());
+        BLOCK_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_STAINED_TERRACOTTA_BRICKS = ((BlockColoredBase) new BlockColoredBase(Material.ROCK, Names.BLOCK_STAINED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE)).addStairSlab();
         registerBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, new ItemBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, Names.BLOCK_STAINED_TERRACOTTA_BRICKS));
-        BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks().addStair());
-        BLOCK_OBSIDIAN_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE))).addStair();
-        BLOCK_POLISHED = new BlockPolished().addStair();
+        BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks().addStairSlab());
+        BLOCK_OBSIDIAN_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE))).addStairSlab();
+        BLOCK_POLISHED = new BlockPolished().addStairSlab();
         registerBlockMeta(BLOCK_POLISHED);
         BLOCK_FACELESS_PUMPKIN = registerBlock(new BlockFacelessPumpkin());
         BLOCK_FINE_GRAVEL = registerBlock(new BlockFallingBase(Names.BLOCK_FINE_GRAVEL, SoundType.GROUND).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
-        BLOCK_GRAVEL_STONE = new BlockGravelStone().addStair();
+        BLOCK_GRAVEL_STONE = new BlockGravelStone().addStairSlab();
         registerBlockMeta(BLOCK_GRAVEL_STONE);
 
         BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
@@ -213,52 +179,6 @@ public class ModBlocks
         BLOCK_PILLAR_DARK_PRISMARINE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_DARK_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_PILLAR_END_STONE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_END_STONE).setHardness(BlockValues.END_STONE_HARDNESS).setResistance(BlockValues.END_STONE_RESISTANCE));
         BLOCK_PILLAR_NETHERRACK = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_NETHERRACK).setHardness(BlockValues.NETHER_BRICKS_HARDNESS).setResistance(BlockValues.NETHERRACK_RESISTANCE));
-
-        BLOCK_HALF_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_HALF_SLAB_VANILLA_STONE, false);
-        BLOCK_DOUBLE_SLAB_VANILLA_STONE = new BlockVanillaStoneSlab(Names.BLOCK_DOUBLE_SLAB_VANILLA_STONE, true);
-        BLOCK_HALF_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlab2(Names.BLOCK_HALF_SLAB_VANILLA_STONE_2, false);
-        BLOCK_DOUBLE_SLAB_VANILLA_STONE_2 = new BlockVanillaStoneSlab2(Names.BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, true);
-        BLOCK_HALF_SLAB_TERRACOTTA = new BlockTerracottaSlab(Names.BLOCK_HALF_SLAB_TERRACOTTA, false);
-        BLOCK_DOUBLE_SLAB_TERRACOTTA = new BlockTerracottaSlab(Names.BLOCK_DOUBLE_SLAB_TERRACOTTA, true);
-        BLOCK_HALF_SLAB_TERRACOTTA_2 = new BlockTerracottaSlab2(Names.BLOCK_HALF_SLAB_TERRACOTTA_2, false);
-        BLOCK_DOUBLE_SLAB_TERRACOTTA_2 = new BlockTerracottaSlab2(Names.BLOCK_DOUBLE_SLAB_TERRACOTTA_2, true);
-        BLOCK_HALF_SLAB_CONCRETE = new BlockConcreteSlab(Names.BLOCK_HALF_SLAB_CONCRETE, false);
-        BLOCK_DOUBLE_SLAB_CONCRETE = new BlockConcreteSlab(Names.BLOCK_DOUBLE_SLAB_CONCRETE, true);
-        BLOCK_HALF_SLAB_CONCRETE_2 = new BlockConcreteSlab2(Names.BLOCK_HALF_SLAB_CONCRETE_2, false);
-        BLOCK_DOUBLE_SLAB_CONCRETE_2 = new BlockConcreteSlab2(Names.BLOCK_DOUBLE_SLAB_CONCRETE_2, true);
-        BLOCK_HALF_SLAB_MOD = new BlockModSlab(Names.BLOCK_HALF_SLAB_MOD, false);
-        BLOCK_DOUBLE_SLAB_MOD = new BlockModSlab(Names.BLOCK_DOUBLE_SLAB_MOD, true);
-        BLOCK_HALF_SLAB_TERRACOTTA_BRICKS = new BlockTerracottaBricksSlab(Names.BLOCK_HALF_SLAB_TERRACOTTA_BRICKS, false);
-        BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS = new BlockTerracottaBricksSlab(Names.BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS, true);
-        BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2 = new BlockTerracottaBricksSlab2(Names.BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, false);
-        BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2 = new BlockTerracottaBricksSlab2(Names.BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, true);
-        BLOCK_HALF_SLAB_OBSIDIAN = new BlockObsidianSlab(Names.BLOCK_HALF_SLAB_OBSIDIAN, false);
-        BLOCK_DOUBLE_SLAB_OBSIDIAN = new BlockObsidianSlab(Names.BLOCK_DOUBLE_SLAB_OBSIDIAN, true);
-        BLOCK_HALF_SLAB_GRAVEL_STONE = new BlockGravelStoneSlab(Names.BLOCK_HALF_SLAB_GRAVEL_STONE, false);
-        BLOCK_DOUBLE_SLAB_GRAVEL_STONE = new BlockGravelStoneSlab(Names.BLOCK_DOUBLE_SLAB_GRAVEL_STONE, true);
-
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE, BLOCK_HALF_SLAB_VANILLA_STONE, BLOCK_DOUBLE_SLAB_VANILLA_STONE));
-        registerBlockMeta(BLOCK_HALF_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_VANILLA_STONE_2, BLOCK_HALF_SLAB_VANILLA_STONE_2, BLOCK_DOUBLE_SLAB_VANILLA_STONE_2));
-        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_DOUBLE_SLAB_TERRACOTTA));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA, BLOCK_HALF_SLAB_TERRACOTTA, BLOCK_DOUBLE_SLAB_TERRACOTTA));
-        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA_2, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_2));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA_2, BLOCK_HALF_SLAB_TERRACOTTA_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_2));
-        registerBlockMeta(BLOCK_HALF_SLAB_CONCRETE, new ItemSlabBase(BLOCK_HALF_SLAB_CONCRETE, BLOCK_HALF_SLAB_CONCRETE, BLOCK_DOUBLE_SLAB_CONCRETE));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_CONCRETE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_CONCRETE, BLOCK_HALF_SLAB_CONCRETE, BLOCK_DOUBLE_SLAB_CONCRETE));
-        registerBlockMeta(BLOCK_HALF_SLAB_CONCRETE_2, new ItemSlabBase(BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_DOUBLE_SLAB_CONCRETE_2));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_CONCRETE_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_CONCRETE_2, BLOCK_HALF_SLAB_CONCRETE_2, BLOCK_DOUBLE_SLAB_CONCRETE_2));
-        registerBlockMeta(BLOCK_HALF_SLAB_MOD, new ItemSlabBase(BLOCK_HALF_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_MOD, new ItemSlabBase(BLOCK_DOUBLE_SLAB_MOD, BLOCK_HALF_SLAB_MOD, BLOCK_DOUBLE_SLAB_MOD));
-        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA_BRICKS, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA_BRICKS, BLOCK_HALF_SLAB_TERRACOTTA_BRICKS, BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS, BLOCK_HALF_SLAB_TERRACOTTA_BRICKS, BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS));
-        registerBlockMeta(BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, new ItemSlabBase(BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, new ItemSlabBase(BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2, BLOCK_HALF_SLAB_TERRACOTTA_BRICKS_2, BLOCK_DOUBLE_SLAB_TERRACOTTA_BRICKS_2));
-        registerBlockMeta(BLOCK_HALF_SLAB_OBSIDIAN, new ItemSlabBase(BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_DOUBLE_SLAB_OBSIDIAN));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_OBSIDIAN, new ItemSlabBase(BLOCK_DOUBLE_SLAB_OBSIDIAN, BLOCK_HALF_SLAB_OBSIDIAN, BLOCK_DOUBLE_SLAB_OBSIDIAN));
-        registerBlockMeta(BLOCK_HALF_SLAB_GRAVEL_STONE, new ItemSlabBase(BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_DOUBLE_SLAB_GRAVEL_STONE));
-        registerBlockMeta(BLOCK_DOUBLE_SLAB_GRAVEL_STONE, new ItemSlabBase(BLOCK_DOUBLE_SLAB_GRAVEL_STONE, BLOCK_HALF_SLAB_GRAVEL_STONE, BLOCK_DOUBLE_SLAB_GRAVEL_STONE));
 
         BLOCK_SPRUCE_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_SPRUCE_LADDER));
         BLOCK_BIRCH_LADDER = registerBlock(new BlockWoodenLadder(Names.BLOCK_BIRCH_LADDER));
@@ -293,69 +213,67 @@ public class ModBlocks
         registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE);
         BLOCK_ROSE = registerBlock(new BlockRose());
 
-        addVanillaStair(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE);
-        addVanillaStair(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE);
-        addVanillaStair(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE);
-        addVanillaStair(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE_SMOOTH), Names.SMOOTH_ANDESITE);
-        addVanillaStair(Blocks.MOSSY_COBBLESTONE, Names.MOSSY_COBBLESTONE);
-        addVanillaStair(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.MOSSY), Names.MOSSY_STONEBRICK);
-        addVanillaStair(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), Names.CRACKED_STONEBRICK);
-        addVanillaStair(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.CHISELED_STONEBRICK);
-        addVanillaStair(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.CHISELED), Names.CHISELED_SANDSTONE);
-        addVanillaStair(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.SMOOTH), Names.SMOOTH_SANDSTONE);
-        addVanillaStair(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.CHISELED), Names.CHISELED_RED_SANDSTONE);
-        addVanillaStair(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.SMOOTH), Names.SMOOTH_RED_SANDSTONE);
-        addVanillaStair(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.BRICKS), Names.PRISMARINE_BRICKS);
-        addVanillaStair(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE);
-        addVanillaStair(Blocks.END_BRICKS, Names.END_BRICKS);
-        addVanillaStair(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.TERRACOTTA);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.CONCRETE);
-        addVanillaStair(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN);
-        
-        addStairs();
-        
-        //Block test = new BlockTest(BLOCK_COBBLESTONE_BRICKS.getDefaultState(), Utils.getBaseBlockName(BLOCK_COBBLESTONE_BRICKS), false, false);
-        //Block test1 = new BlockTest(BLOCK_COBBLESTONE_BRICKS.getDefaultState(), Utils.getBaseBlockName(BLOCK_COBBLESTONE_BRICKS), true, false);
+        addVanillaStairSlab(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE);
+        addVanillaStairSlab(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE_SMOOTH), Names.SMOOTH_GRANITE);
+        addVanillaStairSlab(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE_SMOOTH), Names.SMOOTH_DIORITE);
+        addVanillaStairSlab(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE_SMOOTH), Names.SMOOTH_ANDESITE);
+        addVanillaStairSlab(Blocks.MOSSY_COBBLESTONE, Names.MOSSY_COBBLESTONE);
+        addVanillaStairSlab(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.MOSSY), Names.MOSSY_STONEBRICK);
+        addVanillaStairSlab(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), Names.CRACKED_STONEBRICK);
+        addVanillaStairSlab(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CHISELED), Names.CHISELED_STONEBRICK);
+        addVanillaStairSlab(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.CHISELED), Names.CHISELED_SANDSTONE);
+        addVanillaStairSlab(Blocks.SANDSTONE.getDefaultState().withProperty(BlockSandStone.TYPE, BlockSandStone.EnumType.SMOOTH), Names.SMOOTH_SANDSTONE);
+        addVanillaStairSlab(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.CHISELED), Names.CHISELED_RED_SANDSTONE);
+        addVanillaStairSlab(Blocks.RED_SANDSTONE.getDefaultState().withProperty(BlockRedSandstone.TYPE, BlockRedSandstone.EnumType.SMOOTH), Names.SMOOTH_RED_SANDSTONE);
+        addVanillaStairSlab(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.BRICKS), Names.PRISMARINE_BRICKS);
+        addVanillaStairSlab(Blocks.PRISMARINE.getDefaultState().withProperty(BlockPrismarine.VARIANT, BlockPrismarine.EnumType.DARK), Names.DARK_PRISMARINE);
+        addVanillaStairSlab(Blocks.END_BRICKS, Names.END_BRICKS);
+        addVanillaStairSlab(Blocks.RED_NETHER_BRICK.getDefaultState(), Names.RED_NETHER_BRICK);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY, Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.TERRACOTTA);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.WHITE), Names.WHITE + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.ORANGE), Names.ORANGE + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.MAGENTA), Names.MAGENTA + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIGHT_BLUE), Names.LIGHT_BLUE + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.YELLOW), Names.YELLOW + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.LIME), Names.LIME + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PINK), Names.PINK + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GRAY), Names.GRAY + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.SILVER), Names.SILVER + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.CYAN), Names.CYAN + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.PURPLE), Names.PURPLE + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLUE), Names.BLUE + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BROWN), Names.BROWN + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.GREEN), Names.GREEN + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.CONCRETE);
+        addVanillaStairSlab(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN);
+
+        addStairSlabs();
     }
 
     public static void registerBlocks()
     {
     }
 
-    private static void addStairs()
+    private static void addStairSlabs()
     {
-        for (Block block : STAIR_LIST)
+        for (Block block : STAIRSLAB_LIST)
         {
             IBlockState state = block.getDefaultState();
             String name = Utils.getBaseBlockName(block);
@@ -367,29 +285,36 @@ public class ModBlocks
                     state = block.getDefaultState().withProperty(((IBlockMeta) block).getVariants(), ((IBlockMeta) block).byMetadata(i));
                     name = Utils.getBaseBlockName(((IBlockMeta) block).getSpecialName(i)).replace("stained_", "");
 
-                    addStair(state, name, false);
+                    addStairSlab(state, name, false);
                 }
             }
             else
             {
-                addStair(state, name, false);
+                addStairSlab(state, name, false);
             }
         }
     }
 
-    private static void addVanillaStair(Block block, String name)
+    private static void addVanillaStairSlab(Block block, String name)
     {
-        addVanillaStair(block.getDefaultState(), name);
+        addVanillaStairSlab(block.getDefaultState(), name);
     }
 
-    private static void addVanillaStair(IBlockState state, String name)
+    private static void addVanillaStairSlab(IBlockState state, String name)
     {
-        addStair(state, name, true);
+        addStairSlab(state, name, true);
     }
 
-    private static void addStair(IBlockState state, String name, boolean vanilla)
+    private static void addStairSlab(IBlockState state, String name, boolean vanilla)
     {
-        registerBlock(new BlockStairBase(state, name, vanilla));
+        BlockStairBase stair = state.getBlock() instanceof IStairSlab ? ((IStairSlab) state.getBlock()).setStair(new BlockStairBase(state, name, vanilla)) : new BlockStairBase(state, name, vanilla);
+        registerBlock(stair);
+
+        if (!name.equals(Names.STONE))
+        {
+            BlockSlabBase slab = state.getBlock() instanceof IStairSlab ? ((IStairSlab) state.getBlock()).setSlab(new BlockSlabBase(state, name, vanilla)) : new BlockSlabBase(state, name, vanilla);
+            registerBlock(slab, ItemBlockSlab::new);
+        }
     }
 
     protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block)
@@ -445,6 +370,11 @@ public class ModBlocks
         }
         else if (block instanceof BlockSlabBase)
         {
+            if (((BlockSlabBase) block).isVanilla())
+            {
+                ConfigurationHandler.createVanillaConfig(block);
+            }
+
             return;
         }
 

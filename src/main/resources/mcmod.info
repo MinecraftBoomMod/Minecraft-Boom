@@ -3,7 +3,7 @@
   "modid": "minecraftboom",
   "name": "Minecraft Boom",
   "description": "Exploiting the potential of the game",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/minecraft-boom",
   "updateUrl": "",

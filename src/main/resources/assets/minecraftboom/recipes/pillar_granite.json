@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:pillar_granite",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:pillar_granite"
   },

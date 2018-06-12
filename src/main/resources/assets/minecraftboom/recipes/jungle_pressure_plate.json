@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:jungle_pressure_plate",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:jungle_pressure_plate"
   },

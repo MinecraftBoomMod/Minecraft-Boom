@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:slab_smooth_andesite",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 6
+    }
+  }
+}

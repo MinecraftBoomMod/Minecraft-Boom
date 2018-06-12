@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:acacia_button",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:acacia_button"
   },

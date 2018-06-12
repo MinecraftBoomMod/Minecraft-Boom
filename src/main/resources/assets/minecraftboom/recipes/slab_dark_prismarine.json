@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:slab_dark_prismarine",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:prismarine",
+      "data": 2
+    }
+  }
+}

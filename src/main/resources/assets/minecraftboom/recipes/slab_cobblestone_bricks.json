@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraftboom:slab_cobblestone_bricks",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:cobblestone_bricks"
+    }
+  }
+}
