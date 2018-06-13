@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "all": "minecraftboom:blocks/blue_stained_terracotta_bricks",
+            "all": "minecraftboom:blocks/blue_terracotta_bricks",
             "side": "#all",
             "top": "#all",
             "bottom": "#all"

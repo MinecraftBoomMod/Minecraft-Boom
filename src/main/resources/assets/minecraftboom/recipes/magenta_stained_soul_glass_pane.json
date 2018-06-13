@@ -1,0 +1,22 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:magenta_stained_soul_glass_pane",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:magenta_stained_soul_glass_pane",
+    "count": 16
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:magenta_stained_soul_glass"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:spruce_bookshelf",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:spruce_bookshelf"
+  },
+  "pattern": [
+    "xxx",
+    "yyy",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:planks",
+      "data": 1
+    },
+    "y": {
+      "item": "minecraft:book"
+    }
+  }
+}

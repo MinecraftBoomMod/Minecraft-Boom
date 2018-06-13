@@ -1,0 +1,13 @@
+{
+  "result": {
+    "item": "minecraft:dye",
+    "data": 14,
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "minecraftboom:orange_dye_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

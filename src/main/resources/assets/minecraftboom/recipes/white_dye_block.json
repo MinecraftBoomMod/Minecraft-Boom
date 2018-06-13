@@ -1,0 +1,23 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:white_dye_block",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:white_dye_block"
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:dye",
+      "data": 15
+    }
+  }
+}

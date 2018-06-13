@@ -6,7 +6,7 @@
             "bottom":"#all",
             "top":"#all",        
             "side":"#all",
-            "all": "minecraftboom:blocks/blue_stained_terracotta_bricks"
+            "all": "minecraftboom:blocks/blue_terracotta_bricks"
         },
         "transform":"forge:default-block",
         "uvlock": true

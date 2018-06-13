@@ -6,7 +6,7 @@
             "bottom":"#all",
             "top":"#all",        
             "side":"#all",
-            "all": "minecraftboom:blocks/cyan_stained_terracotta_bricks"
+            "all": "minecraftboom:blocks/cyan_terracotta_bricks"
         },
         "transform":"forge:default-block",
         "uvlock": true

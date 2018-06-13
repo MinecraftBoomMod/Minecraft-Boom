@@ -1,0 +1,23 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:lime_dye_block",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:lime_dye_block"
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:dye",
+      "data": 10
+    }
+  }
+}

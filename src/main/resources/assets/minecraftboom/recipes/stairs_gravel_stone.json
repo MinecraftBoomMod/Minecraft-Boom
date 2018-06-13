@@ -1,6 +1,6 @@
 {
   "result": {
-    "item": "minecraftboom:stairs_normal_gravel_stone",
+    "item": "minecraftboom:stairs_gravel_stone",
     "count": 4
   },
   "pattern": [
@@ -11,8 +11,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:gravel_stone",
-      "data": 0
+      "item": "minecraftboom:gravel_stone"
     }
   }
 }

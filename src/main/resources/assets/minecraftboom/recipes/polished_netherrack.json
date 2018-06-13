@@ -1,0 +1,22 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:polished_netherrack",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:polished_netherrack",
+    "count": 4
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:netherrack"
+    }
+  }
+}

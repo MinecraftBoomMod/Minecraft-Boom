@@ -11,8 +11,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:gravel_stone",
-      "data": 2
+      "item": "minecraftboom:gravel_bricks"
     }
   }
 }

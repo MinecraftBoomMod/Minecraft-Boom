@@ -25,39 +25,31 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import soupbubbles.minecraftboom.block.BlockBookShelf;
-import soupbubbles.minecraftboom.block.BlockDye;
 import soupbubbles.minecraftboom.block.BlockFacelessPumpkin;
-import soupbubbles.minecraftboom.block.BlockGravelStone;
 import soupbubbles.minecraftboom.block.BlockGunpowder;
 import soupbubbles.minecraftboom.block.BlockMagmaBricks;
 import soupbubbles.minecraftboom.block.BlockMagmaCream;
 import soupbubbles.minecraftboom.block.BlockNetherBrickFenceGate;
-import soupbubbles.minecraftboom.block.BlockPolished;
 import soupbubbles.minecraftboom.block.BlockPrismarineCrystal;
 import soupbubbles.minecraftboom.block.BlockRedNetherBrickFence;
 import soupbubbles.minecraftboom.block.BlockRose;
 import soupbubbles.minecraftboom.block.BlockSoulGlass;
 import soupbubbles.minecraftboom.block.BlockSoulGlassPane;
-import soupbubbles.minecraftboom.block.BlockStainedSoulGlass;
-import soupbubbles.minecraftboom.block.BlockStainedSoulGlassPane;
 import soupbubbles.minecraftboom.block.BlockWoodenButton;
 import soupbubbles.minecraftboom.block.BlockWoodenLadder;
 import soupbubbles.minecraftboom.block.BlockWoodenPressurePlate;
 import soupbubbles.minecraftboom.block.BlockWoodenTrapDoor;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.block.base.BlockColoredBase;
 import soupbubbles.minecraftboom.block.base.BlockFallingBase;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.block.base.BlockPillarBase;
-import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
+import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.item.base.ItemBlockSlab;
 import soupbubbles.minecraftboom.reference.BlockValues;
 import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.IBlockMeta;
 import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
 
@@ -70,13 +62,33 @@ public class ModBlocks
     public static final Block BLOCK_COBBLESTONE_BRICKS;
     public static final Block BLOCK_MOSSY_COBBLESTONE_BRICKS;
     public static final Block BLOCK_TERRACOTTA_BRICKS;
-    public static final Block BLOCK_STAINED_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_WHITE_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_ORANGE_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_MAGENTA_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_LIGHT_BLUE_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_YELLOW_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_LIME_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_PINK_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_GRAY_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_SILVER_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_CYAN_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_PURPLE_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_BLUE_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_BROWN_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_GREEN_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_RED_TERRACOTTA_BRICKS;
+    public static final Block BLOCK_BLACK_TERRACOTTA_BRICKS;
     public static final Block BLOCK_MAGMA_BRICKS;
     public static final Block BLOCK_OBSIDIAN_BRICKS;
-    public static final Block BLOCK_POLISHED;
+    public static final Block BLOCK_POLISHED_PRISMARINE;
+    public static final Block BLOCK_POLISHED_DARK_PRISMARINE;
+    public static final Block BLOCK_POLISHED_END_STONE;
+    public static final Block BLOCK_POLISHED_NETHERRACK;
     public static final Block BLOCK_FACELESS_PUMPKIN;
     public static final Block BLOCK_FINE_GRAVEL;
     public static final Block BLOCK_GRAVEL_STONE;
+    public static final Block BLOCK_FINE_GRAVEL_STONE;
+    public static final Block BLOCK_GRAVEL_BRICKS;
 
     //Storage Blocks
     public static final Block BLOCK_CHARCOAL;
@@ -87,11 +99,40 @@ public class ModBlocks
     public static final Block BLOCK_MAGMA_CREAM;
     public static final Block BLOCK_PRISMARINE_CRYSTAL;
     public static final Block BLOCK_CHARRED_BONE;
-    public static final Block BLOCK_DYE;
+    public static final Block BLOCK_WHITE_DYE_BLOCK;
+    public static final Block BLOCK_ORANGE_DYE_BLOCK;
+    public static final Block BLOCK_MAGENTA_DYE_BLOCK;
+    public static final Block BLOCK_LIGHT_BLUE_DYE_BLOCK;
+    public static final Block BLOCK_YELLOW_DYE_BLOCK;
+    public static final Block BLOCK_LIME_DYE_BLOCK;
+    public static final Block BLOCK_PINK_DYE_BLOCK;
+    public static final Block BLOCK_GRAY_DYE_BLOCK;
+    public static final Block BLOCK_SILVER_DYE_BLOCK;
+    public static final Block BLOCK_CYAN_DYE_BLOCK;
+    public static final Block BLOCK_PURPLE_DYE_BLOCK;
+    public static final Block BLOCK_BROWN_DYE_BLOCK;
+    public static final Block BLOCK_GREEN_DYE_BLOCK;
+    public static final Block BLOCK_RED_DYE_BLOCK;
+    public static final Block BLOCK_BLACK_DYE_BLOCK;
 
     //Glass
     public static final Block BLOCK_SOUL_GLASS;
-    public static final Block BLOCK_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_WHITE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_ORANGE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_MAGENTA_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_YELLOW_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_LIME_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_PINK_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_GRAY_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_SILVER_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_CYAN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_PURPLE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BLUE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BROWN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_GREEN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_RED_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS;
 
     //Pillars
     public static final Block BLOCK_PILLAR_GRANITE;
@@ -103,7 +144,11 @@ public class ModBlocks
     public static final Block BLOCK_PILLAR_NETHERRACK;
 
     //Wood Variations
-    public static final Block BLOCK_BOOKSHELF;
+    public static final Block BLOCK_SPRUCE_BOOKSHELF;
+    public static final Block BLOCK_BIRCH_BOOKSHELF;
+    public static final Block BLOCK_JUNGLE_BOOKSHELF;
+    public static final Block BLOCK_ACACIA_BOOKSHELF;
+    public static final Block BLOCK_DARK_OAK_BOOKSHELF;
 
     public static final Block BLOCK_SPRUCE_LADDER;
     public static final Block BLOCK_BIRCH_LADDER;
@@ -136,26 +181,62 @@ public class ModBlocks
     public static final Block BLOCK_RED_NETHER_BRICK_FENCE_GATE;
 
     public static final Block BLOCK_SOUL_GLASS_PANE;
-    public static final Block BLOCK_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_WHITE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_LIME_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_PINK_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_GRAY_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_SILVER_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_CYAN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BLUE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BROWN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_GREEN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_RED_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS_PANE;
     public static final Block BLOCK_ROSE;
 
     static
     {
-        BLOCK_BOOKSHELF = new BlockBookShelf();
-        registerBlockMeta(BLOCK_BOOKSHELF, new ItemBlockMeta(BLOCK_BOOKSHELF, Names.BLOCK_BOOKSHELF));
+        BLOCK_SPRUCE_BOOKSHELF = registerBlock(new BlockBookShelf(Names.BLOCK_SPRUCE_BOOKSHELF));
+        BLOCK_BIRCH_BOOKSHELF = registerBlock(new BlockBookShelf(Names.BLOCK_BIRCH_BOOKSHELF));
+        BLOCK_JUNGLE_BOOKSHELF = registerBlock(new BlockBookShelf(Names.BLOCK_JUNGLE_BOOKSHELF));
+        BLOCK_ACACIA_BOOKSHELF = registerBlock(new BlockBookShelf(Names.BLOCK_ACACIA_BOOKSHELF));
+        BLOCK_DARK_OAK_BOOKSHELF = registerBlock(new BlockBookShelf(Names.BLOCK_DARK_OAK_BOOKSHELF));
+
         BLOCK_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStairSlab());
         BLOCK_MOSSY_COBBLESTONE_BRICKS = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_MOSSY_COBBELSTONE_BRICKS).setHardness(BlockValues.COBBLESTONE_HARDNESS).setResistance(BlockValues.COBBLESTONE_RESISTANCE)).addStairSlab());
         BLOCK_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
-        BLOCK_STAINED_TERRACOTTA_BRICKS = ((BlockColoredBase) new BlockColoredBase(Material.ROCK, Names.BLOCK_STAINED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE)).addStairSlab();
-        registerBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, new ItemBlockMeta(BLOCK_STAINED_TERRACOTTA_BRICKS, Names.BLOCK_STAINED_TERRACOTTA_BRICKS));
+        BLOCK_WHITE_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_WHITE_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_ORANGE_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_ORANGE_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_MAGENTA_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_MAGENTA_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_LIGHT_BLUE_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_LIGHT_BLUE_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_YELLOW_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_YELLOW_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_LIME_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_LIME_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_PINK_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_PINK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_GRAY_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_GRAY_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_SILVER_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_SILVER_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_CYAN_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_CYAN_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_PURPLE_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_PURPLE_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_BLUE_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_BLUE_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_BROWN_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_BROWN_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_GREEN_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_GREEN_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_RED_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_RED_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
+        BLOCK_BLACK_TERRACOTTA_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_BLACK_TERRACOTTA_BRICKS).setHardness(BlockValues.TERRACOTTA_HARDNESS).setResistance(BlockValues.TERRACOTTA_RESISTANCE))).addStairSlab();
         BLOCK_MAGMA_BRICKS = registerBlock(new BlockMagmaBricks().addStairSlab());
         BLOCK_OBSIDIAN_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_OBSIDIAN_BRICKS).setHardness(BlockValues.OBSIDIAN_HARDNESS).setResistance(BlockValues.OBSIDIAN_RESISTANCE))).addStairSlab();
-        BLOCK_POLISHED = new BlockPolished().addStairSlab();
-        registerBlockMeta(BLOCK_POLISHED);
+        BLOCK_POLISHED_PRISMARINE = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_POLISHED_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE)).addStairSlab());
+        BLOCK_POLISHED_DARK_PRISMARINE = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_POLISHED_DARK_PRISMARINE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE)).addStairSlab());
+        BLOCK_POLISHED_END_STONE = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_POLISHED_END_STONE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE)).addStairSlab());
+        BLOCK_POLISHED_NETHERRACK = registerBlock(((BlockBase) new BlockBase(Names.BLOCK_POLISHED_NETHERRACK).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE)).addStairSlab());
         BLOCK_FACELESS_PUMPKIN = registerBlock(new BlockFacelessPumpkin());
         BLOCK_FINE_GRAVEL = registerBlock(new BlockFallingBase(Names.BLOCK_FINE_GRAVEL, SoundType.GROUND).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
-        BLOCK_GRAVEL_STONE = new BlockGravelStone().addStairSlab();
-        registerBlockMeta(BLOCK_GRAVEL_STONE);
+        BLOCK_GRAVEL_STONE = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_GRAVEL_STONE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE))).addStairSlab();
+        BLOCK_FINE_GRAVEL_STONE = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_FINE_GRAVEL_STONE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE))).addStairSlab();
+        BLOCK_GRAVEL_BRICKS = ((BlockBase) registerBlock(new BlockBase(Names.BLOCK_GRAVEL_BRICKS).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE))).addStairSlab();
 
         BLOCK_CHARCOAL = registerBlock(new BlockBase(Material.ROCK, Names.BLOCK_CHARCOAL, SoundType.STONE).setHardness(5.0F).setResistance(10.0F));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR).setHardness(BlockValues.SAND_HARDNESS).setResistance(BlockValues.SAND_RESISTANCE));
@@ -165,12 +246,39 @@ public class ModBlocks
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream());
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockPrismarineCrystal());
         BLOCK_CHARRED_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_CHARRED_BONE)).setHardness(BlockValues.BONE_BLOCK_HARDNESS).setResistance(BlockValues.BONE_BLOCK_RESISTANCE);
-        BLOCK_DYE = new BlockDye();
-        registerBlockMeta(BLOCK_DYE, new ItemBlockMeta(BLOCK_DYE, Names.BLOCK_DYE));
+        BLOCK_WHITE_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_WHITE_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_ORANGE_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_ORANGE_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_MAGENTA_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_MAGENTA_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_LIGHT_BLUE_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_LIGHT_BLUE_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_YELLOW_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_YELLOW_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_LIME_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_LIME_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_PINK_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_PINK_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_GRAY_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_GRAY_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_SILVER_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_SILVER_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_CYAN_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_CYAN_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_PURPLE_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_PURPLE_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_BROWN_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_BROWN_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_GREEN_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_GREEN_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_RED_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_RED_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_BLACK_DYE_BLOCK = registerBlock(new BlockBase(Names.BLOCK_BLACK_DYE_BLOCK).setHardness(BlockValues.DYE_BLOCK_HARDNESS).setResistance(BlockValues.DYE_BLOCK_RESISTANCE));
 
-        BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass());
-        BLOCK_STAINED_SOUL_GLASS = new BlockStainedSoulGlass();
-        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS);
+        BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_SOUL_GLASS));
+        BLOCK_WHITE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_WHITE_STAINED_SOUL_GLASS));
+        BLOCK_ORANGE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_ORANGE_STAINED_SOUL_GLASS));
+        BLOCK_MAGENTA_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_MAGENTA_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_YELLOW_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_YELLOW_STAINED_SOUL_GLASS));
+        BLOCK_LIME_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_LIME_STAINED_SOUL_GLASS));
+        BLOCK_PINK_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_PINK_STAINED_SOUL_GLASS));
+        BLOCK_GRAY_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_SILVER_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_SILVER_STAINED_SOUL_GLASS));
+        BLOCK_CYAN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_CYAN_STAINED_SOUL_GLASS));
+        BLOCK_PURPLE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_PURPLE_STAINED_SOUL_GLASS));
+        BLOCK_BLUE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_BROWN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BROWN_STAINED_SOUL_GLASS));
+        BLOCK_GREEN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_GREEN_STAINED_SOUL_GLASS));
+        BLOCK_RED_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_RED_STAINED_SOUL_GLASS));
+        BLOCK_BLACK_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BLACK_STAINED_SOUL_GLASS));
 
         BLOCK_PILLAR_GRANITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_GRANITE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
         BLOCK_PILLAR_DIORITE = registerBlock(new BlockPillarBase(Names.BLOCK_PILLAR_DIORITE).setHardness(BlockValues.STONE_HARDNESS).setResistance(BlockValues.STONE_RESISTANCE));
@@ -208,9 +316,23 @@ public class ModBlocks
         BLOCK_RED_NETHER_BRICK_FENCE = registerBlock(new BlockRedNetherBrickFence());
         BLOCK_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_NETHER_FENCE_GATE));
         BLOCK_RED_NETHER_BRICK_FENCE_GATE = registerBlock(new BlockNetherBrickFenceGate(Names.BLOCK_RED_NETHER_FENCE_GATE));
-        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane());
-        BLOCK_STAINED_SOUL_GLASS_PANE = new BlockStainedSoulGlassPane();
-        registerBlockMeta(BLOCK_STAINED_SOUL_GLASS_PANE);
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_SOUL_GLASS));
+        BLOCK_WHITE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_WHITE_STAINED_SOUL_GLASS));
+        BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_ORANGE_STAINED_SOUL_GLASS));
+        BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_MAGENTA_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_YELLOW_STAINED_SOUL_GLASS));
+        BLOCK_LIME_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_LIME_STAINED_SOUL_GLASS));
+        BLOCK_PINK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_PINK_STAINED_SOUL_GLASS));
+        BLOCK_GRAY_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_SILVER_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_SILVER_STAINED_SOUL_GLASS));
+        BLOCK_CYAN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_CYAN_STAINED_SOUL_GLASS));
+        BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_PURPLE_STAINED_SOUL_GLASS));
+        BLOCK_BLUE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_BROWN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_BROWN_STAINED_SOUL_GLASS));
+        BLOCK_GREEN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_GREEN_STAINED_SOUL_GLASS));
+        BLOCK_RED_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_RED_STAINED_SOUL_GLASS));
+        BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockSoulGlassPane(Names.BLOCK_BLACK_STAINED_SOUL_GLASS));
         BLOCK_ROSE = registerBlock(new BlockRose());
 
         addVanillaStairSlab(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), Names.STONE);
@@ -263,7 +385,6 @@ public class ModBlocks
         addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.RED), Names.RED + "_" + Names.CONCRETE);
         addVanillaStairSlab(Blocks.CONCRETE.getDefaultState().withProperty(BlockColored.COLOR, EnumDyeColor.BLACK), Names.BLACK + "_" + Names.CONCRETE);
         addVanillaStairSlab(Blocks.OBSIDIAN.getDefaultState(), Names.OBSIDIAN);
-
         addStairSlabs();
     }
 
@@ -275,23 +396,7 @@ public class ModBlocks
     {
         for (Block block : STAIRSLAB_LIST)
         {
-            IBlockState state = block.getDefaultState();
-            String name = Utils.getBaseBlockName(block);
-
-            if (block instanceof IBlockMeta)
-            {
-                for (int i = 0; i < ((ItemBlockMeta) Item.getItemFromBlock(block)).getVariants().length; i++)
-                {
-                    state = block.getDefaultState().withProperty(((IBlockMeta) block).getVariants(), ((IBlockMeta) block).byMetadata(i));
-                    name = Utils.getBaseBlockName(((IBlockMeta) block).getSpecialName(i)).replace("stained_", "");
-
-                    addStairSlab(state, name, false);
-                }
-            }
-            else
-            {
-                addStairSlab(state, name, false);
-            }
+            addStairSlab(block.getDefaultState(), Utils.getBaseBlockName(block), false);
         }
     }
 
@@ -332,23 +437,6 @@ public class ModBlocks
 
             ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
         }
-
-        BLOCKS.add(block);
-        addCreativeList(block);
-        addConfig(block);
-
-        return block;
-    }
-
-    protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block)
-    {
-        return registerBlockMeta(block, new ItemBlockMeta(block, ""));
-    }
-
-    protected static <BLOCK extends Block> BLOCK registerBlockMeta(BLOCK block, ItemBlockMeta itemBlock)
-    {
-        ForgeRegistries.BLOCKS.register(block);
-        ForgeRegistries.ITEMS.register(itemBlock);
 
         BLOCKS.add(block);
         addCreativeList(block);

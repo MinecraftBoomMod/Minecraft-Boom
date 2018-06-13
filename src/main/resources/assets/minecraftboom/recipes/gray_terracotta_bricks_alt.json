@@ -1,0 +1,27 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:gray_terracotta_bricks",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:gray_terracotta_bricks",
+    "count": 8
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:terracotta_bricks"
+    },
+    "y": {
+      "type": "forge:ore_dict",
+      "ore": "dyeGray"
+    }
+  }
+}

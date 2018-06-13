@@ -15,8 +15,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:polished",
-      "data": 1
+      "item": "minecraftboom:polished_dark_prismarine"
     }
   }
 }

@@ -113,7 +113,7 @@ public class BlockSlabBase extends Block
         }
         else
         {
-            return facing != EnumFacing.DOWN && (facing == EnumFacing.UP || (double) hitY <= 0.5D) ? state.withProperty(TYPE, BlockSlabBase.EnumBlockSlab.BOTTOM) : state.withProperty(TYPE, BlockSlabBase.EnumBlockSlab.TOP);
+            return facing != EnumFacing.DOWN && (facing == EnumFacing.UP || hitY <= 0.5D) ? state.withProperty(TYPE, BlockSlabBase.EnumBlockSlab.BOTTOM) : state.withProperty(TYPE, BlockSlabBase.EnumBlockSlab.TOP);
         }
     }
 
@@ -203,11 +203,13 @@ public class BlockSlabBase extends Block
             this.meta = meta;
         }
 
+        @Override
         public String toString()
         {
             return name;
         }
 
+        @Override
         public String getName()
         {
             return name;

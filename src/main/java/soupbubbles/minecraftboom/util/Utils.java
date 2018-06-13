@@ -102,16 +102,6 @@ public class Utils
         return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + getConfigName(block), getConfigName(block), true).getBoolean();
     }
 
-    public static boolean isBlockEnabled(Block block, int meta)
-    {
-        if (block instanceof IBlockMeta)
-        {
-            return isBlockEnabled(block) && ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + getConfigName(block), getConfigName(((IBlockMeta) block).getSpecialName(meta)), true).getBoolean();
-        }
-
-        return isBlockEnabled(block);
-    }
-
     public static boolean isStairEnabled(BlockStairBase block)
     {
         if (!block.isVanilla())

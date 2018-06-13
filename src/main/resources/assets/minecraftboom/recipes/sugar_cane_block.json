@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:sugar_cane_block",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:sugar_cane_block"
   },

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "minecraftboom:stairs_polished_end_stone",
+    "count": 4
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:polished_end_stone"
+    }
+  }
+}

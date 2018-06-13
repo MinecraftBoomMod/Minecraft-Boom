@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:spruce_button",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:spruce_button"
   },

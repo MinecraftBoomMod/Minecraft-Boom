@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:spruce_ladder",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:spruce_ladder",
     "count": 4

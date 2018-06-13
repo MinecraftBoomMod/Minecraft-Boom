@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:terracotta_bricks",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:terracotta_bricks",
     "count": 4

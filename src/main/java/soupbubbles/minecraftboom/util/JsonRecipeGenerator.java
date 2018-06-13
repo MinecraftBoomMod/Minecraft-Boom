@@ -19,6 +19,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
+import soupbubbles.minecraftboom.init.ModBlocks;
 
 /**
  * @author williewillus Temporarily here while new recipes are still being
@@ -34,6 +35,12 @@ public class JsonRecipeGenerator
 
     public static void init()
     {
+        Block[] dyeList = {ModBlocks.BLOCK_WHITE_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_LIME_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_PINK_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_GRAY_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_SILVER_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_CYAN_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_BLUE_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_BROWN_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_GREEN_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_RED_STAINED_SOUL_GLASS_PANE, ModBlocks.BLOCK_BLACK_STAINED_SOUL_GLASS_PANE};
+
+        for (int i = 0; i < dyeList.length; i++)
+        {
+            //addShapedRecipe(new ItemStack(dyeList[i], 16), "xxx", "xxx", 'x', soulList[i]);
+        }
     }
 
     private static void setupDir()

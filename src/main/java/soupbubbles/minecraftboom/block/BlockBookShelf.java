@@ -1,180 +1,45 @@
 package soupbubbles.minecraftboom.block;
 
-import net.minecraft.block.BlockBookshelf;
+import java.util.Random;
+
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.NonNullList;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.util.IBlockMeta;
 
-public class BlockBookShelf extends BlockBookshelf implements IBlockMeta
+public class BlockBookShelf extends BlockBase
 {
-    public static final PropertyEnum<BlockBookShelf.EnumType> VARIANT = PropertyEnum.<BlockBookShelf.EnumType>create(Assets.VARIANT_NAME_VARIANT, BlockBookShelf.EnumType.class);
-    
-    protected final String BASE_NAME = Names.BLOCK_BOOKSHELF;
+    protected final String BASE_NAME;
 
-    public BlockBookShelf()
+    public BlockBookShelf(String name)
     {
-        super();
-        setDefaultState(blockState.getBaseState().withProperty(VARIANT, BlockBookShelf.EnumType.SPRUCE));
-        setRegistryName(BASE_NAME);
-        setUnlocalizedName(BASE_NAME);
-        setCreativeTab(CreativeTab.MINECRAFTBOOM_TAB);
+        super(Material.WOOD, name, SoundType.WOOD);
         setHardness(BlockValues.BOOKSHELF_HARDNESS);
         setResistance(BlockValues.BOOKSHELF_RESISTANCE);
-        setSoundType(SoundType.WOOD);
+        
+        BASE_NAME = name; 
     }
 
-    @Override
-    public String getUnlocalizedName()
-    {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BASE_NAME);
-    }
-    
-    @Override
-    public String getSpecialName(int meta)
-    {
-        return String.format(Assets.BLOCK_PREFIX, Assets.ASSET_PREFIX, BlockBookShelf.EnumType.byMetadata(meta).getName() + "_" + BASE_NAME);
-    }
-    
-    @Override
-    public int damageDropped(IBlockState state)
-    {
-        return state.getValue(VARIANT).getMetadata();
-    }
-    
 	@Override
 	public float getEnchantPowerBonus(World world, BlockPos pos) 
 	{
 		return 1;
 	}
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
+	
+	@Override
+    public int quantityDropped(Random random)
     {
-        for (BlockBookShelf.EnumType blockbookshelf$enumtype : BlockBookShelf.EnumType.values())
-        {
-            list.add(new ItemStack(this, 1, blockbookshelf$enumtype.getMetadata()));
-        }
+        return 3;
     }
 
-    @Override
-    public IBlockState getStateFromMeta(int meta)
+	@Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return getDefaultState().withProperty(VARIANT, BlockBookShelf.EnumType.byMetadata(meta));
-    }
-
-    @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
-        return state.getValue(VARIANT).getMapColor();
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        return state.getValue(VARIANT).getMetadata();
-    }
-
-    @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {VARIANT});
-    }  
-
-    @Override
-    public PropertyEnum getVariants()
-    {
-        return VARIANT;
-    }
-    
-    @Override
-    public String getVariantName()
-    {
-        return Assets.VARIANT_NAME_VARIANT;
-    }
-    
-    @Override
-    public Enum byMetadata(int meta)
-    {
-        return EnumType.byMetadata(meta);
-    }
-    
-    public static enum EnumType implements IStringSerializable
-    {
-        SPRUCE(0, Names.SPRUCE, MapColor.OBSIDIAN),
-        BIRCH(1, Names.BIRCH, MapColor.SAND),
-        JUNGLE(2, Names.JUNGLE, MapColor.DIRT),
-        ACACIA(3, Names.ACACIA, MapColor.ADOBE),
-        DARK_OAK(4, Names.DARK_OAK, MapColor.BROWN);
-
-        private static final BlockBookShelf.EnumType[] META_LOOKUP = new BlockBookShelf.EnumType[values().length];
-        private final int meta;
-        private final String name;
-        private final MapColor mapColor;
-
-        private EnumType(int metaIn, String nameIn, MapColor mapColorIn)
-        {
-            meta = metaIn;
-            name = nameIn;
-            mapColor = mapColorIn;
-        }
-
-        public int getMetadata()
-        {
-            return meta;
-        }
-
-        public MapColor getMapColor()
-        {
-            return mapColor;
-        }
-
-        @Override
-        public String toString()
-        {
-            return name;
-        }
-
-        public static BlockBookShelf.EnumType byMetadata(int meta)
-        {
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
-                meta = 0;
-            }
-
-            return META_LOOKUP[meta];
-        }
-
-        @Override
-        public String getName()
-        {
-            return name;
-        }
-
-        static
-        {
-            for (BlockBookShelf.EnumType blockbookshelf$enumtype : values())
-            {
-                META_LOOKUP[blockbookshelf$enumtype.getMetadata()] = blockbookshelf$enumtype;
-            }
-        }
+        return Items.BOOK;
     }
 }

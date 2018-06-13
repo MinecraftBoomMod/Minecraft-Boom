@@ -1,0 +1,22 @@
+{
+  "conditions" : [
+    {
+        "type" : "minecraftboom:polished_end_stone",
+        "value" : true
+    } 
+  ],
+  "result": {
+    "item": "minecraftboom:polished_end_stone",
+    "count": 4
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:end_bricks"
+    }
+  }
+}

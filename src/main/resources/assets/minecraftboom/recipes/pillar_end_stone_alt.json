@@ -15,8 +15,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:polished",
-      "data": 2
+      "item": "minecraftboom:polished_end_stone"
     }
   }
 }

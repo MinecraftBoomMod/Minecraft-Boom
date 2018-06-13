@@ -9,7 +9,6 @@ import com.google.common.collect.Ordering;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
@@ -17,7 +16,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Reference;
 import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
@@ -53,37 +51,11 @@ public class CreativeTab
                 {
                     removeList.add(stack);
                 }
-
-                if (stack.getItem() instanceof ItemBlockMeta)
-                {
-                    ItemBlockMeta itemBlock = (ItemBlockMeta) stack.getItem();
-
-                    for (int i = 0; i < itemBlock.getVariants().length; i++)
-                    {
-                        if (!Utils.isBlockEnabled(Block.getBlockFromItem(stack.getItem()), i))
-                        {
-                            removeList.add(new ItemStack(stack.getItem(), stack.getCount(), i));
-                        }
-                    }
-                }
             }
 
             for (ItemStack stack : removeList)
             {
-                if (stack.getItem() instanceof ItemBlock)
-                {
-                    for (ItemStack stack1 : list)
-                    {
-                        if (stack.getItem() == stack1.getItem() && stack.getMetadata() == stack1.getMetadata())
-                        {
-                            list.remove(stack1);
-                        }
-                    }
-                }
-                else
-                {
-                    list.remove(stack);
-                }
+                list.remove(stack);
             }
 
             tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);

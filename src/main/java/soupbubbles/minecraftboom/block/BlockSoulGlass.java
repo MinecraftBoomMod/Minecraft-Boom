@@ -13,13 +13,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockSoulGlass extends BlockBase
 {
-    public BlockSoulGlass()
+    public BlockSoulGlass(String name)
     {
-        super(Material.GLASS, Names.BLOCK_SOUL_GLASS, SoundType.GLASS);
+        super(Material.GLASS, name, SoundType.GLASS);
         setHardness(BlockValues.GLASS_HARDNESS);
         setResistance(BlockValues.GLASS_RESISTANCE);
     }

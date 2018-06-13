@@ -9,8 +9,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:gravel_stone",
-      "data": 1
+      "item": "minecraftboom:fine_gravel_stone"
     }
   }
 }

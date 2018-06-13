@@ -64,25 +64,41 @@ public class Names
 
     public static final String BLOCK_FACELESS_PUMPKIN = "faceless_pumpkin";
 
-    public static final String BLOCK_BOOKSHELF = "bookshelf";
+    public static final String BLOCK_SPRUCE_BOOKSHELF = "spruce_bookshelf";
+    public static final String BLOCK_BIRCH_BOOKSHELF = "birch_bookshelf";
+    public static final String BLOCK_JUNGLE_BOOKSHELF = "jungle_bookshelf";
+    public static final String BLOCK_ACACIA_BOOKSHELF = "acacia_bookshelf";
+    public static final String BLOCK_DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
 
     public static final String BLOCK_COBBELSTONE_BRICKS = "cobblestone_bricks";
     public static final String BLOCK_MOSSY_COBBELSTONE_BRICKS = "mossy_cobblestone_bricks";
     public static final String BLOCK_TERRACOTTA_BRICKS = "terracotta_bricks";
-    public static final String BLOCK_STAINED_TERRACOTTA_BRICKS = "stained_terracotta_bricks";
+    public static final String BLOCK_WHITE_TERRACOTTA_BRICKS = "white_terracotta_bricks";
+    public static final String BLOCK_ORANGE_TERRACOTTA_BRICKS = "orange_terracotta_bricks";
+    public static final String BLOCK_MAGENTA_TERRACOTTA_BRICKS = "magenta_terracotta_bricks";
+    public static final String BLOCK_LIGHT_BLUE_TERRACOTTA_BRICKS = "light_blue_terracotta_bricks";
+    public static final String BLOCK_YELLOW_TERRACOTTA_BRICKS = "yellow_terracotta_bricks";
+    public static final String BLOCK_LIME_TERRACOTTA_BRICKS = "lime_terracotta_bricks";
+    public static final String BLOCK_PINK_TERRACOTTA_BRICKS = "pink_terracotta_bricks";
+    public static final String BLOCK_GRAY_TERRACOTTA_BRICKS = "gray_terracotta_bricks";
+    public static final String BLOCK_SILVER_TERRACOTTA_BRICKS = "silver_terracotta_bricks";
+    public static final String BLOCK_CYAN_TERRACOTTA_BRICKS = "cyan_terracotta_bricks";
+    public static final String BLOCK_PURPLE_TERRACOTTA_BRICKS = "purple_terracotta_bricks";
+    public static final String BLOCK_BLUE_TERRACOTTA_BRICKS = "blue_terracotta_bricks";
+    public static final String BLOCK_BROWN_TERRACOTTA_BRICKS = "brown_terracotta_bricks";
+    public static final String BLOCK_GREEN_TERRACOTTA_BRICKS = "green_terracotta_bricks";
+    public static final String BLOCK_RED_TERRACOTTA_BRICKS = "red_terracotta_bricks";
+    public static final String BLOCK_BLACK_TERRACOTTA_BRICKS = "black_terracotta_bricks";
     public static final String BLOCK_MAGMA_BRICKS = "magma_bricks";
     public static final String BLOCK_OBSIDIAN_BRICKS = "obsidian_bricks";
     public static final String BLOCK_FINE_GRAVEL = "fine_gravel";
     public static final String BLOCK_GRAVEL_STONE = "gravel_stone";
-    public static final String BLOCK_NORMAL_GRAVEL_STONE = "normal_gravel_stone";
     public static final String BLOCK_FINE_GRAVEL_STONE = "fine_gravel_stone";
     public static final String BLOCK_GRAVEL_BRICKS = "gravel_bricks";
-
-    public static final String BLOCK_POLISHED = "polished";
-    public static final String BLOCK_SMOOTH_PRISMARINE = "smooth_prismarine";
-    public static final String BLOCK_SMOOTH_DARK_PRISMARINE = "smooth_dark_prismarine";
-    public static final String BLOCK_SMOOTH_END_STONE = "smooth_end_stone";
-    public static final String BLOCK_SMOOTH_NETHERRACK = "smooth_netherrack";
+    public static final String BLOCK_POLISHED_PRISMARINE = "polished_prismarine";
+    public static final String BLOCK_POLISHED_DARK_PRISMARINE = "polished_dark_prismarine";
+    public static final String BLOCK_POLISHED_END_STONE = "polished_end_stone";
+    public static final String BLOCK_POLISHED_NETHERRACK = "polished_netherrack";
 
     public static final String BLOCK_CHARCOAL = "charcoal_block";
     public static final String BLOCK_SUGAR = "sugar_block";
@@ -92,10 +108,39 @@ public class Names
     public static final String BLOCK_MAGMA_CREAM = "magma_cream_block";
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
     public static final String BLOCK_CHARRED_BONE = "charred_bone_block";
-    public static final String BLOCK_DYE = "dye_block";
+    public static final String BLOCK_WHITE_DYE_BLOCK = "white_dye_block";
+    public static final String BLOCK_ORANGE_DYE_BLOCK = "orange_dye_block";
+    public static final String BLOCK_MAGENTA_DYE_BLOCK = "magenta_dye_block";
+    public static final String BLOCK_LIGHT_BLUE_DYE_BLOCK = "light_blue_dye_block";
+    public static final String BLOCK_YELLOW_DYE_BLOCK = "yellow_dye_block";
+    public static final String BLOCK_LIME_DYE_BLOCK = "lime_dye_block";
+    public static final String BLOCK_PINK_DYE_BLOCK = "pink_dye_block";
+    public static final String BLOCK_GRAY_DYE_BLOCK = "gray_dye_block";
+    public static final String BLOCK_SILVER_DYE_BLOCK = "silver_dye_block";
+    public static final String BLOCK_CYAN_DYE_BLOCK = "cyan_dye_block";
+    public static final String BLOCK_PURPLE_DYE_BLOCK = "purple_dye_block";
+    public static final String BLOCK_BROWN_DYE_BLOCK = "brown_dye_block";
+    public static final String BLOCK_GREEN_DYE_BLOCK = "green_dye_block";
+    public static final String BLOCK_RED_DYE_BLOCK = "red_dye_block";
+    public static final String BLOCK_BLACK_DYE_BLOCK = "black_dye_block";
 
     public static final String BLOCK_SOUL_GLASS = "soul_glass";
-    public static final String BLOCK_STAINED_SOUL_GLASS = "stained_soul_glass";
+    public static final String BLOCK_WHITE_STAINED_SOUL_GLASS = "white_stained_soul_glass";
+    public static final String BLOCK_ORANGE_STAINED_SOUL_GLASS = "orange_stained_soul_glass";
+    public static final String BLOCK_MAGENTA_STAINED_SOUL_GLASS = "magenta_stained_soul_glass";
+    public static final String BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS = "light_blue_stained_soul_glass";
+    public static final String BLOCK_YELLOW_STAINED_SOUL_GLASS = "yellow_stained_soul_glass";
+    public static final String BLOCK_LIME_STAINED_SOUL_GLASS = "lime_stained_soul_glass";
+    public static final String BLOCK_PINK_STAINED_SOUL_GLASS = "pink_stained_soul_glass";
+    public static final String BLOCK_GRAY_STAINED_SOUL_GLASS = "gray_stained_soul_glass";
+    public static final String BLOCK_SILVER_STAINED_SOUL_GLASS = "silver_stained_soul_glass";
+    public static final String BLOCK_CYAN_STAINED_SOUL_GLASS = "cyan_stained_soul_glass";
+    public static final String BLOCK_PURPLE_STAINED_SOUL_GLASS = "purple_stained_soul_glass";
+    public static final String BLOCK_BLUE_STAINED_SOUL_GLASS = "blue_stained_soul_glass";
+    public static final String BLOCK_BROWN_STAINED_SOUL_GLASS = "brown_stained_soul_glass";
+    public static final String BLOCK_GREEN_STAINED_SOUL_GLASS = "green_stained_soul_glass";
+    public static final String BLOCK_RED_STAINED_SOUL_GLASS = "red_stained_soul_glass";
+    public static final String BLOCK_BLACK_STAINED_SOUL_GLASS = "black_stained_soul_glass";
     public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
     public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
 

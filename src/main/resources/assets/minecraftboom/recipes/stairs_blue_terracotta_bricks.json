@@ -11,8 +11,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "minecraftboom:stained_terracotta_bricks",
-      "data": 11
+      "item": "minecraftboom:blue_terracotta_bricks"
     }
   }
 }

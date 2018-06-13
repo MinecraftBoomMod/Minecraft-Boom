@@ -7,13 +7,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
 import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
 
 public class BlockSoulGlassPane extends BlockPaneBase
 {
-    public BlockSoulGlassPane()
+    public BlockSoulGlassPane(String name)
     {
-        super(Material.GLASS, Names.BLOCK_SOUL_GLASS_PANE, SoundType.GLASS, false);
+        super(Material.GLASS, name + "_pane", SoundType.GLASS, false);
         setHardness(BlockValues.GLASS_HARDNESS);
         setResistance(BlockValues.GLASS_RESISTANCE);
     }

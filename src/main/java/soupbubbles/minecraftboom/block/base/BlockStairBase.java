@@ -1,7 +1,6 @@
 package soupbubbles.minecraftboom.block.base;
 
 import net.minecraft.block.BlockStairs;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
 import soupbubbles.minecraftboom.reference.Assets;

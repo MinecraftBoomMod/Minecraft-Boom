@@ -1,0 +1,14 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "end": "blocks/planks_acacia",
+            "side": "minecraftboom:blocks/acacia_bookshelf"
+        },
+        "model": "cube_column",
+        "uvlock": true
+    },
+    "variants": {
+        "normal": [{ }]
+    }
+}

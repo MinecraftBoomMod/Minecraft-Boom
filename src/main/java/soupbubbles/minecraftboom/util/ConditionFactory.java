@@ -11,7 +11,6 @@ import net.minecraftforge.common.crafting.IConditionFactory;
 import net.minecraftforge.common.crafting.JsonContext;
 import soupbubbles.minecraftboom.init.ModBlocks;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Assets;
 
 public class ConditionFactory implements IConditionFactory
@@ -32,25 +31,9 @@ public class ConditionFactory implements IConditionFactory
 
         for (Block block : ModBlocks.BLOCKS)
         {
-            if (block instanceof IBlockMeta)
+            if (key.equals(Assets.TEXTURE_PREFIX + Utils.getBaseBlockName(block)))
             {
-                ItemBlockMeta itemBlock = (ItemBlockMeta) Item.getItemFromBlock(block);
-
-                for (int i = 0; i < itemBlock.getVariants().length; i++)
-                {
-                    if (key.equals(Assets.TEXTURE_PREFIX + Utils.getBaseBlockName(((IBlockMeta) block).getSpecialName(i))))
-                    {
-                        int meta = i;
-                        return () -> Utils.isBlockEnabled(block, meta) == value;
-                    }
-                }
-            }
-            else
-            {
-                if (key.equals(Assets.TEXTURE_PREFIX + Utils.getBaseBlockName(block)))
-                {
-                    return () -> Utils.isBlockEnabled(block) == value;
-                }
+                return () -> Utils.isBlockEnabled(block) == value;
             }
         }
 

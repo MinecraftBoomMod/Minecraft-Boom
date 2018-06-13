@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -18,10 +17,7 @@ import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import soupbubbles.minecraftboom.MinecraftBoom;
-import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.item.base.ItemBlockMeta;
 import soupbubbles.minecraftboom.reference.Reference;
-import soupbubbles.minecraftboom.util.IBlockMeta;
 import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
 
@@ -185,27 +181,7 @@ public class ConfigurationHandler
     {
         allowedBlocks.add(loadPropBool(Utils.getConfigName(block), CATEGORY_BLOCKS, "", true));
 
-        if (block instanceof IBlockMeta)
-        {
-            ItemBlockMeta itemBlock = (ItemBlockMeta) Item.getItemFromBlock(block);
-
-            for (int i = 0; i < itemBlock.getVariants().length; i++)
-            {
-                if (block == ModBlocks.BLOCK_DYE && EnumDyeColor.byMetadata(i) == EnumDyeColor.BLUE)
-                {
-                }
-                else
-                {
-                    loadPropBool(Utils.capitalize(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i))), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
-
-                    if (block instanceof IStairSlab && ((IStairSlab) block).hasStairSlab())
-                    {
-                        loadPropBool(Utils.getStairSlabConfigName(Utils.getConfigName(((IBlockMeta) block).getSpecialName(i)), block), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
-                    }
-                }
-            }
-        }
-        else if (block instanceof IStairSlab && ((IStairSlab) block).hasStairSlab())
+        if (block instanceof IStairSlab && ((IStairSlab) block).hasStairSlab())
         {
             loadPropBool(Utils.getStairSlabConfigName(Utils.getConfigName(block), block), CATEGORY_BLOCKS, "", true, Utils.getConfigName(block));
         }
