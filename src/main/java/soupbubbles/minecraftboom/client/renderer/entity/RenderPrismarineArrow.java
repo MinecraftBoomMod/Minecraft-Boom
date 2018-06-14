@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
-import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Assets;
+import soupbubbles.minecraftboom.lib.Reference;
 
 public class RenderPrismarineArrow extends RenderArrow
 {

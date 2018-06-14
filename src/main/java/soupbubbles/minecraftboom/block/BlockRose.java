@@ -6,9 +6,9 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import soupbubbles.minecraftboom.block.base.BlockCrossBase;
-import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.Assets;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class BlockRose extends BlockCrossBase
 {

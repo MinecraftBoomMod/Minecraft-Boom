@@ -7,7 +7,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 import soupbubbles.minecraftboom.util.Utils;
 
 public class ItemBase extends Item

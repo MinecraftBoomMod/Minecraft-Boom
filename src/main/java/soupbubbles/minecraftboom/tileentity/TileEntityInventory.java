@@ -17,7 +17,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 
 @SuppressWarnings("deprecation")
 public class TileEntityInventory extends TileEntityBase implements IInventory

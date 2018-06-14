@@ -3,7 +3,7 @@ package soupbubbles.minecraftboom.util;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 
 public interface IRenderItem
 {

@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_polished_dark_prismarine",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_polished_dark_prismarine",
     "count": 6

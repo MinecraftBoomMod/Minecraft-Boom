@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_yellow_terracotta",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_yellow_terracotta",
     "count": 6

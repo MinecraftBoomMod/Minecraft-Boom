@@ -3,7 +3,7 @@ package soupbubbles.minecraftboom.client.gui.config;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Reference;
 
 public class GuiButtonConfigMenu extends GuiButton
 {

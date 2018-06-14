@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_smooth_granite",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_smooth_granite",
     "count": 6

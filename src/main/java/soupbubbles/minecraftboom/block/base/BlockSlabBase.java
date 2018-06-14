@@ -19,7 +19,7 @@ import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 
 public class BlockSlabBase extends Block
 {

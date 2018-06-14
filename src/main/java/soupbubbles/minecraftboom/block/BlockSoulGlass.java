@@ -12,7 +12,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.reference.BlockValues;
+import soupbubbles.minecraftboom.lib.BlockValues;
 
 public class BlockSoulGlass extends BlockBase
 {

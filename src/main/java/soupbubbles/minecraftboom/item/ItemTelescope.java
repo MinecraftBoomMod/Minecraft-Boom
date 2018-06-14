@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.item.base.ItemBase;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class ItemTelescope extends ItemBase
 {

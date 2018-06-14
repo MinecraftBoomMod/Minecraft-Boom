@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld_rod",
     "textures": {
-        "layer0": "minecraftboom:items/wheat_on_stick"
+        "layer0": "minecraftboom:items/wheat_on_a_stick"
     }
 }

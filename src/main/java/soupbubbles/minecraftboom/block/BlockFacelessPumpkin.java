@@ -11,8 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockBase;
 import soupbubbles.minecraftboom.init.ModItems;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 import soupbubbles.minecraftboom.util.Utils;
 
 public class BlockFacelessPumpkin extends BlockBase

@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_polished_netherrack",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_polished_netherrack",
     "count": 6

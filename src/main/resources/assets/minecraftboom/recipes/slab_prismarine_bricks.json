@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_prismarine_bricks",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_prismarine_bricks",
     "count": 6

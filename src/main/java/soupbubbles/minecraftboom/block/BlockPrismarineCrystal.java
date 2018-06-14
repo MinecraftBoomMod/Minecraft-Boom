@@ -9,8 +9,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.MathHelper;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class BlockPrismarineCrystal extends BlockBase
 {

@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Reference;
 
 public class Utils
 {
@@ -86,7 +86,7 @@ public class Utils
 
         return result;
     }
-    
+
     public static boolean isItemEnabled(Item item)
     {
         if (item instanceof ItemBlock)
@@ -99,10 +99,10 @@ public class Utils
 
     public static boolean isBlockEnabled(Block block)
     {
-        return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + getConfigName(block), getConfigName(block), true).getBoolean();
+        return block instanceof BlockStairBase ? isStairEnabled((BlockStairBase) block) : block instanceof BlockSlabBase ? isSlabEnabled((BlockSlabBase) block) : ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + getConfigName(block), getConfigName(block), true).getBoolean();
     }
 
-    public static boolean isStairEnabled(BlockStairBase block)
+    private static boolean isStairEnabled(BlockStairBase block)
     {
         if (!block.isVanilla())
         {
@@ -111,11 +111,11 @@ public class Utils
                 return false;
             }
         }
-        
+
         return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + (block.isVanilla() ? "Vanilla Stairs and Slabs" : getConfigName(block.getStairBlockState().getBlock())), getStairSlabConfigName(Utils.getConfigName(block), block), true).getBoolean();
     }
-    
-    public static boolean isSlabEnabled(BlockSlabBase block)
+
+    private static boolean isSlabEnabled(BlockSlabBase block)
     {
         if (!block.isVanilla())
         {
@@ -124,7 +124,7 @@ public class Utils
                 return false;
             }
         }
-        
+
         return ConfigurationHandler.configuration.get(ConfigurationHandler.CATEGORY_BLOCKS + "." + (block.isVanilla() ? "Vanilla Stairs and Slabs" : getConfigName(block.getSlabBlockState().getBlock())), getStairSlabConfigName(Utils.getConfigName(block), block), true).getBoolean();
     }
 }

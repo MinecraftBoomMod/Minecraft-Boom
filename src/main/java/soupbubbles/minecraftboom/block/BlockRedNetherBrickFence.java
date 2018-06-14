@@ -5,9 +5,9 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.Assets;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class BlockRedNetherBrickFence extends BlockFence
 {

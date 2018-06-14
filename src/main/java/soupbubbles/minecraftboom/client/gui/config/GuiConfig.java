@@ -9,7 +9,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Property;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 import soupbubbles.minecraftboom.util.Compatibility;
 
 public class GuiConfig extends GuiBase

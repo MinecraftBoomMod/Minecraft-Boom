@@ -13,8 +13,8 @@ import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Assets;
+import soupbubbles.minecraftboom.lib.Reference;
 import soupbubbles.minecraftboom.util.Compatibility;
 
 public class GuiCategory extends GuiBase

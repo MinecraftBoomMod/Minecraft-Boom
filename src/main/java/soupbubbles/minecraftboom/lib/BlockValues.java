@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.reference;
+package soupbubbles.minecraftboom.lib;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

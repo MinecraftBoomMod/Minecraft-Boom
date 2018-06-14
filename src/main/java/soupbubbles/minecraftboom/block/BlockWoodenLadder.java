@@ -3,7 +3,7 @@ package soupbubbles.minecraftboom.block;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.block.SoundType;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 
 public class BlockWoodenLadder extends BlockLadder
 {

@@ -7,8 +7,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class BlockMagmaBricks extends BlockBase
 {

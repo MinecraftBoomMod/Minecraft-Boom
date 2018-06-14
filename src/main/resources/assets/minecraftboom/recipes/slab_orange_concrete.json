@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_orange_concrete",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_orange_concrete",
     "count": 6

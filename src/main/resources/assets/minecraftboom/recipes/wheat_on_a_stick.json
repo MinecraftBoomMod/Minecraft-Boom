@@ -1,12 +1,12 @@
 {
   "conditions" : [
     {
-        "type" : "minecraftboom:wheat_on_stick",
+        "type" : "minecraftboom:wheat_on_a_stick",
         "value" : true
     } 
   ],
   "result": {
-    "item": "minecraftboom:wheat_on_stick"
+    "item": "minecraftboom:wheat_on_a_stick"
   },
   "ingredients": [
     {

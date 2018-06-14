@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.reference;
+package soupbubbles.minecraftboom.lib;
 
 public class Assets
 {

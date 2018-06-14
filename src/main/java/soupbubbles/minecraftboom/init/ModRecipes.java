@@ -50,12 +50,13 @@ public class ModRecipes
         addSmelting(Blocks.GRAVEL, new ItemStack(ModBlocks.BLOCK_GRAVEL_STONE), 0.1F);
         addSmelting(ModBlocks.BLOCK_FINE_GRAVEL, new ItemStack(ModBlocks.BLOCK_FINE_GRAVEL_STONE), 0.1F);
         addSmelting(Blocks.MAGMA, new ItemStack(ModItems.ITEM_MAGMA_BRICK), 0.1F);
+        addSmelting(Items.EGG, new ItemStack(ModItems.ITEM_COOKED_EGG), 0.2F);
     }
 
     private static void initBrewingRecipes()
     {
     }
-    
+
     private static void addOreDict(String name, Block block)
     {
         if (block != null)
@@ -84,19 +85,9 @@ public class ModRecipes
 
     private static void addSmelting(ItemStack input, ItemStack result, float exp)
     {
-        if (result.getItem() instanceof ItemBlock)
+        if (Utils.isItemEnabled(result.getItem()))
         {
-            if (Utils.isBlockEnabled(Block.getBlockFromItem(result.getItem())))
-            {
-                GameRegistry.addSmelting(input, result, exp);
-            }
-        }
-        else
-        {
-            if (Utils.isItemEnabled(result.getItem()))
-            {
-                GameRegistry.addSmelting(input, result, exp);
-            }
+            GameRegistry.addSmelting(input, result, exp);
         }
     }
 }

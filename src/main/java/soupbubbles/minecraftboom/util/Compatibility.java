@@ -6,7 +6,7 @@ import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.Loader;
 import soupbubbles.minecraftboom.MinecraftBoom;
 import soupbubbles.minecraftboom.handler.ConfigurationHandler;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Reference;
 
 public class Compatibility
 {

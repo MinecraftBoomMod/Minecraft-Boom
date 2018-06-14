@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockSlabBase;
 import soupbubbles.minecraftboom.block.base.BlockStairBase;
 import soupbubbles.minecraftboom.init.ModBlocks;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Reference;
 import soupbubbles.minecraftboom.util.IStairSlab;
 import soupbubbles.minecraftboom.util.Utils;
 
@@ -80,21 +80,9 @@ public class CreativeTab
 
             for (ItemStack stack : list)
             {
-                Block block = Block.getBlockFromItem(stack.getItem());
-
-                if (block instanceof BlockStairBase)
+                if (!Utils.isBlockEnabled(Block.getBlockFromItem(stack.getItem())))
                 {
-                    if (!Utils.isStairEnabled((BlockStairBase) block))
-                    {
-                        removeList.add(stack);
-                    }
-                }
-                else
-                {
-                    if (!Utils.isSlabEnabled((BlockSlabBase) block))
-                    {
-                        removeList.add(stack);
-                    }
+                    removeList.add(stack);
                 }
             }
 

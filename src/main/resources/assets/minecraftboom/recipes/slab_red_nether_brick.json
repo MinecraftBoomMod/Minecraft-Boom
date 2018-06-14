@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_red_nether_brick",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_red_nether_brick",
     "count": 6

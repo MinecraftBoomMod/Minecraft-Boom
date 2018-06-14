@@ -12,8 +12,8 @@ import soupbubbles.minecraftboom.client.renderer.entity.RenderGenericItem;
 import soupbubbles.minecraftboom.client.renderer.entity.RenderPrismarineArrow;
 import soupbubbles.minecraftboom.entity.EntityGrenade;
 import soupbubbles.minecraftboom.entity.EntityPrismarineArrow;
-import soupbubbles.minecraftboom.reference.Names;
-import soupbubbles.minecraftboom.reference.Reference;
+import soupbubbles.minecraftboom.lib.Names;
+import soupbubbles.minecraftboom.lib.Reference;
 
 public class ModEntities
 {

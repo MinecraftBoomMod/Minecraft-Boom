@@ -3,9 +3,9 @@ package soupbubbles.minecraftboom.block;
 import net.minecraft.block.BlockSlime;
 import net.minecraft.block.SoundType;
 import soupbubbles.minecraftboom.creativetab.CreativeTab;
-import soupbubbles.minecraftboom.reference.Assets;
-import soupbubbles.minecraftboom.reference.BlockValues;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.Assets;
+import soupbubbles.minecraftboom.lib.BlockValues;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class BlockMagmaCream extends BlockSlime
 {

@@ -6,7 +6,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import soupbubbles.minecraftboom.block.base.BlockPaneBase;
-import soupbubbles.minecraftboom.reference.BlockValues;
+import soupbubbles.minecraftboom.lib.BlockValues;
 
 public class BlockSoulGlassPane extends BlockPaneBase
 {

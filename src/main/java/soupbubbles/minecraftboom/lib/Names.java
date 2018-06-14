@@ -1,4 +1,4 @@
-package soupbubbles.minecraftboom.reference;
+package soupbubbles.minecraftboom.lib;
 
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPrismarine;
@@ -205,11 +205,12 @@ public class Names
     public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
     public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
-    public static final String ITEM_WHEAT_ON_STICK = "wheat_on_stick";
+    public static final String ITEM_WHEAT_ON_A_STICK = "wheat_on_a_stick";
     public static final String ITEM_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
     public static final String ITEM_TELESCOPE = "telescope";
     public static final String ITEM_LEVITATION_DUST = "levitation_dust";
     public static final String ITEM_MAGMA_BRICK = "magma_brick";
+    public static final String ITEM_COOKED_EGG = "cooked_egg";
 
     public static final String ENTITY_PRISMARINE_ARROW = "prismarine_arrow";
     public static final String ENTITY_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";

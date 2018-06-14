@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_obsidian",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_obsidian",
     "count": 6

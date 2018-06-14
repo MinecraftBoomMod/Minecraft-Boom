@@ -11,7 +11,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.entity.EntityGrenade;
 import soupbubbles.minecraftboom.item.base.ItemBase;
-import soupbubbles.minecraftboom.reference.Names;
+import soupbubbles.minecraftboom.lib.Names;
 
 public class ItemGrenade extends ItemBase
 {

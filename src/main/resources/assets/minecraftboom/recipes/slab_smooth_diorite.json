@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_smooth_diorite",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_smooth_diorite",
     "count": 6

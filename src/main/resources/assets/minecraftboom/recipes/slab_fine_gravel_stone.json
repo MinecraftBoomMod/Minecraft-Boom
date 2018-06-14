@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_fine_gravel_stone",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_fine_gravel_stone",
     "count": 6

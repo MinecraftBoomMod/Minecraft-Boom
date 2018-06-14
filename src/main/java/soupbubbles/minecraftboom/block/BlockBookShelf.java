@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import soupbubbles.minecraftboom.block.base.BlockBase;
-import soupbubbles.minecraftboom.reference.BlockValues;
+import soupbubbles.minecraftboom.lib.BlockValues;
 
 public class BlockBookShelf extends BlockBase
 {

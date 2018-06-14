@@ -19,11 +19,12 @@ item.minecraftboom.wither_bone.name=Wither Bone
 item.minecraftboom.pumpkin_slice.name=Pumpkin Slice
 item.minecraftboom.polar_bear_fur.name=Polar Bear Fur
 item.minecraftboom.prismarine_arrow.name=Prismarine Arrow
-item.minecraftboom.wheat_on_stick.name=Wheat On A Stick
+item.minecraftboom.wheat_on_a_stick.name=Wheat On A Stick
 item.minecraftboom.popped_chorus_grenade.name=Popped Chorus Grenade
 item.minecraftboom.telescope.name=Telescope
 item.minecraftboom.levitation_dust.name=Levitation Dust
 item.minecraftboom.magma_brick.name=Magma Brick
+item.minecraftboom.cooked_egg.name=Cooked Egg
 
 
 # Blocks

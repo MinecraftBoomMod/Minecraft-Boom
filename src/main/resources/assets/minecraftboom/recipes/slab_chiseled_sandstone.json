@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_chiseled_sandstone",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_chiseled_sandstone",
     "count": 6

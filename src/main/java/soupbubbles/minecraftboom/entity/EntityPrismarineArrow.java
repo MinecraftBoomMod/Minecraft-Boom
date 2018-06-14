@@ -46,7 +46,6 @@ public class EntityPrismarineArrow extends EntityArrow
         {
             for (int i = 0; i < 4; ++i)
             {
-                float f3 = 0.25F;
                 world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, posX - motionX * 0.25D, posY - motionY * 0.25D, posZ - motionZ * 0.25D, motionX, motionY, motionZ, new int[0]);
             }
         }

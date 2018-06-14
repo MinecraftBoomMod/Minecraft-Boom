@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_mossy_stonebrick",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_mossy_stonebrick",
     "count": 6

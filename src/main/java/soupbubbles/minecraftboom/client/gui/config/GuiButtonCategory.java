@@ -2,7 +2,7 @@ package soupbubbles.minecraftboom.client.gui.config;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
-import soupbubbles.minecraftboom.reference.Assets;
+import soupbubbles.minecraftboom.lib.Assets;
 
 public class GuiButtonCategory extends GuiButton
 {

@@ -1,4 +1,10 @@
 {
+  "conditions" : [
+    {
+        "type" : "minecraftboom:slab_chiseled_stonebrick",
+        "value" : true
+    } 
+  ],
   "result": {
     "item": "minecraftboom:slab_chiseled_stonebrick",
     "count": 6
